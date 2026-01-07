@@ -4,11 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-// 2. Configuramos Poppins
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"], // Elegimos los grosores que usaremos (Light, Regular, SemiBold, Bold)
-  variable: "--font-poppins", // Variable para usarla en Tailwind si quieres
+  weight: ["300", "400", "600", "700"], 
+  variable: "--font-poppins", 
 });
 
 export const metadata: Metadata = {
