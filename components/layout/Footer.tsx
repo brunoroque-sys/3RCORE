@@ -61,7 +61,7 @@ const Footer = () => {
         {/* COLUMNA 4: Información y Libro */}
         <div>
           <h3 className="text-[#ff2e63] font-bold text-lg mb-4">Información</h3>
-          <ul className="space-y-3 text-sm text-gray-300 mb-8">
+          <ul className="space-y-3 text-sm text-gray-300 mb-4">
             <li><Link href="/faq" className="hover:text-white transition-colors">Preguntas Frecuentes</Link></li>
             <li><Link href="/terminos" className="hover:text-white transition-colors">Términos y Condiciones</Link></li>
             <li><Link href="/privacidad" className="hover:text-white transition-colors">Política y Privacidad</Link></li>
