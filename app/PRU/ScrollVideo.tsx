@@ -29,10 +29,9 @@ export default function ScrollVideo() {
     const images = imagesRef.current;
     const frameObj = frameRef.current;
 
-    // 1. Cargar imágenes
     if (images.length === 0) {
         const currentFrame = (index: number) => 
-            `/frames/ezgif-frame-${(index + 1).toString().padStart(3, "0")}.jpg`;
+            `/frames/frame_${(index + 1).toString().padStart(3, "0")}.webp`;
 
         for (let i = 0; i < frameCount; i++) {
             const img = new Image();
@@ -41,7 +40,6 @@ export default function ScrollVideo() {
         }
     }
 
-    // 2. Función Render
     const render = () => {
       if (!context || !canvas) return;
       context.clearRect(0, 0, canvas.width, canvas.height);

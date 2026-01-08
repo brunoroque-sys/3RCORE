@@ -1,13 +1,12 @@
-import Hero from "@/components/layout/Hero";
-import ScrollVideo from "./PRU/ScrollVideo"; // Ajusta la ruta según tu estructura
-
+import ServicesSlider from '@/components/layout/ServicesWheel'
+import TeamSection from '@/components/layout/TeamSection'
+import StatsAndCTA from '@/components/layout/CTASection'
 export default function Home() {
   return (
     <main>
-      <Hero />
-      {/* AQUÍ VA TU VIDEO */}
-      <ScrollVideo />
-
+      <TeamSection></TeamSection>
+      <ServicesSlider></ServicesSlider>
+      <StatsAndCTA></StatsAndCTA>
     </main>
   );
 }
