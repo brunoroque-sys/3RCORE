@@ -2,6 +2,7 @@ import ServicesSlider from '@/components/layout/home/ServicesWheel'
 import TeamSection from '@/components/layout/home/TeamSection'
 import StatsAndCTA from '@/components/layout/home/CTASection'
 import Hero from '@/components/layout/home/Hero'
+import ClientSection from '@/components/layout/home/ClientSection';
 export default function Home() {
   return (
     <main >
@@ -9,6 +10,7 @@ export default function Home() {
       <TeamSection></TeamSection>
       <ServicesSlider ></ServicesSlider>
       <StatsAndCTA></StatsAndCTA>
+      <ClientSection />
     </main>
   );
 }
