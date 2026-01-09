@@ -54,7 +54,7 @@ useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
+        start: "top 5%",
         end: `+=${frameCount * 5}%`, 
         scrub: 1,
         pin: true,
@@ -103,7 +103,7 @@ useGSAP(() => {
 
   }, { scope: containerRef });
   return (
-    <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden font-sans">
+    <div ref={containerRef} className="pt-24 relative w-full h-screen bg-black overflow-hidden font-sans">
       {/* CANVAS (FONDO) */}
       <canvas
         ref={canvasRef}
