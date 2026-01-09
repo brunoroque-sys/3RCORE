@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google"; // <--- 1. Importamos directamente desde Google
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScrolling from "@/components/ui/SmoothScrolling"
+import Navbar from "@/components/layout/Navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,9 +25,13 @@ export default function RootLayout({
     <html lang="es">
       {/* 3. Aplicamos la clase al body */}
       <body className={`${poppins.className} antialiased bg-black text-white`}>
-        <Navbar />
-        <main className="pt-24 min-h-screen bg-[#120214] ">
-          {children}
+          
+        <Navbar/>
+        <div className="noise-global" />
+        <main className="min-h-screen bg-[#120214] ">
+          <SmoothScrolling>
+            {children}
+          </SmoothScrolling>
         </main>
         <Footer />
       </body>

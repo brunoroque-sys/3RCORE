@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       {/* BARRA DE NAVEGACIÓN SUPERIOR (Siempre visible) */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0217] text-white border-b border-white/10">
+      <nav className="top-0 left-0 w-full z-50 bg-[#0f0217] text-white border-b border-white/10">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-24 relative">
             
@@ -71,9 +71,9 @@ const Navbar = () => {
               >
                 <span className="hidden sm:block">{isOpen ? "CLOSE" : "MENU"}</span>
                 {/* Icono Hamburguesa / Cruz */}
-                <div className="flex flex-col justify-center items-end w-6 h-6 gap-[5px]">
-                  <span className={`block h-[2px] bg-white transition-all duration-500 ease-in-out ${isOpen ? "w-6 -rotate-45 -translate-y-[3.5px]" : "w-4 group-hover:w-6"}`}></span>
-                  <span className={`block h-[2px] bg-white transition-all duration-500 ease-in-out ${isOpen ? "w-6 rotate-45 translate-y-[3.5px]" : "w-6"}`}></span>
+                <div className="flex flex-col justify-center items-end w-6 h-6 gap-[5px] cursor-pointer">
+                  <span className={`block h-[2px] bg-white transition-all duration-500 ease-in-out ${isOpen ? "w-6 " : "w-4 group-hover:w-6"}`}></span>
+                  <span className={`block h-[2px] bg-white transition-all duration-500 ease-in-out ${isOpen ? "w-6 " : "w-6"}`}></span>
                 </div>
               </button>
             </div>
