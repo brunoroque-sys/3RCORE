@@ -80,7 +80,7 @@ const NewsSection = () => {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover transition-transform duration-700 "
+                      className="object-cover transition-transform duration-700"
                     />
                   </div>
                 </div>
