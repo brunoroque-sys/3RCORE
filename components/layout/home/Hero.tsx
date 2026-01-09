@@ -11,8 +11,6 @@ export default function ScrollVideo() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Referencias
-  const textContainerRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]); 
   const frameRef = useRef({ frame: 0 });
 

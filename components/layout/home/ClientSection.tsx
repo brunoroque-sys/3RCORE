@@ -2,10 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Playfair_Display, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import gsap from "gsap";
 
-const playfair = Playfair_Display({ subsets: ["latin"], style: ['italic'], weight: ["400"] });
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
 
 const logos = [
@@ -63,10 +62,10 @@ const ClientSection = () => {
         {logos.map((logo) => (
           <div 
             key={logo.id}
-            className={`logo-box absolute md:w-[227px] md:h-[120px] w-[100px] h-[60px] border border-white/10 flex justify-center items-center backdrop-blur-sm transition-colors duration-500  ${logo.pos}`}
+            className={`logo-box absolute md:w-[227px] md:h-[120px] w-[100px] h-[60px] border border-white/40 flex justify-center items-center backdrop-blur-sm transition-colors duration-500  ${logo.pos}`}
             style={{ opacity: 0 }} // Empiezan invisibles para que aparezcan suavemente
           >
-            <div className="relative md:w-[132px] w-[80px] md:h-[66px] h-[32px] grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="relative md:w-[132px] w-[80px] md:h-[66px] h-[32px] grayscale  transition-all duration-500">
               <Image
                 src={logo.src}
                 alt={`Cliente ${logo.id}`}
