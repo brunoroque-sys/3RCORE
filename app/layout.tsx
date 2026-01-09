@@ -25,7 +25,7 @@ export default function RootLayout({
       {/* 3. Aplicamos la clase al body */}
       <body className={`${poppins.className} antialiased bg-black text-white`}>
         <Navbar />
-        <main className="pt-24 min-h-screen">
+        <main className="pt-24 min-h-screen bg-[#120214] ">
           {children}
         </main>
         <Footer />

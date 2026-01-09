@@ -77,7 +77,7 @@ const TeamSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full bg-[#120214] py-24 px-4 flex justify-center items-center overflow-hidden">
+    <section ref={containerRef} className="w-full py-24 px-4 flex justify-center items-center overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         
         {/* Título principal dividido en letras */}

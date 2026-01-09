@@ -10,10 +10,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   { id: 1, title: "BRANDING", image: "/images/card1.png", desc: "Identidad visual única." },
-  { id: 2, title: "SOCIAL MEDIA", image: "/images/card2.png", desc: "Conectando comunidades." },
-  { id: 3, title: "WEB DESIGN", image: "/images/card3.png", desc: "Experiencias inmersivas." },
+  { id: 2, title: "SOCIAL MEDIA", image: "/images/card1.png", desc: "Conectando comunidades." },
+  { id: 3, title: "WEB DESIGN", image: "/images/card1.png", desc: "Experiencias inmersivas." },
   { id: 4, title: "SEO / SEM", image: "/images/card1.png", desc: "Posicionamiento global." },
-  { id: 5, title: "ECOMMERCE", image: "/images/card2.png", desc: "Ventas sin fronteras." }
+  { id: 5, title: "ECOMMERCE", image: "/images/card1.png", desc: "Ventas sin fronteras." }
 ];
 
 const ServicesSlider = () => {
@@ -76,9 +76,9 @@ const ServicesSlider = () => {
                     
                     // Ajustamos el umbral de distancia para que el efecto sea más "snappy"
                     if (distance < 0.1) { 
-                        gsap.to(item, { scale: 0.9, opacity: 1, filter: "brightness(1)", zIndex: 10, duration: 0.2 });
+                        gsap.to(item, { scale: 1, opacity: 1, filter: "brightness(1)", zIndex: 10, duration: 0.2 });
                     } else {
-                        gsap.to(item, { scale: 0.9, opacity: 0.4, filter: "brightness(0.5)", zIndex: 0, duration: 0.2 });
+                        gsap.to(item, { scale: 1, opacity: 1, filter: "brightness(0.4)", zIndex: 0, duration: 0.2 });
                     }
                 }
             }
@@ -88,10 +88,10 @@ const ServicesSlider = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full bg-[#120214] overflow-hidden text-white flex flex-col justify-center">
+    <section ref={containerRef} className="relative h-screen w-full overflow-hidden text-white flex flex-col justify-center">
       
       {/* Fondo */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/40 via-[#120214] to-[#120214]"></div>
+      <div className="absolute inset-0 pointer-events-none  bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/40 via-[#120214] to-[#120214]"></div>
 
       {/* --- SLIDER --- */}
       <div className="relative z-10 w-full h-[55vh] flex items-center">
@@ -111,7 +111,7 @@ const ServicesSlider = () => {
             <div 
                 key={service.id} 
                 ref={el => itemsRef.current[index] = el}
-                className="relative flex-shrink-0 w-[70vw] md:w-[30vw] h-[60vh] md:h-[70vh] rounded-3xl overflow-hidden border border-white/10 shadow-2xl transition-all bg-black"
+                className="relative flex-shrink-0 w-[70vw] md:w-[30vw] h-[60vh] md:h-[70vh] overflow-hidden border border-white/10 shadow-2xl transition-all bg-black"
             >
               <Image
                 src={service.image}

@@ -3,9 +3,9 @@ import TeamSection from '@/components/layout/TeamSection'
 import StatsAndCTA from '@/components/layout/CTASection'
 export default function Home() {
   return (
-    <main>
+    <main >
       <TeamSection></TeamSection>
-      <ServicesSlider></ServicesSlider>
+      <ServicesSlider ></ServicesSlider>
       <StatsAndCTA></StatsAndCTA>
     </main>
   );
