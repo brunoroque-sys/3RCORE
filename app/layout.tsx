@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import SmoothScrolling from "@/components/ui/SmoothScrolling"
 import Navbar from "@/components/layout/Navbar";
+import ContactForm from "@/components/layout/ContactForm";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
             {children}
           </SmoothScrolling>
         </main>
+        <ContactForm />
         <Footer />
       </body>
     </html>
