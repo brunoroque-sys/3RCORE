@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       {/* BARRA DE NAVEGACIÓN SUPERIOR (Siempre visible) */}
-      <nav className="top-0 left-0 w-full z-50 bg-[#0f0217] text-white border-b border-white/10">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#0f0217] text-white border-b border-white/10">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-24 relative">
             
