@@ -89,7 +89,7 @@ const Founders = () => {
       { opacity: 0, scale: 1.2 }, 
       { opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
     );
-  }, [index]);
+  }, [index, selected.name]);
 
   return (
     <section 

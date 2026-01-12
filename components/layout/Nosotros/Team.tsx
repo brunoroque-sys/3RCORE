@@ -63,9 +63,9 @@ export default function Team() {
   return (
     <section 
       ref={sectionRef} 
-      className="relative flex h-screen w-full overflow-hidden bg-[#2d0a2d] text-white"
+      className="relative flex h-screen w-full overflow-hidden  text-white"
     >
-      <div className="flex w-2/4 flex-col justify-center px-8 md:px-16 z-20 bg-[#2d0a2d]">
+      <div className="flex w-2/4 flex-col justify-center px-8 md:px-16 z-20 ">
         <h2 className="text-5xl italic mb-6 text-white font-serif">Nuestro Equipo</h2>
         <p className="text-m max-w-xs leading-relaxed">
           Conoce a las personas que hacen posible nuestro éxito.
