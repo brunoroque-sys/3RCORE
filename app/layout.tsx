@@ -24,11 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${poppins.className} antialiased bg-black text-white  bg-[#120214] `}>
+      <body className={`${poppins.className} antialiased bg-black text-white`}>
         
         <Navbar/>
         
-        <main className="min-h-screen">
+        <main className="min-h-screen bg-[#120214] ">
           <SmoothScrolling>
             <div className="noise-global" />
             {children}
