@@ -9,7 +9,7 @@ const ContactForm = () => {
     <section 
       className={`${montserrat.className} relative w-full py-24 flex justify-center items-center overflow-hidden min-h-screen`}
       style={{
-        backgroundImage: "url('/images/fondoFormulario.webp')",
+        backgroundImage: "url('/images/fondo.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -24,7 +24,6 @@ const ContactForm = () => {
         </h2>
 
         <form className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-           {/* ... tus inputs se mantienen igual ... */}
            <div className="flex flex-col gap-2">
             <label className="text-white text-[10px] uppercase tracking-widest opacity-70">Nombre</label>
             <input 
@@ -32,14 +31,55 @@ const ContactForm = () => {
               className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"
             />
           </div>
-          {/* Repetir para los demás campos */}
+
+          <div className="flex flex-col gap-2">
+            <label className="text-white text-[10px] uppercase tracking-widest opacity-70">Apellido</label>
+            <input
+              type="text"
+              className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"
+            />
+          </div>
+
+           <div className="flex flex-col gap-2">
+            <label className="text-white text-[10px] uppercase tracking-widest opacity-70">Teléfono</label>
+            <input
+              type="tel"
+
+              className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label className="text-white text-[10px] uppercase tracking-widest opacity-70">Email</label>
+            <input
+              type="email"
+              className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"
+            />
+          </div>
+
+          <div className="flex flex-col gap-2 md:col-span-2">
+            <label className="text-white text-[10px] uppercase tracking-widest opacity-70">Mensaje</label>
+            <textarea
+              rows={1}
+              className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors resize-none"
+            />
+          </div>
           
           <div className="md:col-span-2 flex justify-center mt-12">
             <button 
               type="submit"
-              className="border border-white/40 rounded-full px-16 py-3 text-white text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-300 font-bold cursor-pointer"
+              className="relative inline-flex items-center justify-center px-16 py-3.5 overflow-hidden font-bold uppercase tracking-[0.3em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] group/btn hover:border-transparent cursor-pointer text-white"
             >
-              Enviar
+              {/* CAMBIOS: 
+                1. -translate-x-[101%] para asegurar que salga totalmente del cuadro.
+                2. scale-x-105 en hover para que cubra los bordes redondeados sin dejar fugas.
+              */}
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-[101%] group-hover/btn:translate-x-0 group-hover/btn:scale-x-105"></span>
+              
+              {/* Texto */}
+              <span className="relative z-10 transition-colors duration-200">
+                Enviar
+              </span>
             </button>
           </div>
         </form>

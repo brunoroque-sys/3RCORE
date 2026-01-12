@@ -95,9 +95,13 @@ const NewsSection = () => {
                   </h3>
 
                   <div className="mt-auto">
-                    <button className="relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-2xl group/btn hover:border-transparent cursor-pointer text-white">
-                      <span className="absolute inset-0 w-full h-full transition-all duration-500 opacity-0 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] group-hover/btn:opacity-100"></span>
-                      <span className="relative z-10">Leer más</span>
+                    <button className="relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] group/btn hover:border-transparent cursor-pointer text-white">
+                      <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-200 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>
+                      
+                      {/* Texto - Aseguramos que esté por encima del fondo */}
+                      <span className="relative z-10 transition-colors duration-300">
+                        Leer más
+                      </span>
                     </button>
                   </div>
                 </div>

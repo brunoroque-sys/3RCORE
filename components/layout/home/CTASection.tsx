@@ -131,12 +131,18 @@ const StatsAndCTA = () => {
 
             <button className={`
               ${poppins.className} 
-              text-xs tracking-[0.2em] text-white uppercase 
-              border border-white/30 rounded-full px-10 py-4
-              hover:bg-white hover:text-[#2d052a] hover:scale-105
-              transition-all duration-500 ease-out
+              relative inline-flex items-center justify-center px-10 py-4 
+              overflow-hidden text-xs font-bold uppercase tracking-[0.2em] text-white 
+              border border-white/30 rounded-[15px] transition-all duration-500 
+              group/btn hover:border-transparent hover:scale-105 cursor-pointer
             `}>
-              Contáctanos
+              {/* Fondo degradado que se desliza */}
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>
+              
+              {/* Texto por encima del fondo */}
+              <span className="relative z-10 transition-colors duration-300">
+                Contáctanos
+              </span>
             </button>
           </div>
 
@@ -150,7 +156,7 @@ const StatsAndCTA = () => {
                             z-30 drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]">
               
               <Image
-                src="/images/monitor.png"
+                src="/images/REDES-NEW.gif"
                 alt="iMac Display"
                 fill
                 priority
