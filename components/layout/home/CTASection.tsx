@@ -156,7 +156,7 @@ const StatsAndCTA = () => {
                             z-30 drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]">
               
               <Image
-                src="/images/REDES-NEW.gif"
+                src="/images/LAPTOP-1.gif"
                 alt="iMac Display"
                 fill
                 priority

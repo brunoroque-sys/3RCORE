@@ -87,7 +87,7 @@ const NewsSection = () => {
 
                 {/* Contenido */}
                 <div className="p-10 pt-4 flex flex-col flex-grow">
-                  <span className="text-[11px] text-pink-500/80 font-bold tracking-widest mb-6">
+                  <span className="text-[11px] text-white font-medium tracking-widest mb-6">
                     {item.date}
                   </span>
                   <h3 className="text-2xl font-semibold leading-[1.4] mb-8 text-white/90 group-hover:text-white transition-colors">

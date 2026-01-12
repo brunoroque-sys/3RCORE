@@ -1,5 +1,12 @@
+import Founders from "@/components/layout/Nosotros/Founders";
+import NosotrosSection from "@/components/layout/Nosotros/NosotrosSection";
+import Team from "@/components/layout/Nosotros/Team";
 export default function Nosotros() {
   return (
-    <h1>SOY EL NOSOTROS</h1>
+    <main>
+      <NosotrosSection />
+      <Founders/>
+      <Team/>
+    </main>
   );
 }
