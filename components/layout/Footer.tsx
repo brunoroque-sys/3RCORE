@@ -7,10 +7,8 @@ const Footer = () => {
     <footer className="bg-[#0f0518] text-white pt-16 pb-8 px-10 font-sans">
       <div className="max-w-8lg mx-auto">
         
-        {/* SECCIÓN PRINCIPAL: 4 COLUMNAS */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
-          {/* COLUMNA 1: LOGO */}
           <div className="flex justify-start items-start">
             <div className="relative w-56 h-20"> 
               <Image 
@@ -23,7 +21,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* COLUMNA 2: NUESTRA AGENCIA */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Nuestra Agencia</h3>
             <div className="text-gray-200 text-xs leading-relaxed space-y-4">
@@ -38,7 +35,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* COLUMNA 3: SERVICIOS */}
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Servicios</h3>
             <ul className="space-y-3 text-xs text-gray-200">
@@ -49,7 +45,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* COLUMNA 4: REDES SOCIALES */}
           <div className="flex flex-col items-start">
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Redes Sociales</h3>
             <div className="flex gap-4">
@@ -61,7 +56,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* LÍNEA DIVISORIA Y BOTTOM BAR */}
         <div className="border-t border-white/90 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex gap-8 text-[10px] tracking-widest text-white">
             <Link href="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>
@@ -95,7 +89,6 @@ const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
         overflow-hidden
       "
     >
-      {/* Fondo con degradado que aparece en Hover */}
       <div className="
         absolute inset-0 
         bg-gradient-to-br from-[#E91E63] to-[#9C27B0] 
@@ -103,7 +96,6 @@ const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
         transition-opacity duration-500 ease-out
       " />
 
-      {/* Icono con escala */}
       <span className="
         relative z-10 
         transition-transform duration-300 

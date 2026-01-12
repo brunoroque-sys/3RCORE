@@ -14,10 +14,8 @@ const ContactForm = () => {
         backgroundPosition: 'center',
       }}
     >
-      {/* OVERLAY: Ahora es un fondo oscuro semi-transparente que cubre TODA la sección */}
       <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-      {/* CONTENIDO DEL FORMULARIO */}
       <div className="relative z-10 w-full max-w-4xl px-6">
         <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.3em] uppercase mb-16">
           Contáctanos
@@ -70,13 +68,8 @@ const ContactForm = () => {
               type="submit"
               className="relative inline-flex items-center justify-center px-16 py-3.5 overflow-hidden font-bold uppercase tracking-[0.3em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] group/btn hover:border-transparent cursor-pointer text-white"
             >
-              {/* CAMBIOS: 
-                1. -translate-x-[101%] para asegurar que salga totalmente del cuadro.
-                2. scale-x-105 en hover para que cubra los bordes redondeados sin dejar fugas.
-              */}
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-[101%] group-hover/btn:translate-x-0 group-hover/btn:scale-x-105"></span>
               
-              {/* Texto */}
               <span className="relative z-10 transition-colors duration-200">
                 Enviar
               </span>

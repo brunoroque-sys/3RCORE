@@ -5,7 +5,6 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Registramos el plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -20,7 +19,6 @@ const Founders = () => {
   const [index, setIndex] = useState(0);
   const selected = foundersData[index];
   
-  // Referencias para animaciones
   const sectionRef = useRef<HTMLDivElement>(null);
   const leftSideRef = useRef<HTMLDivElement>(null);
   const rightSideRef = useRef<HTMLDivElement>(null);
@@ -46,10 +44,8 @@ const Founders = () => {
     }, 40);
   };
 
-  // 1. FUNCIONALIDAD SCROLL TRIGGER (Aparición inicial)
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación de entrada para los dos lados
       gsap.fromTo([leftSideRef.current, rightSideRef.current], 
         { 
           y: 60, 
@@ -63,17 +59,16 @@ const Founders = () => {
           ease: "power4.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 75%", // Se activa cuando el top de la sección llega al 75% del viewport
-            toggleActions: "play none none none" // Solo se ejecuta una vez al entrar
+            start: "top 75%", 
+            toggleActions: "play none none none"
           }
         }
       );
     }, sectionRef);
 
-    return () => ctx.revert(); // Limpieza al desmontar
+    return () => ctx.revert(); 
   }, []);
 
-  // 2. CICLO AUTOMÁTICO (3 segundos)
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % foundersData.length);
@@ -87,7 +82,6 @@ const Founders = () => {
     return () => clearInterval(timer);
   }, [index]);
 
-  // 3. ANIMACIONES DE CAMBIO DE ESTADO
   useEffect(() => {
     runScramble(selected.name);
 
@@ -104,7 +98,6 @@ const Founders = () => {
     >
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
-        {/* Lado Izquierdo */}
         <div ref={leftSideRef} className="flex flex-col space-y-6">
           <div className="flex items-center space-x-4">
             <div className="overflow-hidden h-8 flex items-center">
@@ -141,7 +134,6 @@ const Founders = () => {
           </p>
         </div>
 
-        {/* Lado Derecho */}
         <div ref={rightSideRef} className="flex flex-col group">
           <div 
             ref={imageContainerRef}

@@ -65,7 +65,6 @@ export default function Team() {
       ref={sectionRef} 
       className="relative flex h-screen w-full overflow-hidden bg-[#2d0a2d] text-white"
     >
-      {/* IZQUIERDA: Título Fijo */}
       <div className="flex w-2/4 flex-col justify-center px-8 md:px-16 z-20 bg-[#2d0a2d]">
         <h2 className="text-5xl italic mb-6 text-white font-serif">Nuestro Equipo</h2>
         <p className="text-m max-w-xs leading-relaxed">
@@ -88,7 +87,6 @@ export default function Team() {
                 className={`flex flex-col group transition-transform duration-300
                   ${isMiddle ? "-mt-16" : isLast ? "mt-8" : "mt-0"}`}
               >
-                {/* Contenedor de imagen con aspect ratio vertical delgado */}
                 <div className="relative aspect-[2/3] w-full bg-neutral-800 mb-4 overflow-hidden rounded-sm">
                   <Image 
                     src={member.image} 
@@ -98,7 +96,6 @@ export default function Team() {
                   />
                 </div>
                 
-                {/* Textos más pequeños para acompañar la card delgada */}
                 <div className="px-1">
                   <h3 className="font-bold text-base uppercase tracking-tight leading-none">
                     {member.name}

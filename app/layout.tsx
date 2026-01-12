@@ -24,7 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      {/* 3. Aplicamos la clase al body */}
       <body className={`${poppins.className} antialiased bg-black text-white`}>
         
         <Navbar/>
