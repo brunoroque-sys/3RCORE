@@ -94,6 +94,8 @@ export default function Team() {
                     fill
                     className="object-cover  "
                   />
+                  {/* Glitch overlay */}
+                  <div className="glitch-overlay absolute inset-0 bg-pink-500/30 opacity-0 mix-blend-screen pointer-events-none" />
                 </div>
                 
                 <div className="px-1">
