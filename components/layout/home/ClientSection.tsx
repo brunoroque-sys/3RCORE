@@ -1,94 +1,109 @@
-"use client";
+"use client"; // Asegúrate de incluir esto si usas Next.js App Router
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { Ubuntu } from 'next/font/google';
 
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import { Montserrat } from "next/font/google";
-import gsap from "gsap";
+interface Client {
+  name: string;
+  logo: string;
+  className?: string; 
+}
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
+const ubuntu = Ubuntu({ subsets: ["latin"], weight: ["400", "700"] });
 
-const logos = [
-  { id: 1, src: "/images/2kLogo.webp", pos: "md:top-[301px] top-[194px] md:left-0 left-0" },
-  { id: 2, src: "/images/AutoLogo.webp", pos: "md:top-[180px] top-[126px] md:left-[226px] left-[60px]" },
-  { id: 3, src: "/images/domusLogo.webp", pos: "top-[58px] md:left-[452px] left-[137px]" },
-  { id: 4, src: "/images/pdk.webp", pos: "md:top-0 top-[126px] md:left-[706px] left-[215px]" },
-  { id: 5, src: "/images/pretties.webp", pos: "md:top-[121px] top-[194px] md:left-[932px] left-[280px]" },
-  { id: 6, src: "/images/ranchoVentura.webp", pos: "md:top-[181px] top-[334px] right-0" },
-  { id: 7, src: "/images/venturaLogo.webp", pos: "md:top-[301px] top-[402px] md:right-[227px] right-[60px]" },
-  { id: 8, src: "/images/VenusLogo.webp", pos: "md:top-[421px] top-[470px] md:right-[454px] right-[137px]" },
-  { id: 9, src: "/images/vitaLogo.webp", pos: "md:top-[481px] top-[402px] md:right-[708px] right-[215px]" },
-  { id: 10, src: "/images/vlissad.webp", pos: "md:top-[361px] top-[334px] md:right-[935px] right-[280px]" },
+const clients: Client[] = [
+  { name: 'Client 1', logo: '/images/Logos/2kLogo.webp', className: "lg:-translate-y-4 lg:-translate-x-2" },
+  { name: 'Client 2', logo: '/images/Logos/AutoLogo.webp', className: "lg:translate-y-8 lg:translate-x-4" },
+  { name: 'Client 3', logo: '/images/Logos/domusLogo.webp', className: "lg:-translate-y-8 lg:scale-90" },
+  { name: 'Client 4', logo: '/images/Logos/pdk.webp', className: "lg:translate-y-12 lg:-translate-x-4" },
+  { name: 'Client 5', logo: '/images/Logos/pretties.webp', className: "lg:-translate-y-6 lg:translate-x-8" },
+  { name: 'Client 6', logo: '/images/Logos/ranchoVentura.webp', className: "lg:translate-y-4 lg:-translate-x-6" },
+  { name: 'Client 7', logo: '/images/Logos/venturaLogo.webp', className: "lg:-translate-y-10 lg:translate-x-2" },
+  { name: 'Client 8', logo: '/images/Logos/venusLogo.webp', className: "lg:translate-y-6 lg:scale-95" },
+  { name: 'Client 9', logo: '/images/Logos/vitaLogo.webp', className: "lg:-translate-y-4 lg:-translate-x-8" },
+  { name: 'Client 10', logo: '/images/Logos/vlissad.webp', className: "lg:translate-y-10 lg:translate-x-6" },
 ];
 
-const ClientSection = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const boxes = gsap.utils.toArray<HTMLElement>(".logo-box");
-      
-      boxes.forEach((box) => {
-        const randomFade = () => {
-          // Generamos un estado de "apagado" o "encendido"
-          const targetOpacity = Math.random() > 0.5 ? gsap.utils.random(0.4, 1) : 0;
-          
-          gsap.to(box, {
-            opacity: targetOpacity,
-            duration: gsap.utils.random(1.5, 3), // Un poco más rápido para notar el cambio
-            delay: gsap.utils.random(0, 4),      // Delay para que no coincidan
-            ease: "power2.inOut",
-            onComplete: randomFade 
-          });
-        };
-        randomFade();
-      });
-
-      gsap.from(".center-content", {
-        y: 30,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power4.out"
-      });
-    }, containerRef);
-    return () => ctx.revert();
-  }, []);
-
+export default function ClientsSection() {
   return (
-    <section className="md:mt-[109px] mt-[117px] w-full py-20 overflow-hidden bg-transparent">
-      <div 
-        ref={containerRef}
-        className="md:w-[1540px] h-[710px] w-full mx-auto relative"
-      >
-        {logos.map((logo) => (
-          <div 
-            key={logo.id}
-            className={`logo-box absolute md:w-[227px] md:h-[120px] w-[100px] h-[60px] border border-white/40 flex justify-center items-center backdrop-blur-sm transition-colors duration-500  ${logo.pos}`}
-            style={{ opacity: 0 }} // Empiezan invisibles para que aparezcan suavemente
-          >
-            <div className="relative md:w-[132px] w-[80px] md:h-[66px] h-[32px] grayscale  transition-all duration-500">
-              <Image
-                src={logo.src}
-                alt={`Cliente ${logo.id}`}
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-        ))}
-
-        <div className="center-content absolute md:w-[413px] w-[335px] md:top-[240px] top-[224px] md:left-[513px] left-1/2 -translate-x-1/2 md:translate-x-0 flex flex-col items-center justify-center pointer-events-none">
-            <h2 className={`${montserrat.className} 
-                text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] via-[#C2185B] to-[#9C27B0]
-                md:text-[35px] text-[30px] font-bold uppercase tracking-tight leading-none text-center`}>
-                Nuestros Clientes
+    <section className="py-32 px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12 items-center">
+          
+          {/* BLOQUE CENTRAL DE TEXTO */}
+          <div className="
+            col-span-2 
+            md:col-start-2 md:row-start-2
+            lg:col-span-2 lg:col-start-2 lg:row-start-2
+            flex flex-col justify-center items-center text-center 
+            z-20 p-8 backdrop-blur-sm
+          ">
+            <h2 className={`
+              tracking-[0.1em] uppercase leading-tight
+              text-1xl md:text-3xl 
+              bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
+              bg-clip-text text-transparent
+            `}>
+              Nuestros Clientes
             </h2>
-          <div className={`${montserrat.className} mt-6 text-white text-center md:text-[18px] text-[16px] font-light leading-relaxed max-w-[350px]`}>
-            Estas son algunas de las empresas que confían en nosotros
+            <p className={`text-white text-sm md:text-base max-w-[300px] ${ubuntu.className} leading-relaxed`}>
+              Empresas que confían en nuestra visión y resultados.
+            </p>
           </div>
+
+          {/* MAPEO DE LOGOS CON EFECTO ALEATORIO */}
+          {clients.map((client, i) => (
+            <div key={i} className={`${client.className}`}>
+              <ClientCard client={client} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-};
+}
 
-export default ClientSection;
+const ClientCard = ({ client }: { client: Client }) => {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const triggerRandomFlicker = () => {
+      // Tiempo aleatorio para estar visible o invisible (entre 2 y 6 segundos)
+      const randomTime = Math.floor(Math.random() * 2000) + 1000;
+      
+      setTimeout(() => {
+        setVisible(prev => !prev);
+        triggerRandomFlicker();
+      }, randomTime);
+    };
+
+    // Delay inicial aleatorio para que no todos parpadeen al mismo tiempo
+    const initialDelay = Math.floor(Math.random() * 5000);
+    const timeout = setTimeout(triggerRandomFlicker, initialDelay);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <div className={`
+      group relative h-32 md:h-40 w-full 
+      border border-white/30 
+      flex items-center justify-center 
+      rounded-sm p-8 md:p-10
+      transition-all duration-1000 ease-in-out
+      hover:border-white/90 hover:bg-white/[0.06] hover:!opacity-100
+      ${visible ? 'opacity-100 blur-none' : 'opacity-0'}
+    `}>
+      <div className="relative w-full h-full filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform ">
+        <Image
+          src={client.logo}
+          alt={`${client.name} logo`}
+          fill
+          className="object-contain"
+        />
+      </div>
+
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_30px_rgba(255,255,255,0.03)] pointer-events-none" />
+    </div>
+  );
+};

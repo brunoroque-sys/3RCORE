@@ -15,8 +15,8 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "700
 
 const stats = [
   { id: 1, endValue: 1000, label: "CLIENTES", prefix: "+" },
-  { id: 2, endValue: 10, label: "AÑOS DE EXPERIENCIA", prefix: "" },
-  { id: 3, endValue: 3, label: "PAISES ALCANZADOS", prefix: "" },
+  { id: 2, endValue: 10, label: "AÑOS DE EXPERIENCIA", prefix: "+" },
+  { id: 3, endValue: 3, label: "PAISES ALCANZADOS", prefix: "+" },
 ];
 
 const StatsAndCTA = () => {

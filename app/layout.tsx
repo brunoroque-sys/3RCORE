@@ -28,7 +28,7 @@ export default function RootLayout({
         
         <Navbar/>
         
-        <main className="min-h-screen bg-[#120214] ">
+        <main className="min-h-screen bg-[#130218] ">
           <SmoothScrolling>
             <div className="noise-global" />
             {children}

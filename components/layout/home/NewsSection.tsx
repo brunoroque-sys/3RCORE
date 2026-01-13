@@ -40,7 +40,7 @@ const NewsSection = () => {
         <div className="flex flex-col items-center justify-center mb-20 w-full group">
         <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
             
-            <h2 className="text-white text-s md:text-m tracking-[0.2em] uppercase font-medium whitespace-nowrap">
+            <h2 className="text-white text-s md:text-m tracking-[0.1em] uppercase font-medium whitespace-nowrap">
             Entérate de nuestras noticias
             </h2>
             
