@@ -48,7 +48,7 @@ useEffect(() => {
       isDesktop: "(min-width: 769px)",
       all: "(min-width: 0px)"
     }, (context) => {
-      let { isMobile, all } = context.conditions;
+      const isMobile = context.conditions?.isMobile;
 
       const totalScroll = container.offsetHeight - window.innerHeight + 200;
       
