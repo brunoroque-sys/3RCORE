@@ -5,13 +5,14 @@ export async function POST(request: Request) {
   // Movemos la inicialización aquí dentro para evitar errores en el 'build'
   const resend = new Resend(process.env.RESEND_API_KEY);
   const logoUrl = 'https://3-rcore.vercel.app/icons/LogoContorno.webp';
-
+// CONFIGURACIÓN DE TU DOMINIO
+  const emailEmpresa = 'contacto@3rcore.com';
   try {
     const { nombre, apellido, email, telefono, mensaje } = await request.json();
 
     // 1. Notificación para ti (Directa y clara)
     await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'Sistema 3RCORE <contacto@3rcore.com>',
       to: 'bruno.roque@3rcore.com',
       subject: `Nuevo contacto: ${nombre} quiere hablar con 3RCORE`,
       html: `
@@ -39,7 +40,7 @@ export async function POST(request: Request) {
     // 2. Respuesta para el CLIENTE (Cercana y humana)
     try {
       await resend.emails.send({
-        from: 'onboarding@resend.dev', // Cambia a 'Bruno de 3RCORE <tu-email-verificado>' pronto
+        from: 'Sistema 3RCORE <contacto@3rcore.com>',
         to: email,
         subject: `¡Hola ${nombre}! Qué bueno saludarte`,
         html: `
