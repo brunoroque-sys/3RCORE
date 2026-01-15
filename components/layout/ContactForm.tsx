@@ -17,7 +17,8 @@ const ContactForm = () => {
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-
+        // ✅ LIMPIAR EL FORMULARIO INMEDIATAMENTE
+    e.currentTarget.reset();
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -36,6 +37,7 @@ const ContactForm = () => {
     } finally {
       setLoading(false);
     }
+
   };
 
   return (
