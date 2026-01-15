@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   // Movemos la inicialización aquí dentro para evitar errores en el 'build'
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const logoUrl = 'https://3-rcore.vercel.app/icons/LogoContorno.webp';
+  const logoUrl = 'https://3-rcore.vercel.app/icons/3logo.webp';
 // CONFIGURACIÓN DE TU DOMINIO
   const emailEmpresa = 'contacto@3rcore.com';
   try {
@@ -20,7 +20,7 @@ export async function POST(request: Request) {
           <div style="max-width: 600px; margin: 0 auto; background-color: #1a0522; border-radius: 24px; padding: 40px; border: 1px solid #ffffff10;">
             <img src="${logoUrl}" alt="3RCORE" style="width: 120px; margin-bottom: 30px;">
             <h2 style="font-size: 24px; color: #E91E63; margin-bottom: 10px;">¡Bruno, tienes un nuevo lead!</h2>
-            <p style="color: #b3b3b3; font-size: 16px;">Alguien se ha interesado en lo que hacemos. Aquí tienes los detalles:</p>
+            <p style="color: white; font-size: 16px;">Alguien se ha interesado en lo que hacemos. Aquí tienes los detalles:</p>
             
             <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; margin: 25px 0;">
               <p style="margin: 10px 0;"><strong>Persona:</strong> ${nombre} ${apellido}</p>
