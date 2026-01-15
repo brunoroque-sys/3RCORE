@@ -61,7 +61,7 @@ const ContactForm = () => {
               
               {/* CAMPO: NOMBRE (Agregado name="nombre") */}
               <div className="flex flex-col gap-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">Nombre y Dominio</label>
+                <label className="text-white text-[10px] uppercase tracking-widest">Nombre y Apellido</label>
                 <input name="nombre" required type="text" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
