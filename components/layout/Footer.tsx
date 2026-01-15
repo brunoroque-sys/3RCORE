@@ -58,9 +58,8 @@ const Footer = () => {
 
         <div className="border-t border-white/90 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex gap-8 text-[10px] tracking-widest text-white">
-            <Link href="/privacidad" className="hover:text-white transition-colors">Política de Privacidad</Link>
-            <Link href="/terminos" className="hover:text-white transition-colors">Términos</Link>
-            <Link href="/cookies" className="hover:text-white transition-colors">Cookies</Link>
+            <Link href="/politicas" className="hover:text-white transition-colors">Política de Privacidad</Link>
+            <Link href="/terminos" className="hover:text-white transition-colors">Términos y condiciones</Link>
           </div>
           
           <div className="text-[10px] uppercase tracking-widest text-white">

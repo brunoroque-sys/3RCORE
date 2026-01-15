@@ -47,7 +47,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   const links = [
-    { name: "HOME", href: "/" }, // Usando nombres en inglés como en la referencia
+    { name: "HOME", href: "/" }, 
     { name: "NOSOTROS", href: "/nosotros" },
     { name: "CONTACTO", href: "/contacto" },
     { name: "SERVICIOS", href: "/servicios" }
@@ -143,7 +143,7 @@ const Navbar = () => {
                       ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
                       hover:text-white hover:pl-4 transition-all duration-300
                     `}
-                    style={{ transitionDelay: `${150 + index * 100}ms` }} // Delay escalonado
+                    style={{ transitionDelay: `${150 + index * 100}ms` }}
                   >
                    <span className="
                       absolute top-0 left-0 w-0 h-full

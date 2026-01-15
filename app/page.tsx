@@ -5,9 +5,15 @@ import Hero from '@/components/layout/home/Hero'
 import ClientSection from '@/components/layout/home/ClientSection';
 import NewsSection from '@/components/layout/home/NewsSection';
 import MosaicoParallax from '@/components/layout/home/imagesParallaxSection';
+import ContactForm from '@/components/layout/ContactForm';
+import Footer from '@/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar';
+
 export default function Home() {
   return (
     <main >
+
+
       <Hero></Hero>
       <TeamSection></TeamSection>
       <ServicesSlider ></ServicesSlider>
@@ -15,6 +21,9 @@ export default function Home() {
       <MosaicoParallax />
       <ClientSection />
       <NewsSection />
+
+      <ContactForm />
+
     </main>
   );
 }

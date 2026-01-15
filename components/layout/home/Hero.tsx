@@ -13,7 +13,7 @@ export default function ScrollVideo() {
   const imagesRef = useRef<HTMLImageElement[]>([]); 
   const frameRef = useRef({ frame: 0 });
 
-  const frameCount = 192;
+  const frameCount = 245;
   const palabrasAbajo = ["Impacto", "Valores", "Experiencia", "Identidad", "Profesionalismo", "Conexión"];
   const palabrasArriba = ["Creatividad", "Diseño", "Estrategia", "Digital", "Futuro", "Innovación"];
 
@@ -51,7 +51,7 @@ export default function ScrollVideo() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=600%", 
+        end: "+=900%", 
         scrub: 1,
         pin: true,
         onRefresh: render

@@ -6,24 +6,29 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 const members = [
-  { id: 1, name: "Gimena", role: "Brand Director", image: "/images/Equipo/Gimena.webp" },
-  { id: 2, name: "Odeth", role: "Brand Designer", image: "/images/Equipo/Odeth.webp" },
-  { id: 3, name: "Nadia", role: "Brand Designer", image: "/images/Equipo/Nadia.webp" },
-  { id: 4, name: "Elizabeth", role: "Creative Design Supervisor", image: "/images/Equipo/Elizabeth.webp" },
-  { id: 5, name: "Nicole", role: "Digital Content Manager", image: "/images/Equipo/Nicole.webp" },
-  { id: 6, name: "Maria Fernanda", role: "Commercial Director", image: "/images/Equipo/Mafer.webp" },
-  { id: 7, name: "Sofia", role: "Film Maker", image: "/images/Equipo/Sofia.webp" },
-  { id: 8, name: "Franco", role: "Grapich Designer", image: "/images/Equipo/Franco.webp" },
-  { id: 9, name: "Aaron", role: "Grapich Designer", image: "/images/Equipo/Aaron.webp" },
-  { id: 10, name: "Stefany", role: "Grapich Designer", image: "/images/Equipo/Stefany.webp" },
-  { id: 11, name: "Sara", role: "Graphic Designer", image: "/images/Equipo/Sara.webp" },
-  { id: 12, name: "Karol", role: "Graphic Designer", image: "/images/Equipo/Karol.webp" },
-  { id: 13, name: "Josue", role: "Post-Production", image: "/images/Equipo/Josue.webp" },
-  { id: 14, name: "Grecia", role: "Social Media Manager", image: "/images/Equipo/Grecia.webp" },
-  { id: 15, name: "Claudia", role: "Social Media Manager", image: "/images/Equipo/Claudia.webp" },
-  { id: 16, name: "Debora", role: "Head to web", image: "/images/Equipo/Debora.webp" },
-  { id: 17, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp" },
-  { id: 18, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp" },
+  { id: 1, name: "Maria Fernanda", role: "Commercial Director", image: "/images/Equipo/Mafer.webp", area:"commercial" },
+  { id: 2, name: "Gimena", role: "Commercial", image: "/images/Equipo/Gimena.webp", area:"commercial"},
+  { id: 3, name: "La china", role:"Commercial Supervisor", image:"", area:"commercial"},
+
+  { id: 4, name: "Elizabeth", role: "Creative Design Supervisor", image: "/images/Equipo/Elizabeth.webp", area:"branding"},
+  { id: 5, name: "Odeth", role: "Brand Designer", image: "/images/Equipo/Odeth.webp", area:"branding"},
+  { id: 6, name: "Nadia", role: "Brand Designer", image: "/images/Equipo/Nadia.webp", area:"branding" },
+
+  { id: 7, name: "Grecia", role: "Social Media Manager", image: "/images/Equipo/Grecia.webp", area:"social media"},
+  { id: 8, name: "Nicole", role: "Social Media", image: "/images/Equipo/Nicole.webp", area:"social media"},
+  { id: 9, name: "Claudia", role: "Social Media", image: "/images/Equipo/Claudia.webp", area:"social media"},
+
+  { id: 10, name: "Sofia", role: "Film Maker", image: "/images/Equipo/Sofia.webp", area:"design multimedia"},
+  { id: 11, name: "Franco", role: "Designer", image: "/images/Equipo/Franco.webp", area:"design multimedia" },
+  { id: 12, name: "Aaron", role: "Designer", image: "/images/Equipo/Aaron.webp", area:"design multimedia" },
+  { id: 13, name: "Stefany", role: "Designer", image: "/images/Equipo/Stefany.webp", area:"design multimedia"},
+  { id: 14, name: "Sara", role: "Film Maker", image: "/images/Equipo/Sara.webp", area:"design multimedia" },
+  { id: 15, name: "Karol", role: "Designer", image: "/images/Equipo/Karol.webp", area:"design multimedia"},
+  { id: 16, name: "Josue", role: "Post-Production", image: "/images/Equipo/Josue.webp", area:"design multimedia"},
+
+  { id: 17, name: "Debora", role: "Project Manager Director", image: "/images/Equipo/Debora.webp", area:"Web developmet & IT" },
+  { id: 18, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web developmet & IT"},
+  { id: 19, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web developmet & IT" },
 
 ];
 
@@ -32,6 +37,14 @@ export default function Team() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
+  // Agrupamos los miembros (puedes mover esto fuera del componente si 'members' es estático)
+  const groupedMembers = members.reduce((acc, member) => {
+    const area = member.area;
+    if (!acc[area]) acc[area] = [];
+    acc[area].push(member);
+    return acc;
+  }, {} as Record<string, typeof members>);
+
 useEffect(() => {
     const section = sectionRef.current;
     const container = containerRef.current;
@@ -39,11 +52,9 @@ useEffect(() => {
 
     if (!section || !container) return;
 
-    // Usamos matchMedia en lugar de context
     const mm = gsap.matchMedia();
 
     mm.add({
-      // Definimos nuestras condiciones
       isMobile: "(max-width: 768px)",
       isDesktop: "(min-width: 769px)",
       all: "(min-width: 0px)"
@@ -88,18 +99,9 @@ useEffect(() => {
     return () => mm.revert();
   }, []);
 
-  return (
-    <section 
-      ref={sectionRef} 
-      className="relative flex flex-col md:flex-row h-screen w-full overflow-hidden text-white"
-
-    >
-      <div
-        ref={textRef}
-        className="flex w-full md:w-2/4 flex-col justify-center px-6 md:px-16 pt-30 md:pt-0 z-20"
-      >
-
-
+return (
+    <section ref={sectionRef} className="relative flex flex-col md:flex-row h-screen w-full overflow-hidden text-white">
+      <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-6 md:px-16 pt-30 md:pt-0 z-20">
         <h2 className="text-5xl italic mb-6 text-white font-serif">Nuestro Equipo</h2>
         <p className="text-m max-w-xs leading-relaxed">
           Conoce a las personas que hacen posible nuestro éxito.
@@ -107,74 +109,45 @@ useEffect(() => {
       </div>
 
       <div className="relative w-full md:w-3/4 h-full">
+        <div ref={containerRef} className="pt-[20vh] pb-[10vh] px-6 md:px-10">
+          
+          {Object.entries(groupedMembers).map(([area, areaMembers]) => (
+            <div key={area} className="mb-20">
+              
+              <div className="w-full mb-10 border-l-3 border-pink-500 pl-3">
+                <h2 className="text-2xl md:text-3xl font-m uppercase tracking-[0.05em] text-pink-500">
+                  {area}
+                </h2>
+              </div>
 
-        <div 
-          ref={containerRef}
-          className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 pt-[20vh] pb-[0vh] px-6 md:px-10"
-        >
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+                {areaMembers.map((member, index) => {
+                  const isMobileSecond = index % 2 === 1;
+                  const isMiddle = index % 3 === 1;
+                  const isLast = index % 3 === 2;
 
-          {members.map((member, index) => {
-            const isMobileSecond = index % 2 === 1; // mobile: 2 columnas
-            const isMiddle = index % 3 === 1;       // desktop
-            const isLast = index % 3 === 2;
-
-
-            return (
-<div 
-  key={member.id} 
-  className={`
-    flex flex-col group transition-transform duration-300
-
-    /* Mobile */
-    ${isMobileSecond ? "mt-10" : "mt-0"}
-
-    /* Desktop */
-    md:${isMiddle ? "-mt-16" : isLast ? "mt-8" : "mt-0"}
-  `}
->
-  {/* Gradient border wrapper */}
-  <div className="
-    relative  p-[0px]
-    bg-[length:300%_300%]
-    transition-all duration-500
-
-    group-hover:bg-gradient-to-br
-    group-hover:from-[#E91E63]
-    group-hover:via-[#FF4081]
-    group-hover:to-[#9C27B0]
-
-    group-hover:animate-[rotate-gradient_3s_linear_infinite]
-
-    group-hover:shadow-[0_0_20px_rgba(233,30,99,0.7),0_0_45px_rgba(233,30,99,0.6),0_0_70px_rgba(156,39,176,0.5)]
-
-  ">
-
-    {/* Image container */}
-    <div className="relative aspect-[2/3] w-full bg-neutral-800 overflow-hidden ">
-      <Image 
-        src={member.image} 
-        alt={member.name}
-        fill
-        className="object-cover"
-      />
-
-      {/* Glitch overlay */}
-      <div className="glitch-overlay absolute inset-0 bg-pink-500/30 opacity-0 mix-blend-screen pointer-events-none" />
-    </div>
-  </div>
-
-  <div className="px-1 mt-4">
-    <h3 className="font-bold text-base uppercase tracking-tight leading-none">
-      {member.name}
-    </h3>
-    <p className="text-white text-[10px] mt-2 uppercase tracking-widest">
-      {member.role}
-    </p>
-  </div>
-</div>
-
-            );
-          })}
+                  return (
+                    <div key={member.id} className={`flex flex-col group transition-transform duration-300 ${isMobileSecond ? "mt-10" : "mt-0"} md:${isMiddle ? "-mt-16" : isLast ? "mt-8" : "mt-0"}`}>
+                      <div className="relative p-[0px] transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-[#E91E63] group-hover:via-[#FF4081] group-hover:to-[#9C27B0] group-hover:shadow-[0_0_20px_rgba(233,30,99,0.7)]">
+                        <div className="relative aspect-[2/3] w-full bg-neutral-800 overflow-hidden">
+                          {member.image ? (
+                            <Image src={member.image} alt={member.name} fill className="object-cover" />
+                          ) : (
+                            <div className="flex items-center justify-center h-full text-neutral-500 italic">No image</div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="px-1 mt-4">
+                        <h3 className="font-bold text-base uppercase tracking-tight leading-none">{member.name}</h3>
+                        <p className="text-white text-[10px] mt-2 uppercase tracking-widest">{member.role}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+          
         </div>
       </div>
     </section>

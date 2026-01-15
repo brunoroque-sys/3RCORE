@@ -90,7 +90,7 @@ const StatsAndCTA = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full bg-[#120214] py-32 px-4 flex flex-col items-center gap-40  overflow-hidden">
+    <section ref={containerRef} className="w-full py-32 px-4 flex flex-col items-center gap-40  overflow-hidden">
       
       {/* --- ESTADÍSTICAS --- */}
       <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-60 md:gap-60 w-full max-w-7xl">

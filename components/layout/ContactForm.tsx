@@ -1,12 +1,11 @@
 "use client";
 
 import { Montserrat } from "next/font/google";
-import { useState } from "react"; // 1. Importar useState
+import { useState } from "react"; 
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ContactForm = () => {
-  // 2. Definir estados para carga y mensajes
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error' | ''; message: string }>({ type: '', message: '' });
 
@@ -17,7 +16,6 @@ const ContactForm = () => {
 
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-        // ✅ LIMPIAR EL FORMULARIO INMEDIATAMENTE
     e.currentTarget.reset();
     try {
       const response = await fetch('/api/contact', {
@@ -58,38 +56,32 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
           <div className="flex items-center justify-center">
-            {/* 3. Agregar el onSubmit al formulario */}
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 w-full">
               
-              {/* CAMPO: NOMBRE (Agregado name="nombre") */}
               <div className="flex flex-col gap-2 relative group/field">
                 <label className="text-white text-[10px] uppercase tracking-widest">Nombre y Apellido</label>
                 <input name="nombre" required type="text" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
-              {/* CAMPO: APELLIDO (Agregado name="apellido") */}
               <div className="flex flex-col gap-2 relative group/field">
                 <label className="text-white text-[10px] uppercase tracking-widest">Empresa</label>
                 <input name="apellido" required type="text" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
-              {/* CAMPO: TELÉFONO (Agregado name="telefono") */}
               <div className="flex flex-col gap-2 relative group/field">
                 <label className="text-white text-[10px] uppercase tracking-widest">Teléfono</label>
                 <input name="telefono" required type="tel" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
-              {/* CAMPO: EMAIL (Agregado name="email") */}
               <div className="flex flex-col gap-2 relative group/field">
                 <label className="text-white text-[10px] uppercase tracking-widest">Email</label>
                 <input name="email" required type="email" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
-              {/* CAMPO: MENSAJE (Agregado name="mensaje") */}
               <div className="flex flex-col gap-2 md:col-span-2 relative group/field">
                 <label className="text-white text-[10px] uppercase tracking-widest">Mensaje</label>
                 <textarea name="mensaje" required rows={1} className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors resize-none peer" />
@@ -98,7 +90,7 @@ const ContactForm = () => {
               
               <div className="md:col-span-2 flex flex-col gap-4 mt-6">
                 <button 
-                  disabled={loading} // Desactivar si está cargando
+                  disabled={loading} 
                   type="submit" 
                   className="relative inline-flex items-center justify-center px-12 py-3 overflow-hidden font-bold uppercase tracking-[0.3em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] group/btn hover:border-transparent cursor-pointer text-white disabled:opacity-50"
                 >
@@ -109,7 +101,6 @@ const ContactForm = () => {
             </form>
           </div>
 
-          {/* ... resto del código (mapa) se queda igual ... */}
           <div className="w-full h-[400px] lg:h-full min-h-[500px] relative overflow-hidden border border-white/10 group rounded-2xl">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3044063260063!2d-76.9519657249382!3d-12.09130088814899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c710419b833d%3A0xd38447313365f798!2s3R%20Core%20-%20Agencia%20de%20Marketing!5e0!3m2!1ses-419!2spe!4v1768342086873!5m2!1ses-419!2spe" 

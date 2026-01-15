@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import SmoothScrolling from "@/components/ui/SmoothScrolling"
 import Navbar from "@/components/layout/Navbar";
 import ContactForm from "@/components/layout/ContactForm";
+import CookieBanner from "@/components/layout/CookieBanners";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,17 +26,16 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.className} antialiased bg-black text-white`}>
-        
         <Navbar/>
-        
-        <main className="min-h-screen bg-[#130218] ">
+        <main className="min-h-screen bg-[#130218]">
           <SmoothScrolling>
-            <div className="noise-global" />
+
+            <div className="noise-global relative z-10" />
             {children}
           </SmoothScrolling>
         </main>
-        <ContactForm />
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
