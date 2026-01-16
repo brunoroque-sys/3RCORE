@@ -4,7 +4,6 @@ import "./globals.css";
 import Footer from "@/components/layout/Footer";
 import SmoothScrolling from "@/components/ui/SmoothScrolling"
 import Navbar from "@/components/layout/Navbar";
-import ContactForm from "@/components/layout/ContactForm";
 import CookieBanner from "@/components/layout/CookieBanners";
 import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
 

@@ -47,10 +47,12 @@ const Navbar = () => {
   }, [isOpen]);
 
   const links = [
-    { name: "HOME", href: "/" }, 
+    { name: "INICIO", href: "/" }, 
     { name: "NOSOTROS", href: "/nosotros" },
+    { name: "SERVICIOS", href: "/servicios" },
+    { name: "BLOGS", href: "/https://3rcore.com/blog" },
     { name: "CONTACTO", href: "/contacto" },
-    { name: "SERVICIOS", href: "/servicios" }
+
   ];
 
   const socialLinks = ["FACEBOOK", "INSTAGRAM", "LINKEDIN", "YOUTUBE"];
