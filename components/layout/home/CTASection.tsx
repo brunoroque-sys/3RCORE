@@ -89,7 +89,7 @@ const StatsAndCTA = () => {
   return (
     <section ref={containerRef} className="w-full py-32 px-4 flex flex-col items-center gap-40  overflow-hidden">
       
-      <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-60 md:gap-60 w-full max-w-7xl">
+      <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-40 md:gap-40 w-full max-w-6xl">
         {stats.map((stat, index) => (
           <div key={stat.id} className="stat-item text-center flex flex-col items-center">
             <div className={`text-[#D11E68] text-5xl md:text-7xl ${trirong.className} italic font-bold mb-3`}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react"; // 1. Agregamos useEffect
+import { useState, useEffect, TouchEvent } from "react"; // 1. Agregamos useEffect
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -19,6 +19,13 @@ interface WPPost {
 const NewsSection = () => {
   const [posts, setPosts] = useState<WPPost[]>([]); 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Estados para el touch
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  // Distancia mínima para considerar que es un "swipe"
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -39,18 +46,41 @@ const NewsSection = () => {
   }, []);
 
   const nextSlide = () => {
-    if (currentIndex + 3 < posts.length) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
-  };
+      if (currentIndex + 3 < posts.length) {
+        setCurrentIndex(currentIndex + 1);
+      } else {
+        setCurrentIndex(0);
+      }
+    };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     } else {
       setCurrentIndex(Math.max(0, posts.length - 3));
+    }
+  };
+  // --- LÓGICA TÁCTIL ---
+  const onTouchStart = (e: TouchEvent) => {
+    setTouchEnd(null); // Resetear al inicio
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
     }
   };
 
@@ -67,18 +97,17 @@ const NewsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto relative flex items-center">
-        <button
-          onClick={prevSlide}
-          className="absolute -left-20 z-20 hidden xl:block text-white/20 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"
-        >
+      <div className="max-w-7xl mx-auto relative flex items-center">
+        <button onClick={prevSlide} className="absolute -left-20 z-20 hidden xl:block text-white/20 hover:text-white transition-all">
           <ChevronLeft size={60} strokeWidth={1} />
         </button>
 
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}>
           <div
             className="flex transition-transform duration-700 ease-in-out gap-8"
-            style={{ transform: `translateX(-${currentIndex * (100 / 3 + 0.8)}%)` }}
           >
             {posts.map((item, index) => {
               const imageUrl = item.yoast_head_json?.og_image?.[0]?.url || "/images/placeholder.png";
@@ -92,10 +121,10 @@ const NewsSection = () => {
               return (
                 <div
                   key={index}
-                  className="group min-w-full md:min-w-[calc(33.333%-22px)] bg-[#2F0729] backdrop-blur-xl rounded-[40px] overflow-hidden flex flex-col min-h-[620px] border border-white/5 transition-all duration-500"
+                  className="group min-w-full md:min-w-[calc(33.333%-22px)] bg-[#2F0729] backdrop-blur-xl rounded-[20px] overflow-hidden flex flex-col min-h-[620px] border border-white/5 transition-all duration-500"
                 >
-                  <div className="relative h-80 w-full p-5">
-                    <div className="relative w-full h-full overflow-hidden rounded-[30px]">
+                  <div className="relative h-80 w-full">
+                    <div className="relative w-full h-full overflow-hidden rounded-t-[20px]">
                       <Image
                         src={imageUrl}
                         alt={item.title.rendered}
@@ -134,10 +163,7 @@ const NewsSection = () => {
           </div>
         </div>
 
-        <button
-          onClick={nextSlide}
-          className="absolute -right-20 z-20 hidden xl:block text-white/20 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"
-        >
+        <button onClick={nextSlide} className="absolute -right-20 z-20 hidden xl:block text-white/20 hover:text-white transition-all">
           <ChevronRight size={60} strokeWidth={1} />
         </button>
       </div>

@@ -43,7 +43,7 @@ const Navbar = () => {
     { name: "INICIO", href: "/" }, 
     { name: "NOSOTROS", href: "/nosotros" },
     { name: "SERVICIOS", href: "/servicios" },
-    { name: "BLOGS", href: "/https://3rcore.com/blog" },
+    { name: "BLOGS", href: "https://3rcore.com/blog" },
     { name: "CONTACTO", href: "/contacto" },
 
   ];
