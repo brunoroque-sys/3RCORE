@@ -30,7 +30,6 @@ const ServicesSlider = () => {
     const movePerSlideX = isMobile ? 75 : 35; 
     const totalMove = (totalSlides - 1) * movePerSlideX;
     
-    // Ángulo de la rueda
     const anglePerSlide = 360 / totalSlides;
 
     const tl = gsap.timeline({
@@ -49,19 +48,16 @@ const ServicesSlider = () => {
       },
     });
 
-    // 1. Mover el Slider (Usamos xPercent no, usamos 'x' con vw para precisión absoluta)
     tl.to(sliderRef.current, {
-      x: `-${totalMove}vw`, // Movimiento exacto en viewport width
+      x: `-${totalMove}vw`, 
       ease: "none",
     }, 0);
 
-    // 2. Girar la Rueda
     tl.to(wheelRef.current, {
       rotation: -360 + anglePerSlide, 
       ease: "none",
     }, 0);
 
-    // 3. Efecto de Escala en la carta central
     itemsRef.current.forEach((item, index) => {
         gsap.to(item, {
             scrollTrigger: {
@@ -74,7 +70,6 @@ const ServicesSlider = () => {
                     const itemPos = index / (totalSlides - 1);
                     const distance = Math.abs(progress - itemPos);
                     
-                    // Ajustamos el umbral de distancia para que el efecto sea más "snappy"
                     if (distance < 0.1) { 
                         gsap.to(item, { scale: 1, opacity: 1, filter: "brightness(1)", zIndex: 10, duration: 0.2 });
                     } else {
@@ -90,19 +85,10 @@ const ServicesSlider = () => {
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden text-white flex flex-col justify-center">
       
-      {/* Fondo */}
       <div className="absolute inset-0 pointer-events-none  bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/40 via-[#120214] to-[#120214]"></div>
 
-      {/* --- SLIDER --- */}
       <div className="relative z-10 w-full h-[55vh] flex items-center">
         
-        {/* CALIBRACIÓN DE POSICIÓN INICIAL:
-            Padding-Left = (100vw - CardWidth) / 2
-            Desktop: (100 - 30) / 2 = 35vw
-            Mobile: (100 - 70) / 2 = 15vw
-            
-            Gap: 5vw (mt-0 gap-x-[5vw])
-        */}
         <div 
             ref={sliderRef} 
             className="flex h-full items-center pl-[15vw] md:pl-[35vw] gap-x-[5vw] will-change-transform"
@@ -124,19 +110,18 @@ const ServicesSlider = () => {
         </div>
       </div>
 
-      {/* --- RUEDA DE TEXTO CURVO (SVG) --- */}
       <div 
         ref={wheelRef}
         className="absolute -bottom-[20vw] md:-bottom-[15vw] left-1/2 transform -translate-x-1/2 z-20 pointer-events-none w-[20vw] h-[20vw] md:w-[30vw] md:h-[30vw]"
       >
         <svg 
-            // Agregamos 'rotate-[54deg]' para compensar el cambio de offsets y que 'Branding' quede arriba.
+            
             className="w-full h-full rotate-[54deg] will-change-transform" 
             viewBox="0 0 300 300" 
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs>
-                {/* Definimos el círculo. La 'M' (Move) empieza a las 9 en punto (Izquierda) */}
+                
                 <path 
                     id="circlePath" 
                     d="M 150, 150 m -120, 0 a 120,120 0 0,1 240,0 a 120,120 0 0,1 -240,0" 
@@ -147,10 +132,6 @@ const ServicesSlider = () => {
                 {services.map((service, index) => {
                     const total = services.length;
                     
-                    // --- CORRECCIÓN MATEMÁTICA ---
-                    // Usamos offsets que alejen el texto del punto de corte (0% / 100%).
-                    // Con 5 items: 10%, 30%, 50%, 70%, 90%.
-                    // Esto deja un margen de seguridad del 10% en cada extremo para que palabras largas como 'ECOMMERCE' no se corten.
                     const offset = (100 / total) * index + 10;
                     
                     return (

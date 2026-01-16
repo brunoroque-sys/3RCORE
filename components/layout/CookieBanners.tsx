@@ -12,7 +12,6 @@ export default function CookieBanner() {
       }
     };
 
-    // Usamos setTimeout para evitar el error de "cascading renders"
     const timeoutId = setTimeout(checkConsent, 0);
     return () => clearTimeout(timeoutId);
   }, []);

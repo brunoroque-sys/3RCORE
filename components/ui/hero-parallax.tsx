@@ -6,7 +6,7 @@ import {
   useTransform,
   useSpring,
   MotionValue,
-} from "framer-motion"; // Asegúrate de que la importación sea correcta según tu proyecto
+} from "framer-motion"; 
 
 export const HeroParallax = ({
   products,
@@ -17,7 +17,6 @@ export const HeroParallax = ({
     thumbnail: string;
   }[];
 }) => {
-  // Dividimos el total de productos (24) en 4 filas de 6 para que quepan todos
   const firstRow = products.slice(0, 6);
   const secondRow = products.slice(6, 12);
   const thirdRow = products.slice(12, 18);
@@ -70,28 +69,24 @@ export const HeroParallax = ({
           opacity,
         }}
       >
-        {/* Fila 1 */}
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mb-10">
           {firstRow.map((product) => (
             <ProductCard product={product} translate={translateX} key={product.thumbnail} />
           ))}
         </motion.div>
         
-        {/* Fila 2 */}
         <motion.div className="flex flex-row space-x-10 mb-10">
           {secondRow.map((product) => (
             <ProductCard product={product} translate={translateXReverse} key={product.thumbnail} />
           ))}
         </motion.div>
 
-        {/* Fila 3 */}
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mb-10">
           {thirdRow.map((product) => (
             <ProductCard product={product} translate={translateX} key={product.thumbnail} />
           ))}
         </motion.div>
 
-        {/* Fila 4 */}
         <motion.div className="flex flex-row space-x-10">
           {fourthRow.map((product) => (
             <ProductCard product={product} translate={translateXReverse} key={product.thumbnail} />
@@ -139,7 +134,6 @@ export const ProductCard = ({
           alt={product.title}
         />
       </a>
-      {/* Overlay sutil al hacer hover */}
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-10 bg-black pointer-events-none transition-opacity"></div>
     </motion.div>
   );

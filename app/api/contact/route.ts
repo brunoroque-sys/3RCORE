@@ -13,7 +13,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Faltan campos requeridos' }, { status: 400 });
     }
 
-    // Estilos comunes para hacer el diseño responsive
     const responsiveStyles = `
       <style>
         @media only screen and (max-width: 600px) {
@@ -26,7 +25,6 @@ export async function POST(request: Request) {
     `;
 
     const result = await resend.batch.send([
-      // Email 1: Para el negocio (3RCORE)
       {
         from: 'Sistema 3RCORE <contacto@3rcore.com>',
         to: 'bruno.roque@3rcore.com',
@@ -58,7 +56,6 @@ export async function POST(request: Request) {
           </html>
         `,
       },
-      // Email 2: Para el cliente
       {
         from: 'Sistema 3RCORE <contacto@3rcore.com>',
         to: email,

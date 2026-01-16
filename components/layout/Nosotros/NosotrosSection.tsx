@@ -19,7 +19,6 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "700"] 
 });
 
-// Textos separados para poder dividirlos
 const titleText = "Nosotros";
 const paragraphText = "Nos convertimos en el motor estratégico de tu negocio. Nuestra misión es dedicar todo nuestro talento y ADN tecnológico a impulsar el crecimiento de tu empresa, acompañándote en cada paso de la evolución digital con soluciones innovadoras que garantizan tu relevancia en el mercado actual.";
 

@@ -105,7 +105,6 @@ export default function ScrollVideo() {
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
 
-      {/* --- NUEVA LÍNEA / INDICADOR DE SCROLL --- */}
       <div 
         ref={scrollIndicatorRef}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white/70"
@@ -114,7 +113,6 @@ export default function ScrollVideo() {
         <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent animate-bounce mt-8" />
       </div>
 
-      {/* Contenido de palabras (tu lógica original) */}
       <div className="absolute bottom-30 left-20 z-20 text-white pointer-events-none">
         <h2 className="text-3xl md:text-4xl font-light">La Agencia <span className="italic font-serif">es</span></h2>
         <div className="relative h-20 w-[500px]">

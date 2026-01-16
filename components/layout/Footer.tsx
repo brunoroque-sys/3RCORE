@@ -83,7 +83,6 @@ const Footer = () => {
   );
 };
 
-// Componente para los iconos sociales (Versión minimalista de la imagen)
 const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => {
   return (
     <a 

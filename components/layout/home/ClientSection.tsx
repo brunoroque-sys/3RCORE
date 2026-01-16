@@ -42,11 +42,8 @@ export default function ClientsSection() {
     <section className="py-10 min-h-screen flex items-center justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6">
         
-        {/* GRID PRINCIPAL */}
-        {/* En móvil: 3 columnas. En LG: 6 columnas. */}
         <div className="grid grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 items-center">
           
-          {/* BLOQUE CENTRAL DE TEXTO */}
           <div className="
             /* Móvil: Ocupa la fila central y todas las columnas */
             col-span-3 order-first mb-8
@@ -72,7 +69,6 @@ export default function ClientsSection() {
             </p>
           </div>
 
-          {/* MAPEO DE LOGOS */}
           {clients.map((client, i) => (
             <div key={i} className={`flex justify-center ${client.className}`}>
               <ClientCard client={client} />

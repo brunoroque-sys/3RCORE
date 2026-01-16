@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
   return (
     <section className="relative z-10 pt-40 pb-20 px-6 text-justify">
       <div className="max-w-4xl mx-auto">
-        {/* Título Principal */}
+
         <header className="mb-12 border-b border-white/10 pb-8">
             <h1 className={`
               leading-tight
@@ -21,7 +21,6 @@ export default function PrivacyPolicy() {
           </p>
         </header>
 
-        {/* Contenido */}
         <div className="space-y-12 text-gray-300 leading-relaxed font-light">
           
           <article>

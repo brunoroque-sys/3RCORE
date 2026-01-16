@@ -37,7 +37,6 @@ export default function Team() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
-  // Agrupamos los miembros (puedes mover esto fuera del componente si 'members' es estático)
   const groupedMembers = members.reduce((acc, member) => {
     const area = member.area;
     if (!acc[area]) acc[area] = [];

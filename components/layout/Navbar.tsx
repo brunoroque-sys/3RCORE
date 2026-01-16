@@ -9,35 +9,28 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Lógica para esconder/mostrar al hacer scroll
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
-        // Si el menú está abierto, no queremos que el scroll lo esconda
         if (isOpen) return;
 
         if (window.scrollY > lastScrollY && window.scrollY > 100) { 
-          // Si bajamos y pasamos los 100px, escondemos
           setIsVisible(false);
         } else {
-          // Si subimos, mostramos
           setIsVisible(true);
         }
         
-        // Recordar la posición actual para la próxima comparación
         setLastScrollY(window.scrollY);
       }
     };
 
     window.addEventListener('scroll', controlNavbar);
 
-    // Cleanup
     return () => {
       window.removeEventListener('scroll', controlNavbar);
     };
   }, [lastScrollY, isOpen]);
 
-  // Tu useEffect del body overflow se queda igual...
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";

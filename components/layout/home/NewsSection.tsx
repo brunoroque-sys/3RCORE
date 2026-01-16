@@ -7,7 +7,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
-// Definimos la forma de los datos que vienen de WP
 interface WPPost {
   title: { rendered: string };
   date: string;
@@ -18,10 +17,9 @@ interface WPPost {
 }
 
 const NewsSection = () => {
-  const [posts, setPosts] = useState<WPPost[]>([]); // Estado para los posts
+  const [posts, setPosts] = useState<WPPost[]>([]); 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 2. Llamada a la API
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -30,7 +28,7 @@ const NewsSection = () => {
         );
         const data = await res.json();
         
-        console.log("Datos de la API para el slider:", data); // Console log solicitado
+        console.log("Datos de la API para el slider:", data); 
         setPosts(data);
       } catch (error) {
         console.error("Error cargando noticias:", error);
@@ -56,7 +54,6 @@ const NewsSection = () => {
     }
   };
 
-  // Si aún no hay posts, podemos mostrar un estado de carga simple
   if (posts.length === 0) return null;
 
   return (
@@ -84,10 +81,8 @@ const NewsSection = () => {
             style={{ transform: `translateX(-${currentIndex * (100 / 3 + 0.8)}%)` }}
           >
             {posts.map((item, index) => {
-              // 3. Extraer imagen de Yoast o usar placeholder
               const imageUrl = item.yoast_head_json?.og_image?.[0]?.url || "/images/placeholder.png";
               
-              // 4. Formatear fecha
               const formattedDate = new Date(item.date).toLocaleDateString("en-US", {
                 month: "short",
                 day: "2-digit",

@@ -24,7 +24,6 @@ const StatsAndCTA = () => {
   const numbersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
   useGSAP(() => {
-    // --- ANIMACIÓN 1: ESTADÍSTICAS ---
     gsap.from(".stat-item", {
       y: 50,
       opacity: 0,
@@ -50,7 +49,6 @@ const StatsAndCTA = () => {
       });
     });
 
-    // --- ANIMACIÓN 2: CTA CARD ---
     const ctaTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".cta-card-container",
@@ -78,7 +76,6 @@ const StatsAndCTA = () => {
       ease: "back.out(1.2)"
     }, "-=0.8");
 
-    // Flotación infinita
     gsap.to(".cta-image-wrapper", {
       y: -20,
       duration: 3,
@@ -92,7 +89,6 @@ const StatsAndCTA = () => {
   return (
     <section ref={containerRef} className="w-full py-32 px-4 flex flex-col items-center gap-40  overflow-hidden">
       
-      {/* --- ESTADÍSTICAS --- */}
       <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-60 md:gap-60 w-full max-w-7xl">
         {stats.map((stat, index) => (
           <div key={stat.id} className="stat-item text-center flex flex-col items-center">
@@ -106,17 +102,13 @@ const StatsAndCTA = () => {
           </div>
         ))}
       </div>
-
-      {/* --- CTA CARD CONTAINER --- */}
       <div className="cta-card-container w-full max-w-7xl relative h-[500px] md:h-[350px] flex items-center">
         
-        {/* Fondo de la tarjeta (con overflow hidden para el gradiente) */}
         <div className="cta-bg absolute inset-0 bg-gradient-to-r from-[#4a0d3d] to-[#120214] rounded-[3rem] shadow-2xl overflow-hidden pointer-events-none">
-            {/* Glow interno */}
+
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#D11E68] opacity-20 blur-[100px]"></div>
         </div>
 
-        {/* Contenido */}
         <div className="cta-content relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-12">
           
           <div className="flex flex-col items-start text-left md:w-1/2 space-y-8">
@@ -136,17 +128,14 @@ const StatsAndCTA = () => {
               border border-white/30 rounded-[15px] transition-all duration-500 
               group/btn hover:border-transparent hover:scale-105 cursor-pointer
             `}>
-              {/* Fondo degradado que se desliza */}
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>
               
-              {/* Texto por encima del fondo */}
               <span className="relative z-10 transition-colors duration-300">
                 Contáctanos
               </span>
             </button>
           </div>
 
-          {/* Lado Derecho: Imagen Monitor "Saliendo" */}
           <div className="md:w-1/2 flex justify-center md:justify-end relative group">
             <div className="cta-image-wrapper relative 
                             w-[350px] h-[270px]   /* Tamaño más grande */
