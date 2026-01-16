@@ -58,7 +58,6 @@ export default function ScrollVideo() {
       }
     });
 
-    // Animación de rebote (Bounce) infinita
       gsap.to(".scroll-arrow", {
         y: 10,
         repeat: -1,
@@ -67,7 +66,6 @@ export default function ScrollVideo() {
         duration: 0.8
       });
 
-      // El indicador desaparece al hacer scroll (dentro de tu tl principal)
       tl.to(scrollIndicatorRef.current, {
         opacity: 0,
         pointerEvents: "none",
@@ -82,7 +80,6 @@ export default function ScrollVideo() {
       onUpdate: render,
     }, 0);
 
-    // Animación ABAJO y ARRIBA (tu lógica original)
     wordsBottom.forEach((word, i) => {
       const start = i * step;
       tl.to(word, { opacity: 1, y: 0, duration: 0.5 }, start);

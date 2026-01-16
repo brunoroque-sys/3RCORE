@@ -85,10 +85,9 @@ const ClientCard = ({ client }: { client: Client }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // 1. Verificamos si es móvil (ancho menor a 1024px para coincidir con tu 'lg')
+    
     const isMobile = window.innerWidth < 1024;
     
-    // Si es móvil, no ejecutamos la lógica del parpadeo
     if (isMobile) return;
 
     const triggerRandomFlicker = () => {

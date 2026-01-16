@@ -61,14 +61,14 @@ const Footer = () => {
           <div className="flex gap-8 text-[10px] tracking-widest text-white">
             <Link 
               href="/politicas" 
-              className="hover:text-white transition-all duration-300 hover:-translate-y-1 inline-block"
+              className="hover:text-white  hover:brightness-110 transition-all duration-300 inline-block"
             >
               Política de Privacidad
             </Link>
 
             <Link 
               href="/terminos" 
-              className="hover:text-white transition-all duration-300 hover:-translate-y-1 inline-block"
+              className="hover:text-white  hover:brightness-110 transition-all duration-300 inline-block"
             >
               Términos y condiciones
             </Link>

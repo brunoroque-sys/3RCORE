@@ -28,7 +28,7 @@ export default function CookieBanner() {
       <div className="mb-4 md:mb-0 md:mr-8 max-w-3xl">
         <p className="text-sm text-gray-200">
           Utilizamos cookies para mejorar tu experiencia. Al aceptar, consientes el uso de tecnologías de seguimiento según nuestra 
-          <a href="/politicas" className="ml-1 text-[#E91E63] hover:text-[#9C27B0] font-semibold transition-colors underline">
+          <a href="/politicas" target="_blank" className="ml-1 text-[#E91E63] hover:text-[#9C27B0] font-semibold transition-colors underline">
             Política de Privacidad
           </a>.
         </p>
@@ -37,14 +37,14 @@ export default function CookieBanner() {
       <div className="flex gap-4 items-center">
         <button 
           onClick={() => setIsVisible(false)}
-          className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors uppercase tracking-wider"
+          className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white cursor-pointer transition-colors uppercase tracking-wider"
         >
           Rechazar
         </button>
         
         <button 
           onClick={acceptCookies}
-          className="bg-gradient-to-r from-[#E91E63] to-[#9C27B0] hover:brightness-110 text-white px-8 py-2.5 rounded-full font-bold shadow-[0_0_15px_rgba(233,30,99,0.3)] transition-all active:scale-95 uppercase text-xs tracking-widest"
+          className="bg-gradient-to-r from-[#E91E63] to-[#9C27B0] hover:brightness-110 cursor-pointer text-white px-8 py-2.5 rounded-[10px] font-bold shadow-[0 0 15px rgba(233,30,99,0.3)] transition-all active:scale-95 uppercase text-xs tracking-widest"
         >
           Aceptar todas
         </button>
