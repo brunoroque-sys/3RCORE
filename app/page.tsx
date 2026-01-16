@@ -8,6 +8,7 @@ import MosaicoParallax from '@/components/layout/home/imagesParallaxSection';
 import ContactForm from '@/components/layout/ContactForm';
 import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
+import LatestPosts from '@/components/layout/home/PRUEBA';
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
       <MosaicoParallax />
       <ClientSection />
       <NewsSection />
-
+      <LatestPosts/>
       <ContactForm />
 
     </main>

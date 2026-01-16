@@ -12,6 +12,7 @@ export default function ScrollVideo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]); 
   const frameRef = useRef({ frame: 0 });
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
 
   const frameCount = 194;
   const palabrasAbajo = ["Impacto", "Valores", "Experiencia", "Identidad", "Profesionalismo", "Conexión"];
@@ -44,7 +45,6 @@ export default function ScrollVideo() {
 
     const wordsBottom = gsap.utils.toArray<HTMLElement>(".word-bottom", containerRef.current);
     const wordsTop = gsap.utils.toArray<HTMLElement>(".word-top", containerRef.current);
-
     const step = 2; 
 
     const tl = gsap.timeline({
@@ -58,6 +58,22 @@ export default function ScrollVideo() {
       }
     });
 
+    // Animación de rebote (Bounce) infinita
+      gsap.to(".scroll-arrow", {
+        y: 10,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        duration: 0.8
+      });
+
+      // El indicador desaparece al hacer scroll (dentro de tu tl principal)
+      tl.to(scrollIndicatorRef.current, {
+        opacity: 0,
+        pointerEvents: "none",
+        duration: 0.5
+      }, 0);
+
     tl.to(frameRef.current, {
       frame: frameCount - 1,
       snap: "frame",
@@ -66,7 +82,7 @@ export default function ScrollVideo() {
       onUpdate: render,
     }, 0);
 
-    // 2. Animación ABAJO
+    // Animación ABAJO y ARRIBA (tu lógica original)
     wordsBottom.forEach((word, i) => {
       const start = i * step;
       tl.to(word, { opacity: 1, y: 0, duration: 0.5 }, start);
@@ -89,12 +105,21 @@ export default function ScrollVideo() {
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
 
+      {/* --- NUEVA LÍNEA / INDICADOR DE SCROLL --- */}
+      <div 
+        ref={scrollIndicatorRef}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white/70"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] font-m">Scroll</span>
+        <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent animate-bounce mt-8" />
+      </div>
+
+      {/* Contenido de palabras (tu lógica original) */}
       <div className="absolute bottom-30 left-20 z-20 text-white pointer-events-none">
         <h2 className="text-3xl md:text-4xl font-light">La Agencia <span className="italic font-serif">es</span></h2>
         <div className="relative h-20 w-[500px]">
           {palabrasAbajo.map((p, i) => (
-            <p key={`bot-${i}`} 
-               className="word-bottom absolute top-0 left-0 text-4xl md:text-6xl font-m tracking-tighter opacity-0 translate-y-10 transition-colors">
+            <p key={`bot-${i}`} className="word-bottom absolute top-0 left-0 text-4xl md:text-6xl font-m tracking-tighter opacity-0 translate-y-10 transition-colors">
               {p}
             </p>
           ))}
@@ -105,8 +130,7 @@ export default function ScrollVideo() {
         <h2 className="text-3xl md:text-4xl font-light ">La Agencia <span className="italic font-serif">es</span></h2>
         <div className="relative h-20 w-[500px] ml-auto">
           {palabrasArriba.map((p, i) => (
-            <p key={`top-${i}`} 
-               className="word-top absolute top-0 right-0 text-4xl md:text-6xl font-m tracking-tighter opacity-0 translate-y-10">
+            <p key={`top-${i}`} className="word-top absolute top-0 right-0 text-4xl md:text-6xl font-m tracking-tighter opacity-0 translate-y-10">
               {p}
             </p>
           ))}
