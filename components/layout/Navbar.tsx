@@ -67,7 +67,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-24 relative">
             
             <div className="flex-shrink-0 relative z-[60]">
-              <Link href="/">
+              <Link href="/" onClick={() => setIsOpen(false)}> 
                 <div className="relative h-10 w-28 cursor-pointer">
                   <Image
                     src="/icons/LogoFull.webp"
