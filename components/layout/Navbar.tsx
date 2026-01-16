@@ -86,8 +86,8 @@ const Navbar = () => {
 
             <div className="flex items-center gap-6 relative z-[60]">
               <div className={`hidden sm:flex items-center gap-4 text-xs font-bold tracking-widest transition-opacity duration-300 ${isOpen ? 'opacity-0 delay-0' : 'opacity-100 delay-300'} text-gray-400`}>
-                <button className="hover:text-white transition-colors cursor-pointer">ES</button>
-                <button className="hover:text-white transition-colors cursor-pointer">EN</button>
+                <button className="hover:text-[#E91E63] transition-colors cursor-pointer">ES</button>
+                <button className="hover:text-[#E91E63] transition-colors cursor-pointer">EN</button>
               </div>
 
               <button
