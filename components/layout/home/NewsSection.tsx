@@ -67,7 +67,7 @@ const NewsSection = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative flex items-center">
+      <div className="max-w-6xl mx-auto relative flex items-center">
         <button
           onClick={prevSlide}
           className="absolute -left-20 z-20 hidden xl:block text-white/20 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"

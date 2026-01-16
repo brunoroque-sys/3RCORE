@@ -102,7 +102,7 @@ const StatsAndCTA = () => {
           </div>
         ))}
       </div>
-      <div className="cta-card-container w-full max-w-7xl relative h-[500px] md:h-[350px] flex items-center">
+      <div className="cta-card-container w-full max-w-6xl relative h-[500px] md:h-[350px] flex items-center">
         
         <div className="cta-bg absolute inset-0 bg-gradient-to-r from-[#4a0d3d] to-[#120214] rounded-[3rem] shadow-2xl overflow-hidden pointer-events-none">
 

@@ -48,7 +48,13 @@ const Navbar = () => {
 
   ];
 
-  const socialLinks = ["FACEBOOK", "INSTAGRAM", "LINKEDIN", "YOUTUBE"];
+  const socialLinks = [
+    { name:"FACEBOOK", href:"https://www.facebook.com/3Rcore/"},
+    { name:"INSTAGRAM", href:"https://www.instagram.com/3rcore_/?hl=es"},
+    { name:"LINKEDIN", href:"https://www.linkedin.com/company/3r-core/"},
+    { name:"TIKTOK", href:"https://www.tiktok.com/@3rcore"},
+  ]
+    
 
   return (
     <>
@@ -134,7 +140,7 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white py-4 sm:py-6 border-b border-white/20 relative transition-all duration-500 transform 
+                    className={`block text-3xl sm:text-3xl lg:text:4xl font-bold tracking-tight text-white py-4 sm:py-6 border-b border-white/20 relative transition-all duration-500 transform 
                       ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
                       hover:text-white hover:pl-4 transition-all duration-300
                     `}
@@ -159,8 +165,16 @@ const Navbar = () => {
 
             <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center text-[10px] sm:text-xs font-bold tracking-widest text-white/50 mt-12 transition-all duration-700 delay-700 transform ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex gap-4 sm:gap-6 mb-4 sm:mb-0">
-                {socialLinks.map(social => (
-                   <a key={social} href="#" className="hover:text-white transition-colors">{social}</a>
+                {socialLinks.map((social) => (
+                  <a 
+                    key={social.name} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-white transition-colors"
+                  >
+                    {social.name}
+                  </a>
                 ))}
               </div>
             </div>

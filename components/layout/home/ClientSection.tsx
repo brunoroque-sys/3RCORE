@@ -85,6 +85,12 @@ const ClientCard = ({ client }: { client: Client }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    // 1. Verificamos si es móvil (ancho menor a 1024px para coincidir con tu 'lg')
+    const isMobile = window.innerWidth < 1024;
+    
+    // Si es móvil, no ejecutamos la lógica del parpadeo
+    if (isMobile) return;
+
     const triggerRandomFlicker = () => {
       const randomTime = Math.floor(Math.random() * 2000) + 2000;
       setTimeout(() => {
@@ -106,7 +112,9 @@ const ClientCard = ({ client }: { client: Client }) => {
       rounded-md p-4
       transition-all duration-1000 ease-in-out
       hover:border-white hover:bg-white/[0.03] hover:!opacity-100
-      ${visible ? 'opacity-100' : 'opacity-0'}
+      /* 2. Aseguramos que en móvil siempre sea opacity-100 ignorando el estado 'visible' */
+      ${visible ? 'opacity-100' : 'opacity-0 lg:opacity-0'} 
+      max-lg:!opacity-100
     `}>
       <div className="relative w-full h-full filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
         <Image
