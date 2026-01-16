@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -48,18 +48,30 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Redes Sociales</h3>
             <div className="flex gap-4">
-              <SocialIcon href="#" icon={<FaFacebookF />} />
-              <SocialIcon href="#" icon={<FaInstagram />} />
-              <SocialIcon href="#" icon={<FaLinkedinIn />} />
-              <SocialIcon href="#" icon={<FaYoutube />} />
+              <SocialIcon href="https://www.facebook.com/3Rcore/" icon={<FaFacebookF />} />
+              <SocialIcon href="https://www.instagram.com/3rcore_/?hl=es" icon={<FaInstagram />} />
+              <SocialIcon href="https://www.linkedin.com/company/3r-core/" icon={<FaLinkedinIn />} />
+              <SocialIcon href="https://www.tiktok.com/@3rcore" icon={<FaTiktok />
+} />
             </div>
           </div>
         </div>
 
         <div className="border-t border-white/90 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex gap-8 text-[10px] tracking-widest text-white">
-            <Link href="/politicas" className="hover:text-white transition-colors">Política de Privacidad</Link>
-            <Link href="/terminos" className="hover:text-white transition-colors">Términos y condiciones</Link>
+            <Link 
+              href="/politicas" 
+              className="hover:text-white transition-all duration-300 hover:-translate-y-1 inline-block"
+            >
+              Política de Privacidad
+            </Link>
+
+            <Link 
+              href="/terminos" 
+              className="hover:text-white transition-all duration-300 hover:-translate-y-1 inline-block"
+            >
+              Términos y condiciones
+            </Link>
           </div>
           
           <div className="text-[10px] uppercase tracking-widest text-white">

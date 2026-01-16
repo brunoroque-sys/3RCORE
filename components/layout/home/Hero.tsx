@@ -13,7 +13,7 @@ export default function ScrollVideo() {
   const imagesRef = useRef<HTMLImageElement[]>([]); 
   const frameRef = useRef({ frame: 0 });
 
-  const frameCount = 242;
+  const frameCount = 194;
   const palabrasAbajo = ["Impacto", "Valores", "Experiencia", "Identidad", "Profesionalismo", "Conexión"];
   const palabrasArriba = ["Creatividad", "Diseño", "Estrategia", "Digital", "Futuro", "Innovación"];
 

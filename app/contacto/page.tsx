@@ -1,6 +1,13 @@
+import ContactForm from "@/components/layout/ContactForm";
+import CTAContacto from "@/components/layout/contacto/CTContacto";
+import Contacto from "@/components/layout/contacto/heroContacto";
 
-export default function Contacto() {
+export default function Nosotros() {
   return (
-    <h1>SOY EL CONTACTO</h1>
+    <main>
+      <Contacto/>
+      <CTAContacto />
+      <ContactForm/>
+    </main>
   );
 }

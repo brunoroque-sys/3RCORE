@@ -1,4 +1,5 @@
 
+import ContactForm from "@/components/layout/ContactForm";
 import { DraggableCardDemo } from "@/components/layout/Nosotros/Activities";
 import Founders from "@/components/layout/Nosotros/Founders";
 import HeroNosotros from "@/components/layout/Nosotros/HeroNosotros";
@@ -12,6 +13,7 @@ export default function Nosotros() {
       <Founders />
       <Team />
       <DraggableCardDemo/>
+      <ContactForm/>
     </main>
   );
 }
