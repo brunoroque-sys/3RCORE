@@ -22,7 +22,6 @@ export default function Home() {
       <MosaicoParallax />
       <ClientSection />
       <NewsSection />
-      <LatestPosts/>
       <ContactForm />
 
     </main>
