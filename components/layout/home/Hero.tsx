@@ -59,12 +59,12 @@ export default function ScrollVideo() {
     });
 
       gsap.to(".scroll-arrow", {
-        y: 10,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        duration: 0.8
-      });
+      y: 10,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+      duration: 0.8
+    });
 
       tl.to(scrollIndicatorRef.current, {
         opacity: 0,
@@ -102,13 +102,25 @@ export default function ScrollVideo() {
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
 
-      <div 
-        ref={scrollIndicatorRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white/70"
+    <div 
+      ref={scrollIndicatorRef}
+      className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white/70"
+    >
+      <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Scroll</span>
+      
+      {/* Esta es la flecha que animará GSAP */}
+      <svg 
+        className="scroll-arrow w-6 h-6 mt-2" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="2" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-m">Scroll</span>
-        <div className="w-[1px] h-20 bg-gradient-to-b from-white to-transparent animate-bounce mt-8" />
-      </div>
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+      </svg>
+    </div>
 
       <div className="absolute bottom-30 left-20 z-20 text-white pointer-events-none">
         <h2 className="text-3xl md:text-4xl font-light">La Agencia <span className="italic font-serif">es</span></h2>

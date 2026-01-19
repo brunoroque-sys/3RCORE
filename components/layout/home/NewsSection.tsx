@@ -78,6 +78,7 @@ className="absolute -left-20 z-20 hidden xl:block text-white/20 hover:text-white
  <div className="w-full overflow-hidden">
 <div
 className="flex transition-transform duration-700 ease-in-out gap-8"
+style={{ transform: `translateX(-${currentIndex * (100 / 2.90)}%)` }}
 >
  {posts.map((item, index) => {
 const imageUrl = item.yoast_head_json?.og_image?.[0]?.url || "/images/placeholder.png";

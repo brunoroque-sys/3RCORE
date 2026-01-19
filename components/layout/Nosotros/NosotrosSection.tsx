@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 });
 
 const titleText = "Nosotros";
-const paragraphText = "Nos convertimos en el motor estratégico de tu negocio. Nuestra misión es dedicar todo nuestro talento y ADN tecnológico a impulsar el crecimiento de tu empresa, acompañándote en cada paso de la evolución digital con soluciones innovadoras que garantizan tu relevancia en el mercado actual.";
+const paragraphText = "Somos equipo de profesionales y nativos digitales que conjugamos la experiencia, la Visión y la tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes";
 
 const NosotrosSection= () => {
   const containerRef = useRef(null);

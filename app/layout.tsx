@@ -6,6 +6,7 @@ import SmoothScrolling from "@/components/ui/SmoothScrolling"
 import Navbar from "@/components/layout/Navbar";
 import CookieBanner from "@/components/layout/CookieBanners";
 import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
+import ScrollContactBtn from "@/components/ui/ScrollContactBtn";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieBanner />
+        <ScrollContactBtn/>
         <WhatsAppBtn />
       </body>
     </html>

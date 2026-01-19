@@ -8,12 +8,17 @@ import Team from "@/components/layout/Nosotros/Team";
 export default function Nosotros() {
   return (
     <main>
-      <HeroNosotros />
+      <div id="hero">
+        <HeroNosotros />
+      </div>
       <NosotrosSection />
       <Founders />
       <Team />
       <DraggableCardDemo/>
-      <ContactForm/>
+      <div  id="contacto">
+        <ContactForm/>
+      </div>
+
     </main>
   );
 }

@@ -5,9 +5,14 @@ import Contacto from "@/components/layout/contacto/heroContacto";
 export default function Nosotros() {
   return (
     <main>
-      <Contacto/>
+      <div id="hero">
+        <Contacto/>
+      </div>
       <CTAContacto />
-      <ContactForm/>
+      <div  id="contacto">
+        <ContactForm/>
+      </div>
+
     </main>
   );
 }

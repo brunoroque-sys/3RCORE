@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 });
 
 const titleText = "Somos un equipo";
-const paragraphText = "En 3R CORE AGENCIA DE MARKETING, somos un equipo con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la experiencia, la Visión y la tecnología enfocados en estrategias de marketing Digital, personalizadas de acuerdo a tu empresa.";
+const paragraphText = "En 3R CORE AGENCIA DE MARKETING Somos un equipo con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la experiencia, la Visión y la tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresas";
 
 const TeamSection = () => {
   const containerRef = useRef(null);
