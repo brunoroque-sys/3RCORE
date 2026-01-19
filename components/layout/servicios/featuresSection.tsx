@@ -1,0 +1,108 @@
+'use client';
+
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const FeaturesSection = () => {
+  const containerRef = useRef(null);
+  const lineRef = useRef(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
+
+  const features = [
+    {
+      title: 'COMPROMETIDOS',
+      description: 'Mantenemos una comunicación constante que nos permite tener claros los puntos que requieres, y atenderlos lo más pronto posible.',
+      icon: <div className="w-12 h-12 bg-gray-300 mb-6" />,
+    },
+    {
+      title: 'CREATIVOS',
+      description: 'Convertimos la innovación en eficiencia. Presentamos propuestas que marcan la diferencia y nos comprometemos no solo a alcanzar tus metas, sino a sobrepasarlas.',
+      icon: <div className="w-12 h-12 bg-gray-300 mb-6" />,
+    },
+    {
+      title: 'PROFESIONALES',
+      description: 'Nos involucramos de principio a fin, brindando una pre-producción meticulosa, asistencia técnica permanente y un análisis profundo de métricas al concluir para asegurar que los objetivos se cumplan.',
+      icon: <div className="w-12 h-12 bg-gray-300 mb-6" />,
+    },
+  ];
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 75%',
+      }
+    });
+
+    tl.from('.main-title', {
+      y: 20,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    })
+    .from(lineRef.current, {
+      scaleX: 0,
+      duration: 1,
+      ease: 'expo.inOut'
+    }, '-=0.4');
+
+    cardsRef.current.forEach((card, index) => {
+      const children = card.children;
+      
+      tl.from(children, {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: 'power2.out'
+      }, `-=${index === 0 ? 0.5 : 0.4}`);
+    });
+
+  }, { scope: containerRef });
+
+  return (
+    <section 
+      ref={containerRef}
+      className="relative w-full py-24 px-6 text-white overflow-hidden bg-[#2D0A31] bg-gradient-to-br from-[#1A051D] via-[#2D0A31] to-[#3B0D42]"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col items-center mb-20">
+          <h2 className="main-title text-xl md:text-2xl font-light tracking-[0.2em] text-center mb-6 uppercase">
+            Trabajemos juntos para lograr tus objetivos
+          </h2>
+          <div ref={lineRef} className="w-full max-w-4xl h-[1px] bg-white/80 origin-center" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          {features.map((feature, index) => (
+            <div 
+              key={index} 
+              ref={(el) => { if (el) cardsRef.current[index] = el; }}
+              className="flex flex-col items-start text-justify"
+            >
+              <div className="icon-wrapper transition-transform duration-300 hover:scale-110">
+                {feature.icon}
+              </div>
+              
+              <h3 className="text-lg font-bold tracking-widest mb-5 mt-5 uppercase">
+                {feature.title}
+              </h3>
+              
+              <p className="text-sm leading-relaxed font-light text-gray-300 text-pretty">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FeaturesSection;

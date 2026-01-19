@@ -92,7 +92,7 @@ const [isMobile, setIsMobile] = useState(false);
           ...prev,
           [projectId]: ((prev[projectId] || 0) + 1) % slides.length
         }));
-      }, 2500);
+      }, 1000);
 
       carouselIntervalsRef.current[projectId] = interval;
     };
