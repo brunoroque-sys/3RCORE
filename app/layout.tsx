@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es"suppressHydrationWarning>
       <body className={`${poppins.className} antialiased bg-black text-white`}>
         <Navbar/>
         <main className="min-h-screen bg-[#130218]">
