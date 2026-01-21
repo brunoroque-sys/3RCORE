@@ -38,7 +38,7 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Servicios</h3>
             <ul className="space-y-3 text-xs text-gray-200">
-              <li><Link href="/servicios/branding" className="hover:text-white transition-colors">Branding</Link></li>
+              <li><Link href="/servicios/branding/#hero" className="hover:text-white transition-colors">Branding</Link></li>
               <li><Link href="/servicios/social-media" className="hover:text-white transition-colors">Social Media</Link></li>
               <li><Link href="/servicios/seo-sem" className="hover:text-white transition-colors">SEO / SEM</Link></li>
               <li><Link href="/servicios/web-design" className="hover:text-white transition-colors">Web Design</Link></li>

@@ -1,42 +1,135 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import gsap from 'gsap';
 
 export default function HeroBranding() {
+  const pinkBgRef = useRef(null);
+  const andTextRef = useRef(null);
+  const brTextRef = useRef(null);
+  const lineRef = useRef(null);
+  const sloganRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const playAnimation = () => {
+      // Timeline para las animaciones
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // Establecer estados iniciales
+      gsap.set(pinkBgRef.current, { scaleX: 0, transformOrigin: 'left center' });
+      gsap.set(andTextRef.current, { clipPath: 'inset(0 100% 0 0)' });
+      gsap.set(brTextRef.current, { opacity: 0, y: -20 });
+      gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
+      gsap.set(sloganRef.current, { opacity: 0, y: 20 });
+
+      // Secuencia de animaciones
+      tl.to(pinkBgRef.current, {
+        scaleX: 1,
+        duration: 0.8,
+        delay: 0.3
+      })
+      .to(andTextRef.current, {
+        clipPath: 'inset(0 0% 0 0)',
+        duration: 0.6,
+        ease: 'power2.out'
+      }, '-=0.4')
+      .to(brTextRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6
+      }, '-=0.4')
+      .to(lineRef.current, {
+        scaleX: 1,
+        duration: 0.8
+      }, '-=0.2')
+      .to(sloganRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6
+      }, '-=0.4');
+
+      return tl;
+    };
+
+    // Configurar Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Reproducir la animación cuando el hero es visible
+            playAnimation();
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* 1. Imagen de fondo con Overlay */}
+    <section 
+      ref={sectionRef}
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
+    >
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/branding/fondoBranding1.webp" // Reemplaza con tu ruta
+          src="/images/branding/fondoBranding1.webp"
           alt="Brand Background"
           fill
-          className="object-cover " // Ajusta la opacidad para el efecto oscuro
+          className="object-cover"
           priority
         />
-        {/* Capa de degradado extra para profundidad */}
         <div className="absolute inset-0 bg-[#130218] via-transparent to-transparent opacity-80"></div>
       </div>
 
-      {/* 2. Contenido Central */}
       <div className="relative z-10 text-center px-4">
         <div className="flex flex-col items-center">
           
           <div className='w-[35%]'>
-            <div className="bg-none px-6 py-2 w-[100%] transform ">
-            <h2 className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none">
-              BR
-            </h2>
+            <div className="bg-none px-6 py-2 w-[100%] transform">
+              <h2 
+                ref={brTextRef}
+                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+              >
+                BR
+              </h2>
             </div>
 
-            <div className="bg-[#ff0055] px-6 py-2 w-[100%] transform " >
-              <h2 className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none">AND</h2>
+            <div 
+              ref={pinkBgRef}
+              className="bg-[#ff0055] px-6 py-2 w-[100%] transform"
+            >
+              <h2 
+                ref={andTextRef}
+                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+              >
+                AND
+              </h2>
             </div>
           </div>
 
-          {/* Línea Divisoria */}
-          <div className="w-200 h-[1px] bg-white my-8"></div>
+          <div 
+            ref={lineRef}
+            className="w-200 h-[1px] bg-white/50 my-8"
+          ></div>
 
-          {/* Eslogan en Español */}
-          <p className="text-white text-sm md:text-lg font-light w-full">
+          <p 
+            ref={sloganRef}
+            className="text-white text-sm md:text-lg font-light w-full"
+          >
             Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta.
           </p>
         </div>
