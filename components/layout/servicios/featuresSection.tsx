@@ -18,17 +18,17 @@ const FeaturesSection = () => {
     {
       title: 'COMPROMETIDOS',
       description: 'Mantenemos una comunicación constante que nos permite tener claros los puntos que requieres, y atenderlos lo más pronto posible.',
-      icon: <div className="w-12 h-12 bg-gray-300 mb-6" />,
+        icon: '/icons/manos.svg',
     },
     {
       title: 'CREATIVOS',
       description: 'Convertimos la innovación en eficiencia. Presentamos propuestas que marcan la diferencia y nos comprometemos no solo a alcanzar tus metas, sino a sobrepasarlas.',
-      icon: <div className="w-12 h-12 bg-gray-300 mb-6" />,
+      icon: '/icons/foco.svg',
     },
     {
       title: 'PROFESIONALES',
       description: 'Nos involucramos de principio a fin, brindando una pre-producción meticulosa, asistencia técnica permanente y un análisis profundo de métricas al concluir para asegurar que los objetivos se cumplan.',
-      icon: <div className="w-12 h-12 bg-gray-300 mb-6" />,
+      icon:'/icons/maleta.svg',
     },
   ];
 
@@ -69,11 +69,11 @@ const FeaturesSection = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-24 px-6 text-white overflow-hidden bg-[#2D0A31] bg-gradient-to-br from-[#1A051D] via-[#2D0A31] to-[#3B0D42]"
+      className="relative w-full py-24 px-6 text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-20">
-          <h2 className="main-title text-xl md:text-2xl font-light tracking-[0.2em] text-center mb-6 uppercase">
+          <h2 className="main-title text-xl md:text-2xl font-light tracking-[0.2em] text-center mb-4 uppercase">
             Trabajemos juntos para lograr tus objetivos
           </h2>
           <div ref={lineRef} className="w-full max-w-4xl h-[1px] bg-white/80 origin-center" />
@@ -87,7 +87,7 @@ const FeaturesSection = () => {
               className="flex flex-col items-start text-justify"
             >
               <div className="icon-wrapper transition-transform duration-300 hover:scale-110">
-                {feature.icon}
+                <img src={feature.icon} alt={feature.title} className="w-12 h-12 mb-5" />
               </div>
               
               <h3 className="text-lg font-bold tracking-widest mb-5 mt-5 uppercase">

@@ -1,6 +1,6 @@
 import ContactForm from "@/components/layout/ContactForm";
 import FeaturesSection from "@/components/layout/servicios/featuresSection";
-import HeroBranding from "@/components/layout/servicios/heroBranding";
+import HeroBranding from "@/components/layout/servicios/branding/heroBranding";
 
 export default function branding(){
   return(
@@ -8,7 +8,7 @@ export default function branding(){
         <div id="hero">
           <HeroBranding />
         </div>
-        <FeaturesSection/>
+        
         <div id="contacto">
           <ContactForm/>
         </div>
