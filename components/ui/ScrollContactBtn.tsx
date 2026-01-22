@@ -33,7 +33,7 @@ const ScrollNavBtn = () => {
 
   return (
     <a
-      href={isAtBottom ? "#hero" : "#contacto"}
+      href={"#contacto"}
       onClick={handleScroll}
       className={`fixed bottom-24 right-6 w-14 h-14 rounded-full z-50 flex items-center justify-center 
                  transition-all duration-500 ease-in-out border
