@@ -5,6 +5,7 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from 'next-intl'; // Importación añadida
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,9 +20,9 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "700"] 
 });
 
-const titleText = "Te brindamos ideas creativas";
 const ServiceAbout = () => {
   const containerRef = useRef(null);
+  const t = useTranslations('ServiceAbout'); // Hook de traducción
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -73,7 +74,8 @@ const ServiceAbout = () => {
       <div className="max-w-6xl mx-auto text-center">
         
         <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-5xl mb-6 tracking-wide`}>
-          {titleText.split("").map((char, index) => (
+          {/* Reemplazo de titleText por t('title') */}
+          {t('title').split("").map((char, index) => (
             <span 
               key={index} 
               className="title-char-anim inline-block"
@@ -85,10 +87,10 @@ const ServiceAbout = () => {
         </h2>
 
         <h3 className={`team-subtitle ${montserrat.className} bg-gradient-to-r from-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent text-3xl md:text-5xl font-medium mb-2 tracking-tight will-change-transform`}>
-          que aseguran resultados exitosos
+          {t('subtitle1')}
         </h3>
         <h3 className={`team-subtitle ${montserrat.className} bg-gradient-to-r from-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent text-3xl md:text-5xl font-medium mb-10 tracking-tight will-change-transform`}>
-          para tus proyectos
+          {t('subtitle2')}
         </h3>
       </div>
     </section>

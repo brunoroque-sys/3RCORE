@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Playfair_Display, Poppins } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,9 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "700
 
 
 const CTAContacto = () => {
+
+  const t = useTranslations('ScheduleSection');
+  
   const containerRef = useRef(null);
 
 
@@ -29,10 +33,10 @@ const CTAContacto = () => {
           <div className="items-start text-center md:w-2/2 space-y-8">
             <div className="text-white text-2xl md:text-4xl leading-tight">
               <h3 className={`${playfair.className} italic font-normal mb-2`}>
-                Horario de Atención
+                { t('title')}
               </h3>
               <h3 className={`${poppins.className} font-normal`}>
-                Lunes a Viernes de 9am a 18 pm (PET)
+                { t('hours')}
               </h3>
             </div>
           </div>

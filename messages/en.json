@@ -1,0 +1,226 @@
+{
+  "HeroHome": {
+    "agency":"The Agency",
+    "s":"is",
+    "impact": "Impact",
+    "values": "Values",
+    "experience": "Experience",
+    "identity": "Identity",
+    "professionalism": "Professionalism",
+    "connection": "Connection",
+    "agency2":"Digital",
+    "d":" ",
+    "marketing":"Marketing Agency"
+  }
+  ,
+  "TeamSection": {
+    "title": "We are a team",
+    "subtitle": "Professional and Digital Native",
+    "description": "At 3R CORE MARKETING AGENCY, we are a team with a 3-generation vision focused on the same goal, highly trained and combining experience, vision, and technology focused on digital marketing strategies, customized according to your business."
+  }
+  ,
+  "Hovers": {
+    "ver": "/images/tituloCarru/ServiciosEn.svg",
+    "hor":  "/images/tituloCarru/serviciosEnHorizontal.svg"
+  }
+  ,
+  "CTA": {
+    "titleLine1": "Position and Insert",
+    "titleLine2": "your brand in the market",
+    "ctaButton": "Contact Us",
+    "labelClients": "CLIENTS",
+    "labelExperience": "YEARS OF EXPERIENCE",
+    "labelCountries": "COUNTRIES REACHED"
+  }
+  ,
+  "ClientsSection": {
+    "title": "Our Clients",
+    "description": "Companies that trust our vision and results."
+  }
+  ,
+  "NewsSection": {
+    "title": "Check out our news",
+    "readMore": "Read more",
+    "viewAllBlogs": "Read more blogs",
+    "t":"en"
+  }
+  ,
+  "ContactSection": {
+    "title": "Contact Us",
+    "fieldName": "Full Name",
+    "fieldCompany": "Company",
+    "fieldPhone": "Phone Number",
+    "fieldEmail": "Email",
+    "fieldMessage": "Message",
+    "buttonSend": "Send",
+    "buttonSending": "Sending..."
+  }
+  ,
+  "Navbar": {
+    "title":"Navegador",
+    "regular": "Your Success",
+    "bold": "OUR SUCCESS",
+    "nav": {
+      "home":"HOME",
+      "about us":"ABOUT US",
+      "services":"SERVICES",
+      "blogs":"BLOGS",
+      "contact":"CONTACT US"
+    }
+    
+  }
+  ,
+  "FoundersSection": {
+    "badge": "Founders",
+    "description": "Explore the vision of our leadership team through this interactive presentation.",
+    "roles": {
+      "ceo": "CEO 3R Core",
+      "marketingDirector": "Marketing Director",
+      "seoDirector": "SEO Director"
+    }
+  }
+  ,
+  "AboutSection": {
+    "title": "About Us",
+    "subtitle": "We boost your results",
+    "description": "We are a team of professionals and digital natives who combine experience, vision, and technology focused on providing digital marketing strategies, oriented towards optimizing your return on investment, enhancing the positioning and competitive advantages of our clients."
+  }
+  ,
+  "OurTeamSection": {
+    "title": "Our Team",
+    "description": "Meet the people who make our success possible."
+  }
+  ,
+  "MomentsSection": {
+    "highlightText": "MOMENTS THAT STRENGTHEN OUR BOND"
+  }
+  ,
+  "ScheduleSection": {
+    "title": "Business Hours",
+    "hours": "Monday to Friday from 9am to 6pm (PET)"
+  }
+  ,
+  "ExpansionSection": {
+    "title": "We expand",
+    "subtitle": "your reach to the world"
+  }
+  ,
+  "BrandingHero": {
+    "slogan": "Your image says a lot about you, make sure it's the right one."
+  }
+  ,
+  "Footer": {
+    "services": "Services",
+    "agency": "Our Agency",
+    "socialMedia": "Social Media",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms and Conditions",
+    "copyright": "© 2026 3R CORE. All rights reserved",
+    "A":" Hours: Monday to Friday"
+  }
+  ,
+  "CookieBanner": {
+    "message": "We use cookies to improve your experience. By accepting, you consent to the use of tracking technologies according to our",
+    "privacyLink": "Privacy Policy",
+    "decline": "Decline",
+    "acceptAll": "Accept All"
+  }
+  ,
+  "PrivacyPolicy": {
+    "title": "Privacy Policies",
+    "topBadge": "GENERAL PRIVACY POLICY",
+    "sections": {
+      "s1": {
+        "title": "Introduction",
+        "text": "At 3R Core Marketing Agency, we are committed to providing personal data owners with the highest level of security and protecting the confidentiality of their information. Therefore, business relationships are conducted in a secure server environment under SSL (Secure Socket Layer) protocol, which keeps information encrypted and safe. This protocol is currently used by the world's leading companies for secure electronic transactions. This website has been created and designed to provide all relevant information and to establish a communication space with data owners."
+      },
+      "s2": {
+        "title": "Objective and Purpose",
+        "text": "At 3R Core Marketing Agency, we are concerned with providing personal data owners with the highest level of security and protecting the confidentiality of their information.",
+        "quote": "Business relationships are conducted in a secure server environment under the SSL (Secure Socket Layer) protocol, which keeps information encrypted and secure."
+      },
+      "s3": {
+        "title": "Legislation",
+        "intro": "This policy is governed by Peruvian legislation and specifically by:",
+        "law1": "Law No. 29733 - Personal Data Protection Law.",
+        "law2": "Supreme Decree No. 003-2013-JUS, Regulation of Law No. 29733.",
+        "footer": "In accordance with Law No. 29733 - Personal Data Protection Law and its Regulation approved by Supreme Decree No. 003-2013-JUS, personal data is any numerical, alphabetical, graphic, photographic, acoustic information, about personal habits or any other type that refers to a natural person that identifies them or makes them identifiable through means that can reasonably be used. Likewise, personal data processing refers to any operation or technical procedure, automated or not, that allows the collection, registration, organization, storage, conservation, elaboration, modification, extraction, consultation, use, blocking, suppression, communication by transfer or by diffusion or any other form of processing that facilitates access, correlation or interconnection of personal data."
+      },
+      "s4": {
+        "title": "Information Storage",
+        "text": "The personal data provided through our website https://www.3rcore.com/ will be stored in data banks called 'Clients' and 'Prospects' for the period indicated in each privacy notice or consent. It is important to highlight that our data banks are duly registered with the General Directorate for the Protection of Personal Data, in accordance with current legislation. Only 3R Core Marketing Agency personnel who need to know such information to send information or respond to requests from data owners may access and manage the personal data provided. This personal data will be treated fairly and legally and will not be used for purposes incompatible with those specified."
+      },
+      "s5": {
+        "title": "Exercise of Rights",
+        "text": "You may exercise your rights of information, access, update, rectification, and deletion of personal data through:",
+        "physical": "In Person",
+        "digital": "Digital Way",
+        "subject": "Subject: Personal Data Protection"
+      },
+      "s6": {
+        "title": "Quality of Personal Data",
+        "text": "The information required from personal data owners consists of basic contact details, which are relevant, adequate, and proportionate in relation to the purpose for which they are collected. The personal data to which 3R Core Marketing Agency will have access will be those that the owners voluntarily provide in the corresponding forms. To ensure that data owners are aware of this Privacy Policy, 3R Core Marketing Agency provides the necessary technical resources. It is essential that the personal data provided is truthful and up-to-date; otherwise, it will be cancelled. Personal data will be deleted when no longer necessary for the purpose for which it was collected but will be kept for an indefinite period."
+      }
+    }
+  }
+  ,
+  "Terms": {
+    "title": "Terms and Conditions",
+    "topBadge": "GENERAL TERMS",
+    "sections": {
+      "s1": {
+        "title": "Introduction",
+        "text": "At 3R Core Marketing Agency, we are committed to providing personal data owners with the highest level of security and protecting the confidentiality of their information. Therefore, business relationships are conducted in a secure server environment under the SSL (Secure Socket Layer) protocol, which keeps information encrypted and safe. This protocol is currently used by the world's leading companies for secure electronic transactions. This website has been created and designed to provide all relevant information and to establish a communication space with personal data owners."
+      },
+      "s2": {
+        "title": "Objective and Purpose",
+        "text": "At 3R Core Marketing Agency, we care about providing personal data owners with the highest level of security and protecting the confidentiality of their information.",
+        "quote": "Business relationships are conducted in a secure server environment under the SSL (Secure Socket Layer) protocol, which keeps information encrypted and safe."
+      },
+      "s3": {
+        "title": "Legislation",
+        "intro": "This policy is governed by Peruvian legislation and specifically by:",
+        "law1": "Law No. 29733 - Personal Data Protection Law.",
+        "law2": "Supreme Decree No. 003-2013-JUS, Regulation of Law No. 29733.",
+        "footer": "In accordance with Law No. 29733 - Personal Data Protection Law and its Regulation approved by Supreme Decree No. 003-2013-JUS, personal data is any numerical, alphabetical, graphic, photographic, acoustic information about personal habits or any other type that refers to a natural person that identifies them or makes them identifiable through means that can reasonably be used. Likewise, personal data processing refers to any operation or technical procedure, automated or not, that allows the collection, registration, organization, storage, conservation, elaboration, modification, extraction, consultation, use, blocking, suppression, communication by transfer or by diffusion or any other form of processing that facilitates access, correlation or interconnection of personal data."
+      },
+      "s4": {
+        "title": "Information Storage",
+        "text": "Personal data provided through our website https://www.3rcore.com/ will be stored in data banks called 'Clients' and 'Prospects', for the time period indicated in each privacy notice or consent. It is important to note that our data banks are duly registered with the General Directorate for the Protection of Personal Data, in accordance with current legislation. Only 3R Core Marketing Agency personnel who need to know such information to send information or respond to requests from data owners may access and manage the personal data provided. This personal data will be processed fairly and legally and will not be used for purposes incompatible with those specified."
+      },
+      "s5": {
+        "title": "Exercise of Rights",
+        "text": "You may exercise your rights to information, access, update, rectification, and deletion of personal data through:",
+        "physical": "In Person",
+        "digital": "Digital Way",
+        "subject": "Subject: Personal Data Protection"
+      },
+      "s6": {
+        "title": "Quality of Personal Data",
+        "text": "The information required from personal data owners consists of basic contact data, which are relevant, adequate, and proportionate in relation to the purpose for which they are collected. The personal data to which 3R Core Marketing Agency will have access will be those provided voluntarily by the owners in the corresponding forms. To ensure that data owners are aware of this Privacy Policy, 3R Core Marketing Agency provides the necessary technical resources. It is important that the personal data provided is truthful and up-to-date; otherwise, it will be cancelled. Personal data will be deleted when no longer necessary for the purpose for which it was collected but will be kept for an indefinite period."
+      }
+    }
+  }
+  ,
+  "FeaturesSection": {
+    "mainTitle": "Let's work together to achieve your goals",
+    "committed": {
+      "title": "COMMITTED",
+      "description": "We maintain constant communication that allows us to stay clear on your requirements and address them as quickly as possible."
+    },
+    "creative": {
+      "title": "CREATIVE",
+      "description": "We turn innovation into efficiency. We present proposals that make a difference and commit not only to reaching your goals but to surpassing them."
+    },
+    "professional": {
+      "title": "PROFESSIONAL",
+      "description": "We are involved from start to finish, providing meticulous pre-production, permanent technical assistance, and deep metrics analysis upon completion to ensure objectives are met."
+    }
+  }
+  ,
+  "ServiceAbout": {
+    "title": "We provide you with creative ideas",
+    "subtitle1": "that ensure successful results",
+    "subtitle2": "for your projects"
+  }
+}

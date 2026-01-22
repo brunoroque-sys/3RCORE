@@ -1,5 +1,7 @@
+import { useTranslations } from "next-intl";
 
 const Contacto = () => {
+   const t = useTranslations('ExpansionSection');
   return (
     <section className="relative h-screen text-white px-4 flex flex-col items-center justify-center text-center overflow-hidden">
       
@@ -22,11 +24,11 @@ const Contacto = () => {
       
       <div className="relative z-20"> 
         <h2 className="text-4xl md:text-6xl font-serif italic mb-2">
-          Expandimos
+          { t('title')}
         </h2>
         
         <h3 className="text-3xl md:text-5xl font-sans font-bold text-[#d81b60] mb-10">
-          tu alcance al mundo
+          { t('subtitle')}
         </h3>
 
         <div className="w-full max-w-xl h-[0.5px] bg-gray-400 mb-10 opacity-30 mx-auto"></div>

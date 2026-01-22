@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"; // 1. Agregamos useEffect
 import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl"
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -17,26 +18,40 @@ interface WPPost {
 }
 
 const NewsSection = () => {
+
+const t = useTranslations('NewsSection');
+const langPath = t('t') ? `/${t('t')}` : "";
+
 const [posts, setPosts] = useState<WPPost[]>([]); 
 const [currentIndex, setCurrentIndex] = useState(0);
 
 useEffect(() => {
-const fetchPosts = async () => {
-  try {
-  const res = await fetch(
-  "https://3rcore.com/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json"
-  );
-  const data = await res.json();
+  const fetchPosts = async () => {
+    try {
+      const tValue = t('t'); 
+      const prefix = tValue === "en" ? "/en" : "";
+      const wpUrl = `https://3rcore.com${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
 
-  console.log("Datos de la API para el slider:", data); 
-  setPosts(data);
-  } catch (error) {
-  console.error("Error cargando noticias:", error);
-  }
-};
+      // Usamos un proxy para saltar el bloqueo de CORS
+      // Nota: Esto es ideal para desarrollo, en producción usaremos la API Route de Next.js
+      const proxyUrl = "https://corsproxy.io/?"; 
+      const finalUrl = proxyUrl + encodeURIComponent(wpUrl);
 
-fetchPosts();
-}, []);
+      console.log("Conectando a través de proxy a:", wpUrl);
+
+      const res = await fetch(finalUrl);
+      
+      if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+
+      const data = await res.json();
+      setPosts(data);
+    } catch (error) {
+      console.error("Error al obtener posts:", error);
+    }
+  };
+
+  fetchPosts();
+}, [t]);
 
 const nextSlide = () => {
 if (currentIndex + 3 < posts.length) {
@@ -61,7 +76,7 @@ return (
  <div className="flex flex-col items-center justify-center mb-20 w-full group">
 <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
 <h2 className="text-white text-s md:text-m tracking-[0.1em] uppercase font-medium whitespace-nowrap">
-Entérate de nuestras noticias
+{t('title')}
 </h2>
 <div className="h-[1px] bg-white/90 w-full md:w-[70%] lg:w-[100%] mx-auto"></div>
 </div>
@@ -123,7 +138,7 @@ fill
 >
 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-full group-hover:translate-x-0"></span>
  <span className="relative z-10 transition-colors duration-300">
- Leer más
+{t('readMore')}
  </span>
  </a>
 </div>
@@ -151,7 +166,7 @@ className="group relative inline-flex items-center justify-center px-10 py-3.5 o
 >
  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-full group-hover:translate-x-0" />
  <div className="relative z-10 transition-colors duration-300">
- Leer más blogs
+{t('viewAllBlogs')}
  </div>
 </a>
  </div>

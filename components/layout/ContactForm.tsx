@@ -2,10 +2,15 @@
 
 import { Montserrat } from "next/font/google";
 import { useState } from "react"; 
+import { useTranslations } from "next-intl"
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ContactForm = () => {
+
+  const t = useTranslations('ContactSection');
+  
+
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<{ type: 'success' | 'error' | ''; message: string }>({ type: '', message: '' });
 
@@ -51,7 +56,7 @@ const ContactForm = () => {
 
       <div className="relative z-10 w-full max-w-7xl px-6">
         <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.2em] uppercase mb-16">
-          Contáctanos
+          {t('title')}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
@@ -59,31 +64,31 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 w-full">
               
               <div className="flex flex-col gap-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">Nombre y Apellido</label>
+                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldName')}</label>
                 <input name="nombre" required type="text" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
               <div className="flex flex-col gap-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">Empresa</label>
+                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldCompany')}</label>
                 <input name="apellido" required type="text" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
               <div className="flex flex-col gap-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">Teléfono</label>
+                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldPhone')}</label>
                 <input name="telefono" required type="tel" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
               <div className="flex flex-col gap-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">Email</label>
+                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldEmail')}</label>
                 <input name="email" required type="email" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
 
               <div className="flex flex-col gap-2 md:col-span-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">Mensaje</label>
+                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldMessage')}</label>
                 <textarea name="mensaje" required rows={1} className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors resize-none peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
@@ -95,7 +100,7 @@ const ContactForm = () => {
                   className="relative inline-flex items-center justify-center px-12 py-3 overflow-hidden font-bold uppercase tracking-[0.3em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] group/btn hover:border-transparent cursor-pointer text-white disabled:opacity-50"
                 >
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-[101%] group-hover/btn:translate-x-0"></span>
-                  <span className="relative z-10">{loading ? 'Enviando...' : 'Enviar'}</span>
+                  <span className="relative z-10">{loading ? t('buttonSending') : t('buttonSend')}</span>
                 </button>
               </div>
             </form>

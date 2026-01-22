@@ -4,6 +4,7 @@ import {
   DraggableCardContainer,
 } from "@/components/ui/draggable-card";
 import { Playfair_Display, Poppins } from "next/font/google";
+import { useTranslations } from "next-intl";
 
 const playfair = Playfair_Display({ 
   subsets: ["latin"], 
@@ -17,6 +18,9 @@ const poppins = Poppins({
   weight: ["400"]
 });
 export function DraggableCardDemo() {
+
+  const t = useTranslations('MomentsSection');
+  
   const items = [
     {
       title: "Fundadores",
@@ -76,7 +80,7 @@ export function DraggableCardDemo() {
   return (
     <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">
       <p className={`absolute top-1/2 mx-auto max-w-sm ${poppins.className} -translate-y-3/4 text-center text-1xl font-black text-white md:text-3xl dark:text-neutral-800`}>
-        MOMENTOS QUE FORTALECEN NUESTRO VÍNCULO 
+        {t('highlightText')}
       </p>
         {items.map((item, index) => (
         <DraggableCardBody

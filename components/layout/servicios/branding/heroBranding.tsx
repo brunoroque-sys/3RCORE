@@ -3,8 +3,13 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
+import { useTranslations } from 'next-intl';
 
 export default function HeroBranding() {
+
+  const t = useTranslations('BrandingHero');
+  
+
   const pinkBgRef = useRef(null);
   const andTextRef = useRef(null);
   const brTextRef = useRef(null);
@@ -58,7 +63,6 @@ export default function HeroBranding() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Reproducir la animación cuando el hero es visible
             playAnimation();
           }
         });
@@ -130,7 +134,7 @@ export default function HeroBranding() {
             ref={sloganRef}
             className="text-white text-sm md:text-lg font-light w-full"
           >
-            Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta.
+            { t('slogan')}
           </p>
         </div>
       </div>

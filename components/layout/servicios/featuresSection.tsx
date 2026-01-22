@@ -4,33 +4,36 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
 const FeaturesSection = () => {
+
+  const t = useTranslations('FeaturesSection');
   const containerRef = useRef(null);
   const lineRef = useRef(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
-  const features = [
-    {
-      title: 'COMPROMETIDOS',
-      description: 'Mantenemos una comunicación constante que nos permite tener claros los puntos que requieres, y atenderlos lo más pronto posible.',
-        icon: '/icons/manos.svg',
-    },
-    {
-      title: 'CREATIVOS',
-      description: 'Convertimos la innovación en eficiencia. Presentamos propuestas que marcan la diferencia y nos comprometemos no solo a alcanzar tus metas, sino a sobrepasarlas.',
-      icon: '/icons/foco.svg',
-    },
-    {
-      title: 'PROFESIONALES',
-      description: 'Nos involucramos de principio a fin, brindando una pre-producción meticulosa, asistencia técnica permanente y un análisis profundo de métricas al concluir para asegurar que los objetivos se cumplan.',
-      icon:'/icons/maleta.svg',
-    },
-  ];
+const features = [
+  {
+    title: t('committed.title'),
+    description: t('committed.description'),
+    icon: '/icons/manos.svg',
+  },
+  {
+    title: t('creative.title'),
+    description: t('creative.description'),
+    icon: '/icons/foco.svg',
+  },
+  {
+    title: t('professional.title'),
+    description: t('professional.description'),
+    icon: '/icons/maleta.svg',
+  },
+];
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -74,7 +77,7 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-20">
           <h2 className="main-title text-xl md:text-2xl font-light tracking-[0.2em] text-center mb-4 uppercase">
-            Trabajemos juntos para lograr tus objetivos
+           {t('mainTitle')}
           </h2>
           <div ref={lineRef} className="w-full max-w-4xl h-[1px] bg-white/80 origin-center" />
         </div>

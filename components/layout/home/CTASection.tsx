@@ -6,20 +6,27 @@ import { Playfair_Display, Poppins, Trirong } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from "next-intl"
 
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 const playfair = Playfair_Display({ subsets: ["latin"], style: ['normal', 'italic'], weight: ["400", "700"] });
 const trirong = Trirong({ subsets: ["latin"], style: ['normal', 'italic'], weight: ["400", "700"] });
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "700"] });
 
-const stats = [
-  { id: 1, endValue: 1000, label: "CLIENTES", prefix: "+" },
-  { id: 2, endValue: 10, label: "AÑOS DE EXPERIENCIA", prefix: "+" },
-  { id: 3, endValue: 3, label: "PAISES ALCANZADOS", prefix: "+" },
-];
+
 
 const StatsAndCTA = () => {
+  const t = useTranslations('CTA');
+
+  const stats = [
+    { id: 1, endValue: 1000, label: t('labelClients'), prefix: "+" },
+    { id: 2, endValue: 10, label:  t('labelExperience'), prefix: "+" },
+    { id: 3, endValue: 3, label: t('labelCountries'), prefix: "+" },
+  ];
+
   const containerRef = useRef(null);
   const numbersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
@@ -114,10 +121,10 @@ const StatsAndCTA = () => {
           <div className="flex flex-col items-start text-left md:w-1/2 space-y-8">
             <div className="text-white text-2xl md:text-4xl leading-tight">
               <h3 className={`${playfair.className} italic font-normal mb-2`}>
-                Posiciónate e Inserta
+                {t('titleLine1')}
               </h3>
               <h3 className={`${poppins.className} font-normal`}>
-                tu marca en el mercado
+               {t('titleLine2')}
               </h3>
             </div>
 
@@ -131,7 +138,7 @@ const StatsAndCTA = () => {
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>
               
               <span className="relative z-10 transition-colors duration-300">
-                Contáctanos
+                {t('ctaButton')}
               </span>
             </button>
           </div>

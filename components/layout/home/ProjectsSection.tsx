@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useTranslations } from "next-intl"
 
 interface CarouselInterval {
   interval: NodeJS.Timeout;
@@ -16,6 +17,9 @@ interface Project {
 }
 
 export default function ProjectsSection() {
+
+  const t = useTranslations('Hovers');
+
 const [isMobile, setIsMobile] = useState(false);
   const [activeColumn, setActiveColumn] = useState<string | null>(null);
   const [carouselStates, setCarouselStates] = useState<Record<string, number>>({});
@@ -359,8 +363,8 @@ const [isMobile, setIsMobile] = useState(false);
       <div className="contenedor-imagenes-hovers">
         <div className="col col-static">
           <img src="/images/tituloCarru/serviciosbg.webp" className="fondopro" alt="Background" />
-          <img src="/images/tituloCarru/Servicios.svg" className="titulo-img" alt="Our Projects" />
-          <img src="/images/tituloCarru/serviciosHorizontal.svg" className="titulo-img-horizon" alt="Our Projects" />
+          <img src={t('ver')} className="titulo-img" alt="Our Projects" />
+          <img src={t('hor')} className="titulo-img-horizon" alt="Our Projects" />
         </div>
 
         {projects.map((project) => {

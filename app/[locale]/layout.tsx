@@ -1,0 +1,65 @@
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google"; 
+import "./globals.css";
+import Footer from "@/components/layout/Footer";
+import SmoothScrolling from "@/components/ui/SmoothScrolling"
+import Navbar from "@/components/layout/Navbar";
+import CookieBanner from "@/components/layout/CookieBanners";
+import WhatsAppBtn from "@/components/ui/WhatsAppBtn";
+import ScrollContactBtn from "@/components/ui/ScrollContactBtn";
+
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
+import { getMessages } from "next-intl/server";
+
+ 
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{locale: string}>;
+};
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"], 
+  variable: "--font-poppins", 
+});
+
+export const metadata: Metadata = {
+  title: "3RCORE",
+  description: "Agencia de Marketing",
+};
+
+export default async function RootLayout({children,params}:{children: React.ReactNode,params:any}) {
+
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  
+  const messages=await getMessages();
+
+  return (
+    <html >
+      <body className={`${poppins.className} antialiased bg-black text-white`}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          
+          <Navbar />
+          
+          <main className="min-h-screen bg-[#130218]">
+            <SmoothScrolling>
+              <div className="noise-global relative z-10" />
+              {children}
+            </SmoothScrolling>
+          </main>
+          
+          <Footer />
+          <CookieBanner />
+          <ScrollContactBtn />
+          <WhatsAppBtn />
+
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

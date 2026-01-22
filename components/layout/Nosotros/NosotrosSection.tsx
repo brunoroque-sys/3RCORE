@@ -5,6 +5,7 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,10 +20,14 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "700"] 
 });
 
-const titleText = "Nosotros";
-const paragraphText = "Somos equipo de profesionales y nativos digitales que conjugamos la experiencia, la Visión y la tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes";
 
 const NosotrosSection= () => {
+
+  const t = useTranslations('AboutSection');
+  
+  const titleText = t('title');
+  const paragraphText = t('description');
+
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -87,7 +92,7 @@ const NosotrosSection= () => {
         </h2>
 
         <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-5xl font-medium mb-10 tracking-tight will-change-transform`}>
-          Potenciamos tus resultados
+         {t('subtitle')}
         </h3>
 
         <div className="team-line w-full max-w-2xl mx-auto h-[1px] bg-white/40 my-10 origin-center will-change-transform"></div>

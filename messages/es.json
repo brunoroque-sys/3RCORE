@@ -1,0 +1,238 @@
+{
+  "HeroHome": 
+  {
+    "agency":"La Agencia",
+    "s":"es",
+    "impact": "Impacto",
+    "values": "Valores",
+    "experience": "Experiencia",
+    "identity": "Identidad",
+    "professionalism": "Profesionalismo",
+    "connection": "Conexión",
+    "agency2":"Agencia",
+    "d":"de",
+    "marketing":"Marketing Digital"
+  }
+  ,
+  "TeamSection": 
+  {
+    "title": "Somos un equipo",
+    "subtitle": "Profesional y Nativo Digital",
+    "description": "En 3R CORE AGENCIA DE MARKETING Somos un equipo con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la experiencia, la Visión y la tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresas"
+  }
+  ,
+  "Hovers":
+  {
+    "ver": "/images/tituloCarru/Servicios.svg",
+    "hor": "/images/tituloCarru/serviciosHorizontal.svg"
+  }
+  ,
+  "CTA": {
+    "titleLine1": "Posiciónate e Inserta",
+    "titleLine2": "tu marca en el mercado",
+    "ctaButton": "Contáctanos",
+    "labelClients": "CLIENTES",
+    "labelExperience": "AÑOS DE EXPERIENCIA",
+    "labelCountries": "PAISES ALCANZADOS"
+  }
+  ,
+  "ClientsSection": {
+    "title": "Nuestros Clientes",
+    "description": "Empresas que confían en nuestra visión y resultados."
+  }
+  ,
+  "NewsSection": {
+    "title": "Entérate de nuestras noticias",
+    "readMore": "Leer más",
+    "viewAllBlogs": "Leer más blogs",
+    "t":""
+  }
+  ,
+  "ContactSection": {
+    "title": "Contáctanos",
+    "fieldName": "Nombre y Apellido",
+    "fieldCompany": "Empresa",
+    "fieldPhone": "Teléfono",
+    "fieldEmail": "Email",
+    "fieldMessage": "Mensaje",
+    "buttonSend": "Enviar",
+    "buttonSending": "Enviando..."
+  }
+  ,
+  "Navbar": {
+    "title":"Navegador",
+    "regular": "Tu Éxito",
+    "bold": "NUESTRO ÉXITO",
+    "nav": {
+      "home":"INICIO",
+      "about us":"NOSOTROS",
+      "services":"SERVICIOS",
+      "blogs":"BLOGS",
+      "contact":"CONTACTO"
+    }
+  }
+  ,
+  "FoundersSection": {
+    "badge": "Fundadores",
+    "description": "Explora la visión de nuestro equipo directivo a través de esta presentación interactiva.",
+    "roles": {
+      "ceo": "CEO 3R Core",
+      "marketingDirector": "Director de Marketing",
+      "seoDirector": "Director de SEO"
+    }
+  }
+  ,
+  "AboutSection": {
+    "title": "Nosotros",
+    "subtitle": "Potenciamos tus resultados",
+    "description": "Somos equipo de profesionales y nativos digitales que conjugamos la experiencia, la Visión y la tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes"
+  }
+  ,
+  "OurTeamSection": {
+    "title": "Nuestro Equipo",
+    "description": "Conoce a las personas que hacen posible nuestro éxito."
+  }
+  ,
+  "MomentsSection": {
+    "highlightText": "MOMENTOS QUE FORTALECEN NUESTRO VÍNCULO"
+  }
+  ,
+  "ScheduleSection": {
+    "title": "Horario de Atención",
+    "hours": "Lunes a Viernes de 9am a 18 pm (PET)"
+  }
+  ,
+  "ExpansionSection": {
+    "title": "Expandimos",
+    "subtitle": "tu alcance al mundo"
+  }
+  ,
+  "BrandingHero": {
+    "slogan": "Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta."
+  }
+  ,
+  "Footer": {
+    "services": "Servicios",
+    "agency": "Nuestra Agencia",
+    "socialMedia": "Redes Sociales",
+    "privacyPolicy": "Política de Privacidad",
+    "termsConditions": "Términos y condiciones",
+    "copyright": "© 2026 3R CORE. Todos los derechos reservados",
+    "A":" Atención: Lunes a Viernes"
+  }
+  ,
+  "cooke": {
+    "services": "Servicios",
+    "agency": "Nuestra Agencia",
+    "socialMedia": "Redes Sociales",
+    "privacyPolicy": "Política de Privacidad",
+    "termsConditions": "Términos y condiciones",
+    "copyright": "© 2026 3R CORE. Todos los derechos reservados",
+    "A":" Atención: Lunes a Viernes"
+  }
+  ,
+  "CookieBanner": {
+    "message": "Utilizamos cookies para mejorar tu experiencia. Al aceptar, consientes el uso de tecnologías de seguimiento según nuestra",
+    "privacyLink": "Política de Privacidad",
+    "decline": "Rechazar",
+    "acceptAll": "Aceptar todas"
+  }
+  ,
+  "PrivacyPolicy": {
+    "title": "Políticas de privacidad",
+    "topBadge": "POLÍTICA DE PRIVACIDAD GENERAL",
+    "sections": {
+      "s1": {
+        "title": "Introducción",
+        "text": "En 3R Core Agencia de Marketing nos preocupa brindar a los titulares de datos personales el más alto nivel de seguridad y proteger la confidencialidad de su información..."
+      },
+      "s2": {
+        "title": "Objetivo y finalidad",
+        "text": "En 3R Core Agencia de Marketing nos preocupa brindar a los titulares de datos personales el más alto nivel de seguridad y proteger la confidencialidad de su información.",
+        "quote": "Las relaciones comerciales se llevan a cabo en un entorno de servidor seguro bajo protocolo SSL (Secure Socket Layer), que mantiene la información encriptada y segura."
+      },
+      "s3": {
+        "title": "Legislación",
+        "intro": "Esta política está regulada por la legislación peruana y en particular por:",
+        "law1": "Ley N° 29733 - Ley de Protección de Datos Personales.",
+        "law2": "Decreto Supremo N° 003-2013-JUS, Reglamento de la Ley N° 29733.",
+        "footer": "De acuerdo con la Ley N° 29733... [resto del texto]"
+      },
+      "s4": {
+        "title": "Almacenamiento de información",
+        "text": "Los datos personales proporcionados a través de nuestra página https://www.3rcore.com/ serán almacenados en los bancos de datos llamados «Clientes» y «Prospectos»..."
+      },
+      "s5": {
+        "title": "Ejercicio de Derechos",
+        "text": "Puedes ejercer tus derechos de información, acceso, actualización, rectificación y supresión de datos personales mediante:",
+        "physical": "Vía Presencial",
+        "digital": "Vía Digital",
+        "subject": "Asunto: Protección de Datos Personales"
+      },
+      "s6": {
+        "title": "Calidad de los Datos Personales",
+        "text": "La información requerida a los titulares de datos personales consiste en datos básicos de contacto..."
+      }
+    }
+  }
+  ,
+  "Terms": {
+    "title": "Términos y condiciones",
+    "topBadge": "TÉRMINOS GENERALES",
+    "sections": {
+      "s1": {
+        "title": "Introducción",
+        "text": "En 3R Core Agencia de Marketing nos preocupa brindar a los titulares de datos personales el más alto nivel de seguridad y proteger la confidencialidad de su información. Por lo tanto, las relaciones comerciales se llevan a cabo en un entorno de servidor seguro bajo protocolo SSL (Secure Socket Layer), que mantiene la información encriptada y segura. Este protocolo es utilizado actualmente por las empresas más importantes del mundo para realizar transacciones electrónicas seguras. Este sitio web ha sido creado y diseñado para proporcionar toda la información que consideramos relevante y para establecer un espacio de comunicación con los titulares de los datos personales."
+      },
+      "s2": {
+        "title": "Objetivo y finalidad",
+        "text": "En 3R Core Agencia de Marketing nos preocupa brindar a los titulares de datos personales el más alto nivel de seguridad y proteger la confidencialidad de su información.",
+        "quote": "Las relaciones comerciales se llevan a cabo en un entorno de servidor seguro bajo protocolo SSL (Secure Socket Layer), que mantiene la información encriptada y segura."
+      },
+      "s3": {
+        "title": "Legislación",
+        "intro": "Esta política está regulada por la legislación peruana y en particular por:",
+        "law1": "Ley N° 29733 - Ley de Protección de Datos Personales.",
+        "law2": "Decreto Supremo N° 003-2013-JUS, Reglamento de la Ley N° 29733.",
+        "footer": "De acuerdo con la Ley N° 29733 - Ley de Protección de Datos Personales y su Reglamento aprobado por el Decreto Supremo N° 003-2013-JUS, los datos personales son cualquier información numérica, alfabética, gráfica, fotográfica, acústica, sobre hábitos personales o de cualquier otro tipo que se refiere a una persona natural que la identifica o la hace identificable a través de medios que pueden ser razonablemente utilizados. Asimismo, el tratamiento de datos personales se refiere a cualquier operación o procedimiento técnico, automatizado o no, que permite la recopilación, registro, organización, almacenamiento, conservación, elaboración, modificación, extracción, consulta, utilización, bloqueo, supresión, comunicación por transferencia o por difusión o cualquier otra forma de procesamiento que facilite el acceso, correlación o interconexión de los datos personales."
+      },
+      "s4": {
+        "title": "Almacenamiento de información",
+        "text": "Los datos personales proporcionados a través de nuestra página https://www.3rcore.com/ serán almacenados en los bancos de datos llamados «Clientes» y «Prospectos», por el período de tiempo indicado en cada aviso de privacidad o consentimiento. Es importante destacar que nuestros bancos de datos están debidamente registrados ante la Dirección General de Protección de Datos Personales, de acuerdo con la legislación actual vigente. Únicamente el personal de 3R Core Agencia de Marketing que necesite conocer dicha información para poder enviar información o responder a las solicitudes de los titulares de los datos personales podrá acceder y gestionar los datos personales proporcionados por los titulares. Estos datos personales serán tratados de forma justa y legal y no serán utilizados para fines incompatibles con los especificados."
+      },
+      "s5": {
+        "title": "Ejercicio de Derechos",
+        "text": "Puedes ejercer tus derechos de información, acceso, actualización, rectificación y supresión de datos personales mediante:",
+        "physical": "Vía Presencial",
+        "digital": "Vía Digital",
+        "subject": "Asunto: Protección de Datos Personales"
+      },
+      "s6": {
+        "title": "Calidad de los Datos Personales",
+        "text": "La información requerida a los titulares de datos personales consiste en datos básicos de contacto, y son pertinentes, adecuados y proporcionados en relación con la finalidad para la cual se recopilan. Los datos personales a los que tendrá acceso 3R Core Agencia de Marketing serán los que los titulares proporcionen voluntariamente en los formularios correspondientes. Para que los titulares de los datos personales tengan conocimiento de la presente Política de Privacidad, 3R Core Agencia de Marketing brinda los recursos técnicos necesarios. Es importante que los datos personales proporcionados sean veraces y estén actualizados, de lo contrario, serán cancelados. Los datos personales serán eliminados cuando ya no sean necesarios para la finalidad para la cual fueron recopilados, pero se mantendrán por un período indefinido."
+      }
+    }
+  }
+  ,
+  "FeaturesSection": {
+    "mainTitle": "Trabajemos juntos para lograr tus objetivos",
+    "committed": {
+      "title": "COMPROMETIDOS",
+      "description": "Mantenemos una comunicación constante que nos permite tener claros los puntos que requieres, y atenderlos lo más pronto posible."
+    },
+    "creative": {
+      "title": "CREATIVOS",
+      "description": "Convertimos la innovación en eficiencia. Presentamos propuestas que marcan la diferencia y nos comprometemos no solo a alcanzar tus metas, sino a sobrepasarlas."
+    },
+    "professional": {
+      "title": "PROFESIONALES",
+      "description": "Nos involucramos de principio a fin, brindando una pre-producción meticulosa, asistencia técnica permanente y un análisis profundo de métricas al concluir para asegurar que los objetivos se cumplan."
+    }
+  }
+  ,
+  "ServiceAbout": {
+    "title": "Te brindamos ideas creativas",
+    "subtitle1": "que aseguran resultados exitosos",
+    "subtitle2": "para tus proyectos"
+  }
+}

@@ -5,9 +5,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+import { useTranslations } from "next-intl"
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function ScrollVideo() {
+export default function HeroHome() {
+
+  const t = useTranslations('HeroHome');
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]); 
@@ -15,8 +20,14 @@ export default function ScrollVideo() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
 
   const frameCount = 194;
-  const palabrasAbajo = ["Impacto", "Valores", "Experiencia", "Identidad", "Profesionalismo", "Conexión"];
-  const palabrasArriba = ["Creatividad", "Diseño", "Estrategia", "Digital", "Futuro", "Innovación"];
+  const palabrasAbajo = [
+    t('impact'),
+    t('values'),
+    t('experience'),
+    t('identity'),
+    t('professionalism'),
+    t('connection')
+  ];
 
   useGSAP(() => {
     const canvas = canvasRef.current;
@@ -123,7 +134,7 @@ export default function ScrollVideo() {
     </div>
 
       <div className="absolute bottom-30 left-20 z-20 text-white pointer-events-none">
-        <h2 className="text-3xl md:text-4xl font-light">La Agencia <span className="italic font-serif">es</span></h2>
+        <h2 className="text-3xl md:text-4xl font-light">{t('agency')} <span className="italic font-serif">{t('s')}</span></h2>
         <div className="relative h-20 w-[500px]">
           {palabrasAbajo.map((h2, i) => (
             <h2 key={`bot-${i}`} className="word-bottom absolute top-0 left-0 text-4xl md:text-6xl font-m tracking-tighter opacity-0 translate-y-10 transition-colors">
@@ -134,11 +145,11 @@ export default function ScrollVideo() {
       </div>
 
       <div className="absolute top-40 right-20 z-20 text-white text-right pointer-events-none">
-        <h2 className="text-3xl md:text-4xl font-light ">Agencia <span className="italic font-serif">de</span></h2>
+        <h2 className="text-3xl md:text-4xl font-light ">{t('agency2')}  <span className="italic font-serif">{t('d')}</span></h2>
         <div className="relative h-30 w-[500px] ml-auto">
           <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
               bg-clip-text text-transparent font-m tracking-tighter leading-tight">
-            Marketing Digital
+            {t('marketing')}
           </h1>
         </div>
       </div>

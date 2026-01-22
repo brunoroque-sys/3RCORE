@@ -4,18 +4,41 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const foundersData = [
-  { id: 'alejandro', name: 'ALEJANDRO', fullName: 'Alejandro Roque', role: 'CEO 3R Core', image: '/images/Fundadores/alejandro.webp' },
-  { id: 'bruno', name: 'BRUNO', fullName: 'Bruno Roque', role: 'Director de Marketing', image: '/images/Fundadores/Bruno.webp' },
-  { id: 'piero', name: 'PIERO', fullName: 'Piero Roque', role: 'Director de SEO', image: '/images/Fundadores/Piero.webp' },
-];
 
 const Founders = () => {
+  
+const t = useTranslations('FoundersSection');
+
+const foundersData = [
+    { 
+      id: 'alejandro', 
+      name: 'ALEJANDRO', 
+      fullName: 'Alejandro Roque', 
+      role: t('roles.ceo'), // <--- Usa la traducción aquí
+      image: '/images/Fundadores/alejandro.webp' 
+    },
+    { 
+      id: 'bruno', 
+      name: 'BRUNO', 
+      fullName: 'Bruno Roque', 
+      role: t('roles.marketingDirector'), 
+      image: '/images/Fundadores/Bruno.webp' 
+    },
+    { 
+      id: 'piero', 
+      name: 'PIERO', 
+      fullName: 'Piero Roque', 
+      role: t('roles.seoDirector'), 
+      image: '/images/Fundadores/Piero.webp' 
+    },
+  ];
+  
   const [index, setIndex] = useState(0);
   const selected = foundersData[index];
   
@@ -109,7 +132,7 @@ const Founders = () => {
             </div>
             <div className="h-[1px] w-12 bg-white"></div>
             <span className="text-white uppercase tracking-[0.3em] text-[10px] font-bold">
-              Fundadores
+              {t('badge')}
             </span>
           </div>
 
@@ -130,7 +153,7 @@ const Founders = () => {
           </div>
 
           <p className="text-gray-500 text-sm max-w-xs italic pt-4 leading-relaxed">
-            Explora la visión de nuestro equipo directivo a través de esta presentación interactiva.
+            {t('description')}
           </p>
         </div>
 

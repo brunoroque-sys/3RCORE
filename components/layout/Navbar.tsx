@@ -1,10 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
+import { Link, usePathname } from "@/i18n/routing"
+import { useTranslations } from "next-intl"
+
 const Navbar = () => {
+
+   const t = useTranslations('Navbar');
+  const pathname = usePathname();
+
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -40,11 +46,11 @@ const Navbar = () => {
   }, [isOpen]);
 
   const links = [
-    { name: "INICIO", href: "/" }, 
-    { name: "NOSOTROS", href: "/nosotros" },
-    { name: "SERVICIOS", href: "/servicios" },
-    { name: "BLOGS", href: "https://3rcore.com/blog" },
-    { name: "CONTACTO", href: "/contacto" },
+    { name: t('nav.home'), href: "/" }, 
+    { name: t('nav.about us') ,href: "/nosotros" },
+    { name: t('nav.services'), href: "/servicios" },
+    { name: t('nav.blogs'), href: "https://3rcore.com/blog" },
+    { name: t('nav.contact'), href: "/contacto" },
 
   ];
 
@@ -81,14 +87,29 @@ const Navbar = () => {
             </div>
 
             <div className={`hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm tracking-wide transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
-              <span className="text-white">Tu Éxito </span>
-              <span className="font-bold ml-2 text-white">NUESTRO ÉXITO</span>
+              <span className="text-white">{t('regular')}</span>
+              <span className="font-bold ml-2 text-white">{t('bold')}</span>
             </div>
 
             <div className="flex items-center gap-6 relative z-[60]">
               <div className={`hidden sm:flex items-center gap-4 text-xs font-bold tracking-widest transition-opacity duration-300 ${isOpen ? 'opacity-0 delay-0' : 'opacity-100 delay-300'} text-gray-400`}>
-                <button className="hover:text-[#E91E63] transition-colors cursor-pointer">ES</button>
-                <button className="hover:text-[#E91E63] transition-colors cursor-pointer">EN</button>
+                {/* Versión Español */}
+                <Link 
+                  href={pathname} 
+                  locale="es" 
+                  className="hover:text-[#E91E63] transition-colors cursor-pointer uppercase"
+                >
+                  ES
+                </Link>
+
+                {/* Versión Inglés */}
+                <Link 
+                  href={pathname} 
+                  locale="en" 
+                  className="hover:text-[#E91E63] transition-colors cursor-pointer uppercase"
+                >
+                  EN
+                </Link>
               </div>
 
               <button

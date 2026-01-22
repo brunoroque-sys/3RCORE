@@ -7,8 +7,10 @@ import NewsSection from '@/components/layout/home/NewsSection';
 import MosaicoParallax from '@/components/layout/home/imagesParallaxSection';
 import ContactForm from '@/components/layout/ContactForm';
 import ProjectsSection from '@/components/layout/home/ProjectsSection';
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
+
   return (
     <main >
       <div id="hero">

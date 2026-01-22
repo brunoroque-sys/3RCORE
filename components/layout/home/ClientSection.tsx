@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Ubuntu } from 'next/font/google';
+import { useTranslations } from "next-intl"
 
 interface Client {
   name: string;
@@ -38,6 +39,8 @@ const clients: Client[] = [
 ];
 
 export default function ClientsSection() {
+
+  const t = useTranslations('ClientsSection');
   return (
     <section className="py-10 min-h-screen flex items-center justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto w-full px-6">
@@ -62,10 +65,10 @@ export default function ClientsSection() {
               bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
               bg-clip-text text-transparent font-m
             `}>
-              Nuestros Clientes
+              {t('title')}
             </h2>
             <p className={`text-white text-s md:text-m max-w-[300px] ${ubuntu.className} mt-3 `}>
-              Empresas que confían en nuestra visión y resultados.
+             {t('description')}
             </p>
           </div>
 

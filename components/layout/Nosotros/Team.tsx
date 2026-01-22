@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(ScrollTrigger);
 const members = [
@@ -33,6 +34,8 @@ const members = [
 ];
 
 export default function Team() {
+  const t = useTranslations('OurTeamSection');
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -101,9 +104,9 @@ useEffect(() => {
 return (
     <section ref={sectionRef} className="relative flex flex-col md:flex-row h-screen w-full overflow-hidden text-white">
       <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-6 md:px-16 pt-30 md:pt-0 z-20">
-        <h2 className="text-5xl italic mb-6 text-white font-serif">Nuestro Equipo</h2>
+        <h2 className="text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
         <p className="text-m max-w-xs leading-relaxed">
-          Conoce a las personas que hacen posible nuestro éxito.
+          { t('description')}
         </p>
       </div>
 
