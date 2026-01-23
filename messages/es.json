@@ -14,17 +14,62 @@
     "marketing":"Marketing Digital"
   }
   ,
-  "TeamSection": 
-  {
+  "TeamSection": {
     "title": "Somos un equipo",
     "subtitle": "Profesional y Nativo Digital",
     "description": "En 3R CORE AGENCIA DE MARKETING Somos un equipo con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la experiencia, la Visión y la tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresas"
   }
   ,
-  "Hovers":
-  {
-    "ver": "/images/tituloCarru/Servicios.svg",
-    "hor": "/images/tituloCarru/serviciosHorizontal.svg"
+  "projects": {
+    "branding": {
+      "bg": "/images/para/parallax5.webp",
+      "title": "/images/tituloCarru/Branding.svg",
+      "titleMobile": "/images/tituloCarru/brandingH.svg",
+      "slides": {
+        "sb1": "/images/para/parallax5.webp",
+        "sb2": "/images/para/parallax8.webp",
+        "sb3": "/images/para/parallax22.webp",
+        "sb4": "/images/para/parallax17.webp",
+        "sb5": "/images/para/parallax4.webp"
+      }
+    },
+    "socialmedia": {
+      "bg": "/images/tituloCarru/socialCarrubg.webp",
+      "title": "/images/tituloCarru/SocialMedia.svg",
+      "titleMobile": "/images/tituloCarru/socialMediaHorizontal.svg",
+      "slides": {
+        "sm1": "/images/tituloCarru/socialCarrubg.webp",
+        "sm2": "/images/tituloCarru/socialCarru1.webp",
+        "sm3": "/images/tituloCarru/socialCarru2.webp",
+        "sm4": "/images/tituloCarru/socialCarru3.webp"
+      }
+    },
+    "seosem": {
+      "bg": "/images/tituloCarru/seoCarrubg.webp",
+      "title": "/images/tituloCarru/SeoSem.svg",
+      "titleMobile": "/images/tituloCarru/seoSemHorizontal.svg",
+      "slides": {
+        "sss1": "/images/tituloCarru/seoCarrubg.webp",
+        "sss2": "/images/tituloCarru/seoCarru1.webp",
+        "sss3": "/images/tituloCarru/seoCarru2.webp",
+        "sss4": "/images/tituloCarru/seoCarru3.webp"
+      }
+    },
+    "webdesign": {
+      "bg": "/images/tituloCarru/webCarrubg.webp",
+      "title": "/images/tituloCarru/WebDesign.svg",
+      "titleMobile": "/images/tituloCarru/WebDesignHorizontal.svg",
+      "slides": {
+        "sw1": "/images/tituloCarru/webCarrubg.webp",
+        "sw2": "/images/tituloCarru/webCarru1.webp",
+        "sw3": "/images/tituloCarru/webCarru2.webp",
+        "sw4": "/images/tituloCarru/webCarru3.webp"
+      }
+    }
+  },
+  "Hovers": {
+    "ver": "/images/tituloCarru/ServiciosEn.svg",
+    "hor": "/images/tituloCarru/serviciosEnHorizontal.svg"
   }
   ,
   "CTA": {
@@ -109,6 +154,10 @@
   ,
   "BrandingHero": {
     "slogan": "Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta."
+  }
+  ,
+  "SocialMediaHero": {
+    "slogan": "Ofrecemos una estrategia integrada de Content Marketing. Diseñamos y creamos contenido relevante y creativo que permite el desarrollo de un vínculo con tu público objetivo. Como agencia de marketing digital, nuestro compromiso consiste en aprovechar las ventajas de las redes sociales para potenciar el valor que ofrece tu marca."
   }
   ,
   "Footer": {

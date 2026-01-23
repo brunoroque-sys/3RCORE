@@ -19,6 +19,7 @@ interface Project {
 export default function ProjectsSection() {
 
   const t = useTranslations('Hovers');
+  const p = useTranslations('projects');
 
 const [isMobile, setIsMobile] = useState(false);
   const [activeColumn, setActiveColumn] = useState<string | null>(null);
@@ -38,54 +39,55 @@ const [isMobile, setIsMobile] = useState(false);
   const projects = [
     {
       id: 'branding',
-      bg: '/images/para/parallax5.webp',
-      title: '/images/tituloCarru/Branding.svg',
-      titleMobile: '/images/tituloCarru/brandingH.svg',
+      bg: p('branding.bg'),
+      title: p('branding.title'),
+      titleMobile: p('branding.titleMobile'),
       slides: [
-        '/images/para/parallax5.webp',
-        '/images/para/parallax8.webp',
-        '/images/para/parallax22.webp',
-        '/images/para/parallax17.webp',
-        '/images/para/parallax4.webp',
+        p('branding.slides.sb1'),
+        p('branding.slides.sb2'),
+        p('branding.slides.sb3'),
+        p('branding.slides.sb4'),
+        p('branding.slides.sb5')
       ]
     },
     {
       id: 'socialmedia',
-      bg: '/images/tituloCarru/socialCarrubg.webp',
-      title: 'images/tituloCarru/SocialMedia.svg',
-      titleMobile: 'images/tituloCarru/socialMediaHorizontal.svg',
+      bg: p('socialmedia.bg'),
+      title: p('socialmedia.title'),
+      titleMobile: p('socialmedia.titleMobile'),
       slides: [
-        '/images/tituloCarru/socialCarrubg.webp',
-        '/images/tituloCarru/socialCarru1.webp',
-        '/images/tituloCarru/socialCarru2.webp',
-        '/images/tituloCarru/socialCarru3.webp'
+        p('socialmedia.slides.sm1'),
+        p('socialmedia.slides.sm2'),
+        p('socialmedia.slides.sm3'),
+        p('socialmedia.slides.sm4')
       ]
     },
     {
       id: 'seosem',
-      bg: 'images/tituloCarru/seoCarrubg.webp',
-      title: 'images/tituloCarru/SeoSem.svg',
-      titleMobile: 'images/tituloCarru/seoSemHorizontal.svg',
+      bg: p('seosem.bg'),
+      title: p('seosem.title'),
+      titleMobile: p('seosem.titleMobile'),
       slides: [
-        'images/tituloCarru/seoCarrubg.webp',
-        'images/tituloCarru/seoCarru1.webp',
-        'images/tituloCarru/seoCarru2.webp',
-        'images/tituloCarru/seoCarru3.webp'
+        p('seosem.slides.sss1'),
+        p('seosem.slides.sss2'),
+        p('seosem.slides.sss3'),
+        p('seosem.slides.sss4')
       ]
     },
     {
       id: 'webdesign',
-      bg: 'images/tituloCarru/webCarrubg.webp',
-      title: 'images/tituloCarru/WebDesign.svg',
-      titleMobile: 'images/tituloCarru/WebDesignHorizontal.svg',
+      bg: p('webdesign.bg'),
+      title: p('webdesign.title'),
+      titleMobile: p('webdesign.titleMobile'),
       slides: [
-        'images/tituloCarru/webCarrubg.webp',
-        'images/tituloCarru/webCarru1.webp',
-        'images/tituloCarru/webCarru2.webp',
-        'images/tituloCarru/webCarru3.webp'
+        p('webdesign.slides.sw1'),
+        p('webdesign.slides.sw2'),
+        p('webdesign.slides.sw3'),
+        p('webdesign.slides.sw4')
       ]
     }
   ];
+
 
   const startCarousel = (projectId: string, slides: string[]) => {
 

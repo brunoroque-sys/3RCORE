@@ -65,8 +65,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/servicios/social-media" 
-                  onClick={() => handleScrollTop("/servicios/social-media")}
+                  href="/servicios/socialmedia" 
+                  onClick={() => handleScrollTop("/servicios/socialmedia")}
                   className="hover:text-white transition-colors"
                 >
                   Social Media

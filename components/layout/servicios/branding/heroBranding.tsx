@@ -19,17 +19,14 @@ export default function HeroBranding() {
 
   useEffect(() => {
     const playAnimation = () => {
-      // Timeline para las animaciones
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      // Establecer estados iniciales
       gsap.set(pinkBgRef.current, { scaleX: 0, transformOrigin: 'left center' });
       gsap.set(andTextRef.current, { clipPath: 'inset(0 100% 0 0)' });
       gsap.set(brTextRef.current, { opacity: 0, y: -20 });
       gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
       gsap.set(sloganRef.current, { opacity: 0, y: 20 });
 
-      // Secuencia de animaciones
       tl.to(pinkBgRef.current, {
         scaleX: 1,
         duration: 0.8,
@@ -58,7 +55,6 @@ export default function HeroBranding() {
       return tl;
     };
 
-    // Configurar Intersection Observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

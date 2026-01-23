@@ -171,7 +171,7 @@ const StatsAndCTA = () => {
                 relative inline-flex items-center justify-center px-10 py-4 
                 overflow-hidden text-xs font-bold uppercase tracking-[0.2em] text-white 
                 border border-white/30 rounded-[15px] transition-all duration-500 
-                group/btn hover:border-transparent hover:scale-105 cursor-pointer
+                group/btn hover:border-transparent hover:scale-105
               `}
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-300 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>

@@ -13,7 +13,8 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { getMessages } from "next-intl/server";
 
- 
+ import { SmoothCursor } from "@/components/ui/smooth-cursor"
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"], 
@@ -37,7 +38,7 @@ export default async function RootLayout({children,params}:{children: React.Reac
 
   return (
     <html >
-      <body className={`${poppins.className} antialiased bg-black text-white`}>
+      <body className={`${poppins.className} antialiased bg-black text-white cursor-none`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           
           <SmoothScrolling>
@@ -52,7 +53,7 @@ export default async function RootLayout({children,params}:{children: React.Reac
           <CookieBanner />
           <ScrollContactBtn />
           <WhatsAppBtn />
-
+          <SmoothCursor />
         </NextIntlClientProvider>
       </body>
     </html>

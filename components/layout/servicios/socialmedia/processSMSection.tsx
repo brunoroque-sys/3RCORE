@@ -1,0 +1,134 @@
+'use client';
+import { Trirong } from 'next/font/google';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const trirong = Trirong({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "700"],
+});
+
+const ProcessSMSection = () => {
+  const sectionRef = useRef(null);
+  const headerRef = useRef(null);
+  const subheaderRef = useRef(null);
+  const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const imageContainerRef = useRef(null);
+  const imageRef = useRef(null);
+
+  const steps = [
+    { id: '01.', title: 'Investigación' },
+    { id: '02.', title: 'Estrategia' },
+    { id: '03.', title: 'Armado de grilla ' },
+    { id: '04.', title: 'Diseño contenido' },
+    { id: '05.', title: 'Publicación' },
+    { id: '06.', title: 'Gestión y análisis' },
+  ];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const masterTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+        }
+      });
+
+      masterTl.from(headerRef.current, {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power4.out"
+      })
+      .from(subheaderRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out"
+      }, "-=0.6");
+
+      stepsRef.current.forEach((step, index) => {
+        if (!step) return;
+        const line = step.querySelector('.border-b');
+        const textElements = step.querySelectorAll('span, h3');
+
+        masterTl.fromTo(line, 
+          { scaleX: 0, transformOrigin: "left center" }, 
+          { scaleX: 1, duration: 0.6, ease: "power2.inOut" },
+          `-=${index === 0 ? 0.2 : 0.4}` 
+        )
+        .from(textElements, {
+          y: 15,
+          opacity: 0,
+          duration: 0.4,
+          stagger: 0.1,
+          ease: "power2.out"
+        }, "-=0.4");
+      });
+
+      gsap.fromTo(imageRef.current,
+        { clipPath: 'inset(0% 0% 100% 0%)' }, 
+        { 
+          clipPath: 'inset(0% 0% 0% 0%)', 
+          duration: 1.5, 
+          ease: "power4.inOut",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 80%",
+          }
+        }
+      );
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="w-full text-white py-24 font-sans flex flex-col items-center overflow-hidden">
+      <div className="max-w-5xl w-full px-6 space-y-24">
+        
+        <div className="text-center space-y-8">
+          <h2 ref={headerRef} className="italic text-2xl md:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
+            Nuestro mantenemos actualizados
+          </h2>
+          <p ref={subheaderRef} className="text-xl md:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
+            vamos con las tendencias actuales y audiencia que tu marca necesita
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 pb-10">
+          {steps.map((step, index) => (
+            <div 
+              key={step.id} 
+              ref={(el) => { stepsRef.current[index] = el; }}
+              className="flex flex-col"
+            >
+              <span className={`block text-[#A21F8A] text-4xl font-bold mb-6 pb-4 ${trirong.className} border-b border-gray-600`}>
+                {step.id}
+              </span>
+              <h3 className="text-lg font-semibold tracking-[0.07em]">
+                {step.title}
+              </h3>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div ref={imageContainerRef} className="w-full h-[60vh] mt-24 overflow-hidden bg-black">
+        <img 
+          ref={imageRef}
+          src="/images/branding/frandoVideo.webp" 
+          alt="Proceso creativo"
+          className="w-full h-full object-cover" 
+        />
+      </div>
+    </section>
+  );
+};
+
+export default ProcessSMSection;
