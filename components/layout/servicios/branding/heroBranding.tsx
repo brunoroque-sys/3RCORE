@@ -99,10 +99,10 @@ export default function HeroBranding() {
         <div className="absolute inset-0 bg-[#130218] via-transparent to-transparent opacity-80"></div>
       </div>
 
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-10">
         <div className="flex flex-col items-center">
           
-          <div className='w-[35%]'>
+          <div className='w-auto md:w-[35%]'>
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
@@ -127,7 +127,7 @@ export default function HeroBranding() {
 
           <div 
             ref={lineRef}
-            className="w-200 h-[1px] bg-white/50 my-8"
+            className="w-full md:w-200 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 

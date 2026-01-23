@@ -70,10 +70,10 @@ const ServiceAbout = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full py-24 px-4 flex justify-center items-center overflow-hidden">
+    <section ref={containerRef} className="w-full py-24 px-10 flex justify-center items-center overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         
-        <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-5xl mb-6 tracking-wide`}>
+        <h2 className={`team-title ${playfair.className} text-white text-4xl md:text-5xl mb-6 tracking-wide`}>
           {/* Reemplazo de titleText por t('title') */}
           {t('title').split("").map((char, index) => (
             <span 
@@ -86,10 +86,10 @@ const ServiceAbout = () => {
           ))}
         </h2>
 
-        <h3 className={`team-subtitle ${montserrat.className} bg-gradient-to-r from-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent text-3xl md:text-5xl font-medium mb-2 tracking-tight will-change-transform`}>
+        <h3 className={`team-subtitle ${montserrat.className} bg-gradient-to-r from-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent text-2xl md:text-5xl font-medium mb-2 tracking-tight will-change-transform`}>
           {t('subtitle1')}
         </h3>
-        <h3 className={`team-subtitle ${montserrat.className} bg-gradient-to-r from-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent text-3xl md:text-5xl font-medium mb-10 tracking-tight will-change-transform`}>
+        <h3 className={`team-subtitle ${montserrat.className} bg-gradient-to-r from-[#E91E63] to-[#9C27B0] bg-clip-text text-transparent text-2xl md:text-5xl font-medium mb-10 tracking-tight will-change-transform`}>
           {t('subtitle2')}
         </h3>
       </div>

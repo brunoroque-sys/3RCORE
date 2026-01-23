@@ -72,7 +72,7 @@ const features = [
   return (
     <section 
       ref={containerRef}
-      className="relative w-full py-24 px-6 text-white overflow-hidden"
+      className="relative w-full py-12 px-10   text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center mb-20">

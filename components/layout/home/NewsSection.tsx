@@ -165,9 +165,9 @@ const NewsSection = () => {
           href="https://3rcore.com/blog/"
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] cursor-pointer text-white"
+          className="group relative inline-flex items-center justify-center px-8 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] cursor-pointer text-white isolation-auto"
         >
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-full group-hover:translate-x-0" />
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-[101%] group-hover:translate-x-0" />
           <div className="relative z-10 transition-colors duration-300">
             {t("viewAllBlogs")}
           </div>

@@ -103,8 +103,8 @@ useEffect(() => {
 
 return (
     <section ref={sectionRef} className="relative flex flex-col md:flex-row h-screen w-full overflow-hidden text-white">
-      <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-6 md:px-16 pt-30 md:pt-0 z-20">
-        <h2 className="text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
+      <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-10 md:px-16 pt-30 md:pt-0 z-20">
+        <h2 className="text-4xl md:text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
         <p className="text-m max-w-xs leading-relaxed">
           { t('description')}
         </p>
