@@ -23,7 +23,7 @@ const ScrollNavBtn = () => {
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const targetId = isAtBottom ? 'hero' : 'contacto';
+    const targetId =  'contacto';
     const targetSection = document.getElementById(targetId);
     
     if (targetSection) {
@@ -62,19 +62,6 @@ const ScrollNavBtn = () => {
           <line x1="8" y1="13" x2="14" y2="13" />
         </svg>
 
-        {/* ICONO DE FLECHA SUBIR (Aparece cuando estamos en contacto) */}
-        <svg 
-          className={`absolute transition-all duration-500 transform ${isAtBottom ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-50 -rotate-90'}`}
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2.5" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-        >
-          <path d="M18 15l-6-6-6 6" />
-          <path d="M18 9l-6-6-6 6" />
-        </svg>
       </div>
     </a>
   );

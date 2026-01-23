@@ -14,15 +14,11 @@ import {routing} from '@/i18n/routing';
 import { getMessages } from "next-intl/server";
 
  
-type Props = {
-  children: React.ReactNode;
-  params: Promise<{locale: string}>;
-};
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"], 
   variable: "--font-poppins", 
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -44,16 +40,15 @@ export default async function RootLayout({children,params}:{children: React.Reac
       <body className={`${poppins.className} antialiased bg-black text-white`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           
-          <Navbar />
-          
-          <main className="min-h-screen bg-[#130218]">
-            <SmoothScrolling>
+          <SmoothScrolling>
+            <Navbar />
+            <main className="min-h-screen bg-[#130218] flex flex-col">
               <div className="noise-global relative z-10" />
               {children}
-            </SmoothScrolling>
-          </main>
+            </main>
+            <Footer />
+          </SmoothScrolling>
           
-          <Footer />
           <CookieBanner />
           <ScrollContactBtn />
           <WhatsAppBtn />

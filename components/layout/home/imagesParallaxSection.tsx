@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
-import Lenis from '@studio-freight/react-lenis';
+import Lenis from 'lenis/react';
 import Image from 'next/image';
 
 const ParallaxRow = ({ images, x, className }: { images: string[], x: MotionValue<number>, className?: string }) => {
