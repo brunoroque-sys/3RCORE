@@ -78,7 +78,7 @@ const Footer = () => {
                   onClick={() => handleScrollTop("/servicios/seo-sem")}
                   className="hover:text-white transition-colors"
                 >
-                  SEO / SEM
+                  Google SEO / SEM
                 </Link>
               </li>
               <li>
@@ -87,7 +87,7 @@ const Footer = () => {
                   onClick={() => handleScrollTop("/servicios/web-design")}
                   className="hover:text-white transition-colors"
                 >
-                  Web Design
+                  Web Development
                 </Link>
               </li>
             </ul>

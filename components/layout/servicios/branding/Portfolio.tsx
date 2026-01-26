@@ -7,6 +7,7 @@ import type { Swiper as SwiperType } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import { useTranslations } from 'next-intl';
 
 interface SliderProps {
   images: string[];
@@ -66,6 +67,10 @@ return (
 };
 
 const Portfolio: React.FC = () => {
+
+  const t = useTranslations('BrandingHero');
+  
+
   const projectData: Record<string, string[]> = {
     cafe: ["/images/branding/Proyectos/Cafe.webp", "/images/branding/Proyectos/Cafe1.webp","/images/branding/Proyectos/Cafe2.webp","/images/branding/Proyectos/Cafe3.webp"],
     manelu: ["/images/branding/Proyectos/Meno.webp", "/images/branding/Proyectos/Meno1.webp","/images/branding/Proyectos/Meno2.webp","/images/branding/Proyectos/Meno3.webp"],
@@ -79,7 +84,7 @@ return (
       <div className="max-w-7xl mx-auto w-full">
         <header className="mb-12">
           <h2 className="text-white text-center text-lg tracking-[0.2em] uppercase font-light">
-            Algunos de nuestros proyectos
+            { t('titPro')}
           </h2>
           <div className="w-[60%] h-[1px] bg-white/80 mx-auto mt-4"></div>
         </header>

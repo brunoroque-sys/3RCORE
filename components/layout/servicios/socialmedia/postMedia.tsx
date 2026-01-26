@@ -1,0 +1,16 @@
+import Image from 'next/image';
+
+export default function PostMedia() {
+  return (
+        <section className="relative h-[70vh] w-full overflow-hidden">
+          <Image
+            src="/images/social/fondoCorre.webp"
+            alt="Sobre nosotros"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </section>
+  );
+}

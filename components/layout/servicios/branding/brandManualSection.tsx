@@ -2,12 +2,16 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const BrandManualSection = () => {
 
-    const phoneNumber = "51986889147";
+  const t = useTranslations('BrandingHero');
+  
+
+  const phoneNumber = "51986889147";
   const message = "Hola vengo de la página web, quiero agendar una reunión.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -55,7 +59,7 @@ const BrandManualSection = () => {
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
           <h2 className="text-sm md:text-base tracking-[0.3em] uppercase font-light text-white">
-            Manual de Marca
+             { t('maTitle')}
           </h2>
           <div 
             ref={lineRef}
@@ -65,12 +69,11 @@ const BrandManualSection = () => {
 
         <div ref={contentRef} className="space-y-8">
           <p className="text-lg md:text-xl leading-relaxed text-white max-w-3xl mx-auto font-light">
-            Es una parte fundamental en el branding de cualquier entidad que se va a lanzar y posicionar en el mercado. 
-            Su objetivo es que la identidad visual sea consistente a través del tiempo y así crear una marca sólida.
+            { t('maParraf')}
           </p>
           
           <p className="text-lg md:text-xl font-medium italic" >
-            ¿Necesitas ayuda con el tuyo?
+             { t('maPreg')}
           </p>
 
           <div className="pt-4">
@@ -81,7 +84,7 @@ const BrandManualSection = () => {
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
               
               <span className="relative z-10">
-                Contáctanos
+                 { t('mabot')}
               </span>
             </button>
           </div>

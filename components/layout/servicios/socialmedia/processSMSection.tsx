@@ -3,6 +3,7 @@ import { Trirong } from 'next/font/google';
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,6 +14,10 @@ const trirong = Trirong({
 });
 
 const ProcessSMSection = () => {
+
+  const t = useTranslations('SocialMediaHero');
+  
+
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
   const subheaderRef = useRef(null);
@@ -21,12 +26,12 @@ const ProcessSMSection = () => {
   const imageRef = useRef(null);
 
   const steps = [
-    { id: '01.', title: 'Investigación' },
-    { id: '02.', title: 'Estrategia' },
-    { id: '03.', title: 'Armado de grilla ' },
-    { id: '04.', title: 'Diseño contenido' },
-    { id: '05.', title: 'Publicación' },
-    { id: '06.', title: 'Gestión y análisis' },
+    { id: '01.', title: t('proIn') },
+    { id: '02.', title: t('proEs') },
+    { id: '03.', title: t('proAr') },
+    { id: '04.', title: t('proDi') },
+    { id: '05.', title: t('proPu') },
+    { id: '06.', title: t('proGes') },
   ];
 
   useEffect(() => {
@@ -94,10 +99,10 @@ const ProcessSMSection = () => {
         
         <div className="text-center space-y-8">
           <h2 ref={headerRef} className="italic text-2xl md:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
-            Nuestro mantenemos actualizados
+            {t('protitle')}
           </h2>
           <p ref={subheaderRef} className="text-xl md:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
-            vamos con las tendencias actuales y audiencia que tu marca necesita
+            {t('prosubtitle')}
           </p>
         </div>
 

@@ -2,12 +2,15 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SocialPost = () => {
 
-    const phoneNumber = "51986889147";
+  const t = useTranslations('SocialMediaHero');
+
+  const phoneNumber = "51986889147";
   const message = "Hola vengo de la página web, quiero agendar una reunión.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -55,7 +58,7 @@ const SocialPost = () => {
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
           <h2 className="text-sm md:text-lg tracking-[0.3em] uppercase font-light text-white">
-            Diseño de posts
+            { t('poTitle')}
           </h2>
           <div 
             ref={lineRef}
@@ -65,11 +68,11 @@ const SocialPost = () => {
 
         <div ref={contentRef} className="space-y-8">
           <p className="text-lg md:text-xl leading-relaxed text-white max-w-3xl mx-auto font-light">
-            Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.
+            { t('poParraf')}
           </p>
           
           <p className="text-lg md:text-xl font-medium italic" >
-             ¿Hablamos de tu próximo gran paso en redes?
+             { t('poPreg')}
           </p>
 
           <div className="pt-4">
@@ -80,7 +83,7 @@ const SocialPost = () => {
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
               
               <span className="relative z-10">
-                Contáctanos
+                { t('pobot')}
               </span>
             </button>
           </div>

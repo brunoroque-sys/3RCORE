@@ -153,11 +153,52 @@
   }
   ,
   "BrandingHero": {
-    "slogan": "Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta."
+    "slogan": "Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta.",
+
+    "protitle":"Nuestro proceso nos diferencia",
+    "prosubtitle":"devoción y rigor artístico con los que desarrollamos la esencia de tu marca",
+    "proIn":"Investigación",
+    "proEs":"Estrategia",
+    "proPla":"Planificación",
+    "proDi":"Diseño",
+    "proIm":"Implementación",
+    "proGes":"Gestión y resultado",
+
+    "maTitle":"Manual de Marca",
+    "maParraf":"Es una parte fundamental en el branding de cualquier entidad que se va a lanzar y posicionar en el mercado. Su objetivo es que la identidad visual sea consistente a través del tiempo y así crear una marca sólida.",
+    "maPreg":"¿Necesitas ayuda con el tuyo?",
+    "mabot":"Contáctanos",
+
+    "apMarca":"Aplicaciones de marca",
+    "apParraf":"Una vez concebida la marca, se genera el branding para productos y merch, obteniendo una imagen más profesional.",
+
+    "titPro":"Algunos de nuestros proyectos"
+
   }
   ,
   "SocialMediaHero": {
-    "slogan": "Ofrecemos una estrategia integrada de Content Marketing. Diseñamos y creamos contenido relevante y creativo que permite el desarrollo de un vínculo con tu público objetivo. Como agencia de marketing digital, nuestro compromiso consiste en aprovechar las ventajas de las redes sociales para potenciar el valor que ofrece tu marca."
+    "slogan": "Ofrecemos una estrategia integrada de Content Marketing. Diseñamos y creamos contenido relevante y creativo que permite el desarrollo de un vínculo con tu público objetivo. Como agencia de marketing digital, nuestro compromiso consiste en aprovechar las ventajas de las redes sociales para potenciar el valor que ofrece tu marca.",
+
+    "protitle":"Nuestro mantenemos actualizados",
+    "prosubtitle":"vamos con las tendencias actuales y audiencia que tu marca necesita",
+    "proIn":"Investigación",
+    "proEs":"Estrategia",
+    "proAr":"Armado de grilla",
+    "proDi":"Diseño contenido",
+    "proPu":"Publicación",
+    "proGes":"Gestión y análisis",
+
+    "poTitle":"Diseño de posts",
+    "poParraf":" Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.",
+    "poPreg":"¿Hablamos de tu próximo gran paso en redes?",
+    "pobot":"Contáctanos",
+
+    "griPost":"Grilla de Contenidos",
+    "griParraf":"Estrategias personalizadas que reflejan los valores únicos de la marca. Desarrollamos el copy para cada post, cubriendo diversos formatos de contenido.",
+
+    "titPost":"Algunos de nuestros proyectos"
+
+
   }
   ,
   "Footer": {

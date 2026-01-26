@@ -153,11 +153,52 @@
   }
   ,
   "BrandingHero": {
-    "slogan": "Your image says a lot about you, make sure it's the right one."
+    "slogan": "Your image says a lot about you; make sure it's the right one.",
+
+
+    "protitle": "Our process sets us apart",
+    "prosubtitle": "Artistic devotion and rigor used to develop the essence of your brand",
+    "proIn": "Research",
+    "proEs": "Strategy",
+    "proPla": "Planning",
+    "proDi": "Design",
+    "proIm": "Implementation",
+    "proGes": "Management & Results",
+
+
+    "maTitle": "Brand Guidelines",
+    "maParraf": "This is a fundamental part of branding for any entity launching and positioning itself in the market. Its goal is to ensure visual identity remains consistent over time, building a solid and cohesive brand.",
+    "maPreg": "Need help with yours?",
+    "mabot": "Contact us",
+
+
+    "apMarca": "Brand Applications",
+    "apParraf": "Once the brand is conceived, we develop branding for products and merchandise, achieving a more professional image.",
+
+    "titPro": "Some of our projects"
   }
   ,
   "SocialMediaHero": {
-    "slogan": "We offer an integrated Content Marketing strategy. We design and create relevant, creative content that builds a meaningful connection with your target audience. As a digital marketing agency, our commitment is to leverage the advantages of social media to amplify the value your brand offers."
+    "slogan": "We offer an integrated Content Marketing strategy. We design and create relevant, creative content that builds a meaningful connection with your target audience. As a digital marketing agency, our commitment is to leverage the advantages of social media to amplify the value your brand offers.",
+
+    "protitle": "We stay up to date",
+    "prosubtitle": "We align with current trends and the audience your brand needs",
+    "proIn": "Research",
+    "proEs": "Strategy",
+    "proAr": "Grid Layout",
+    "proDi": "Content Design",
+    "proPu": "Publishing",
+    "proGes": "Management & Analytics",
+
+    "poTitle": "Post Design",
+    "poParraf": "We put all our ingenuity and dedication into developing content that is not only eye-catching but also projects a solid brand from day one. For us, the key lies in how we tell your story through design.",
+    "poPreg": "Shall we discuss your next big step on social media?",
+    "pobot": "Contact us",
+
+    "griPost": "Content Grid",
+    "griParraf": "Customized strategies that reflect your brand's unique values. We develop the copy for every post, covering a wide range of content formats.",
+
+    "titPost": "Some of our projects"
   }
   ,
   "Footer": {

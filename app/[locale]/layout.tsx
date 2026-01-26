@@ -38,7 +38,8 @@ export default async function RootLayout({children,params}:{children: React.Reac
 
   return (
     <html >
-      <body className={`${poppins.className} antialiased bg-black text-white cursor-none`}>
+      <body className={`${poppins.className} antialiased bg-black text-white cursor-none `}>
+        <div className="noise-overlay" />
         <NextIntlClientProvider locale={locale} messages={messages}>
           
           <SmoothScrolling>
