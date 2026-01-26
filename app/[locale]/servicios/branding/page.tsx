@@ -20,9 +20,8 @@ export default function branding(){
 
   const [isLoading, setIsLoading] = useState(true);
 
-  // Opcional: Timeout de seguridad por si la imagen falla
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 5000);
+    const timer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 

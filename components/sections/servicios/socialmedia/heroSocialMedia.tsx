@@ -5,7 +5,11 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 
-export default function HeroSocialMedia() {
+interface HeroBrandingProps {
+  onImageLoad: () => void; 
+}
+
+export default function HeroSocialMedia({ onImageLoad }: HeroBrandingProps) {
 
   const t = useTranslations('SocialMediaHero');
   
