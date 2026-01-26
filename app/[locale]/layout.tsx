@@ -38,7 +38,7 @@ export default async function RootLayout({children,params}:{children: React.Reac
 
   return (
     <html >
-      <body className={`${poppins.className} antialiased bg-black text-white cursor-none `}>
+      <body className={`${poppins.className}  bg-black text-white `}>
         <div className="noise-overlay" />
         <NextIntlClientProvider locale={locale} messages={messages}>
           
@@ -54,7 +54,6 @@ export default async function RootLayout({children,params}:{children: React.Reac
           <CookieBanner />
           <ScrollContactBtn />
           <WhatsAppBtn />
-          <SmoothCursor />
         </NextIntlClientProvider>
       </body>
     </html>

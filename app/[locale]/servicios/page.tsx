@@ -1,7 +1,7 @@
 import ContactForm from "@/components/layout/ContactForm";
-import FeaturesSection from "@/components/layout/servicios/featuresSection";
-import HeroServicios from "@/components/layout/servicios/heroServicios";
-import ServiceAbout from "@/components/layout/servicios/serviciesAbout";
+import FeaturesSection from "@/components/sections/servicios/featuresSection";
+import HeroServicios from "@/components/sections/servicios/heroServicios";
+import ServiceAbout from "@/components/sections/servicios/serviciesAbout";
 
 export default function Servicios() {
   return (

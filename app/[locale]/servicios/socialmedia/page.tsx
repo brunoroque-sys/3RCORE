@@ -1,12 +1,12 @@
 import ContactForm from "@/components/layout/ContactForm";
-import ClientSection from "@/components/layout/home/ClientSection";
-import MediaApplications from "@/components/layout/servicios/socialmedia/aplicationMediaSection";
-import HeroSocialMedia from "@/components/layout/servicios/socialmedia/heroSocialMedia";
-import PostMedia from "@/components/layout/servicios/socialmedia/postMedia";
-import ProcessSMSection from "@/components/layout/servicios/socialmedia/processSMSection";
-import SocialPortfolio from "@/components/layout/servicios/socialmedia/socialPortfolio";
-import SocialPost from "@/components/layout/servicios/socialmedia/socialPost";
-import { SocialShowSection } from "@/components/layout/servicios/socialmedia/socialShowSection";
+import ClientSection from "@/components/sections/home/ClientSection";
+import MediaApplications from "@/components/sections/servicios/socialmedia/aplicationMediaSection";
+import HeroSocialMedia from "@/components/sections/servicios/socialmedia/heroSocialMedia";
+import PostMedia from "@/components/sections/servicios/socialmedia/postMedia";
+import ProcessSMSection from "@/components/sections/servicios/socialmedia/processSMSection";
+import SocialPortfolio from "@/components/sections/servicios/socialmedia/socialPortfolio";
+import SocialPost from "@/components/sections/servicios/socialmedia/socialPost";
+import { SocialShowSection } from "@/components/sections/servicios/socialmedia/socialShowSection";
 
 
 export default function socialmedia(){

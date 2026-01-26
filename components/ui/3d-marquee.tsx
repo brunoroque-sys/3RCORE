@@ -9,7 +9,6 @@ export const ThreeDMarquee = ({
   images: string[];
   className?: string;
 }) => {
-  // Split the images array into 4 equal parts
   const chunkSize = Math.ceil(images.length / 4);
   const chunks = Array.from({ length: 4 }, (_, colIndex) => {
     const start = colIndex * chunkSize;
@@ -31,7 +30,7 @@ export const ThreeDMarquee = ({
             className="relative top-96 right-[74.5%] grid size-full origin-top-left grid-cols-4 gap-8 transform-3d"
           >
             {chunks.map((subarray, colIndex) => (
-              <motion.div
+              <motion.div 
                 animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
                 transition={{
                   duration: colIndex % 2 === 0 ? 10 : 15,
@@ -46,6 +45,10 @@ export const ThreeDMarquee = ({
                   <div className="relative" key={imageIndex + image}>
                     <GridLineHorizontal className="-top-4" offset="20px" />
                     <motion.img
+                      style={{ willChange: "transform" }}
+                      src={image}
+                      alt={`Image ${imageIndex + 1}`}
+                      loading="eager"
                       whileHover={{
                         y: -10,
                       }}
@@ -54,9 +57,7 @@ export const ThreeDMarquee = ({
                         ease: "easeInOut",
                       }}
                       key={imageIndex + image}
-                      src={image}
-                      alt={`Image ${imageIndex + 1}`}
-                      className="aspect-[970/700] rounded-lg object-cover  hover:shadow-2xl"
+                      className="aspect-[970/700] rounded-lg object-cover hover:shadow-2xl backface-hidden"
                       width={970}
                       height={700}
                     />

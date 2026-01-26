@@ -10,7 +10,6 @@ export const ThreeDMarqueeInvertido = ({
   images: string[];
   className?: string;
 }) => {
-  // Split the images array into 4 equal parts
   const chunkSize = Math.ceil(images.length / 4);
   const chunks = Array.from({ length: 4 }, (_, colIndex) => {
     const start = colIndex * chunkSize;
@@ -47,6 +46,8 @@ export const ThreeDMarqueeInvertido = ({
                   <div className="relative" key={imageIndex + image}>
                     <GridLineHorizontal className="-top-4" offset="20px" />
                     <motion.img
+                      style={{ willChange: "transform" }}
+                      loading="eager"
                       whileHover={{
                         y: -10,
                       }}
@@ -57,7 +58,7 @@ export const ThreeDMarqueeInvertido = ({
                       key={imageIndex + image}
                       src={image}
                       alt={`Image ${imageIndex + 1}`}
-                      className="aspect-[970/700] rounded-lg object-cover  hover:shadow-2xl"
+                      className="aspect-[970/700] rounded-lg object-cover hover:shadow-2xl backface-hidden"
                       width={970}
                       height={700}
                     />

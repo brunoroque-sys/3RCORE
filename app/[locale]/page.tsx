@@ -1,12 +1,12 @@
 
-import TeamSection from '@/components/layout/home/TeamSection'
-import StatsAndCTA from '@/components/layout/home/CTASection'
-import Hero from '@/components/layout/home/Hero'
-import ClientSection from '@/components/layout/home/ClientSection';
-import NewsSection from '@/components/layout/home/NewsSection';
-import MosaicoParallax from '@/components/layout/home/imagesParallaxSection';
+import TeamSection from '@/components/sections/home/TeamSection'
+import StatsAndCTA from '@/components/sections/home/CTASection'
+import Hero from '@/components/sections/home/Hero'
+import ClientSection from '@/components/sections/home/ClientSection';
+import NewsSection from '@/components/sections/home/NewsSection';
+import MosaicoParallax from '@/components/sections/home/imagesParallaxSection';
 import ContactForm from '@/components/layout/ContactForm';
-import ProjectsSection from '@/components/layout/home/ProjectsSection';
+import ProjectsSection from '@/components/sections/home/ProjectsSection';
 import {useTranslations} from 'next-intl';
 
 export default function Home() {

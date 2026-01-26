@@ -65,10 +65,6 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-* {
-  cursor: none !important;
-}
-
 @layer utilities {
   .noise-overlay {
     position: fixed;

@@ -1,13 +1,13 @@
 import ContactForm from "@/components/layout/ContactForm";
-import FeaturesSection from "@/components/layout/servicios/featuresSection";
-import HeroBranding from "@/components/layout/servicios/branding/heroBranding";
-import ClientSection from "@/components/layout/home/ClientSection";
-import ProcessSection from "@/components/layout/servicios/branding/processSection";
-import BrandManualSection from "@/components/layout/servicios/branding/brandManualSection";
-import { BrandShowSection } from "@/components/layout/servicios/branding/brandShowSection";
-import Portfolio from "@/components/layout/servicios/branding/Portfolio";
-import BrandApplications from "@/components/layout/servicios/branding/aplicationSection";
-import { SocialShowSection } from "@/components/layout/servicios/socialmedia/socialShowSection";
+import FeaturesSection from "@/components/sections/servicios/featuresSection";
+import HeroBranding from "@/components/sections/servicios/branding/heroBranding";
+import ClientSection from "@/components/sections/home/ClientSection";
+import ProcessSection from "@/components/sections/servicios/branding/processSection";
+import BrandManualSection from "@/components/sections/servicios/branding/brandManualSection";
+import { BrandShowSection } from "@/components/sections/servicios/branding/brandShowSection";
+import Portfolio from "@/components/sections/servicios/branding/Portfolio";
+import BrandApplications from "@/components/sections/servicios/branding/aplicationSection";
+import { SocialShowSection } from "@/components/sections/servicios/socialmedia/socialShowSection";
 
 export default function branding(){
   return(
