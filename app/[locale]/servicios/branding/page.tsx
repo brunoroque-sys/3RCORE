@@ -3,7 +3,7 @@
 import ContactForm from "@/components/layout/ContactForm";
 import FeaturesSection from "@/components/sections/servicios/featuresSection";
 import HeroBranding from "@/components/sections/servicios/branding/heroBranding";
-import ClientSection from "@/components/sections/home/ClientSection";
+import ClientSection from "@/components/layout/ClientSection";
 import ProcessSection from "@/components/sections/servicios/branding/processSection";
 import BrandManualSection from "@/components/sections/servicios/branding/brandManualSection";
 import { BrandShowSection } from "@/components/sections/servicios/branding/brandShowSection";

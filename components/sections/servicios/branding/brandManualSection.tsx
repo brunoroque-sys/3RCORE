@@ -54,7 +54,7 @@ const BrandManualSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="w-full text-white py-32 px-6 flex flex-col items-center text-center"
+      className="w-full text-white py-32 px-10 flex flex-col items-center text-center"
     >
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">

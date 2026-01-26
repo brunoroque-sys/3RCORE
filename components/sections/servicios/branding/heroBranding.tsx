@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 
 interface HeroBrandingProps {
-  onImageLoad: () => void; // Definimos que es una función que no devuelve nada
+  onImageLoad: () => void; 
 }
 export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
 

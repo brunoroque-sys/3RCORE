@@ -6,17 +6,15 @@ export default function SocialPortfolio() {
   const t = useTranslations('SocialMediaHero');
   
   return (
-    <main className="min-h-screen py-20 px-4">
+    <main className="min-h-screen py-20 px-10 lg:px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white text-center text-lg tracking-[0.3em] uppercase mb-12 opacity-80">
           { t('titPost')}
           <div className="w-[60%] h-[1px] bg-white/80 mx-auto mt-4"></div>
         </h2>
 
-        {/* Grid de 3 columnas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           
-          {/* Columna 1 */}
           <div className="grid gap-6">
             <PizzaCard 
               images={["/images/branding/Proyectos/Cafe.webp", "/images/branding/Proyectos/Cafe1.webp","/images/branding/Proyectos/Cafe2.webp"]} 
@@ -31,7 +29,6 @@ export default function SocialPortfolio() {
             />
           </div>
 
-          {/* Columna 2 */}
           <div className="grid gap-14">
             <PizzaCard 
               images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]} 
@@ -44,8 +41,6 @@ export default function SocialPortfolio() {
               className="aspect-square  grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
             />
           </div>
-
-          {/* Columna 3 */}
           <div className="grid gap-6">
             <PizzaCard 
               images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]}  

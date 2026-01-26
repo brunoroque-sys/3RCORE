@@ -95,7 +95,7 @@ const ProcessSMSection = () => {
 
   return (
     <section ref={sectionRef} className="w-full text-white py-24 font-sans flex flex-col items-center overflow-hidden">
-      <div className="max-w-5xl w-full px-6 space-y-24">
+      <div className="max-w-5xl w-full px-10 lg:px-6 space-y-24">
         
         <div className="text-center space-y-8">
           <h2 ref={headerRef} className="italic text-2xl md:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>

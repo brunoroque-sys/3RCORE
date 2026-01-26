@@ -1,7 +1,7 @@
 'use client';
 import ContactForm from "@/components/layout/ContactForm";
 import LoadingScreen from "@/components/layout/LoadingScreen";
-import ClientSection from "@/components/sections/home/ClientSection";
+import ClientSection from "@/components/layout/ClientSection";
 import MediaApplications from "@/components/sections/servicios/socialmedia/aplicationMediaSection";
 import HeroSocialMedia from "@/components/sections/servicios/socialmedia/heroSocialMedia";
 import PostMedia from "@/components/sections/servicios/socialmedia/postMedia";
