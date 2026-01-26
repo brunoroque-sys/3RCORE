@@ -57,7 +57,7 @@ export const ThreeDMarquee = ({
                         ease: "easeInOut",
                       }}
                       key={imageIndex + image}
-                      className="aspect-[970/700] rounded-lg object-cover hover:shadow-2xl backface-hidden"
+                      className="aspect-[970/700] rounded-lg object-cover hover:backface-hidden"
                       width={970}
                       height={700}
                     />

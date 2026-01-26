@@ -4,7 +4,7 @@ export default function PostMedia() {
   return (
         <section className="relative h-[70vh] w-full overflow-hidden">
           <Image
-            src="/images/social/fondoCorre.webp"
+            src="/images/social/fondoas.webp"
             alt="Sobre nosotros"
             fill
             priority

@@ -16,7 +16,7 @@ export default function socialmedia(){
     const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
-      const timer = setTimeout(() => setIsLoading(false), 3000);
+      const timer = setTimeout(() => setIsLoading(false), 100);
       return () => clearTimeout(timer);
     }, []);
   

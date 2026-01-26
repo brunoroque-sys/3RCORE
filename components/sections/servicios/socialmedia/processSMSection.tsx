@@ -124,7 +124,7 @@ const ProcessSMSection = () => {
         </div>
       </div>
 
-      <div ref={imageContainerRef} className="w-full h-[60vh] mt-24 overflow-hidden bg-black">
+      <div ref={imageContainerRef} className="w-full h-[60vh] mt-24 overflow-hidden ">
         <img 
           ref={imageRef}
           src="/images/branding/frandoVideo.webp" 
