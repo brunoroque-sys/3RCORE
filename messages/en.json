@@ -315,4 +315,8 @@
     "subtitle1": "that ensure successful results",
     "subtitle2": "for your projects"
   }
+  ,
+  "preload":{
+    "text":"Loading Experience..."
+  }
 }

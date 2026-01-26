@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 
 const Footer = () => {
 
-    const t = useTranslations('Footer');
+  const t = useTranslations('Footer');
   
 
   const pathname = usePathname();

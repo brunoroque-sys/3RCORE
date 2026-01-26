@@ -1,3 +1,5 @@
+'use client';
+
 import ContactForm from "@/components/layout/ContactForm";
 import FeaturesSection from "@/components/sections/servicios/featuresSection";
 import HeroBranding from "@/components/sections/servicios/branding/heroBranding";
@@ -8,12 +10,35 @@ import { BrandShowSection } from "@/components/sections/servicios/branding/brand
 import Portfolio from "@/components/sections/servicios/branding/Portfolio";
 import BrandApplications from "@/components/sections/servicios/branding/aplicationSection";
 import { SocialShowSection } from "@/components/sections/servicios/socialmedia/socialShowSection";
+import { useEffect, useState } from "react";
+
+
+import LoadingScreen from "@/components/layout/LoadingScreen";
+import { AnimatePresence } from "framer-motion";
 
 export default function branding(){
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Opcional: Timeout de seguridad por si la imagen falla
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleImageLoaded = () => {
+    setIsLoading(false);
+  };
+
   return(
-      <main>
+    <>
+      <AnimatePresence>
+        {isLoading && <LoadingScreen key="loader" />}
+      </AnimatePresence>
+
+      <main style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease' }}>
         <div id="hero">
-          <HeroBranding />
+          <HeroBranding onImageLoad={handleImageLoaded} />
         </div>
         <ProcessSection/>
         <BrandManualSection/>
@@ -25,5 +50,6 @@ export default function branding(){
           <ContactForm/>
         </div>
       </main>
+    </>
   );
 }

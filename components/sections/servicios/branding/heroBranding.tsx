@@ -5,7 +5,10 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 
-export default function HeroBranding() {
+interface HeroBrandingProps {
+  onImageLoad: () => void; // Definimos que es una función que no devuelve nada
+}
+export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
 
   const t = useTranslations('BrandingHero');
   
@@ -91,6 +94,7 @@ export default function HeroBranding() {
           fill
           className="object-cover"
           priority
+          onLoad={onImageLoad}
         />
         <div className="absolute inset-0 bg-[#130218] via-transparent to-transparent opacity-80"></div>
       </div>

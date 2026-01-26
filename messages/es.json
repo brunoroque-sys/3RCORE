@@ -325,4 +325,8 @@
     "subtitle1": "que aseguran resultados exitosos",
     "subtitle2": "para tus proyectos"
   }
+  ,
+  "preload":{
+    "text":"Cargando Experiencia..."
+  }
 }
