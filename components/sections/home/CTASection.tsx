@@ -115,9 +115,9 @@ const StatsAndCTA = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full py-32 px-4 flex flex-col items-center gap-40  overflow-hidden"
+      className="w-full py-32 px-10 lg:px-4 flex flex-col items-center gap-40  overflow-hidden"
     >
-      <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-40 md:gap-40 w-full max-w-6xl">
+      <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-10 lg:gap-30 md:gap-15 xl:gap-40 w-full max-w-5xl">
         {stats.map((stat, index) => (
           <div
             key={stat.id}
@@ -143,14 +143,14 @@ const StatsAndCTA = () => {
           </div>
         ))}
       </div>
-      <div className="cta-card-container w-full max-w-6xl relative h-[500px] md:h-[350px] flex items-center">
+      <div className="cta-card-container w-full xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-6xl relative md:h-[300px] md:h-[150px] 2xl:h-[500px] 2xl:h-[350px] flex items-center">
         <div className="cta-bg absolute inset-0 bg-gradient-to-r from-[#4a0d3d] to-[#120214] rounded-[3rem] shadow-2xl overflow-hidden pointer-events-none">
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#D11E68] opacity-20 blur-[100px]"></div>
         </div>
 
         <div className="cta-content relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-12">
           <div className="flex flex-col items-start text-left md:w-1/2 space-y-8">
-            <div className="text-white text-2xl md:text-4xl leading-tight">
+            <div className="text-white text-2xl md:text-xl 2xl:text-4xl leading-tight">
               <h3 className={`${playfair.className} italic font-normal mb-2`}>
                 {t("titleLine1")}
               </h3>
