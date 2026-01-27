@@ -127,12 +127,12 @@ return (
 
           <div 
             ref={lineRef}
-            className="w-full md:w-200 h-[1px] bg-white/50 my-8"
+            className="w-full md:w-250 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 
             ref={sloganRef}
-            className="text-white text-sm md:text-lg font-light w-full md:w-1/2 mx-auto leading-relaxed break-words"
+            className="text-white text-sm md:text-sm font-light w-full md:w-1/2 mx-auto leading-relaxed break-words"
           >
             { t('slogan')}
           </p>

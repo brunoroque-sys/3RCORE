@@ -201,11 +201,35 @@
     "titPost": "Some of our projects"
   }
   ,
+  "SeoSemHero": {
+    "slogan": "Boost your business on Google and attract customers who are actively looking for what you offer.",
+
+    "protitle": "We stay up to date",
+    "prosubtitle": "We align with current trends and the audience your brand needs",
+    "proIn": "Research",
+    "proEs": "Strategy",
+    "proAr": "Grid Layout",
+    "proDi": "Content Design",
+    "proPu": "Publishing",
+    "proGes": "Management & Analytics",
+
+    "poTitle": "Post Design",
+    "poParraf": "We put all our ingenuity and dedication into developing content that is not only eye-catching but also projects a solid brand from day one. For us, the key lies in how we tell your story through design.",
+    "poPreg": "Shall we discuss your next big step on social media?",
+    "pobot": "Contact us",
+
+    "griPost": "Content Grid",
+    "griParraf": "Customized strategies that reflect your brand's unique values. We develop the copy for every post, covering a wide range of content formats.",
+
+    "titPost": "Some of our projects"
+  }
+  ,
   "Footer": {
     "services": "Services",
     "agency": "Our Agency",
     "socialMedia": "Social Media",
     "privacyPolicy": "Privacy Policy",
+    "pregunta": "FAQ",
     "termsConditions": "Terms and Conditions",
     "copyright": "© 2026 3R CORE. All rights reserved",
     "A":" Hours: Monday to Friday"
@@ -318,5 +342,107 @@
   ,
   "preload":{
     "text":"Loading Experience..."
+  }
+  ,
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "topBadge": "FAQ - We answer your questions",
+    
+    "faqs": {
+      "q1": {
+        "question": "What services does 3RCORE offer?",
+        "answer": "We offer comprehensive software development solutions, including web development, mobile applications, technology consulting, process automation, and digital transformation for businesses of all sizes."
+      },
+      "q2": {
+        "question": "How long does it take to develop a project?",
+        "answer": "Development time varies depending on project complexity and scope. Small projects can take 4 to 8 weeks, while more complex enterprise solutions may require 3 to 6 months. We always provide a detailed timeline before starting."
+      },
+      "q3": {
+        "question": "Do you offer post-launch support?",
+        "answer": "Yes, we offer ongoing maintenance and support packages that include updates, bug fixes, security monitoring, and technical assistance. Our team is available to ensure your project operates optimally."
+      },
+      "q4": {
+        "question": "Do you work with specific technologies?",
+        "answer": "We work with a wide range of modern technologies including React, Next.js, Node.js, Python, SQL and NoSQL databases, cloud services (AWS, Azure, GCP), and mobile frameworks. We select the best technology based on each project's specific needs."
+      },
+      "q5": {
+        "question": "How do you protect my project information?",
+        "answer": "Security and confidentiality are our priority. We sign non-disclosure agreements (NDA), implement security measures in development, comply with data protection regulations, and use secure private repositories for all source code."
+      },
+      "q6": {
+        "question": "What is the process to start a project?",
+        "answer": "Our process begins with a free initial consultation to understand your needs. Then, we develop a detailed proposal with scope, timeline, and budget. Once approved, we assign a dedicated team and begin with agile development sprints, maintaining constant communication."
+      }
+    },
+
+    "contact": {
+      "title": "Still have questions?",
+      "description": "Our team is ready to help you. Contact us and we will respond shortly."
+    }
+  }
+  ,
+  "SEOSEM": {
+    "title": {
+      "part1": "We position you",
+      "part2": "in search engines",
+      "part3": "organically"
+    },
+    "description": {
+      "paragraph1": "At 3R CORE we help your brand appear in the first Google results, both organically (SEO) and through paid ads (Google Ads). Our goal is simple: for more people to find your business, trust your brand and contact you.",
+      "paragraph2": "We work on positioning from an integral strategy, combining analysis, content, advertising and constant optimization, so that your investment generates real and measurable results"
+    },
+    "cta": "Request SEO consulting"
+  }
+  ,
+  "SeoSemSection": {
+    "header": {
+      "subtitle": "WHAT WE DO AND WHAT THE SERVICE CONSISTS OF",
+      "description": "Our SEO and SEM service focuses on achieving visibility, quality traffic, and conversions.<br />It's not just about appearing on Google, but appearing in front of the right people.<br />We take care of:"
+    },
+    "seo": {
+      "title": "SEO",
+      "subtitle": "Organic positioning\non Google",
+      "description": "SEO allows your website to appear naturally on Google when someone searches for your services or products. We work on:",
+      "items": [
+        "SEO Audit of your website",
+        "On-Page SEO Optimization (structure, texts, speed)",
+        "Keyword strategy",
+        "Optimized content creation",
+        "Medium and long-term organic strategy"
+      ],
+      "footer": "SEO is ideal for building authority, trust, and sustainable results over time."
+    },
+    "sem": {
+      "title": "SEM",
+      "subtitle": "Google Ads Advertising",
+      "description": "With Google Ads, we achieve immediate results through strategically targeted ads. We handle:",
+      "items": [
+        "Creation and configuration of Google Ads campaigns",
+        "Search intent segmentation",
+        "Budget optimization",
+        "Constant monitoring of results",
+        "Continuous performance improvement of the ads"
+      ],
+      "footer": "SEM is ideal if you are looking for fast sales, lead generation, or immediate traffic."
+    }
+  }
+  ,
+  "SEOMETO": {
+    "title": "Our working methodology",
+    "subtitle": "At 3R CORE we don't improvise. <br /> We work with a clear and proven methodology:",
+    "step1_title": "INITIAL ANALYSIS",
+    "step1_desc": "We study your business, your website, your market, and your competition.",
+    "step2_title": "STRATEGY DEFINITION",
+    "step2_desc": "We choose keywords, the SEO and/or SEM approach, and the objectives.",
+    "step3_title": "IMPLEMENTATION",
+    "step3_desc": "We optimize your website and launch Google campaigns according to the defined strategy.",
+    "step4_title": "MONITORING AND OPTIMIZATION",
+    "step4_desc": "We measure results, analyze data, and adjust to improve performance.",
+    "step5_title": "CLEAR REPORTING",
+    "step5_desc": "We show you what is working and how your investment is evolving."
+  }
+  ,
+  "TOOLS": {
+    "title": "TOOLS WE USE"
   }
 }

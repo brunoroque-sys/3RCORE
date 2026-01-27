@@ -112,6 +112,9 @@ const Footer = () => {
             <Link href="/terminos" className="hover:text-white hover:brightness-110 transition-all duration-300">
               { t('termsConditions')}
             </Link>
+            <Link href="/preguntas" className="hover:text-white hover:brightness-110 transition-all duration-300">
+              { t('pregunta')}
+            </Link>
           </div>
           
           <div className="text-[10px] uppercase tracking-widest text-white">

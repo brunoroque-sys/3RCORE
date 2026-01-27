@@ -6,7 +6,7 @@ export default function SocialPortfolio() {
   const t = useTranslations('SocialMediaHero');
   
   return (
-    <main className="min-h-screen py-20 px-10 lg:px-4">
+    <main className=" py-20 px-10 lg:px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white text-center text-lg tracking-[0.3em] uppercase mb-12 opacity-80">
           { t('titPost')}

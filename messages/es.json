@@ -201,11 +201,37 @@
 
   }
   ,
+    "SeoSemHero": {
+      "slogan": "Impulsa tu negocio en Google y atrae clientes que sí buscan lo que ofreces",
+
+      "protitle":"Nuestro mantenemos actualizados",
+    "prosubtitle":"vamos con las tendencias actuales y audiencia que tu marca necesita",
+    "proIn":"Investigación",
+    "proEs":"Estrategia",
+    "proAr":"Armado de grilla",
+    "proDi":"Diseño contenido",
+    "proPu":"Publicación",
+    "proGes":"Gestión y análisis",
+
+    "poTitle":"Diseño de posts",
+    "poParraf":" Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.",
+    "poPreg":"¿Hablamos de tu próximo gran paso en redes?",
+    "pobot":"Contáctanos",
+
+    "griPost":"Grilla de Contenidos",
+    "griParraf":"Estrategias personalizadas que reflejan los valores únicos de la marca. Desarrollamos el copy para cada post, cubriendo diversos formatos de contenido.",
+
+    "titPost":"Algunos de nuestros proyectos"
+
+
+  }
+  ,
   "Footer": {
     "services": "Servicios",
     "agency": "Nuestra Agencia",
     "socialMedia": "Redes Sociales",
     "privacyPolicy": "Política de Privacidad",
+    "pregunta": "FAQ",
     "termsConditions": "Términos y condiciones",
     "copyright": "© 2026 3R CORE. Todos los derechos reservados",
     "A":" Atención: Lunes a Viernes"
@@ -329,4 +355,106 @@
   "preload":{
     "text":"Cargando Experiencia..."
   }
-}
+  ,
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "topBadge": "FAQ - Resolvemos tus dudas",
+    
+    "faqs": {
+      "q1": {
+        "question": "¿Qué servicios ofrece 3RCORE?",
+        "answer": "Ofrecemos soluciones integrales de desarrollo de software, incluyendo desarrollo web, aplicaciones móviles, consultoría tecnológica, automatización de procesos y transformación digital para empresas de todos los tamaños."
+      },
+      "q2": {
+        "question": "¿Cuánto tiempo toma desarrollar un proyecto?",
+        "answer": "El tiempo de desarrollo varía según la complejidad y alcance del proyecto. Proyectos pequeños pueden tomar de 4 a 8 semanas, mientras que soluciones empresariales más complejas pueden requerir de 3 a 6 meses. Siempre proporcionamos un cronograma detallado antes de iniciar."
+      },
+      "q3": {
+        "question": "¿Ofrecen soporte post-lanzamiento?",
+        "answer": "Sí, ofrecemos paquetes de mantenimiento y soporte continuo que incluyen actualizaciones, corrección de errores, monitoreo de seguridad y asistencia técnica. Nuestro equipo está disponible para asegurar que tu proyecto funcione de manera óptima."
+      },
+      "q4": {
+        "question": "¿Trabajan con tecnologías específicas?",
+        "answer": "Trabajamos con una amplia gama de tecnologías modernas incluyendo React, Next.js, Node.js, Python, bases de datos SQL y NoSQL, servicios en la nube (AWS, Azure, GCP), y frameworks móviles. Seleccionamos la mejor tecnología según las necesidades específicas de cada proyecto."
+      },
+      "q5": {
+        "question": "¿Cómo protegen la información de mis proyectos?",
+        "answer": "La seguridad y confidencialidad son nuestra prioridad. Firmamos acuerdos de confidencialidad (NDA), implementamos medidas de seguridad en el desarrollo, cumplimos con normativas de protección de datos y utilizamos repositorios privados seguros para todo el código fuente."
+      },
+      "q6": {
+        "question": "¿Cuál es el proceso para iniciar un proyecto?",
+        "answer": "Nuestro proceso inicia con una consulta inicial gratuita para entender tus necesidades. Luego, desarrollamos una propuesta detallada con alcance, cronograma y presupuesto. Una vez aprobado, asignamos un equipo dedicado y comenzamos con sprints de desarrollo ágil, manteniendo comunicación constante."
+      }
+    },
+
+    "contact": {
+      "title": "¿Aún tienes preguntas?",
+      "description": "Nuestro equipo está listo para ayudarte. Contáctanos y te responderemos a la brevedad."
+    }
+  }
+  ,
+  "SEOSEM": {
+    "title": {
+      "part1": "Te posicionamos",
+      "part2": "en buscadores de",
+      "part3": "manera orgánica"
+    },
+    "description": {
+      "paragraph1": "En 3R CORE ayudamos a que tu marca aparezca en los primeros resultados de Google, tanto de forma orgánica (SEO) como a través de anuncios pagados (Google Ads). Nuestro objetivo es simple: que más personas encuentren tu negocio, confíen en tu marca y te contacten.",
+      "paragraph2": "Trabajamos el posicionamiento desde una estrategia integral, combinando análisis, contenido, pauta y optimización constante, para que tu inversión genere resultados reales y medibles"
+    },
+    "cta": "Solicitar consultoría SEO"
+  }
+  ,
+  "SeoSemSection": {
+    "header": {
+      "subtitle": "¿QUÉ HACEMOS Y EN QUÉ CONSISTE EL SERVICIO?",
+      "description": "Nuestro servicio de SEO y SEM se enfoca en lograr visibilidad, tráfico de calidad y conversiones.<br />No se trata solo de aparecer en Google, sino de aparecer frente a las personas correctas.<br />Nos encargamos de:"
+    },
+    "seo": {
+      "title": "SEO",
+      "subtitle": "Posicionamiento orgánico\nen Google",
+      "description": "El SEO permite que tu página web aparezca de forma natural en Google cuando alguien busca tus servicios o productos. Trabajamos:",
+      "items": [
+        "Auditoría SEO de tu web",
+        "Optimización SEO On Page (estructura, textos, velocidad)",
+        "Estrategia de palabras clave",
+        "Creación de contenido optimizado",
+        "Estrategia orgánica a mediano y largo plazo"
+      ],
+      "footer": "El SEO es ideal para construir autoridad, confianza y resultados sostenibles en el tiempo."
+    },
+    "sem": {
+      "title": "SEM",
+      "subtitle": "Publicidad en Google Ads",
+      "description": "Con Google Ads logramos resultados inmediatos a través de anuncios estratégicamente segmentados. Nos encargamos de:",
+      "items": [
+        "Creación y configuración de campañas en Google Ads",
+        "Segmentación por intención de búsqueda",
+        "Optimización del presupuesto",
+        "Monitoreo constante de resultados",
+        "Mejora continua del rendimiento de la pauta"
+      ],
+      "footer": "El SEM es ideal si buscas ventas rápidas, generación de leads o tráfico inmediato."
+    }
+  }
+  ,
+  "SEOMETO": {
+    "title": "Nuestra metodología de trabajo",
+    "subtitle": "En 3R CORE no improvisamos. <br /> Trabajamos con una metodología clara y probada:",
+    "step1_title": "ANÁLISIS INICIAL",
+    "step1_desc": "Estudiamos tu negocio, tu web, tu mercado y tu competencia.",
+    "step2_title": "DEFINICIÓN DE ESTRATEGIA",
+    "step2_desc": "Elegimos las palabras clave, el enfoque SEO y/o SEM y los objetivos.",
+    "step3_title": "IMPLEMENTACIÓN",
+    "step3_desc": "Optimizamos tu web y lanzamos campañas en Google según la estrategia definida.",
+    "step4_title": "MONITOREO Y OPTIMIZACIÓN",
+    "step4_desc": "Medimos resultados, analizamos datos y ajustamos para mejorar el rendimiento.",
+    "step5_title": "REPORTES CLAROS",
+    "step5_desc": "Te mostramos qué está funcionando y cómo evoluciona tu inversión."
+  }
+  ,
+  "TOOLS": {
+      "title": "HERRAMIENTAS QUE UTILIZAMOS"
+  }
+} 
