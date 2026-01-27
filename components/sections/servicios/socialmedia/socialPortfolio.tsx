@@ -15,40 +15,64 @@ export default function SocialPortfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           
+          {/* Columna izquierda - Con videos tipo Stories */}
           <div className="grid gap-6">
+            {/* Primera tarjeta - Video tipo Instagram Story */}
             <PizzaCard 
-              images={["/images/branding/Proyectos/Cafe.webp", "/images/branding/Proyectos/Cafe1.webp","/images/branding/Proyectos/Cafe2.webp"]} 
+              media={[
+                { type: "video", src: "/videos/PruebaIG.mp4" },
+                { type: "video", src: "/videos/PruebaIG.mp4" }
+              ]} 
               showDots={true} 
               autoOnHover={false}
               className="aspect-[4/5] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out"
             />
+            
+            {/* Segunda tarjeta - Otro video tipo Story */}
             <PizzaCard 
-              images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]} 
-              autoOnHover={true}
-              className="aspect-[3/4]  grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              media={[
+                { type: "video", src: "/videos/PruebaIG.mp4" }
+              ]} 
+              autoOnHover={false}
+              className="aspect-[3/4] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
             />
           </div>
 
+          {/* Columna centro - Imágenes con auto-hover */}
           <div className="grid gap-14">
             <PizzaCard 
-              images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]} 
+              media={[
+                { type: "video", src: "/videos/PruebaIG.mp4" },
+                { type: "video", src: "/videos/PruebaIG.mp4" }
+              ]} 
               autoOnHover={true}
-              className="aspect-[2/3]  grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              className="aspect-[2/3] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
             />
             <PizzaCard 
-              images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]} 
+              media={[
+                { type: "image", src: "/images/branding/Proyectos/dls.webp" },
+                { type: "image", src: "/images/branding/Proyectos/dls.webp" }
+              ]} 
               autoOnHover={true}
-              className="aspect-square  grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              className="aspect-square grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
             />
           </div>
+
+          {/* Columna derecha - Imágenes con auto-hover */}
           <div className="grid gap-6">
             <PizzaCard 
-              images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]}  
+              media={[
+                { type: "image", src: "/images/branding/Proyectos/dls.webp" },
+                { type: "image", src: "/images/branding/Proyectos/dls.webp" }
+              ]}  
               autoOnHover={true}
-              className="aspect-[3/4]  grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              className="aspect-[3/4] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
             />
             <PizzaCard 
-              images={["/images/branding/Proyectos/dls.webp", "/images/branding/Proyectos/dls.webp"]} 
+              media={[
+                { type: "image", src: "/images/branding/Proyectos/dls.webp" },
+                { type: "image", src: "/images/branding/Proyectos/dls.webp" }
+              ]} 
               autoOnHover={true}
               className="aspect-[4/5] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
             />

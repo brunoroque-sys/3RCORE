@@ -92,7 +92,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-6 relative z-[60]">
-              <div className={`hidden sm:flex items-center gap-4 text-xs font-bold tracking-widest transition-opacity duration-300 ${isOpen ? 'opacity-0 delay-0' : 'opacity-100 delay-300'} text-gray-400`}>
+              <div className={`flex items-center gap-4 text-xs font-bold tracking-widest transition-opacity duration-300 ${isOpen ? 'opacity-0 delay-0' : 'opacity-100 delay-300'} text-gray-400`}>
                 {/* Versión Español */}
                 <Link 
                   href={pathname} 
@@ -116,7 +116,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 className="group flex items-center gap-3 text-sm font-bold focus:outline-none tracking-widest uppercase hover:text-gray-300 transition-colors"
               >
-                <span className="hidden sm:block">{isOpen ? "CLOSE" : "MENU"}</span>
+                <span className="hidden sm:block">MENU</span>
                 <div className="flex flex-col justify-center items-end w-6 h-6 gap-[5px] cursor-pointer">
                   <span className={`block h-[2px] bg-white transition-all duration-500 ease-in-out ${isOpen ? "w-6 " : "w-4 group-hover:w-6"}`}></span>
                   <span className={`block h-[2px] bg-white transition-all duration-500 ease-in-out ${isOpen ? "w-6 " : "w-6"}`}></span>
@@ -150,7 +150,7 @@ const Navbar = () => {
             
             <button 
                onClick={() => setIsOpen(false)}
-               className="lg:hidden absolute top-8 right-8 text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white"
+               className="absolute top-8 right-8 text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white transition-colors cursor-pointer"
             >
                CLOSE
             </button>

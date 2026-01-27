@@ -143,7 +143,7 @@ const StatsAndCTA = () => {
           </div>
         ))}
       </div>
-      <div className="cta-card-container w-full xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-6xl relative md:h-[300px] md:h-[150px] 2xl:h-[500px] 2xl:h-[350px] flex items-center">
+      <div className="cta-card-container w-full xl md:max-w-3xl lg:max-w-4xl 2xl:max-w-7xl relative md:h-[200px] lg:h-[220px] 2xl:h-[300px] 2xl:h-[250px] flex items-center">
         <div className="cta-bg absolute inset-0 bg-gradient-to-r from-[#4a0d3d] to-[#120214] rounded-[3rem] shadow-2xl overflow-hidden pointer-events-none">
           <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#D11E68] opacity-20 blur-[100px]"></div>
         </div>
@@ -186,9 +186,8 @@ const StatsAndCTA = () => {
           <div className="md:w-1/2 flex justify-center md:justify-end relative group">
             <div
               className="cta-image-wrapper relative 
-                            w-[350px] h-[270px]   /* Tamaño más grande */
+                            w-[280px] h-[170px]   /* Tamaño más grande */
                             md:w-[550px] md:h-[400px] 
-                            -mr-10 md:-mr-32      /* Sale por la derecha */
                             z-30 drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)]"
             >
               <Image

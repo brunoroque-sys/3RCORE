@@ -78,7 +78,7 @@ const SocialPost = () => {
           <div className="pt-4">
             <button 
               onClick={handleWhatsAppClick}
-              className="group relative px-10 py-3 border border-gray-500 rounded-full text-xs tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent"
+              className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-xs tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent"
             >
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
               

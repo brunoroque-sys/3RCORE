@@ -5,6 +5,13 @@ import Image from "next/image";
 import { Montserrat } from "next/font/google";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -18,11 +25,10 @@ interface WPPost {
 }
 
 const NewsSection = () => {
-
   const t = useTranslations("NewsSection");
 
   const [posts, setPosts] = useState<WPPost[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -50,31 +56,15 @@ const NewsSection = () => {
     fetchPosts();
   }, [t]);
 
-  const nextSlide = () => {
-    if (currentIndex + 3 < posts.length) {
-      setCurrentIndex(currentIndex + 1);
-    } else {
-      setCurrentIndex(0);
-    }
-  };
-
-  const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    } else {
-      setCurrentIndex(Math.max(0, posts.length - 3));
-    }
-  };
-
   if (posts.length === 0) return null;
 
   return (
     <section
-      className={`${montserrat.className} py-24 bg-transparent text-white px-6 overflow-hidden`}
+      className={`${montserrat.className} py-24 bg-transparent text-white px-10 lg:px-6 overflow-hidden`}
     >
       <div className="flex flex-col items-center justify-center mb-20 w-full group">
         <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
-          <h2 className="text-white text-s md:text-m tracking-[0.1em] uppercase font-medium whitespace-nowrap">
+          <h2 className="text-white text-s md:text-m tracking-[0.1em] uppercase whitespace-nowrap">
             {t("title")}
           </h2>
           <div className="h-[1px] bg-white/90 w-full md:w-[70%] lg:w-[100%] mx-auto"></div>
@@ -82,17 +72,38 @@ const NewsSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative flex items-center">
+        {/* Botón Anterior */}
         <button
-          onClick={prevSlide}
+          onClick={() => swiperInstance?.slidePrev()}
           className="absolute -left-20 z-20 hidden xl:block text-white/50 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"
         >
           <ChevronLeft size={60} strokeWidth={1} />
         </button>
 
-        <div className="w-full overflow-hidden">
-          <div
-            className="flex transition-transform duration-700 ease-in-out gap-8"
-            style={{ transform: `translateX(-${currentIndex * (100 / 2.9)}%)` }}
+        {/* Swiper */}
+        <div className="w-full">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={32}
+            slidesPerView={1}
+            loop={true}
+            speed={700}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 32,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+              },
+            }}
+            onSwiper={setSwiperInstance}
+            className="news-swiper"
           >
             {posts.map((item, index) => {
               const imageUrl =
@@ -108,58 +119,59 @@ const NewsSection = () => {
                 .toUpperCase();
 
               return (
-                <div
-                  key={index}
-                  className="group min-w-full md:min-w-[calc(33.333%-22px)] bg-[#2F0729] backdrop-blur-xl rounded-[20px] overflow-hidden flex flex-col min-h-[620px] border border-white/5 transition-all duration-500"
-                >
-                  <div className="relative h-80 w-full">
-                    <div className="relative w-full h-full overflow-hidden rounded-t-[20px]">
-                      <Image
-                        src={imageUrl}
-                        alt={item.title.rendered}
-                        fill
-                        className="object-cover transition-transform duration-700"
+                <SwiperSlide key={index}>
+                  <div className="group bg-[#2F0729] backdrop-blur-xl rounded-[20px] overflow-hidden flex flex-col min-h-[620px] border border-white/5 transition-all duration-500 hover:border-white/10">
+                    <div className="relative h-80 w-full">
+                      <div className="relative w-full h-full overflow-hidden rounded-t-[20px]">
+                        <Image
+                          src={imageUrl}
+                          alt={item.title.rendered}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="p-10 pt-4 flex flex-col flex-grow">
+                      <span className="text-[11px] text-white font-medium tracking-widest mb-6">
+                        {formattedDate}
+                      </span>
+                      <h3
+                        className="text-2xl font-semibold leading-[1.4] mb-8 text-white/90 group-hover:text-white transition-colors"
+                        dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                       />
+
+                      <div className="mt-auto">
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] cursor-pointer text-white group/btn"
+                        >
+                          <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>
+                          <span className="relative z-10 transition-colors duration-300">
+                            {t("readMore")}
+                          </span>
+                        </a>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="p-10 pt-4 flex flex-col flex-grow">
-                    <span className="text-[11px] text-white font-medium tracking-widest mb-6">
-                      {formattedDate}
-                    </span>
-                    <h3
-                      className="text-2xl font-semibold leading-[1.4] mb-8 text-white/90 group-hover:text-white transition-colors"
-                      dangerouslySetInnerHTML={{ __html: item.title.rendered }}
-                    />
-
-                    <div className="mt-auto">
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] cursor-pointer text-white"
-                      >
-                        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-full group-hover:translate-x-0"></span>
-                        <span className="relative z-10 transition-colors duration-300">
-                          {t("readMore")}
-                        </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                </SwiperSlide>
               );
             })}
-          </div>
+          </Swiper>
         </div>
 
+        {/* Botón Siguiente */}
         <button
-          onClick={nextSlide}
+          onClick={() => swiperInstance?.slideNext()}
           className="absolute -right-20 z-20 hidden xl:block text-white/50 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"
         >
           <ChevronRight size={60} strokeWidth={1} />
         </button>
       </div>
 
+      {/* Botón Ver Todos los Blogs */}
       <div className="mt-10 flex justify-center">
         <a
           href="https://3rcore.com/blog/"
@@ -173,6 +185,17 @@ const NewsSection = () => {
           </div>
         </a>
       </div>
+
+      {/* Estilos CSS personalizados para Swiper */}
+      <style jsx global>{`
+        .news-swiper {
+          padding-bottom: 20px;
+        }
+
+        .news-swiper .swiper-slide {
+          height: auto;
+        }
+      `}</style>
     </section>
   );
 };

@@ -21,7 +21,7 @@ export default function Home() {
       <StatsAndCTA></StatsAndCTA>
       <MosaicoParallax />
       <ClientSection />
-      <NewsSection />
+      <NewsSection/>
 
       <div  id="contacto">
         <ContactForm/>
