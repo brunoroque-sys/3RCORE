@@ -170,7 +170,6 @@ const SeoSemSection = () => {
               </div>
             </div>
 
-            {/* SEO Content */}
             <div className="pl-8 md:pl-12 flex items-center relative">
               <div 
                 ref={seoLineRef}

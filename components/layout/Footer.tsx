@@ -83,8 +83,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link 
-                  href="/servicios/web-design" 
-                  onClick={() => handleScrollTop("/servicios/web-design")}
+                  href="/servicios/web-deveploment" 
+                  onClick={() => handleScrollTop("/servicios/web-deveploment")}
                   className="hover:text-white transition-colors"
                 >
                   Web Development

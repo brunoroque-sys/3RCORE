@@ -36,10 +36,8 @@ const WorkMethodology = () => {
   }, { scope: containerRef });
 
   return (
-    /* He quitado overflow-hidden para que la imagen pueda sobresalir por abajo */
     <section ref={containerRef} className="text-white pt-16 px-4 md:px-8 flex flex-col items-center bg-gradient-to-r from-[#4c0046] to-[#130218]">
       
-      {/* Encabezado */}
       <div className="header-content text-center max-w-3xl mb-12">
         <h2 className="text-3xl md:text-4xl font-serif italic mb-8">
           {t('title')}
@@ -50,7 +48,6 @@ const WorkMethodology = () => {
         />
       </div>
 
-      {/* Lista de Pasos */}
       <div className="w-full max-w-4xl border-t border-white/80 border-line">
         {steps.map((step, index) => (
           <div 
@@ -67,7 +64,6 @@ const WorkMethodology = () => {
         ))}
       </div>
 
-      {/* Laptop con efecto de superposición (Overlap) */}
       <div className="laptop-image mt-16 w-full max-w-5xl flex justify-center relative z-20 -mb-[5%] md:-mb-[10%] pointer-events-none">
         <img 
           src="/images/seosem/laptopCom.png" 

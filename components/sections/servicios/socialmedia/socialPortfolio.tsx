@@ -15,66 +15,56 @@ export default function SocialPortfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           
-          {/* Columna izquierda - Con videos tipo Stories */}
           <div className="grid gap-6">
-            {/* Primera tarjeta - Video tipo Instagram Story */}
             <PizzaCard 
               media={[
-                { type: "video", src: "/videos/PruebaIG.mp4" },
-                { type: "video", src: "/videos/PruebaIG.mp4" }
+                { type: "image", src: "/images/social/portafolioProye/img1.png" }
               ]} 
               showDots={true} 
               autoOnHover={false}
-              className="aspect-[4/5] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out"
+              className="aspect-[3/4] transition-all duration-500 ease-in-out"
             />
             
-            {/* Segunda tarjeta - Otro video tipo Story */}
             <PizzaCard 
               media={[
-                { type: "video", src: "/videos/PruebaIG.mp4" }
+                { type: "image", src: "/images/social/portafolioProye/img4.png" }
               ]} 
               autoOnHover={false}
-              className="aspect-[3/4] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              className="aspect-[3/5]  transition-all duration-500 ease-in-out" 
             />
           </div>
 
-          {/* Columna centro - Imágenes con auto-hover */}
-          <div className="grid gap-14">
-            <PizzaCard 
-              media={[
-                { type: "video", src: "/videos/PruebaIG.mp4" },
-                { type: "video", src: "/videos/PruebaIG.mp4" }
-              ]} 
-              autoOnHover={true}
-              className="aspect-[2/3] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
-            />
-            <PizzaCard 
-              media={[
-                { type: "image", src: "/images/branding/Proyectos/dls.webp" },
-                { type: "image", src: "/images/branding/Proyectos/dls.webp" }
-              ]} 
-              autoOnHover={true}
-              className="aspect-square grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
-            />
-          </div>
-
-          {/* Columna derecha - Imágenes con auto-hover */}
           <div className="grid gap-6">
             <PizzaCard 
               media={[
-                { type: "image", src: "/images/branding/Proyectos/dls.webp" },
-                { type: "image", src: "/images/branding/Proyectos/dls.webp" }
-              ]}  
+                { type: "image", src: "/images/social/portafolioProye/img2.png" }
+              ]} 
               autoOnHover={true}
-              className="aspect-[3/4] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              className="aspect-[3/5]  transition-all duration-500 ease-in-out" 
             />
             <PizzaCard 
               media={[
-                { type: "image", src: "/images/branding/Proyectos/dls.webp" },
-                { type: "image", src: "/images/branding/Proyectos/dls.webp" }
+                { type: "image", src: "/images/social/portafolioProye/img5.png" }
               ]} 
               autoOnHover={true}
-              className="aspect-[4/5] grayscale-900 hover:grayscale-0 transition-all duration-500 ease-in-out" 
+              className="aspect-[3/4] transition-all duration-500 ease-in-out" 
+            />
+          </div>
+
+          <div className="grid gap-6">
+            <PizzaCard 
+              media={[
+                { type: "image", src: "/images/social/portafolioProye/img3.png" }
+              ]}  
+              autoOnHover={true}
+              className="aspect-[3/4] transition-all duration-500 ease-in-out" 
+            />
+            <PizzaCard 
+              media={[
+                { type: "image", src: "/images/social/portafolioProye/img6.png" }
+              ]} 
+              autoOnHover={true}
+              className="aspect-[3/5]  transition-all duration-500 ease-in-out" 
             />
           </div>
 

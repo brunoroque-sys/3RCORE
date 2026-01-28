@@ -445,4 +445,93 @@
   "TOOLS": {
     "title": "TOOLS WE USE"
   }
+  ,
+  "WebHero": {
+    "slogan": "We partner with market-leading e-commerce platforms like Shopify and WooCommerce. These solutions provide the scalability, robustness, and flexibility to adapt to any business in record time, accelerating digital market entry and eliminating lengthy implementation cycles.",
+
+    "protitle": "The best technology for every project",
+    "prosubtitle": "Your site will run at high speed, be secure, easy to maintain, and ready to scale",
+    "proIn": "Strategy",
+    "proEs": "Architecture",
+    "proAr": "Figma Design",
+    "proDi": "Programming",
+    "proPu": "Optimization",
+    "proGes": "Launch",
+
+    "poTitle": "Full Workflow Process",
+    "poParraf1": "We start with a consultation to deeply understand your business, goals, competition, and budget. Then, we design a clear strategy outlining the site’s structure and functionalities.",
+    "poParraf2": "We create complete visual designs in Figma for your approval before writing a single line of code. Once the design is approved, we develop the site using professional quality standards. We perform exhaustive testing across all browsers and both mobile and desktop devices.",
+    "poParraf3": "Finally, we launch your site.",
+    "poPreg": "Shall we discuss your next big step on social media?",
+    "pobot": "Contact us",
+
+    "griPost": "Ready to transform your online brand?",
+    "griParraf": "Book your free 30-minute strategy session. We’ll audit your brand, find growth opportunities, and build a roadmap for you.",
+
+    "titPost": "Some of our projects"
+  }
+  ,
+  "WebSection": {
+    "header": {
+      "subtitle": "TYPES OF WEBSITES",
+      "description": "We design and develop all types of websites tailored to your needs:"
+    },
+    "landing": {
+      "title": "Landing Pages",
+      "description": "Optimized landing pages designed to convert visitors into customers, ideal for marketing campaigns and product launches."
+    },
+    "info": {
+      "title": "Informational & Corporate Sites",
+      "description": "Professional portals that project your company's image and effectively communicate your services."
+    },
+    "Ecomm": {
+      "title": "E-commerce",
+      "description": "Complete online stores featuring shopping carts, integrated payment gateways, and inventory management."
+    },
+    "Elearn": {
+      "title": "E-Learning Platforms",
+      "description": "Online learning systems with course management, student tracking, and educational content."
+    },
+    "Servic": {
+      "title": "Service-Based Sites",
+      "description": "Websites featuring smart forms, appointment systems, and automated scheduling."
+    },
+    "Blogs": {
+      "title": "Blogs & Content Portals",
+      "description": "Platforms optimized for content publishing and distribution."
+    }
+  }
+  ,
+  "webFAQ": {
+    "title": "Frequently Asked Questions",
+    "topBadge": "FAQ - Answering your questions",
+    "par": "We have been creating websites for over 8 years, with more than 150 successful design and development projects completed. Our team is certified in UX/UI design and modern web development. Satisfaction guaranteed.",
+    "tipar": "SUCCESS STORIES",
+    "faqs": {
+      "q1": {
+        "question": "How long does it take?",
+        "answer": "Typically 4-12 weeks depending on complexity. We provide clear timelines from the very start."
+      },
+      "q2": {
+        "question": "Can I see the design before development?",
+        "answer": "Absolutely. We create full prototypes in Figma for your approval before development begins. You'll know exactly how your site will look."
+      },
+      "q3": {
+        "question": "Can I update the content myself?",
+        "answer": "Yes, completely. We'll train you on the admin panel so you can easily update text, images, and content."
+      },
+      "q4": {
+        "question": "What happens after the launch?",
+        "answer": "We offer maintenance and support plans. We’re always available for updates, optimizations, and troubleshooting."
+      },
+      "q5": {
+        "question": "Is Google ranking (SEO) included?",
+        "answer": "We deliver your site with basic SEO implemented, optimized for speed and correct technical structure. For advanced SEO services to boost your traffic and ranking, we offer dedicated plans separately."
+      },
+      "q6": {
+        "question": "What if I need specific functionalities?",
+        "answer": "We can design and integrate almost anything: payment gateways, booking systems, CRM integrations, automations, and more."
+      }
+    }
+  }
 }

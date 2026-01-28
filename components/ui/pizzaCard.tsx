@@ -33,7 +33,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
   const [videoProgress, setVideoProgress] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Referencia para mantener el índice actualizado dentro del setInterval
   const indexRef = useRef(0);
 
   const slideTo = (index: number) => {
@@ -41,7 +40,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
     if (index >= media.length) targetIndex = 0;
     if (index < 0) targetIndex = media.length - 1;
 
-    // Pausar video actual si existe
     const currentVideo = videoRefs.current[indexRef.current];
     if (currentVideo) {
       currentVideo.pause();
@@ -58,10 +56,8 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
     indexRef.current = targetIndex;
     setVideoProgress(0);
 
-    // Reproducir nuevo video si existe Y si está en hover (para videos tipo stories)
     const newVideo = videoRefs.current[targetIndex];
     if (newVideo && media[targetIndex].type === "video") {
-      // Solo auto-play si es autoOnHover O si está en hover (stories)
       if (autoOnHover || isHovered) {
         newVideo.play();
       }
@@ -76,7 +72,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
   };
 
   const handleVideoEnded = () => {
-    // Avanzar al siguiente slide cuando el video termine
     const next = (indexRef.current + 1) % media.length;
     slideTo(next);
   };
@@ -84,19 +79,15 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
   const handleMouseEnter = () => {
     setIsHovered(true);
 
-    // Si el item actual es un video, reproducirlo (sin importar showDots)
     if (media[currentIndex].type === "video") {
       const currentVideo = videoRefs.current[currentIndex];
       if (currentVideo) {
         currentVideo.play();
       }
-      // Si NO es autoOnHover, solo reproducir el video y salir
       if (!autoOnHover) return;
     }
 
-    // Para carrusel automático de imágenes
     if (autoOnHover && media.length > 1) {
-      // Si es un video, no iniciar el intervalo automático
       if (media[currentIndex].type === "video") return;
       
       intervalRef.current = setInterval(() => {
@@ -114,7 +105,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
       intervalRef.current = null;
     }
     
-    // Pausar video si existe
     const currentVideo = videoRefs.current[currentIndex];
     if (currentVideo) {
       currentVideo.pause();
@@ -136,7 +126,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
       onMouseLeave={handleMouseLeave}
       className={`relative overflow-hidden rounded-[1rem] bg-[#1a1a1a] group shadow-2xl ${className}`}
     >
-      {/* Barra de progreso tipo Instagram Stories - solo para videos */}
       {isCurrentMediaVideo && (
         <div className="absolute top-0 left-0 right-0 z-30 px-4 pt-3">
           <div className="h-0.5 bg-white/30 rounded-full overflow-hidden">
@@ -155,7 +144,7 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
               <img 
                 src={item.src} 
                 alt="" 
-                className="w-full h-full object-cover select-none pointer-events-none" 
+                className="w-full h-full  select-none pointer-events-none" 
               />
             ) : (
               <video
@@ -175,7 +164,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
         ))}
       </div>
 
-      {/* Solo mostramos áreas de clic si NO es automático */}
       {!autoOnHover && (
         <div className="absolute inset-0 flex z-10">
           <div className="w-1/2 h-full cursor-pointer" onClick={() => slideTo(currentIndex - 1)} />

@@ -457,4 +457,97 @@
   "TOOLS": {
       "title": "HERRAMIENTAS QUE UTILIZAMOS"
   }
+  ,
+  "WebHero": {
+    "slogan": "Nos asociamos con las mejores plataformas de comercio electrónico del mercado, como Shopify y WooCommerce, que ofrecen la escalabilidad, robustez y flexibilidad para adaptarse a cualquier negocio en tiempo récord, acelerar los mercados digitales y evitar implementaciones prolongadas.",
+
+    "protitle": "La mejor tecnologia para cada proyecto",
+    "prosubtitle": "tu sitio funcionará a velocidad, será seguro, fácil de mantener y preparado para crecer",
+    "proIn": "Estrategia",  
+    "proEs": "Arquitectura",
+    "proAr": "Diseño en figma",
+    "proDi": "Programación",
+    "proPu": "Optimización",
+    "proGes": "Lanzamiento",
+
+    "poTitle": "Proceso de Trabajo Completo",
+    "poParraf1": "Iniciamos con una consulta donde entendemos profundamente tu negocio, tus objetivos, tu competencia y tu presupuesto. Luego diseñamos una estrategia clara de cómo será el sitio y qué funcionalidades tendrá.",
+    "poParraf2": "Creamos diseños visuales completos en Figma que apruebas antes de que escribamos una sola línea de código. Una vez aprobado el diseño, desarrollamos el sitio con estándares profesionales de calidad. Realizamos pruebas exhaustivas en todos los navegadores y dispositivos móviles y desktop.",
+    "poParraf3": "Finalmente, lanzamos tu sitio",
+    "poPreg": "Shall we discuss your next big step on social media?",
+    "pobot": "Contáctanos",
+
+    "griPost": "¿Listo para transformar tu presencia digital?",
+    "griParraf": "Agenda una consulta gratuita de 30 minutos. Analizamos tu situación actual, identificamos oportunidades y te proponemos un plan claro. Muchos de nuestros clientes comenzaron con esta simple conversación.",
+
+    "titPost": "Some of our projects"
+  }
+  ,
+  "WebSection": {
+    "header": {
+      "subtitle": "TIPOS DE SITIOS",
+      "description": "Diseñamos y desarrollamos todo tipo de sitios web adaptados a tus necesidades:"
+    },
+    "landing": {
+      "title": "Landing Pages",
+      "description": "Páginas de aterrizaje optimizadas para convertir visitantes en clientes, ideales para campañas de marketing y lanzamientos de productos."
+    },
+    "info": {
+      "title": "Sitios Informativos y Corporativos",
+      "description": "Portales profesionales que proyectan la imagen de tu empresa y comunican efectivamente tus servicios."
+    }
+    ,
+    "Ecomm": {
+      "title": "E-commerce",
+      "description": "Tiendas online completas con carrito de compras, pasarelas de pago integradas y gestión de inventario."
+    }
+    ,
+    "Elearn": {
+      "title": "Plataformas E-Learning",
+      "description": "Sistemas de aprendizaje en línea con gestión de cursos, estudiantes y contenido educativo."
+    }
+    ,
+    "Servic": {
+      "title": "Sitios de Servicios",
+      "description": "Páginas con formularios inteligentes, sistemas de citas y agendamiento automatizado."
+    }
+    ,
+    "Blogs": {
+      "title": "Blogs y Portales de Contenido",
+      "description": "Plataformas optimizadas para publicación y distribución de contenido."
+    }
+  }
+  ,
+  "webFAQ": {
+    "title": "Preguntas Frecuentes",
+    "topBadge": "FAQ - Resolvemos tus dudas",
+    "par":"Llevamos 8 años creando sitios web. Hemos completado más de 150 proyectos exitosos de diseño y desarrollo. Nuestro equipo está certificado en diseño UX/UI y desarrollo web moderno. Garantizamos satisfacción.",
+    "tipar":"CASOS DE ÉXITO",
+    "faqs": {
+      "q1": {
+        "question": "¿Cuánto tiempo tarda?",
+        "answer": "Típicamente 4-12 semanas según complejidad. Brindamos cronogramas claros desde el inicio."
+      },
+      "q2": {
+        "question": "¿Puedo ver el diseño antes del desarrollo?",
+        "answer": "Absolutamente. Creamos prototipos completos en Figma que apruebas antes de comenzar el desarrollo. Así sabrás exactamente cómo se verá tu sitio."
+      },
+      "q3": {
+        "question": "¿Puedo cambiar el contenido yo mismo?",
+        "answer": "Sí, completamente. Te enseñamos a usar el panel de administración y puedes actualizar textos, imágenes y contenido."
+      },
+      "q4": {
+        "question": "¿Qué pasa después del lanzamiento??",
+        "answer": "Ofrecemos planes de mantenimiento y soporte. Estamos disponibles para cambios, optimizaciones y resolución de problemas."
+      },
+      "q5": {
+        "question": "¿Incluye posicionamiento en Google?",
+        "answer": "Entregamos tu sitio con SEO básico implementado, optimizado para ser rápido y con la estructura técnica correcta. Si necesitas servicios de SEO más avanzados para aumentar tu tráfico y posicionamiento, ofrecemos ese servicio por separado."
+      },
+      "q6": {
+        "question": "¿Y si necesito funcionalidades específicas?",
+        "answer": "Podemos diseñar e integrar casi cualquier cosa: pasarelas de pago, sistemas de reservas, integraciones con CRM, automatizaciones, etc."
+      }
+    }
+  }
 } 

@@ -8,7 +8,7 @@ export function SocialShowSection() {
   return (
         <section className="relative h-[70vh] w-full overflow-hidden">
           <Image
-            src="/images/social/fondoas.webp"
+            src="/images/social/fondoFi.png"
             alt="Sobre nosotros"
             fill
             priority

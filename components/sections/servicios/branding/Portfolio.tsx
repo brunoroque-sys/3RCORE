@@ -48,7 +48,7 @@ return (
         }}
         loop={true}
         allowTouchMove={true} 
-        className="h-full w-full grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700 md:group-hover:scale-110"
+        className="h-full w-full  transition-all duration-700 md:group-hover:scale-110"
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
