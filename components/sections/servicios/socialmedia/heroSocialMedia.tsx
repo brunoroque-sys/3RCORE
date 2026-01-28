@@ -89,13 +89,17 @@ return (
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
     >
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/branding/fondoBranding1.webp"
-          alt="Brand Background"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          src="/videos/Social.webm"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          onLoadedData={onImageLoad} // Similar al onLoad de la imagen
+        >
+          Tu navegador no soporta videos.
+        </video>
         <div className="absolute inset-0 bg-[#130218] via-transparent to-transparent opacity-80"></div>
       </div>
 

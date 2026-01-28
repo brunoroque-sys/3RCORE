@@ -11,6 +11,7 @@ import ImgWebSection from "@/components/sections/servicios/web-deveploment/imgWe
 import WebTypesSection from "@/components/sections/servicios/web-deveploment/webTypesSection";
 import WebApplications from "@/components/sections/servicios/web-deveploment/aplicationWebSection";
 import WebFaq from "@/components/sections/servicios/web-deveploment/webFaq";
+import WebImgSection from "@/components/sections/servicios/web-deveploment/webimgSection";
 
 export default function WebDeveploment(){
     const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +40,7 @@ export default function WebDeveploment(){
         <WebTypesSection/>
         <WebApplications/>
         <WebFaq/>
-        <ImgWebSection/>
+        <WebImgSection/>
 
         <ClientSection />
         <div id="contacto">

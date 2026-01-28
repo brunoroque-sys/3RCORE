@@ -38,13 +38,13 @@ export default async function RootLayout({children,params}:{children: React.Reac
 
   return (
     <html >
-      <body className={`${poppins.className}  bg-black text-white `}>
+      <body className={`${poppins.className} text-white `}>
         <div className="noise-overlay" />
         <NextIntlClientProvider locale={locale} messages={messages}>
           
           <SmoothScrolling>
             <Navbar />
-            <main className="min-h-screen bg-[#130218] flex flex-col">
+            <main className="min-h-screen bg-[#16021B] flex flex-col">
               <div className="noise-global relative z-10" />
               {children}
             </main>

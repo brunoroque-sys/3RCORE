@@ -1,0 +1,40 @@
+"use client"
+import ContactForm from "@/components/layout/ContactForm";
+import FirstLandingSection from "@/components/sections/landing/firstLandingSection";
+import FiveLandingSection from "@/components/sections/landing/fiveLandingSection";
+import FourthLandingSection from "@/components/sections/landing/fourthLandingSection";
+import HeroLanding from "@/components/sections/landing/heroLanding";
+import SecondLandingSection from "@/components/sections/landing/secondLandingSection";
+import SixLandingSection from "@/components/sections/landing/sixLandingSection";
+import ThirdLandingSection from "@/components/sections/landing/thirdLandingSection";
+import { useEffect, useState } from "react";
+
+export default function Landing() {
+  const [isLoading, setIsLoading] = useState(true);
+    
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 100);
+    return () => clearTimeout(timer);
+  }, []);
+    
+  const handleImageLoaded = () => {
+    setIsLoading(false);
+  };
+  return (
+    <main>
+      <div id="hero">
+        <HeroLanding  onImageLoad={handleImageLoaded} />
+      </div>
+      <FirstLandingSection/>
+      <SecondLandingSection/>
+      <ThirdLandingSection/>
+      <FourthLandingSection/>
+      <FiveLandingSection/>
+      <SixLandingSection/>
+      <div  id="contacto">
+        <ContactForm/>
+      </div>
+
+    </main>
+  );
+}
