@@ -82,13 +82,8 @@ export default function SecondLandingSection() {
       <div className='w-full max-w-8xl mx-auto space-y-12'>
         
         <div className='card-wrapper backdrop-blur-sm rounded-3xl overflow-hidden'>
-          {/* Usamos grid-cols-1 por defecto (móvil) y md:grid-cols-2 (escritorio) */}
           <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
             
-            {/* IMAGEN: 
-                order-2: En móvil se va al segundo lugar (abajo).
-                md:order-1: En escritorio vuelve al primer lugar (izquierda). 
-            */}
             <div className={`img-container ${baseContainer} order-2 md:order-1`}>
               <Image 
                 src="/images/landing/img.webp" 
@@ -101,10 +96,6 @@ export default function SecondLandingSection() {
               />
             </div>
 
-            {/* TEXTO: 
-                order-1: En móvil se va al primer lugar (arriba).
-                md:order-2: En escritorio vuelve al segundo lugar (derecha).
-            */}
             <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'>
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>
@@ -123,7 +114,6 @@ export default function SecondLandingSection() {
           </div>
         </div>
 
-        {/* CARD 2: Imagen Reducida (con p-12 o p-16) */}
         <div className='card-wrapper rounded-3xl overflow-hidden'>
           <div className='grid md:grid-cols-2 items-center'>
             <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center'>
@@ -137,7 +127,6 @@ export default function SecondLandingSection() {
                 </ul>
               </div>
             </div>
-            {/* Añadimos p-12 para "achicar" la imagen visualmente dentro del mismo bloque */}
             <div className={`img-container ${baseContainer} p-12 md:p-16 order-1 md:order-2`}>
               <Image 
                 src="/images/landing/secondimg2.webp" 
@@ -151,15 +140,9 @@ export default function SecondLandingSection() {
           </div>
         </div>
 
-        {/* CARD 3: Imagen Reducida */}
         <div className='card-wrapper rounded-3xl overflow-hidden'>
-          {/* Grid base en 1 columna para móvil, 2 para escritorio */}
           <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
             
-            {/* CONTENEDOR DE IMAGEN:
-                order-2: Se va al final en móvil.
-                md:order-1: Se posiciona a la izquierda en escritorio.
-            */}
             <div className={`img-container ${baseContainer} p-12 md:p-16 order-2 md:order-1`}>
               <Image 
                 src="/images/landing/secondimg3.webp" 
@@ -171,10 +154,6 @@ export default function SecondLandingSection() {
               />
             </div>
 
-            {/* CONTENEDOR DE TEXTO:
-                order-1: Se posiciona primero en móvil.
-                md:order-2: Se posiciona a la derecha en escritorio.
-            */}
             <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'> 
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6 text-left'>

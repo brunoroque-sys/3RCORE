@@ -1,17 +1,57 @@
-"use client";
-import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+'use client';
+import { Trirong } from 'next/font/google';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 export function BrandShowSection(){
-  const totalImages = 62 - 14 + 1;
 
-  const images = Array.from({ length: totalImages }, (_, i) => {
-    const cardNumber = String(i + 14).padStart(2, '0');
-    return `/images/branding/manual/manual-estacion 26-${cardNumber}.webp`;
-  });
+  
+
+  const sectionRef = useRef(null);
+  const imageContainerRef = useRef(null);
+  const imageRef = useRef(null);
+
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const masterTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+        }
+      });
+
+
+      gsap.fromTo(imageRef.current,
+        { clipPath: 'inset(0% 0% 100% 0%)' }, 
+        { 
+          clipPath: 'inset(0% 0% 0% 0%)', 
+          duration: 1.5, 
+          ease: "power4.inOut",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 80%",
+          }
+        }
+      );
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className="mx-auto w-full bg-[#FBECD7] rounded-3xl  ring-1 ring-neutral-700/10 dark:bg-neutral-800">
-      <ThreeDMarquee images={images} />
-    </div>
+    <section ref={sectionRef} className="w-full text-white py-0 font-sans flex flex-col items-center overflow-hidden">
+      <div ref={imageContainerRef} className="w-full md:h-[90vh] overflow-hidden">
+        <img 
+          ref={imageRef}
+          src="/images/branding/fond.png" 
+          alt="Proceso creativo"
+          className="w-full h-full " 
+        />
+      </div>
+    </section>
   );
 }
