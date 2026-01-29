@@ -8,211 +8,109 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SecondLandingSection() {
-  const sectionRef = useRef(null);
-  const numberRef = useRef(null);
-  const lineRef = useRef(null);
-  const headingRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const card1Ref = useRef(null);
-  const card2Ref = useRef(null);
-  const card3Ref = useRef(null);
-  const image1Ref = useRef(null);
-  const image2Ref = useRef(null);
-  const image3Ref = useRef(null);
-  const text1Ref = useRef(null);
-  const text2Ref = useRef(null);
-  const text3Ref = useRef(null);
-
+  const sectionRef = useRef<HTMLElement>(null);
+  
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del número "02."
-      gsap.from(numberRef.current, {
+      const q = gsap.utils.selector(sectionRef);
+
+      gsap.from(q(".header-anim"), {
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out',
         scrollTrigger: {
-          trigger: numberRef.current,
+          trigger: sectionRef.current,
           start: 'top 80%',
         },
-        opacity: 0,
-        x: -30,
-        duration: 0.8,
-        ease: 'power3.out',
       });
 
-      // Animación de la línea (crecimiento de 0 a 100%)
-      gsap.from(lineRef.current, {
-        scrollTrigger: {
-          trigger: lineRef.current,
-          start: 'top 80%',
-        },
+      gsap.from(q(".line-grow"), {
         scaleX: 0,
         transformOrigin: 'left center',
         duration: 1.2,
-        delay: 0.3,
         ease: 'power3.out',
-      });
-
-      // Animación del título principal
-      gsap.from(headingRef.current, {
         scrollTrigger: {
-          trigger: headingRef.current,
+          trigger: sectionRef.current,
           start: 'top 80%',
         },
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        delay: 0.5,
-        ease: 'power3.out',
       });
 
-      // Animación de la descripción
-      gsap.from(descriptionRef.current, {
-        scrollTrigger: {
-          trigger: descriptionRef.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        delay: 0.7,
-        ease: 'power3.out',
+      q(".card-wrapper").forEach((card, i) => {
+        const isEven = i % 2 === 0;
+        const img = card.querySelector(".img-container");
+        const text = card.querySelector(".text-container");
+
+        gsap.from(img, {
+          x: isEven ? -100 : 100,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: { trigger: card, start: "top 80%" }
+        });
+
+        gsap.from(text, {
+          x: isEven ? 100 : -100,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: { trigger: card, start: "top 80%" }
+        });
       });
 
-      // Primera tarjeta - Imagen desde la izquierda
-      gsap.from(image1Ref.current, {
-        scrollTrigger: {
-          trigger: card1Ref.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        x: -100,
-        duration: 1,
-        ease: 'power3.out',
-      });
-
-      // Primera tarjeta - Texto desde la derecha
-      gsap.from(text1Ref.current, {
-        scrollTrigger: {
-          trigger: card1Ref.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        x: 100,
-        duration: 1,
-        ease: 'power3.out',
-      });
-
-      // Segunda tarjeta - Texto desde la izquierda
-      gsap.from(text2Ref.current, {
-        scrollTrigger: {
-          trigger: card2Ref.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        x: -100,
-        duration: 1,
-        ease: 'power3.out',
-      });
-
-      // Segunda tarjeta - Imagen desde la derecha
-      gsap.from(image2Ref.current, {
-        scrollTrigger: {
-          trigger: card2Ref.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        x: 100,
-        duration: 1,
-        ease: 'power3.out',
-      });
-
-      // Tercera tarjeta - Imagen desde la izquierda
-      gsap.from(image3Ref.current, {
-        scrollTrigger: {
-          trigger: card3Ref.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        x: -100,
-        duration: 1,
-        ease: 'power3.out',
-      });
-
-      // Tercera tarjeta - Texto desde la derecha
-      gsap.from(text3Ref.current, {
-        scrollTrigger: {
-          trigger: card3Ref.current,
-          start: 'top 80%',
-        },
-        opacity: 0,
-        x: 100,
-        duration: 1,
-        ease: 'power3.out',
-      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
+  const baseContainer = "relative w-full aspect-[16/9] md:aspect-auto md:h-[450px] flex justify-center items-center bg-gradient-to-r from-[#4c0046] to-[#24032D] overflow-hidden";
+  
   return (
-    <section 
-      ref={sectionRef}
-      className="relative min-h-screen w-full py-20 overflow-hidden"
-    >
-      <div className="relative max-w-7xl mx-auto">
-        <div className="mb-12">
-          <h3 
-            ref={numberRef}
-            className="text-[#A21F8A] text-5xl md:text-6xl font-bold italic tracking-tight"
-          >
-            02.
-          </h3>
-          <div 
-            ref={lineRef}
-            className="w-50 h-[2px] bg-white mt-2"
-          ></div>
+    <section ref={sectionRef} className="relative min-h-screen w-full py-20 overflow-hidden ">
+      <div className="relative max-w-7xl mx-auto px-6 mb-16">
+        <div className="mb-8">
+          <h3 className="header-anim text-[#A21F8A] text-5xl md:text-6xl font-bold italic tracking-tight">02.</h3>
+          <div className="line-grow w-40 h-[2px] bg-white mt-2"></div>
         </div>
-
-        <h2 
-          ref={headingRef}
-          className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
-        >
+        <h2 className="header-anim text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 leading-tight">
           ¿Por qué hacer Posicionamiento SEO?
         </h2>
-
-        <p 
-          ref={descriptionRef}
-          className="text-white text-sm md:text-base max-w-4xl mb-16 leading-relaxed"
-        >
+        <p className="header-anim text-white text-sm md:text-base max-w-4xl leading-relaxed">
           Trabajamos bajo una metodología clara, medible y orientada a resultados.
         </p>
       </div>
 
-      <div className='w-full relative max-w-full mx-auto'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8'>
-          
-          <div 
-            ref={card1Ref}
-            className='backdrop-blur-sm md:col-span-2'
-          >
-            <div className='grid md:grid-cols-2 gap-8 items-center'>
-              <div 
-                ref={image1Ref}
-                className='flex justify-center bg-gradient-to-r from-[#4c0046] to-[#24032D]'
-              >
-                <Image 
-                  src="/images/landing/secondimg1.png" 
-                  alt="Auditoría y Planificación SEO"
-                  width={240}
-                  height={340}
-                  className="w-full max-w-[350px] min-h-[450px]"
-                />
-              </div>
-              <div ref={text1Ref} className='px-32'>
-                <div> 
-                  <h3 className='text-white text-base md:text-lg font-bold uppercase tracking-wide mb-6'>
-                    Auditoría y Planificación SEO 
-                  </h3>
-                </div>
-                <ul className='text-white text-sm md:text-base space-y-3'>
+      <div className='w-full max-w-8xl mx-auto space-y-12'>
+        
+        <div className='card-wrapper backdrop-blur-sm rounded-3xl overflow-hidden'>
+          {/* Usamos grid-cols-1 por defecto (móvil) y md:grid-cols-2 (escritorio) */}
+          <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
+            
+            {/* IMAGEN: 
+                order-2: En móvil se va al segundo lugar (abajo).
+                md:order-1: En escritorio vuelve al primer lugar (izquierda). 
+            */}
+            <div className={`img-container ${baseContainer} order-2 md:order-1`}>
+              <Image 
+                src="/images/landing/img.webp" 
+                alt="Auditoría SEO"
+                width={1952}
+                height={930}
+                quality={100}
+                priority
+                className="w-full h-full object-cover" 
+              />
+            </div>
+
+            {/* TEXTO: 
+                order-1: En móvil se va al primer lugar (arriba).
+                md:order-2: En escritorio vuelve al segundo lugar (derecha).
+            */}
+            <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
+              <div className='max-w-md w-full'>
+                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>
+                  Auditoría y Planificación SEO
+                </h3>
+                <ul className='text-white/80 space-y-3 text-sm md:text-base'>
                   <li>- Análisis de palabras clave principales de tu negocio</li>
                   <li>- Estudio de competidores directos en Google</li>
                   <li>- Revisión básica de la estructura de tu sitio web</li>
@@ -221,61 +119,68 @@ export default function SecondLandingSection() {
                 </ul>
               </div>
             </div>
-          </div>
 
-          <div 
-            ref={card2Ref}
-            className='rounded-3xl backdrop-blur-sm md:col-span-2'
-          >
-            <div className='grid md:grid-cols-2 gap-8 items-center'>
-              <div ref={text2Ref} className='px-32'>
-                <h3 className='text-white text-base md:text-lg font-bold uppercase tracking-wide mb-6'>
-                  Optimización de Interlinks    
-                </h3>
-                <ul className='text-white text-sm md:text-base space-y-3'>
+          </div>
+        </div>
+
+        {/* CARD 2: Imagen Reducida (con p-12 o p-16) */}
+        <div className='card-wrapper rounded-3xl overflow-hidden'>
+          <div className='grid md:grid-cols-2 items-center'>
+            <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center'>
+              <div className='max-w-md w-full'>
+                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>Optimización de Interlinks</h3>
+                <ul className='text-white/80 space-y-3 text-sm md:text-base'>
                   <li>- Análisis de la estructura interna del sitio</li>
                   <li>- Estrategia de enlaces internos entre contenidos</li>
                   <li>- Optimización del recorrido del usuario</li>
                   <li>- Mejora de la autoridad interna de las páginas principales</li>
                 </ul>
               </div>
-              <div 
-                ref={image2Ref}
-                className='flex justify-center bg-gradient-to-r from-[#4c0046] to-[#24032D]'
-              >
-                <Image 
-                  src="/images/landing/secondimg2.png" 
-                  alt="Optimización de Interlinks"
-                  width={240}
-                  height={240}
-                  className="w-full max-w-[400px] min-h-[450px]"
-                />
-              </div>
+            </div>
+            {/* Añadimos p-12 para "achicar" la imagen visualmente dentro del mismo bloque */}
+            <div className={`img-container ${baseContainer} p-12 md:p-16 order-1 md:order-2`}>
+              <Image 
+                src="/images/landing/secondimg2.webp" 
+                alt="Interlinks"
+                width={1952}
+                height={930}
+                quality={100}
+                className="w-full h-full object-contain" 
+              />
             </div>
           </div>
+        </div>
 
-          <div 
-            ref={card3Ref}
-            className='backdrop-blur-sm md:col-span-2'
-          >
-            <div className='grid md:grid-cols-2 gap-8 items-center'>
-              <div 
-                ref={image3Ref}
-                className='flex justify-center bg-gradient-to-r from-[#4c0046] to-[#24032D]'
-              >
-                <Image 
-                  src="/images/landing/secondimg3.png" 
-                  alt="Escalamiento SEO"
-                  width={240}
-                  height={240}
-                  className="w-full max-w-[400px] min-h-[450px]"
-                />
-              </div>
-              <div ref={text3Ref} className='px-32'>
-                <h3 className='text-white text-base md:text-lg font-bold uppercase tracking-wide mb-6'>
-                  escalamiento seo   
+        {/* CARD 3: Imagen Reducida */}
+        <div className='card-wrapper rounded-3xl overflow-hidden'>
+          {/* Grid base en 1 columna para móvil, 2 para escritorio */}
+          <div className='grid grid-cols-1 md:grid-cols-2 items-center'>
+            
+            {/* CONTENEDOR DE IMAGEN:
+                order-2: Se va al final en móvil.
+                md:order-1: Se posiciona a la izquierda en escritorio.
+            */}
+            <div className={`img-container ${baseContainer} p-12 md:p-16 order-2 md:order-1`}>
+              <Image 
+                src="/images/landing/secondimg3.webp" 
+                alt="Escalamiento"
+                width={1952}
+                height={930}
+                quality={100}
+                className="w-full h-full object-contain" 
+              />
+            </div>
+
+            {/* CONTENEDOR DE TEXTO:
+                order-1: Se posiciona primero en móvil.
+                md:order-2: Se posiciona a la derecha en escritorio.
+            */}
+            <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
+              <div className='max-w-md w-full'> 
+                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6 text-left'>
+                  Escalamiento SEO
                 </h3>
-                <ul className='text-white text-sm md:text-base space-y-3'>
+                <ul className='text-white/80 space-y-3 text-sm md:text-base text-left'>
                   <li>- Identificación de nuevas oportunidades de posicionamiento</li>
                   <li>- Optimización continua de contenidos existentes</li>
                   <li>- Refuerzo de páginas con mejor desempeño</li>
@@ -283,9 +188,10 @@ export default function SecondLandingSection() {
                 </ul>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
+
       </div>
     </section>
   );

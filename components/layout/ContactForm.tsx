@@ -106,7 +106,7 @@ const ContactForm = () => {
             </form>
           </div>
 
-          <div className="w-full h-[400px] lg:h-full min-h-[500px] relative overflow-hidden border border-white/10 group rounded-2xl">
+          <div className="w-full h-[400px] lg:h-full min-h-[500px] relative overflow-hidden border-2 border-white/20 group rounded-[20px] shadow-xl">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3044063260063!2d-76.9519657249382!3d-12.09130088814899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c710419b833d%3A0xd38447313365f798!2s3R%20Core%20-%20Agencia%20de%20Marketing!5e0!3m2!1ses-419!2spe!4v1768342086873!5m2!1ses-419!2spe" 
               width="600" 
@@ -115,10 +115,11 @@ const ContactForm = () => {
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade" 
-              className="absolute inset-0 w-full h-full opacity-95 group-hover:opacity-80 transition-all duration-700"
+              className="absolute inset-0 w-full h-full opacity-95 group-hover:opacity-100 transition-all duration-700"
               title="Mapa de ubicación"
             ></iframe>
-            <div className="absolute inset-0 pointer-events-none bg-[#130218] opacity-20 group-hover:opacity-0 transition-opacity duration-700"></div>
+            {/* Overlay suave */}
+            <div className="absolute inset-0 pointer-events-none bg-[#130218] opacity-10 group-hover:opacity-0 transition-opacity duration-700"></div>
           </div>
         </div>
       </div>

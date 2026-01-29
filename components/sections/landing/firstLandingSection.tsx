@@ -158,7 +158,7 @@ export default function FirstLandingSection() {
             }}>
           </div>
 
-          <div className="text-center px-8 md:px-16 py-12">
+          <div className="relative index-3 text-center px-8 md:px-16 py-12">
             <p className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light">
               El SEO no es publicidad ni redes sociales
             </p>

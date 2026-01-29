@@ -141,7 +141,7 @@ export default function FourthLandingSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full py-20 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative w-full py-10 px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-12">
@@ -178,10 +178,9 @@ export default function FourthLandingSection() {
             className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image 
-              src="/images/landing/pc1.png" 
+              src="/images/landing/argentaria.gif" 
               alt="Caso de éxito 1"
               fill
-              className="object-cover"
             />
           </div>
           <div 
@@ -189,10 +188,9 @@ export default function FourthLandingSection() {
             className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image 
-              src="/images/landing/pc2.png" 
+              src="/images/landing/asdeoros.gif" 
               alt="Caso de éxito 2"
               fill
-              className="object-cover"
             />
           </div>
         </div>

@@ -38,7 +38,7 @@ export default async function RootLayout({children,params}:{children: React.Reac
 
   return (
     <html >
-      <body className={`${poppins.className} text-white `}>
+      <body className={`${poppins.className} text-white `}suppressHydrationWarning={true}>
         <div className="noise-overlay" />
         <NextIntlClientProvider locale={locale} messages={messages}>
           
