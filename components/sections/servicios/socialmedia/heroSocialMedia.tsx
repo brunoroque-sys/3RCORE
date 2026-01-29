@@ -166,7 +166,7 @@ return (
 
           <p 
             ref={sloganRef}
-            className="text-white text-sm md:text-sm font-light w-full md:w-1/2 mx-auto leading-relaxed break-words"
+            className="text-white text-xs md:text-sm font-light w-full md:w-1/2 mx-auto leading-relaxed break-words"
           >
             { t('slogan')}
           </p>

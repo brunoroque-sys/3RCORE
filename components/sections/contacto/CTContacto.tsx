@@ -54,11 +54,11 @@ useEffect(() => {
 }, []);
 
   return (
-    <section ref={containerRef} className="w-full py-20 px-4 flex flex-col items-center overflow-hidden">
+    <section ref={containerRef} className="w-full py-20 px-10 md:px-4 flex flex-col items-center overflow-hidden">
       
       <div 
         ref={cardRef} 
-        className="cta-card-container w-full max-w-7xl relative min-h-[300px] md:min-h-[250px] flex items-center"
+        className="cta-card-container w-full max-w-7xl relative min-h-[250px] md:min-h-[250px] flex items-center"
       >
         
         <div className="cta-bg absolute inset-0 bg-[#4a0d3d] rounded-[3rem] shadow-2xl overflow-hidden pointer-events-none">
@@ -72,7 +72,7 @@ useEffect(() => {
             <h3 className={`${playfair.className} text-white italic font-normal text-3xl md:text-5xl leading-tight`}>
               {t('title')}
             </h3>
-            <h3 className={`${poppins.className} text-white/80 font-light text-3xl md:text-4xl tracking-wide `}>
+            <h3 className={`${poppins.className} text-white/80 font-light text-2xl md:text-4xl tracking-wide `}>
               {t('hours')}
             </h3>
             

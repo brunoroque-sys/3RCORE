@@ -133,7 +133,7 @@ const WebTypesSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="w-full text-white py-20 px-6 md:px-12 lg:px-20"
+      className="w-full text-white py-20 px-10 md:px-6 md:px-12 lg:px-20"
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-30 space-y-6">
@@ -159,7 +159,7 @@ const WebTypesSection = () => {
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
               <div className="space-y-2 max-w-xs">
-                <h3 className="text-lg md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
+                <h3 className="text-xl md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
                   {t('landing.title')}
                 </h3>
               </div>
@@ -184,7 +184,7 @@ const WebTypesSection = () => {
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
               <div className="space-y-2 max-w-xs">
-                <h3 className="text-lg md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
+                <h3 className="text-xl md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
                   {t('info.title')}
                 </h3>
               </div>
@@ -209,7 +209,7 @@ const WebTypesSection = () => {
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
               <div className="space-y-2 max-w-xs">
-                <h3 className="text-lg md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
+                <h3 className="text-xl md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
                   {t('Ecomm.title')}
                 </h3>
               </div>
@@ -234,7 +234,7 @@ const WebTypesSection = () => {
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
               <div className="space-y-2 max-w-xs">
-                <h3 className="text-lg md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
+                <h3 className="text-xl md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
                   {t('Elearn.title')}
                 </h3>
               </div>
@@ -259,7 +259,7 @@ const WebTypesSection = () => {
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
               <div className="space-y-2 max-w-xs">
-                <h3 className="text-lg md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
+                <h3 className="text-xl md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
                   {t('Servic.title')}
                 </h3>
               </div>
@@ -284,7 +284,7 @@ const WebTypesSection = () => {
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
               <div className="space-y-2 max-w-sm">
-                <h3 className="text-lg md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
+                <h3 className="text-xl md:text-xl lg:text-3xl font-serif italic text-[#E91E63]">
                   {t('Blogs.title')}
                 </h3>
               </div>

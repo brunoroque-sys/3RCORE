@@ -118,7 +118,7 @@ export default function HeroWeb({ onImageLoad }: HeroWebProps) {
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-3xl md:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 WEB
               </h2>
@@ -130,7 +130,7 @@ export default function HeroWeb({ onImageLoad }: HeroWebProps) {
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-3xl md:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 DEVELOPMENT
               </h2>
@@ -144,7 +144,7 @@ export default function HeroWeb({ onImageLoad }: HeroWebProps) {
 
           <p 
             ref={sloganRef}
-            className="text-white max-w-[800px] text-sm md:text-sm font-light w-full"
+            className="text-white max-w-[800px] text-xs md:text-sm font-light w-full"
           >
             { t('slogan')}
           </p>

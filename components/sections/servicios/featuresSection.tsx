@@ -75,7 +75,7 @@ const features = [
       className="relative w-full py-12 px-10   text-white overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col items-center mb-20">
+        <div className="flex flex-col items-center mb-10 md:mb-20">
           <h2 className="main-title text-xl md:text-2xl font-light tracking-[0.2em] text-center mb-4 uppercase">
            {t('mainTitle')}
           </h2>
@@ -97,7 +97,7 @@ const features = [
                 {feature.title}
               </h3>
               
-              <p className="text-sm leading-relaxed font-light text-gray-300 text-pretty">
+              <p className="text-xs leading-relaxed font-light text-gray-300 text-pretty">
                 {feature.description}
               </p>
             </div>

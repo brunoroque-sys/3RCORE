@@ -65,7 +65,7 @@ const Contacto = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="relative h-screen text-white px-4 flex flex-col items-center justify-center text-center overflow-hidden"
+      className="relative md:h-screen text-white px-4 pt-50 md:pt-0 flex flex-col items-center justify-center text-center overflow-hidden"
     >
       
       {/* Imágenes Decorativas con clase común para GSAP */}

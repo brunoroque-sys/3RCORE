@@ -165,7 +165,7 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
 
           <p 
             ref={sloganRef}
-            className="text-white text-sm md:text-sm font-light w-full"
+            className="text-white text-xs md:text-sm font-light w-full"
           >
             { t('slogan')}
           </p>

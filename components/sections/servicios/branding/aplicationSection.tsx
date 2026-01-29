@@ -43,7 +43,7 @@ export default function BrandApplications() {
             {t('apMarca')}
           </h2>
           
-          <p className="text-white/90 text-lg md:text-xl lg:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
+          <p className="text-white/90 text-base md:text-xl lg:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
             {t('apParraf')}
           </p>
         </div>

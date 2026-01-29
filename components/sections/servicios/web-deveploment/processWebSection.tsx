@@ -124,7 +124,7 @@ const ProcessWebSection = () => {
         </div>
       </div>
 
-      <div ref={imageContainerRef} className="w-full h-[60vh] mt-24 overflow-hidden">
+      <div ref={imageContainerRef} className="w-full h-[25vh] md:h-[60vh] mt-12 md:mt-24 overflow-hidden">
         <img 
           ref={imageRef}
           src="/images/web/fondoWeb.png" 

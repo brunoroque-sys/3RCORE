@@ -208,7 +208,7 @@ export default function WebFaq() {
   }, [openIndex]);
 
   return (
-    <section ref={sectionRef} className="relative z-10 pt-40 pb-20 px-6">
+    <section ref={sectionRef} className="relative z-10 pt-40 pb-20 px-10 md:px-6">
       <div className="max-w-4xl mx-auto">
 
         <header ref={headerRef} className="mb-12 pb-8 text-center relative">
@@ -232,7 +232,7 @@ export default function WebFaq() {
           >
             {t('topBadge')}
           </p>
-          <div className="header-line h-[1px] w-full bg-gradient-to-r from-transparent via-white/50 to-transparent origin-center" />
+          <div className="header-line h-[1px] w-full bg-gradient-to-r from-transparent via-white/90 to-transparent origin-center" />
         </header>
 
         <div className="space-y-6">
@@ -262,7 +262,7 @@ export default function WebFaq() {
                     <span className="text-[#E91E63] font-mono text-sm border-b border-[#9C27B0] shrink-0 mt-1">
                       {String(index + 1).padStart(2, '0')}.
                     </span>
-                    <h3 className="text-white font-semibold text-lg md:text-xl leading-relaxed">
+                    <h3 className="text-white font-semibold text-sm md:text-xl leading-relaxed">
                       {faq.question}
                     </h3>
                   </div>
@@ -293,7 +293,7 @@ export default function WebFaq() {
                 <div className="faq-answer overflow-hidden max-h-0 opacity-0">
                   <div className="px-6 pb-6 pl-16">
                     <div>
-                      <p className="text-gray-300 leading-relaxed font-light">
+                      <p className="text-gray-300 text-sm md:leading-relaxed md:font-light">
                         {faq.answer}
                       </p>
                     </div>
@@ -310,9 +310,9 @@ export default function WebFaq() {
           >
             {t('tipar')}
           </p>
-          <div className="header-line h-[1px] w-full bg-white/40 origin-center mb-5" />
+          <div className="header-line h-[1px] w-full bg-white/90 origin-center mb-5" />
           <p 
-            className="text-white max-w-[900px] text-sm md:text-sm font-light w-full"
+            className="text-white max-w-[900px] text-xs md:text-sm font-light w-full"
           >
             { t('par')}
           </p>

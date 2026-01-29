@@ -54,7 +54,7 @@ const BrandManualSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="w-full text-white py-32 px-10 flex flex-col items-center text-center"
+      className="w-full text-white py-20 px-10 flex flex-col items-center text-center"
     >
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
@@ -68,11 +68,11 @@ const BrandManualSection = () => {
         </div>
 
         <div ref={contentRef} className="space-y-8">
-          <p className="text-lg md:text-xl leading-relaxed text-white max-w-3xl mx-auto font-light">
+          <p className="text-xs md:text-xl leading-relaxed text-white max-w-3xl mx-auto font-light">
             { t('maParraf')}
           </p>
           
-          <p className="text-lg md:text-xl font-medium italic" >
+          <p className="text-xs md:text-xl font-medium italic" >
              { t('maPreg')}
           </p>
 

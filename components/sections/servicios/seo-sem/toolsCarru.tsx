@@ -36,7 +36,7 @@ const ToolsCarousel = () => {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
-          slidesPerView={2} 
+          slidesPerView={3} 
           loop={true}
           speed={5000} 
           autoplay={{

@@ -87,19 +87,19 @@ export default function FiveLandingSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full py-10 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative w-full py-10 px-10 md:px-12 lg:px-24 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-12">
           <h3 
             ref={numberRef}
-            className="text-[#A21F8A] text-5xl md:text-6xl font-bold italic tracking-tight"
+            className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
             05.
           </h3>
           <div 
             ref={lineRef}
-            className="w-50 h-[2px] bg-white mt-2"
+            className="w-30 h-[2px] bg-white mt-2"
           ></div>
         </div>
 
@@ -112,7 +112,7 @@ export default function FiveLandingSection() {
 
         <p 
           ref={descriptionRef}
-          className="text-white text-sm md:text-base max-w-4xl mb-16 leading-relaxed"
+          className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
         >
           Este servicio incluye auditoría, planificación, optimización, escalamiento y reportes mensuales.
         </p>
@@ -136,7 +136,7 @@ export default function FiveLandingSection() {
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <p className="text-gray-200 text-base md:text-lg">
+                  <p className="text-gray-200 text-sm md:text-lg">
                     Es una estrategia continua enfocada en resultados sostenibles.
                   </p>
                 </div>

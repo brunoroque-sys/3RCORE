@@ -136,10 +136,10 @@ const SeoSemSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="w-full text-white py-20 px-6 md:px-12 lg:px-20"
+      className="w-full text-white py-20 px-10 md:px-6 md:px-12 lg:px-20"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-30 space-y-6">
+        <div className="text-center mb-10 md:mb-30 space-y-6">
           <h2 
             ref={titleRef}
             className="text-base md:text-lg tracking-[0.3em] uppercase font-light"
@@ -152,14 +152,14 @@ const SeoSemSection = () => {
           />
           <p 
             ref={descriptionRef}
-            className="text-sm md:text-base leading-relaxed max-w-3xl mx-auto font-light"
+            className="text-xs md:text-base leading-relaxed max-w-3xl mx-auto font-light"
             dangerouslySetInnerHTML={{ __html: t('header.description') }}
           />
         </div>
 
         <div ref={seoRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
-            <div className="flex items-center justify-center min-h-[400px] md:min-h-[500px]">
+            <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[500px]">
               <div className="space-y-2 ">
                 <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#E91E63]">
                  {t('seo.title')}
@@ -196,7 +196,7 @@ const SeoSemSection = () => {
 
         <div ref={semRef}>
           <div className="grid md:grid-cols-[40%_60%] gap-0">
-            <div className="flex items-center justify-center min-h-[400px] md:min-h-[500px]">
+            <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[500px]">
               <div className="space-y-2">
                 <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#E91E63]">
                   {t('sem.title')}

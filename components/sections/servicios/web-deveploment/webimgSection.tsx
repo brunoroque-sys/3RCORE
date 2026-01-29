@@ -53,7 +53,7 @@ const WebImgSection = () => {
 
   return (
     <section ref={sectionRef} className="w-full text-white py-0 font-sans flex flex-col items-center overflow-hidden">
-      <div ref={imageContainerRef} className="w-full h-[90vh] overflow-hidden">
+      <div ref={imageContainerRef} className="w-full h-[25vh] md:h-[90vh] overflow-hidden">
         <img 
           ref={imageRef}
           src="/images/web/fondowoooo.png" 

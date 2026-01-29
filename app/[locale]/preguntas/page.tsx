@@ -22,7 +22,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="relative z-10 pt-40 pb-20 px-6">
+    <section className="relative z-10 pt-40 pb-20 px-10 md:px-6">
       <div className="max-w-4xl mx-auto">
 
         <header className="mb-12 border-b border-white/50 pb-8">
@@ -67,7 +67,7 @@ export default function FAQ() {
                     <span className="text-[#E91E63] font-mono text-sm border-b border-[#9C27B0] shrink-0 mt-1">
                       {String(index + 1).padStart(2, '0')}.
                     </span>
-                    <h3 className="text-white font-semibold text-lg md:text-xl leading-relaxed">
+                    <h3 className="text-white font-semibold text-sm md:text-xl leading-relaxed">
                       {faq.question}
                     </h3>
                   </div>
@@ -105,7 +105,7 @@ export default function FAQ() {
                 `}>
                   <div className="px-6 pb-6 pl-16">
                     <div className=" ">
-                      <p className="text-gray-300 leading-relaxed font-light">
+                      <p className="text-gray-300 text-sm md:leading-relaxed md:font-light">
                         {faq.answer}
                       </p>
                     </div>

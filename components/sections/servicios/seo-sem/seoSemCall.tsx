@@ -72,17 +72,17 @@ export default function SeoSemCall() {
     >
       <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="text-white space-y-6 pl-40">
+          <div className="text-white space-y-6 px-10 md:pl-40">
             <h2 
               ref={titleRef}
-              className="text-5xl lg:text-6xl font-light leading-tight"
+              className="text-4xl lg:text-6xl font-light leading-tight"
             >
               <span className="italic block">{t('title.part1')}</span>
               <span className="text-pink-600 font-normal block">{t('title.part2')}</span>
               <span className="text-pink-600 font-normal block">{t('title.part3')}</span>
             </h2>
 
-            <div className="space-y-4 text-base lg:text-xl">
+            <div className="space-y-4 text-xs lg:text-xl">
               <p ref={paragraph1Ref} className="leading-relaxed">
                 {t('description.paragraph1')}
               </p>

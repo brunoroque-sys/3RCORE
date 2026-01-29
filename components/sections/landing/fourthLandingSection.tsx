@@ -141,19 +141,19 @@ export default function FourthLandingSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full py-10 px-6 md:px-12 lg:px-24 overflow-hidden"
+      className="relative w-full py-10 px-10 md:px-12 lg:px-24 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-12">
           <h3 
             ref={numberRef}
-            className="text-[#A21F8A] text-5xl md:text-6xl font-bold italic tracking-tight"
+            className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
             04.
           </h3>
           <div 
             ref={lineRef}
-            className="w-50 h-[2px] bg-white mt-2"
+            className="w-30 h-[2px] bg-white mt-2"
           ></div>
         </div>
 
@@ -166,7 +166,7 @@ export default function FourthLandingSection() {
 
         <p 
           ref={descriptionRef}
-          className="text-white text-sm md:text-base max-w-4xl mb-16 leading-relaxed"
+          className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
         >
           Hemos trabajado estrategias SEO para diferentes rubros, logrando posicionamiento en búsquedas clave como:
         </p>
@@ -199,7 +199,7 @@ export default function FourthLandingSection() {
           ref={quoteRef}
           className="relative max-w-5xl mx-auto my-24"
         >
-          <div className="text-center px-8 md:px-16">
+          <div className="text-center px-1 md:px-16">
             <p 
               ref={quoteText1Ref}
               className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light"
@@ -208,7 +208,7 @@ export default function FourthLandingSection() {
             </p>
             <p 
               ref={quoteText2Ref}
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-xl md:text-3xl lg:text-4xl font-medium leading-relaxed"
             >
               y una estrategia personalizada según el negocio
             </p>

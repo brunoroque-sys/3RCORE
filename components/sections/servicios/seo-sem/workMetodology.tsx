@@ -36,7 +36,7 @@ const WorkMethodology = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="text-white pt-16 px-4 md:px-8 flex flex-col items-center bg-gradient-to-r from-[#4c0046] to-[#130218]">
+    <section ref={containerRef} className="text-white pt-16 px-10 md:px-8 flex flex-col items-center bg-gradient-to-r from-[#4c0046] to-[#130218]">
       
       <div className="header-content text-center max-w-3xl mb-12">
         <h2 className="text-3xl md:text-4xl font-serif italic mb-8">

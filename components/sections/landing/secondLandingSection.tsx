@@ -66,10 +66,10 @@ export default function SecondLandingSection() {
   
   return (
     <section ref={sectionRef} className="relative min-h-screen w-full py-20 overflow-hidden ">
-      <div className="relative max-w-7xl mx-auto px-6 mb-16">
+      <div className="relative max-w-7xl mx-auto px-10 md:px-6 mb-16">
         <div className="mb-8">
-          <h3 className="header-anim text-[#A21F8A] text-5xl md:text-6xl font-bold italic tracking-tight">02.</h3>
-          <div className="line-grow w-40 h-[2px] bg-white mt-2"></div>
+          <h3 className="header-anim text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight">02.</h3>
+          <div className="line-grow w-30 h-[2px] bg-white mt-2"></div>
         </div>
         <h2 className="header-anim text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 leading-tight">
           ¿Por qué hacer Posicionamiento SEO?
@@ -96,12 +96,12 @@ export default function SecondLandingSection() {
               />
             </div>
 
-            <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
+            <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'>
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>
                   Auditoría y Planificación SEO
                 </h3>
-                <ul className='text-white/80 space-y-3 text-sm md:text-base'>
+                <ul className='text-white/90  space-y-3 text-sm md:text-base'>
                   <li>- Análisis de palabras clave principales de tu negocio</li>
                   <li>- Estudio de competidores directos en Google</li>
                   <li>- Revisión básica de la estructura de tu sitio web</li>
@@ -116,10 +116,10 @@ export default function SecondLandingSection() {
 
         <div className='card-wrapper rounded-3xl overflow-hidden'>
           <div className='grid md:grid-cols-2 items-center'>
-            <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center'>
+            <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center'>
               <div className='max-w-md w-full'>
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>Optimización de Interlinks</h3>
-                <ul className='text-white/80 space-y-3 text-sm md:text-base'>
+                <ul className='text-white/90 space-y-3 text-sm md:text-base'>
                   <li>- Análisis de la estructura interna del sitio</li>
                   <li>- Estrategia de enlaces internos entre contenidos</li>
                   <li>- Optimización del recorrido del usuario</li>
@@ -154,12 +154,12 @@ export default function SecondLandingSection() {
               />
             </div>
 
-            <div className='text-container p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
+            <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'> 
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6 text-left'>
                   Escalamiento SEO
                 </h3>
-                <ul className='text-white/80 space-y-3 text-sm md:text-base text-left'>
+                <ul className='text-white/90 space-y-3 text-sm md:text-base text-left'>
                   <li>- Identificación de nuevas oportunidades de posicionamiento</li>
                   <li>- Optimización continua de contenidos existentes</li>
                   <li>- Refuerzo de páginas con mejor desempeño</li>

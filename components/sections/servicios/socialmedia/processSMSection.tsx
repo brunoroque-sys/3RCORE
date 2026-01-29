@@ -94,7 +94,7 @@ const ProcessSMSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full text-white py-24 font-sans flex flex-col items-center overflow-hidden">
+    <section ref={sectionRef} className="w-full text-white pt-24 font-sans flex flex-col items-center overflow-hidden">
       <div className="max-w-6xl w-full px-10 lg:px-6 space-y-24">
         
         <div className="text-center space-y-8">
@@ -124,7 +124,7 @@ const ProcessSMSection = () => {
         </div>
       </div>
 
-      <div ref={imageContainerRef} className="w-full h-[60vh] mt-24 overflow-hidden ">
+      <div ref={imageContainerRef} className="w-full h-[25vh] md:h-[60vh] mt-24 overflow-hidden ">
         <img 
           ref={imageRef}
           src="/images/branding/frandoVideo.webp" 
