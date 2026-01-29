@@ -11,23 +11,28 @@ import WorkMethodology from "@/components/sections/servicios/seo-sem/workMetodol
 import ToolsCarousel from "@/components/sections/servicios/seo-sem/toolsCarru";
 
 export default function Seosem(){
+
     const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
-      const timer = setTimeout(() => setIsLoading(false), 100);
-      return () => clearTimeout(timer);
+      const minLoadTime = setTimeout(() => {
+      }, 500);
+      
+      return () => clearTimeout(minLoadTime);
     }, []);
   
     const handleImageLoaded = () => {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
     };
-
+    
   return(
     <>
-      <AnimatePresence>
-        {isLoading && <LoadingScreen key="loader" />}
+      <AnimatePresence mode="wait">
+              {isLoading && <LoadingScreen key="loader" />}
       </AnimatePresence>
-      <main>
+      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
         <div id="hero">
           <HeroSeo onImageLoad={handleImageLoaded} />
         </div>

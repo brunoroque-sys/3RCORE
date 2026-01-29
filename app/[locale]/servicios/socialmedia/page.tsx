@@ -16,20 +16,25 @@ export default function socialmedia(){
     const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
-      const timer = setTimeout(() => setIsLoading(false), 100);
-      return () => clearTimeout(timer);
+      const minLoadTime = setTimeout(() => {
+      }, 500);
+      
+      return () => clearTimeout(minLoadTime);
     }, []);
   
     const handleImageLoaded = () => {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
     };
 
   return(
     <>
-      <AnimatePresence>
-        {isLoading && <LoadingScreen key="loader" />}
+      <AnimatePresence mode="wait">
+              {isLoading && <LoadingScreen key="loader" />}
       </AnimatePresence>
-      <main>
+      
+      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
         <div id="hero">
           <HeroSocialMedia onImageLoad={handleImageLoaded} />
         </div>

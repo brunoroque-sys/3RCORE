@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
@@ -19,8 +19,38 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
   const lineRef = useRef(null);
   const sloganRef = useRef(null);
   const sectionRef = useRef(null);
+  
+  
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+      
+  useEffect(() => {
+          const video = videoRef.current;
+          if (!video) return;
+      
+          const handleCanPlayThrough = () => {
+            setIsVideoLoaded(true);
+            onImageLoad();
+          };
+      
+          // Eventos para asegurar que el video está listo
+          video.addEventListener('canplaythrough', handleCanPlayThrough);
+          video.addEventListener('loadeddata', handleCanPlayThrough);
+      
+          // Forzar la carga del video
+          video.load();
+      
+          return () => {
+            video.removeEventListener('canplaythrough', handleCanPlayThrough);
+            video.removeEventListener('loadeddata', handleCanPlayThrough);
+          };
+  }, [onImageLoad]);
+  
 
   useEffect(() => {
+
+    if (!isVideoLoaded) return;
+
     const playAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -59,29 +89,27 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
     };
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            playAnimation();
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-      }
-    );
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                playAnimation();
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        observer.observe(sectionRef.current);
       }
-    };
-  }, []);
 
+      return () => {
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    }, [isVideoLoaded]);
+    
   return (
     <section 
       ref={sectionRef}
@@ -89,14 +117,16 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
     >
       <div className="absolute inset-0 z-0">
         <video
-          src="/videos/Brand.webm"
+          ref={videoRef}
+          className="w-full h-full object-cover"
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          onLoadedData={onImageLoad} // Similar al onLoad de la imagen
+          preload="auto"
+          style={{ opacity: isVideoLoaded ? 1 : 0, transition: 'opacity 0.3s' }}
         >
+          <source src="/videos/Brand.webm" type="video/webm" />
           Tu navegador no soporta videos.
         </video>
         <div className="absolute inset-0 bg-[#130218] via-transparent to-transparent opacity-80"></div>

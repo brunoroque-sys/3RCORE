@@ -58,9 +58,7 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
 
     const newVideo = videoRefs.current[targetIndex];
     if (newVideo && media[targetIndex].type === "video") {
-      if (autoOnHover || isHovered) {
-        newVideo.play();
-      }
+      newVideo.play();
     }
   };
 
@@ -79,14 +77,6 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
   const handleMouseEnter = () => {
     setIsHovered(true);
 
-    if (media[currentIndex].type === "video") {
-      const currentVideo = videoRefs.current[currentIndex];
-      if (currentVideo) {
-        currentVideo.play();
-      }
-      if (!autoOnHover) return;
-    }
-
     if (autoOnHover && media.length > 1) {
       if (media[currentIndex].type === "video") return;
       
@@ -104,12 +94,17 @@ const PizzaCard: React.FC<PizzaCardProps> = ({
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-    
-    const currentVideo = videoRefs.current[currentIndex];
-    if (currentVideo) {
-      currentVideo.pause();
-    }
   };
+
+  useEffect(() => {
+    // Auto-play video when component mounts or currentIndex changes
+    if (media[currentIndex]?.type === "video") {
+      const currentVideo = videoRefs.current[currentIndex];
+      if (currentVideo) {
+        currentVideo.play();
+      }
+    }
+  }, [currentIndex, media]);
 
   useEffect(() => {
     return () => {

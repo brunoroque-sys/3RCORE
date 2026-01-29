@@ -19,23 +19,26 @@ import { AnimatePresence } from "framer-motion";
 export default function branding(){
 
   const [isLoading, setIsLoading] = useState(true);
-
+  
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000);
-    return () => clearTimeout(timer);
+      const minLoadTime = setTimeout(() => {
+      }, 500);
+      
+      return () => clearTimeout(minLoadTime);
   }, []);
-
+  
   const handleImageLoaded = () => {
-    setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
   };
-
   return(
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen key="loader" />}
       </AnimatePresence>
 
-      <main style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.5s ease' }}>
+      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
         <div id="hero">
           <HeroBranding onImageLoad={handleImageLoaded} />
         </div>

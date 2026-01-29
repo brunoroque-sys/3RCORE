@@ -17,20 +17,26 @@ export default function WebDeveploment(){
     const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
-      const timer = setTimeout(() => setIsLoading(false), 100);
-      return () => clearTimeout(timer);
+      const minLoadTime = setTimeout(() => {
+      }, 500);
+      
+      return () => clearTimeout(minLoadTime);
     }, []);
   
     const handleImageLoaded = () => {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
     };
 
   return(
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen key="loader" />}
       </AnimatePresence>
-      <main>
+      
+      {/* Renderiza el Hero incluso cuando está cargando para precargar el video */}
+      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
         <div id="hero">
           <HeroWeb onImageLoad={handleImageLoaded} />
         </div>
@@ -47,7 +53,6 @@ export default function WebDeveploment(){
           <ContactForm/>
         </div>
       </main>
-
     </>
   );
 }
