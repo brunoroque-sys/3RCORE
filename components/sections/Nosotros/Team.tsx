@@ -26,10 +26,11 @@ const members = [
   { id: 14, name: "Sara", role: "Film Maker", image: "/images/Equipo/Sara.webp", area:"design multimedia" },
   { id: 15, name: "Karol", role: "Designer", image: "/images/Equipo/Karol.webp", area:"design multimedia"},
   { id: 16, name: "Josue", role: "Post-Production", image: "/images/Equipo/Josue.webp", area:"design multimedia"},
+  { id: 17, name: "Franco", role: "Designer", image: "/images/Equipo/franco-2.webp", area:"design multimedia"}, 
 
-  { id: 17, name: "Debora", role: "Project Manager Director", image: "/images/Equipo/Debora.webp", area:"Web developmet & IT" },
-  { id: 18, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web developmet & IT"},
-  { id: 19, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web developmet & IT" },
+  { id: 18, name: "Debora", role: "Project Manager Director", image: "/images/Equipo/Debora.webp", area:"Web development & IT" },
+  { id: 19, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web development & IT"},
+  { id: 20, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web development & IT" },
 
 ];
 
