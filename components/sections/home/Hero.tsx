@@ -132,7 +132,7 @@ export default function HeroHome() {
       </svg>
     </div>
 
-      <div className="absolute bottom-30 left-20 z-20 text-white pointer-events-none">
+      <div className="absolute bottom-30 left-10 lg:left-20 z-20 text-white pointer-events-none">
         <h2 className="text-3xl md:text-4xl font-light">{t('agency')} <span className="italic font-serif">{t('s')}</span></h2>
         <div className="relative h-20 w-[500px]">
           {palabrasAbajo.map((h2, i) => (
@@ -143,7 +143,7 @@ export default function HeroHome() {
         </div>
       </div>
 
-      <div className="absolute top-40 right-20 z-20 text-white text-right pointer-events-none">
+      <div className="absolute top-40 right-10 lg:right-20 z-20 text-white text-right pointer-events-none">
         <h2 className="text-3xl md:text-4xl font-light ">{t('agency2')}  <span className="italic font-serif">{t('d')}</span></h2>
         <div className="relative h-30 w-[500px] ml-auto">
           <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 

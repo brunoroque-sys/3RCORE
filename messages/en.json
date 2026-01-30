@@ -56,8 +56,8 @@
     },
     "webdesign": {
       "bg": "/images/tituloCarru/webCarrubg.webp",
-      "title": "/images/tituloCarru/WebDesign.svg",
-      "titleMobile": "/images/tituloCarru/webDesignHorizontal.svg",
+      "title": "/images/tituloCarru/webDevelopmentV.svg",
+      "titleMobile": "/images/tituloCarru/webDevelopment.svg",
       "slides": {
         "sw1": "/images/tituloCarru/webCarrubg.webp",
         "sw2": "/images/tituloCarru/webCarru1.webp",

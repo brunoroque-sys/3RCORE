@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const members = [
   { id: 1, name: "Maria Fernanda", role: "Commercial Director", image: "/images/Equipo/Mafer.webp", area:"commercial" },
   { id: 2, name: "Gimena", role: "Commercial", image: "/images/Equipo/Gimena.webp", area:"commercial"},
-  { id: 3, name: "Diana", role:"Commercial Supervisor", image:"/images/Equipo/009.png", area:"commercial"},
+  { id: 3, name: "Diana", role:"Commercial Supervisor", image:"/images/Equipo/008.webp", area:"commercial"},
 
   { id: 4, name: "Elizabeth", role: "Creative Design Supervisor", image: "/images/Equipo/Elizabeth.webp", area:"branding"},
   { id: 5, name: "Odeth", role: "Brand Designer", image: "/images/Equipo/Odeth.webp", area:"branding"},

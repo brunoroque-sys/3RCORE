@@ -34,9 +34,11 @@ export default function HeroSocialMedia({ onImageLoad }: HeroBrandingProps) {
         onImageLoad();
       };
   
+      // Eventos para asegurar que el video está listo
       video.addEventListener('canplaythrough', handleCanPlayThrough);
       video.addEventListener('loadeddata', handleCanPlayThrough);
   
+      // Forzar la carga del video
       video.load();
   
       return () => {
@@ -134,7 +136,7 @@ return (
       <div className="relative z-10 text-center px-10">
         <div className="flex flex-col items-center">
           
-          <div className='w-auto md:w-30%]'>
+          <div className='w-auto'>
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
@@ -159,12 +161,12 @@ return (
 
           <div 
             ref={lineRef}
-            className="w-full md:w-250 h-[1px] bg-white/50 my-8"
+            className="w-full ms:w-2/3 2xl:w-1/2 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light w-full md:w-1/2 mx-auto leading-relaxed break-words"
+            className="text-white text-xs md:text-sm font-light  ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
           >
             { t('slogan')}
           </p>

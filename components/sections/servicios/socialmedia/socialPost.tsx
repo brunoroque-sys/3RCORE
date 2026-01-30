@@ -57,7 +57,7 @@ const SocialPost = () => {
     >
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
-          <h2 className="text-sm md:text-lg tracking-[0.3em] uppercase font-light text-white">
+          <h2 className="text-sm lg:text-lg tracking-[0.3em] uppercase font-light text-white">
             { t('poTitle')}
           </h2>
           <div 
@@ -67,11 +67,11 @@ const SocialPost = () => {
         </div>
 
         <div ref={contentRef} className="space-y-8">
-          <p className="text-xs md:text-xl leading-relaxed text-white max-w-3xl mx-auto font-light">
+          <p className="text-xs lg:text-xl leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf')}
           </p>
           
-          <p className="text-xs md:text-xl font-medium italic" >
+          <p className="text-xs lg:text-xl font-medium italic" >
              { t('poPreg')}
           </p>
 

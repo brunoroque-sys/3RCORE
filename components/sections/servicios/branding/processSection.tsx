@@ -98,10 +98,10 @@ const ProcessSection = () => {
       <div className="max-w-6xl w-full px-10 space-y-24">
         
         <div className="text-center space-y-8">
-          <h2 ref={headerRef} className="italic text-2xl md:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
+          <h2 ref={headerRef} className="italic text-2xl lg:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
             { t('protitle')}
           </h2>
-          <p ref={subheaderRef} className="text-xl md:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
+          <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
             { t('prosubtitle')}
           </p>
         </div>
@@ -116,7 +116,7 @@ const ProcessSection = () => {
               <span className={`block text-[#A21F8A] text-4xl font-bold mb-6 pb-4 ${trirong.className} border-b border-gray-600`}>
                 {step.id}
               </span>
-              <h3 className="text-lg font-semibold tracking-[0.07em]">
+              <h3 className="lg:text-lg font-semibold tracking-[0.07em]">
                 {step.title}
               </h3>
             </div>
@@ -124,7 +124,7 @@ const ProcessSection = () => {
         </div>
       </div>
 
-      <div ref={imageContainerRef} className="w-full h-[25vh] md:h-[60vh] mt-24 overflow-hidden">
+      <div ref={imageContainerRef} className="w-full md:h-[25vh] lg:h-[60vh] mt-24 overflow-hidden">
         <img 
           ref={imageRef}
           src="/images/branding/frandoVideo.webp" 

@@ -134,7 +134,7 @@ export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
       <div className="relative z-10 text-center px-10">
         <div className="flex flex-col items-center">
           
-          <div className='w-auto md:w-[35%]'>
+          <div className='w-auto '>
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
@@ -159,12 +159,12 @@ export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
 
           <div 
             ref={lineRef}
-            className="w-full md:w-200 h-[1px] bg-white/50 my-8"
+            className="w-full ms:w-2/3 2xl:w-1/2 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light w-full"
+            className="text-white text-xs md:text-sm font-light  ms:w-1/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
           >
             { t('slogan')}
           </p>

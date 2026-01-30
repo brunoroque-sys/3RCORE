@@ -6,7 +6,7 @@ export function SocialShowSection() {
   
 
   return (
-        <section className="relative h-[70vh] w-full overflow-hidden">
+        <section className="relative h-[25vh] lg:h-[70vh] w-full overflow-hidden">
           <Image
             src="/images/social/fondoFi.png"
             alt="Sobre nosotros"

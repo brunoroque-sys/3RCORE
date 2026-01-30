@@ -79,7 +79,7 @@ const NosotrosSection= () => {
     <section ref={containerRef} className="w-full py-40 px-10 flex justify-center items-center overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         
-        <h2 className={`team-title ${playfair.className} text-white text-4xl md:text-6xl mb-6 tracking-wide`}>
+        <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl mb-6 tracking-wide`}>
           {titleText.map((word, index) => (
             <span 
               key={index} 
@@ -91,17 +91,17 @@ const NosotrosSection= () => {
           ))}
         </h2>
 
-        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-5xl font-medium mb-10 tracking-tight will-change-transform`}>
+        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl font-medium mb-10 tracking-tight will-change-transform`}>
          {t('subtitle')}
         </h3>
 
-        <div className="team-line w-full max-w-2xl mx-auto h-[1px] bg-white/40 my-10 origin-center will-change-transform"></div>
+        <div className="team-line w-full max-w-xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
 
-        <p className={`${montserrat.className} text-white text-base md:text-xl leading-relaxed max-w-5xl mx-auto font-normal`}>
+        <p className={`${montserrat.className} text-white ms:text-sm text-xs md:text-base leading-relaxed max-w-5xl mx-auto font-normal`}>
           {paragraphText.map((word, index) => (
             <span 
               key={index} 
-              className="char-anim inline-block mr-[0.3em]" 
+              className="char-anim inline-block mr-[0.5em]" 
               style={{ whiteSpace: "pre-wrap" }} 
             >
               {word}

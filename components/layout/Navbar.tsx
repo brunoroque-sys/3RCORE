@@ -133,16 +133,22 @@ const Navbar = () => {
       >
         <div className="w-full h-full flex flex-col lg:flex-row">
           
-          <div className="hidden lg:flex flex-1 items-center justify-center bg-[#130218] relative border-r border-white/10">
-             <div className={`relative h-100 w-100 transition-all duration-700 delay-300 transform ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-10'}`}>
-                <Image
-                  src="/icons/LogoFull.webp" 
-                  alt="3RCORE Logo Large"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+          <div onClick={() => setIsOpen(false)} className="hidden lg:flex flex-1 items-center justify-center bg-[#130218] relative border-r border-white/10">
+            {/* Envolvemos el div de la imagen con Link */}
+            <Link 
+              href="/" 
+              className={`relative h-100 w-100 cursor-pointer transition-all duration-700 delay-300 transform ${
+                isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-10'
+              }`}
+            >
+              <Image
+                src="/icons/LogoFull.webp" 
+                alt="3RCORE Logo Large"
+                fill
+                className="object-contain"
+                priority
+              />
+            </Link>
           </div>
 
           <div className="flex-1 flex flex-col justify-between bg-[#130218] p-8 sm:p-16 pt-28 lg:pt-16">

@@ -68,11 +68,11 @@ export default function SeoSemCall() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen pt-24 flex items-center overflow-hidden"
     >
       <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="text-white space-y-6 px-10 md:pl-40">
+          <div className="text-white space-y-6 px-10 lg:pl-40">
             <h2 
               ref={titleRef}
               className="text-4xl lg:text-6xl font-light leading-tight"
@@ -93,10 +93,10 @@ export default function SeoSemCall() {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative flex justify-center md:justify-end lg:justify-end">
             <div 
               ref={imageRef}
-              className="relative w-full lg:max-w-[650px] 2xl:max-w-[750px]"
+              className="relative w-full max-w-[450px] lg:max-w-[650px] 2xl:max-w-[750px]"
             >
               <Image
                 src="/images/seosem/laptopInici.png"

@@ -39,11 +39,11 @@ export default function BrandApplications() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 items-center">
         
         <div className="flex flex-col space-y-4 md:space-y-6 text-center md:text-left">
-          <h2 className="text-white text-3xl md:text-5xl lg:text-5xl font-serif italic tracking-wide">
+          <h2 className="text-white text-3xl lg:text-5xl lg:text-5xl font-serif italic tracking-wide">
             {t('apMarca')}
           </h2>
           
-          <p className="text-white/90 text-base md:text-xl lg:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
+          <p className="text-white/90 text-base lg:text-xl lg:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
             {t('apParraf')}
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function BrandApplications() {
               className="w-full h-auto object-contain max-h-[300px] md:max-h-none transition-opacity duration-300 rounded-[20px]"
             />
 
-            <div className="absolute -bottom-6 -left-4 md:-bottom-10 md:-left-20 w-24 h-24 md:w-50 md:h-50 z-10">
+            <div className="absolute -bottom-20 -left-8 lg:-bottom-10 lg:-left-20 w-24 h-24 lg:w-50 md:h-50 z-10">
               <img 
                 src="/images/branding/Apli/stickerAI.png" 
                 alt="Alucon Sticker"

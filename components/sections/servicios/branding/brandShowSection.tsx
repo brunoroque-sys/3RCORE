@@ -44,12 +44,12 @@ export function BrandShowSection(){
 
   return (
     <section ref={sectionRef} className="w-full text-white py-0 font-sans flex flex-col items-center overflow-hidden">
-      <div ref={imageContainerRef} className="w-full md:h-[90vh] overflow-hidden">
+      <div ref={imageContainerRef} className="w-full h-[25vh] lg:h-[70vh] overflow-hidden">
         <img 
           ref={imageRef}
           src="/images/branding/fond.png" 
           alt="Proceso creativo"
-          className="w-full h-full " 
+          className="object-cover " 
         />
       </div>
     </section>
