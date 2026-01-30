@@ -12,16 +12,24 @@ export async function GET(request: Request) {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        // ESTO ES CLAVE: Simula un navegador real
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Accept': 'application/json',
       },
-      // Esto ayuda a que WordPress no bloquee la petición
       next: { revalidate: 60 } 
     });
 
-    if (!res.ok) return NextResponse.json({ error: 'WP Error' }, { status: res.status });
+    // Si WordPress sigue dando 403, capturamos el error para saber qué pasa
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error(`Error de WordPress (${res.status}):`, errorText);
+      return NextResponse.json({ error: `WP responded with ${res.status}` }, { status: res.status });
+    }
 
     const data = await res.json();
     return NextResponse.json(data);
   } catch (error) {
+    console.error("Error en el servidor de Next.js:", error);
     return NextResponse.json({ error: 'Server Error' }, { status: 500 });
   }
 }
