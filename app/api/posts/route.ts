@@ -9,18 +9,23 @@ export async function GET(request: Request) {
     const wpUrl = `https://3rcore.com${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
     
     const res = await fetch(wpUrl, {
-      next: { revalidate: 300 } 
+      headers: {
+        'Accept': 'application/json',
+      },
+      next: { revalidate: 300 }
     });
 
     if (!res.ok) {
-      throw new Error(`Error HTTP: ${res.status}`);
+      return NextResponse.json(
+        { error: 'WordPress API error' },
+        { status: res.status }
+      );
     }
 
     const data = await res.json();
-    
     return NextResponse.json(data);
+    
   } catch (error) {
-    console.error('Error fetching posts:', error);
     return NextResponse.json(
       { error: 'Failed to fetch posts' },
       { status: 500 }

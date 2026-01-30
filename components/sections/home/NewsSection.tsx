@@ -24,37 +24,44 @@ interface WPPost {
   };
 }
 
-const NewsSection = () => {
-  const t = useTranslations("NewsSection");
+  const NewsSection = () => {
+    const t = useTranslations("NewsSection");
 
-  const [posts, setPosts] = useState<WPPost[]>([]);
-  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+    const [posts, setPosts] = useState<WPPost[]>([]);
+    const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const tValue = t("t");
-        const prefix = tValue === "en" ? "/en" : "";
-        const wpUrl = `https://3rcore.com${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
+    useEffect(() => {
+      const fetchPosts = async () => {
+        try {
+          const tValue = t("t");
+          const lang = tValue === "en" ? "en" : "es";
+          
+          console.log(`Fetching posts for language: ${lang}`);
+          
+          const res = await fetch(`/api/posts?lang=${lang}`);
 
-        const proxyUrl = "https://corsproxy.io/?";
-        const finalUrl = proxyUrl + encodeURIComponent(wpUrl);
+          if (!res.ok) {
+            let errorMessage = `Error HTTP: ${res.status}`;
+            try {
+              const errorData = await res.json();
+              errorMessage = errorData.message || errorMessage;
+            } catch (e) {
+              console.warn('Could not parse error response');
+            }
+            throw new Error(errorMessage);
+          }
 
-        console.log("Conectando a través de proxy a:", wpUrl);
+          const data = await res.json();
+          console.log(`Loaded ${data.length} posts`);
+          setPosts(data);
+          
+        } catch (error) {
+          console.error("Error al obtener posts:", error);
+        }
+      };
 
-        const res = await fetch(finalUrl);
-
-        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
-
-        const data = await res.json();
-        setPosts(data);
-      } catch (error) {
-        console.error("Error al obtener posts:", error);
-      }
-    };
-
-    fetchPosts();
-  }, [t]);
+      fetchPosts();
+    }, [t]);
 
   if (posts.length === 0) return null;
 
