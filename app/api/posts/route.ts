@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge'; // Opcional: usa Edge Runtime para mejor rendimiento
-export const revalidate = 300; // Revalida cada 5 minutos
+export const runtime = 'edge'; 
+export const revalidate = 300; 
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -11,7 +11,6 @@ export async function GET(request: Request) {
     const prefix = lang === 'en' ? '/en' : '';
     const wpUrl = `https://3rcore.com${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
     
-    console.log('Fetching from:', wpUrl);
     
     const res = await fetch(wpUrl, {
       method: 'GET',
@@ -24,11 +23,9 @@ export async function GET(request: Request) {
         'Referer': 'https://3rcore.com/',
         'Origin': 'https://3rcore.com',
       },
-      // No uses next.revalidate aquí si usas export const revalidate arriba
-      cache: 'no-store', // Cambia a 'force-cache' después de probar
+      cache: 'no-store', 
     });
 
-    console.log('Response status:', res.status);
 
     if (!res.ok) {
       const errorText = await res.text();
@@ -40,7 +37,6 @@ export async function GET(request: Request) {
     }
 
     const data = await res.json();
-    console.log('Success! Posts count:', data.length);
     
     return NextResponse.json(data, {
       headers: {

@@ -5,7 +5,7 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useTranslations } from 'next-intl'; // Importación añadida
+import { useTranslations } from 'next-intl'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 
 const ServiceAbout = () => {
   const containerRef = useRef(null);
-  const t = useTranslations('ServiceAbout'); // Hook de traducción
+  const t = useTranslations('ServiceAbout'); 
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -74,7 +74,6 @@ const ServiceAbout = () => {
       <div className="max-w-6xl mx-auto text-center">
         
         <h2 className={`team-title ${playfair.className} text-white text-4xl md:text-5xl mb-6 tracking-wide`}>
-          {/* Reemplazo de titleText por t('title') */}
           {t('title').split("").map((char, index) => (
             <span 
               key={index} 

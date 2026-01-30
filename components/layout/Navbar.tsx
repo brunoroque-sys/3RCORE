@@ -93,7 +93,7 @@ const Navbar = () => {
 
             <div className="flex items-center gap-6 relative z-[60]">
               <div className={`flex items-center gap-4 text-xs font-bold tracking-widest transition-opacity duration-300 ${isOpen ? 'opacity-0 delay-0' : 'opacity-100 delay-300'} text-gray-400`}>
-                {/* Versión Español */}
+
                 <Link 
                   href={pathname} 
                   locale="es" 
@@ -102,7 +102,6 @@ const Navbar = () => {
                   ES
                 </Link>
 
-                {/* Versión Inglés */}
                 <Link 
                   href={pathname} 
                   locale="en" 
@@ -152,7 +151,7 @@ const Navbar = () => {
                onClick={() => setIsOpen(false)}
                className="absolute top-8 right-8 text-sm font-bold tracking-widest uppercase text-white/70 hover:text-white transition-colors cursor-pointer"
             >
-               CLOSE
+               {t('clo')}
             </button>
 
             <ul className="flex flex-col space-y-0">

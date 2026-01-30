@@ -15,7 +15,6 @@ const Contacto = () => {
     const ctx = gsap.context(() => {
       const q = gsap.utils.selector(sectionRef);
 
-      // 1. Animación de entrada para el texto central
       gsap.from(q(".content-center > *"), {
         y: 50,
         opacity: 0,
@@ -28,24 +27,21 @@ const Contacto = () => {
         }
       });
 
-      // 2. Efecto Parallax para las imágenes decorativas
-      // Cada imagen se mueve a una velocidad ligeramente diferente
       const decorations = q(".decoration-img");
       
       decorations.forEach((img, i) => {
         gsap.to(img, {
-          y: i % 2 === 0 ? -60 : 60, // Unas suben, otras bajan
+          y: i % 2 === 0 ? -60 : 60, 
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top bottom",
             end: "bottom top",
-            scrub: 1.5, // Suaviza el movimiento al hacer scroll
+            scrub: 1.5, 
           }
         });
       });
 
-      // 3. Pequeño movimiento flotante continuo (Idle animation)
       decorations.forEach((img) => {
         gsap.to(img, {
           x: "random(-10, 10)",
@@ -68,7 +64,6 @@ const Contacto = () => {
       className="relative md:h-screen text-white px-4 pt-50 md:pt-0 flex flex-col items-center justify-center text-center overflow-hidden"
     >
       
-      {/* Imágenes Decorativas con clase común para GSAP */}
       <div className="decoration-img hidden lg:block absolute top-[20%] left-[5%] md:left-[0%] w-32 md:w-100 h-auto">
         <img src="/images/brand.webp" alt="Decoración 1" className="w-full h-auto rounded-lg shadow-2xl opacity-60 hover:opacity-100 transition-opacity" />
       </div>
@@ -85,7 +80,6 @@ const Contacto = () => {
         <img src="/images/oficina.webp" alt="Decoración 4" className="w-full h-auto opacity-50" />
       </div>
 
-      {/* Contenedor de Texto Central */}
       <div className="content-center relative z-20"> 
         <h2 className="text-4xl md:text-6xl font-serif italic mb-2">
           { t('title')}

@@ -119,7 +119,6 @@ export default function HeroHome() {
     >
       <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Scroll</span>
       
-      {/* Esta es la flecha que animará GSAP */}
       <svg 
         className="scroll-arrow w-6 h-6 mt-2" 
         viewBox="0 0 24 24" 

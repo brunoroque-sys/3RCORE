@@ -129,7 +129,6 @@ const Footer = () => {
   );
 };
 
-// Componente SocialIcon tipado correctamente para TS
 const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => {
   return (
     <a 

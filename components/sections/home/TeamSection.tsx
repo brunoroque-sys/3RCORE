@@ -24,7 +24,6 @@ const TeamSection = () => {
   const t = useTranslations('TeamSection');
   const containerRef = useRef(null);
 
-  // Dividimos por palabras para evitar cortes huérfanos
   const titleWords = t('title').split(" ");
   const descriptionWords = t('description').split(" ");
   
@@ -66,7 +65,7 @@ const TeamSection = () => {
       opacity: 0,
       y: 10,
       filter: "blur(4px)",
-      stagger: 0.02, // Stagger por palabra es mucho más legible
+      stagger: 0.02, 
       duration: 0.8, 
       ease: "power1.out"
     }, "-=1.2"); 

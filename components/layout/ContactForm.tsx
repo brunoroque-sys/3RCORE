@@ -118,7 +118,6 @@ const ContactForm = () => {
               className="absolute inset-0 w-full h-full opacity-95 group-hover:opacity-100 transition-all duration-700"
               title="Mapa de ubicación"
             ></iframe>
-            {/* Overlay suave */}
             <div className="absolute inset-0 pointer-events-none bg-[#130218] opacity-10 group-hover:opacity-0 transition-opacity duration-700"></div>
           </div>
         </div>

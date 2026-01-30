@@ -18,7 +18,6 @@ export default function WebApplications() {
     if (!sectionRef.current || !titleRef.current || !paragraphRef.current || !imageRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animación del título
       gsap.from(titleRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -30,7 +29,6 @@ export default function WebApplications() {
         ease: "power3.out"
       });
 
-      // Animación del párrafo
       gsap.from(paragraphRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -43,7 +41,6 @@ export default function WebApplications() {
         delay: 0.3
       });
 
-      // Animación de la imagen
       gsap.from(imageRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -57,7 +54,6 @@ export default function WebApplications() {
         delay: 0.2
       });
 
-      // Animación flotante continua para la imagen
       gsap.to(imageRef.current, {
         y: -10,
         duration: 2,
@@ -66,7 +62,6 @@ export default function WebApplications() {
         repeat: -1
       });
 
-      // Efecto de brillo en el título
       if (titleRef.current) {
         const title = titleRef.current;
         

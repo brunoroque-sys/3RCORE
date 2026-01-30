@@ -114,7 +114,8 @@
       "services":"SERVICIOS",
       "blogs":"BLOGS",
       "contact":"CONTACTO"
-    }
+    },
+    "clo":"CERRAR"
   }
   ,
   "FoundersSection": {

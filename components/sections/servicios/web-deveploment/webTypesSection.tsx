@@ -14,7 +14,6 @@ const WebTypesSection = () => {
   const lineRef = useRef<HTMLDivElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   
-  // Referencias únicas para cada sección
   const seoRef = useRef<HTMLDivElement>(null);
   const seoLineRef = useRef<HTMLDivElement>(null);
   
@@ -37,7 +36,6 @@ const WebTypesSection = () => {
     if (!containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animación del header
       gsap.from(titleRef.current, {
         scrollTrigger: {
           trigger: containerRef.current,
@@ -72,7 +70,6 @@ const WebTypesSection = () => {
         delay: 0.4
       });
 
-      // Función para animar cada sección
       const animateSection = (
         ref: React.RefObject<HTMLDivElement | null>, 
         lineRef: React.RefObject<HTMLDivElement | null>, 
@@ -117,7 +114,6 @@ const WebTypesSection = () => {
         });
       };
 
-      // Animar cada sección
       animateSection(seoRef, seoLineRef, 'seo-item');
       animateSection(infoRef, infoLineRef, 'info-item');
       animateSection(ecommRef, ecommLineRef, 'ecomm-item');
@@ -153,8 +149,6 @@ const WebTypesSection = () => {
             dangerouslySetInnerHTML={{ __html: t('header.description') }}
           />
         </div>
-
-        {/* Landing Page Section */}
         <div ref={seoRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
@@ -179,7 +173,6 @@ const WebTypesSection = () => {
           </div>
         </div>
 
-        {/* Info Section */}
         <div ref={infoRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
@@ -204,7 +197,6 @@ const WebTypesSection = () => {
           </div>
         </div>
 
-        {/* E-commerce Section */}
         <div ref={ecommRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
@@ -229,7 +221,6 @@ const WebTypesSection = () => {
           </div>
         </div>
 
-        {/* E-learning Section */}
         <div ref={elearnRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
@@ -254,7 +245,6 @@ const WebTypesSection = () => {
           </div>
         </div>
 
-        {/* Services Section */}
         <div ref={servicRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">
@@ -279,7 +269,6 @@ const WebTypesSection = () => {
           </div>
         </div>
 
-        {/* Blogs Section */}
         <div ref={blogsRef} className="mb-20">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center min-h-[50px] md:min-h-[80px]">

@@ -16,12 +16,10 @@ const CTAContacto = () => {
   
   const containerRef = useRef(null);
   const cardRef = useRef(null);
-// 1. Define el tipo en el useRef
 const contentRef = useRef<HTMLDivElement>(null);
 
 useEffect(() => {
   const ctx = gsap.context(() => {
-    // 2. Asegúrate de que contentRef.current no sea nulo antes de usarlo
     if (contentRef.current) {
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -35,7 +33,6 @@ useEffect(() => {
         { opacity: 1, y: 0 }
       )
       .fromTo(
-        // Accedemos a los hijos de forma segura
         contentRef.current.children, 
         { opacity: 0, y: 20 }, 
         { 

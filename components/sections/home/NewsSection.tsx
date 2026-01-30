@@ -79,7 +79,6 @@ interface WPPost {
       </div>
 
       <div className="max-w-7xl mx-auto relative flex items-center">
-        {/* Botón Anterior */}
         <button
           onClick={() => swiperInstance?.slidePrev()}
           className="absolute -left-20 z-20 hidden xl:block text-white/50 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"
@@ -87,7 +86,6 @@ interface WPPost {
           <ChevronLeft size={60} strokeWidth={1} />
         </button>
 
-        {/* Swiper */}
         <div className="w-full">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -169,7 +167,6 @@ interface WPPost {
           </Swiper>
         </div>
 
-        {/* Botón Siguiente */}
         <button
           onClick={() => swiperInstance?.slideNext()}
           className="absolute -right-20 z-20 hidden xl:block text-white/50 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"
@@ -178,7 +175,6 @@ interface WPPost {
         </button>
       </div>
 
-      {/* Botón Ver Todos los Blogs */}
       <div className="mt-10 flex justify-center">
         <a
           href="https://3rcore.com/blog/"
@@ -193,7 +189,6 @@ interface WPPost {
         </a>
       </div>
 
-      {/* Estilos CSS personalizados para Swiper */}
       <style jsx global>{`
         .news-swiper {
           padding-bottom: 20px;

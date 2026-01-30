@@ -33,11 +33,9 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
             onImageLoad();
           };
       
-          // Eventos para asegurar que el video está listo
           video.addEventListener('canplaythrough', handleCanPlayThrough);
           video.addEventListener('loadeddata', handleCanPlayThrough);
       
-          // Forzar la carga del video
           video.load();
       
           return () => {
