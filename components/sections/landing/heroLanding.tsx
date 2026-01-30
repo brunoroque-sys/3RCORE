@@ -104,7 +104,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          onLoadedData={onImageLoad} // Similar al onLoad de la imagen
+          onLoadedData={onImageLoad} 
         >
           Tu navegador no soporta videos.
         </video>

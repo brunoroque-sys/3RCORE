@@ -1,4 +1,4 @@
-"use client"; // Importante para usar usePathname y window.scrollTo
+"use client"; 
 
 import Link from "next/link";
 import Image from "next/image";

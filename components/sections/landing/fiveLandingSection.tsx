@@ -21,7 +21,6 @@ export default function FiveLandingSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del número "05."
       gsap.from(numberRef.current, {
         scrollTrigger: {
           trigger: numberRef.current,
@@ -33,7 +32,6 @@ export default function FiveLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la línea (crecimiento de 0 a 100%)
       gsap.from(lineRef.current, {
         scrollTrigger: {
           trigger: lineRef.current,
@@ -46,7 +44,6 @@ export default function FiveLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del título principal
       gsap.from(headingRef.current, {
         scrollTrigger: {
           trigger: headingRef.current,
@@ -59,7 +56,6 @@ export default function FiveLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la descripción
       gsap.from(descriptionRef.current, {
         scrollTrigger: {
           trigger: descriptionRef.current,
@@ -72,7 +68,6 @@ export default function FiveLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la tarjeta de precio
       gsap.from(priceCardRef.current, {
         scrollTrigger: {
           trigger: priceCardRef.current,

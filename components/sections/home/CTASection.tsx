@@ -35,7 +35,7 @@ const StatsAndCTA = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const stats = [
-    { id: 1, endValue: 1000, label: t("labelClients"), prefix: "+" },
+    { id: 1, endValue: 5000, label: t("labelClients"), prefix: "+" },
     { id: 2, endValue: 10, label: t("labelExperience"), prefix: "+" },
     { id: 3, endValue: 3, label: t("labelCountries"), prefix: "+" },
   ];

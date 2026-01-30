@@ -25,7 +25,6 @@ export default function FourthLandingSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del número "04."
       gsap.from(numberRef.current, {
         scrollTrigger: {
           trigger: numberRef.current,
@@ -37,7 +36,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la línea (crecimiento de 0 a 100%)
       gsap.from(lineRef.current, {
         scrollTrigger: {
           trigger: lineRef.current,
@@ -49,8 +47,6 @@ export default function FourthLandingSection() {
         delay: 0.3,
         ease: 'power3.out',
       });
-
-      // Animación del título principal
       gsap.from(headingRef.current, {
         scrollTrigger: {
           trigger: headingRef.current,
@@ -63,7 +59,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la descripción
       gsap.from(descriptionRef.current, {
         scrollTrigger: {
           trigger: descriptionRef.current,
@@ -76,7 +71,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la primera imagen (desde la izquierda)
       gsap.from(image1Ref.current, {
         scrollTrigger: {
           trigger: image1Ref.current,
@@ -88,7 +82,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la segunda imagen (desde la derecha)
       gsap.from(image2Ref.current, {
         scrollTrigger: {
           trigger: image2Ref.current,
@@ -100,7 +93,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del contenedor de quote
       gsap.from(quoteRef.current, {
         scrollTrigger: {
           trigger: quoteRef.current,
@@ -112,7 +104,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del primer texto del quote
       gsap.from(quoteText1Ref.current, {
         scrollTrigger: {
           trigger: quoteRef.current,
@@ -125,7 +116,6 @@ export default function FourthLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del segundo texto del quote (gradiente)
       gsap.from(quoteText2Ref.current, {
         scrollTrigger: {
           trigger: quoteRef.current,
@@ -175,7 +165,6 @@ export default function FourthLandingSection() {
           {t('description')}
         </p>
 
-        {/* Images Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           <div 
             ref={image1Ref}

@@ -20,7 +20,7 @@ const foundersData = [
       id: 'alejandro', 
       name: 'ALEJANDRO', 
       fullName: 'Alejandro Roque', 
-      role: t('roles.ceo'), // <--- Usa la traducción aquí
+      role: t('roles.ceo'), 
       image: '/images/Fundadores/alejandro.webp' 
     },
     { 

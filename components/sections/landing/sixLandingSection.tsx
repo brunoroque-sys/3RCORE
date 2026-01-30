@@ -20,7 +20,6 @@ export default function SixLandingSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del número "06."
       gsap.from(numberRef.current, {
         scrollTrigger: {
           trigger: numberRef.current,
@@ -32,7 +31,6 @@ export default function SixLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la línea (crecimiento de 0 a 100%)
       gsap.from(lineRef.current, {
         scrollTrigger: {
           trigger: lineRef.current,
@@ -45,7 +43,6 @@ export default function SixLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del título principal
       gsap.from(headingRef.current, {
         scrollTrigger: {
           trigger: headingRef.current,
@@ -58,7 +55,6 @@ export default function SixLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la descripción
       gsap.from(descriptionRef.current, {
         scrollTrigger: {
           trigger: descriptionRef.current,

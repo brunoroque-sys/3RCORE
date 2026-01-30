@@ -23,7 +23,6 @@ export default function FirstLandingSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animación del número "03."
       gsap.from(numberRef.current, {
         scrollTrigger: {
           trigger: numberRef.current,
@@ -35,7 +34,6 @@ export default function FirstLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la línea (crecimiento de 0 a 100%)
       gsap.from(lineRef.current, {
         scrollTrigger: {
           trigger: lineRef.current,
@@ -48,7 +46,6 @@ export default function FirstLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del título principal
       gsap.from(headingRef.current, {
         scrollTrigger: {
           trigger: headingRef.current,
@@ -61,7 +58,6 @@ export default function FirstLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación de la descripción
       gsap.from(descriptionRef.current, {
         scrollTrigger: {
           trigger: descriptionRef.current,
@@ -74,7 +70,6 @@ export default function FirstLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del contenedor de quote
       gsap.from(quoteRef.current, {
         scrollTrigger: {
           trigger: quoteRef.current,
@@ -86,7 +81,6 @@ export default function FirstLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del primer texto del quote
       gsap.from(quoteText1Ref.current, {
         scrollTrigger: {
           trigger: quoteRef.current,
@@ -99,7 +93,6 @@ export default function FirstLandingSection() {
         ease: 'power3.out',
       });
 
-      // Animación del segundo texto del quote (gradiente)
       gsap.from(quoteText2Ref.current, {
         scrollTrigger: {
           trigger: quoteRef.current,
@@ -149,7 +142,6 @@ export default function FirstLandingSection() {
           {t('description')}
         </p>
 
-        {/* Quote section with image placeholders */}
         <div 
           ref={quoteRef}
           className="relative max-w-5xl mx-auto my-24"
