@@ -4,10 +4,14 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SixLandingSection() {
+
+  const t = useTranslations('SixLandingSection');
+
   const sectionRef = useRef(null);
   const numberRef = useRef(null);
   const lineRef = useRef(null);
@@ -82,7 +86,7 @@ export default function SixLandingSection() {
             ref={numberRef}
             className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
-            06.
+            {t('number')}
           </h3>
           <div 
             ref={lineRef}
@@ -94,16 +98,14 @@ export default function SixLandingSection() {
           ref={headingRef}
           className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
-          ¿Tu negocio está listo para posicionarse en Google?
+          {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
           className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
-        >
-          Si buscas resultados inmediatos, este servicio no es para ti.<br/>
-          Si buscas construir presencia digital sólida y tráfico constante, podemos ayudarte.
-        </p>
+          dangerouslySetInnerHTML={{ __html: t('description') }}
+        />
       </div>
     </section>
   );

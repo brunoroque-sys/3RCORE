@@ -230,6 +230,7 @@
     "socialMedia": "Social Media",
     "privacyPolicy": "Privacy Policy",
     "pregunta": "FAQ",
+    "Recla":"Complaints",
     "termsConditions": "Terms and Conditions",
     "copyright": "© 2026 3R CORE. All rights reserved",
     "A":" Hours: Monday to Friday"
@@ -534,4 +535,122 @@
       }
     }
   }
+  ,
+  "ComplaintsSection": {
+      "title": "Complaints Book",
+      "fieldName": "First Name",
+      "fieldLastName": "Last Name",
+      "fieldPhone": "Phone Number",
+      "fieldEmail": "Email Address",
+      "fieldDocumentType": "Document Type",
+      "fieldDocumentNumber": "Document Number",
+      "fieldComplaintType": "Complaint Type",
+      "fieldDetail": "Complaint Details",
+      "fieldRequest": "Request",
+      "buttonSend": "Submit Complaint",
+      "buttonSending": "Sending..."
+  }
+  ,
+  "LandingHero": {
+    "titleLine1": "SEARCH ENGINE",
+    "titleLine2": "POSITIONING",
+    "slogan": "Boost your business on Google and attract customers who are actually looking for what you offer",
+    "buttonText": "CONTACT SERVICE",
+    "whatsappMessage": "Hi, I'm coming from the website, I'd like to schedule a meeting."
+  }
+  ,
+  "FirstLandingSection": {
+    "number": "01.",
+    "heading": "Google SEO Positioning for companies seeking real results",
+    "description": "We improve your website's visibility on Google through a professional SEO strategy, designed to attract qualified traffic and sustainable sales opportunities.",
+    "quote": {
+      "line1": "SEO is not advertising or social media",
+      "line2": "it is a medium-term strategy that builds authority, ranking, and progressive results on Google"
+    },
+    "pricing": {
+      "label": "Monthly Investment",
+      "amount": "$450", 
+      "feature1": "Professional SEO strategy",
+      "feature2": "No forced contracts",
+      "feature3": "Progressive results"
+    }
+  }
+  ,
+  "SecondLandingSection": {
+    "number": "02.",
+    "title": "Why invest in SEO Positioning?",
+    "subtitle": "We work under a clear, measurable, and results-oriented methodology.",
+    "cards": {
+      "audit": {
+        "title": "SEO Audit & Planning",
+        "items": [
+          "Core keyword analysis for your business",
+          "Direct competitor research on Google",
+          "Basic website structure review",
+          "Monthly editorial calendar proposal (8 - 15 optimized titles)",
+          "Monthly performance report"
+        ]
+      },
+      "interlinks": {
+        "title": "Interlinking Optimization",
+        "items": [
+          "Internal site structure analysis",
+          "Internal linking strategy between content",
+          "User journey optimization",
+          "Authority improvement for key landing pages"
+        ]
+      },
+      "scaling": {
+        "title": "SEO Scaling",
+        "items": [
+          "Identification of new ranking opportunities",
+          "Continuous optimization of existing content",
+          "Reinforcement of high-performing pages",
+          "Growth reporting and future action planning"
+        ]
+      }
+    }
+  }
+  ,
+  "ThirdLandingSection": {
+    "number": "03.",
+    "heading": "When do you start seeing results?",
+    "description": "SEO is a medium-term strategy. Initial progress is typically observed starting from the third month, depending on the industry, competition, and the initial state of the website.",
+    "quote": {
+      "line1": "We work with data, analysis, and constant optimization",
+      "line2": "we do not promise immediate rankings or unrealistic results"
+    }
+  }
+  ,
+  "FourthLandingSection": {
+    "number": "04.",
+    "heading": "SEO success stories",
+    "description": "We have implemented SEO strategies for various industries, achieving top rankings for key searches such as:",
+    "successCases": {
+      "case1": "Argentaria - Jewelry and silversmithing",
+      "case2": "As de Oros - Casino and entertainment"
+    },
+    "quote": {
+      "line1": "Every project begins with a real analysis",
+      "line2": "and a personalized strategy tailored to the business"
+    }
+  }
+  ,
+  "FiveLandingSection": {
+    "number": "05.",
+    "heading": "SEO Service Investment",
+    "description": "This service includes audit, planning, optimization, scaling, and monthly reporting.",
+    "pricing": {
+      "label": "Monthly Investment",
+      "amount": "$450",
+      "footer": "It is a continuous strategy focused on sustainable results."
+    }
+  }
+  ,
+  "SixLandingSection": {
+    "number": "06.",
+    "heading": "Is your business ready to rank on Google?",
+    "description": "If you are looking for immediate results, this service is not for you.<br/>If you are looking to build a solid digital presence and consistent traffic, we can help."
+  }
+
 }

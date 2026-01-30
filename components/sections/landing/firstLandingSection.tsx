@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +17,9 @@ export default function FirstLandingSection() {
   const quoteRef = useRef(null);
   const priceCardRef = useRef(null);
 
-  useEffect(() => {
+  const t = useTranslations('FirstLandingSection');
+
+  useEffect(() => { 
     const ctx = gsap.context(() => {
       // Animación del número "01."
       gsap.from(numberRef.current, {
@@ -109,7 +112,7 @@ export default function FirstLandingSection() {
             ref={numberRef}
             className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
-            01.
+           {t('number')}
           </h3>
           <div 
             ref={lineRef}
@@ -121,15 +124,14 @@ export default function FirstLandingSection() {
           ref={headingRef}
           className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
-          Posicionamiento SEO en Google para empresas que quieren resultados reales
+          {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
           className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
         >
-          Mejoramos la visibilidad de tu página web en Google con una estrategia SEO profesional, 
-          orientada a atraer tráfico calificado y oportunidades de venta de forma sostenida.
+          {t('description')}
         </p>
 
         {/* Quote section with image placeholders */}
@@ -160,11 +162,10 @@ export default function FirstLandingSection() {
 
           <div className="relative index-3 text-center px-1 md:px-16 py-12">
             <p className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light">
-              El SEO no es publicidad ni redes sociales
+              {t('quote.line1')}
             </p>
             <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-xl md:text-3xl lg:text-4xl font-medium leading-relaxed">
-              es una estrategia de mediano plazo que construye autoridad, posicionamiento y 
-              resultados progresivos en Google
+              {t('quote.line2')}
             </p>
           </div>
         </div>
@@ -177,10 +178,10 @@ export default function FirstLandingSection() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-center">
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-pink-400 text-xl md:text-5xl italic font-medium mb-3 tracking-wide">
-                  Inversión Mensual
+                  {t('pricing.label')}
                 </p>
                 <p className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
-                  S/1500
+                  {t('pricing.amount')}
                 </p>
               </div>
 
@@ -190,19 +191,19 @@ export default function FirstLandingSection() {
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                   <p className="text-gray-200 text-base md:text-lg">
-                    Estrategia SEO profesional
+                    {t('pricing.feature1')}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                   <p className="text-gray-200 text-base md:text-lg">
-                    Sin contratos forzosos
+                    {t('pricing.feature2')}
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                   <p className="text-gray-200 text-base md:text-lg">
-                    Resultados progresivos
+                    {t('pricing.feature3')}
                   </p>
                 </div>
               </div>

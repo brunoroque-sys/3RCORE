@@ -21,7 +21,7 @@ export default function ProjectsSection() {
   const t = useTranslations('Hovers');
   const p = useTranslations('projects');
 
-const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [activeColumn, setActiveColumn] = useState<string | null>(null);
   const [carouselStates, setCarouselStates] = useState<Record<string, number>>({});
   const mobileTimerRef = useRef<NodeJS.Timeout | null>(null);

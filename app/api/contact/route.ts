@@ -21,6 +21,12 @@ export async function POST(request: Request) {
           .mobile-hide { display: none !important; }
           h1 { font-size: 24px !important; }
         }
+        @media (prefers-color-scheme: dark) {
+          .dark-mode-bg { background-color: #1a1a2e !important; }
+          .dark-mode-card { background-color: #16213e !important; }
+          .dark-mode-text { color: #e4e4e7 !important; }
+          .dark-mode-border { border-color: #374151 !important; }
+        }
       </style>
     `;
 
@@ -32,24 +38,71 @@ export async function POST(request: Request) {
         html: `
           <html>
             <head>${responsiveStyles}</head>
-            <body style="margin: 0; padding: 0; background-color: #3f194b;">
-              <div class="container" style="max-width: 600px; margin: 0 auto; padding: 40px; font-family: 'Montserrat', Helvetica, Arial, sans-serif;">
-                <div style="background-color: #391946; border-radius: 24px; padding: 40px; border: 1px solid #ffffff10; color: white;">
-                  <img src="${logoUrl}" alt="3RCORE" style="width: 120px; margin-bottom: 30px;">
-                  <h2 style="font-size: 24px; color: #E91E63; margin-bottom: 10px;">¡Bruno, tienes un nuevo lead!</h2>
-                  <p style="color: white; font-size: 16px;">Alguien se ha interesado en lo que hacemos:</p>
+            <body style="margin: 0; padding: 0; background-color: #f8fafc;" class="dark-mode-bg">
+              <div class="container" style="max-width: 600px; margin: 0 auto; padding: 40px; font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <div style="background-color: #ffffff; border-radius: 20px; padding: 0; border: 1px solid #e5e7eb; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); overflow: hidden;" class="dark-mode-card dark-mode-border">
                   
-                  <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; margin: 25px 0;">
-                    <p style="margin: 10px 0;"><strong>Persona:</strong> ${nombre}</p>
-                    <p style="margin: 10px 0;"><strong>Empresa:</strong> ${apellido}</p>
-                    <p style="margin: 10px 0;"><strong>Correo:</strong> <a href="mailto:${email}" style="color: #E91E63; text-decoration: none;">${email}</a></p>
-                    <p style="margin: 10px 0;"><strong>WhatsApp/Tel:</strong> ${telefono}</p>
-                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ffffff10;">
-                      <p style="color: #E91E63; font-weight: bold; margin-bottom: 8px;">Lo que nos cuenta:</p>
-                      <p style="line-height: 1.6; color: #e0e0e0;">${mensaje}</p>
+                  <!-- Header -->
+                  <div style="background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%); padding: 40px; text-align: center;">
+                    <img src="${logoUrl}" alt="3RCORE" style="width: 100px; margin-bottom: 15px; filter: brightness(0) invert(1);">
+                    <h2 style="font-size: 22px; color: #ffffff; margin: 0; font-weight: 600; letter-spacing: -0.5px;">¡Nuevo Lead!</h2>
+                  </div>
+                  
+                  <!-- Body -->
+                  <div style="padding: 45px;" class="inner-padding">
+                    <!-- Alert Badge -->
+                    <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-left: 4px solid #10b981; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+                      <p style="margin: 0; font-weight: 600; color: #059669; font-size: 15px; letter-spacing: 0.3px;">
+                        BRUNO, ALGUIEN SE HA INTERESADO EN LO QUE HACEMOS
+                      </p>
+                    </div>
+                    
+                    <!-- Client Data Card -->
+                    <div style="background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 16px; padding: 30px; margin: 30px 0;" class="dark-mode-card dark-mode-border">
+                      <h3 style="color: #111827; margin-top: 0; margin-bottom: 20px; font-size: 18px; font-weight: 600;" class="dark-mode-text">Información del Contacto</h3>
+                      
+                      <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px;" class="dark-mode-border">Persona:</td>
+                          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #111827; font-weight: 500; text-align: right; font-size: 14px;" class="dark-mode-border dark-mode-text">${nombre}</td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px;" class="dark-mode-border">Empresa:</td>
+                          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #111827; font-weight: 500; text-align: right; font-size: 14px;" class="dark-mode-border dark-mode-text">${apellido}</td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; color: #6b7280; font-size: 14px;" class="dark-mode-border">Correo:</td>
+                          <td style="padding: 12px 0; border-bottom: 1px solid #f3f4f6; text-align: right; font-size: 14px;" class="dark-mode-border">
+                            <a href="mailto:${email}" style="color: #E91E63; text-decoration: none; font-weight: 500;">${email}</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 12px 0; color: #6b7280; font-size: 14px;">WhatsApp/Tel:</td>
+                          <td style="padding: 12px 0; color: #111827; font-weight: 500; text-align: right; font-size: 14px;" class="dark-mode-text">${telefono}</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <!-- Message -->
+                    <div style="margin: 30px 0;">
+                      <div style="background: linear-gradient(to right, #E91E63, #9C27B0); height: 3px; border-radius: 10px; margin-bottom: 15px;"></div>
+                      <h4 style="color: #E91E63; margin: 0 0 12px 0; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Lo que nos cuenta</h4>
+                      <p style="line-height: 1.8; color: #374151; margin: 0; font-size: 15px; background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;" class="dark-mode-text dark-mode-card dark-mode-border">${mensaje}</p>
+                    </div>
+
+                    <!-- CTA -->
+                    <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 14px; padding: 20px; margin-top: 35px; text-align: center; border: 1px solid #93c5fd;">
+                      <p style="margin: 0; font-size: 14px; color: #1e40af; line-height: 1.6;">
+                        <strong>Consejo:</strong> Responde dentro de las próximas 24 horas para maximizar la conversión.
+                      </p>
                     </div>
                   </div>
-                  <p style="font-size: 12px; color: #666; text-align: center;">Enviado desde https://3-rcore.vercel.app/</p>
+                  
+                  <!-- Footer -->
+                  <div style="background-color: #f9fafb; padding: 25px; text-align: center; border-top: 1px solid #e5e7eb;" class="dark-mode-card dark-mode-border">
+                    <p style="font-size: 12px; color: #9ca3af; margin: 0;">Enviado desde 3RCORE System</p>
+                    <p style="font-size: 11px; color: #d1d5db; margin: 8px 0 0 0;">https://3-rcore.vercel.app/</p>
+                  </div>
                 </div>
               </div>
             </body>
@@ -63,37 +116,58 @@ export async function POST(request: Request) {
         html: `
           <html>
             <head>${responsiveStyles}</head>
-            <body style="margin: 0; padding: 0; background-color: #f4f4f7;">
-              <div class="container" style="max-width: 600px; margin: 0 auto; padding: 40px; font-family: 'Montserrat', Helvetica, Arial, sans-serif;">
-                <div style="background-color: #ffffff; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+            <body style="margin: 0; padding: 0; background-color: #f8fafc;" class="dark-mode-bg">
+              <div class="container" style="max-width: 600px; margin: 0 auto; padding: 40px; font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+                <div style="background-color: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03); border: 1px solid #e5e7eb;" class="dark-mode-card dark-mode-border">
                   
-                  <div style="background-color: #130218; padding: 40px; text-align: center;">
-                    <img src="${logoUrl}" alt="3RCORE" style="width: 100px;">
+                  <!-- Header -->
+                  <div style="background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%); padding: 45px; text-align: center;">
+                    <img src="${logoUrl}" alt="3RCORE" style="width: 90px; filter: brightness(0) invert(1);">
                   </div>
                   
-                  <div class="inner-padding" style="padding: 45px;">
-                    <h1 style="font-size: 28px; margin-bottom: 20px; color: #130218;">¡Recibido, ${nombre}!</h1>
-                    <p style="font-size: 17px; line-height: 1.6; color: #4a4a4a;">
-                      Muchas gracias por escribirnos y por el interés en lo que estamos creando en <strong>3RCORE</strong>. 
-                    </p>
-                    <p style="font-size: 17px; line-height: 1.6; color: #4a4a4a;">
-                      Ya tengo tu mensaje en mi bandeja de entrada. Voy a leerlo con calma y te daré una respuesta en menos de 24 horas.
+                  <!-- Body -->
+                  <div class="inner-padding" style="padding: 50px 45px;">
+                    <h1 style="font-size: 26px; margin-bottom: 20px; color: #111827; font-weight: 700; letter-spacing: -0.5px;" class="dark-mode-text">¡Recibido, ${nombre}!</h1>
+                    
+                    <p style="font-size: 16px; line-height: 1.7; color: #4b5563; margin-bottom: 15px;" class="dark-mode-text">
+                      Muchas gracias por escribirnos y por el interés en lo que estamos creando en <strong style="color: #E91E63;">3RCORE</strong>.
                     </p>
                     
-                    <div style="margin: 35px 0; padding: 25px; background: linear-gradient(135deg, #fdf4f7 0%, #f9f5ff 100%); border-radius: 16px; border-left: 4px solid #E91E63;">
-                      <p style="margin: 0; color: #130218; font-weight: 500;">
+                    <p style="font-size: 16px; line-height: 1.7; color: #4b5563;" class="dark-mode-text">
+                      Ya tengo tu mensaje en mi bandeja de entrada. Voy a leerlo con calma y te daré una respuesta en menos de <strong style="color: #111827;" class="dark-mode-text">24 horas</strong>.
+                    </p>
+                    
+                    <!-- Quote Card -->
+                    <div style="margin: 35px 0; padding: 25px; background: linear-gradient(135deg, #fef2f2 0%, #fce7f3 100%); border-radius: 16px; border-left: 4px solid #E91E63;">
+                      <p style="margin: 0; color: #374151; font-weight: 500; line-height: 1.6; font-size: 15px; font-style: italic;" class="dark-mode-text">
                         "Estamos convencidos de que podemos aportar valor a tu proyecto. Hablamos muy pronto."
+                      </p>
+                      <p style="margin: 10px 0 0 0; color: #E91E63; font-weight: 600; font-size: 14px;">— Bruno, 3RCORE</p>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div style="background-color: #f9fafb; padding: 25px; border-radius: 14px; margin: 30px 0; border: 1px solid #e5e7eb;" class="dark-mode-card dark-mode-border">
+                      <h4 style="margin-top: 0; color: #111827; font-size: 16px; font-weight: 600; margin-bottom: 12px;" class="dark-mode-text">Mientras tanto...</h4>
+                      <p style="color: #4b5563; line-height: 1.7; margin: 0; font-size: 14px;" class="dark-mode-text">
+                        Si necesitas algo urgente o tienes alguna pregunta adicional, no dudes en responder a este correo. Estamos aquí para ayudarte.
                       </p>
                     </div>
 
-                    <p style="font-size: 15px; color: #888; margin-top: 30px;">
+                    <p style="font-size: 15px; color: #6b7280; margin-top: 35px; line-height: 1.6;">
                       Un saludo,<br/>
-                      <strong>Bruno de 3RCORE</strong>
+                      <strong style="color: #111827;" class="dark-mode-text">Bruno de 3RCORE</strong>
                     </p>
                   </div>
                   
-                  <div style="background: #130218; padding: 25px; text-align: center; color: white; font-size: 12px;">
-                    © 2026 3RCORE. Hecho con pasión por la tecnología.
+                  <!-- Footer -->
+                  <div style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 30px; text-align: center; color: white;">
+                    <div style="margin-bottom: 20px;">
+                      <p style="margin: 8px 0; font-size: 14px; color: #d1d5db;"> contacto@3rcore.com</p>
+                      <p style="margin: 8px 0; font-size: 14px; color: #d1d5db;"> www.3rcore.com</p>
+                    </div>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                      <p style="margin: 0; opacity: 0.6; font-size: 12px; color: #9ca3af;">© 2026 3RCORE. Hecho con pasión por la tecnología.</p>
+                    </div>
                   </div>
                 </div>
               </div>

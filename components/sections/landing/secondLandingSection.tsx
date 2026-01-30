@@ -4,10 +4,14 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SecondLandingSection() {
+
+  const t = useTranslations('SecondLandingSection');
+
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
@@ -68,14 +72,14 @@ export default function SecondLandingSection() {
     <section ref={sectionRef} className="relative min-h-screen w-full py-20 overflow-hidden ">
       <div className="relative max-w-7xl mx-auto px-10 md:px-6 mb-16">
         <div className="mb-8">
-          <h3 className="header-anim text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight">02.</h3>
+          <h3 className="header-anim text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight">{t('number')}</h3>
           <div className="line-grow w-30 h-[2px] bg-white mt-2"></div>
         </div>
         <h2 className="header-anim text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 leading-tight">
-          ¿Por qué hacer Posicionamiento SEO?
+          {t('title')}
         </h2>
         <p className="header-anim text-white text-sm md:text-base max-w-4xl leading-relaxed">
-          Trabajamos bajo una metodología clara, medible y orientada a resultados.
+          {t('subtitle')}
         </p>
       </div>
 
@@ -99,14 +103,14 @@ export default function SecondLandingSection() {
             <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'>
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>
-                  Auditoría y Planificación SEO
+                  {t('cards.audit.title')}
                 </h3>
                 <ul className='text-white/90  space-y-3 text-sm md:text-base'>
-                  <li>- Análisis de palabras clave principales de tu negocio</li>
-                  <li>- Estudio de competidores directos en Google</li>
-                  <li>- Revisión básica de la estructura de tu sitio web</li>
-                  <li>- Propuesta de calendario editorial mensual (8 - 15 títulos optimizados)</li>
-                  <li>- Reporte mensual de rendimiento</li>
+                  <li>- {t('cards.audit.items.0')}</li>
+                  <li>- {t('cards.audit.items.1')}</li>
+                  <li>- {t('cards.audit.items.2')}</li>
+                  <li>- {t('cards.audit.items.3')}</li>
+                  <li>- {t('cards.audit.items.4')}</li>
                 </ul>
               </div>
             </div>
@@ -118,12 +122,12 @@ export default function SecondLandingSection() {
           <div className='grid md:grid-cols-2 items-center'>
             <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center'>
               <div className='max-w-md w-full'>
-                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>Optimización de Interlinks</h3>
+                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>{t('cards.interlinks.title')}</h3>
                 <ul className='text-white/90 space-y-3 text-sm md:text-base'>
-                  <li>- Análisis de la estructura interna del sitio</li>
-                  <li>- Estrategia de enlaces internos entre contenidos</li>
-                  <li>- Optimización del recorrido del usuario</li>
-                  <li>- Mejora de la autoridad interna de las páginas principales</li>
+                  <li>- {t('cards.interlinks.items.0')}</li>
+                  <li>- {t('cards.interlinks.items.1')}</li>
+                  <li>- {t('cards.interlinks.items.2')}</li>
+                  <li>- {t('cards.interlinks.items.3')}</li>
                 </ul>
               </div>
             </div>
@@ -157,13 +161,13 @@ export default function SecondLandingSection() {
             <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'> 
                 <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6 text-left'>
-                  Escalamiento SEO
+                  {t('cards.scaling.title')}
                 </h3>
                 <ul className='text-white/90 space-y-3 text-sm md:text-base text-left'>
-                  <li>- Identificación de nuevas oportunidades de posicionamiento</li>
-                  <li>- Optimización continua de contenidos existentes</li>
-                  <li>- Refuerzo de páginas con mejor desempeño</li>
-                  <li>- Reporte de crecimiento y plan de acciones futuras</li>
+                  <li>- {t('cards.scaling.items.0')}</li>
+                  <li>- {t('cards.scaling.items.1')}</li>
+                  <li>- {t('cards.scaling.items.2')}</li>
+                  <li>- {t('cards.scaling.items.3')}</li>
                 </ul>
               </div>
             </div>

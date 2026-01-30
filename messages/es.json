@@ -232,6 +232,7 @@
     "socialMedia": "Redes Sociales",
     "privacyPolicy": "Política de Privacidad",
     "pregunta": "FAQ",
+    "Recla":"Reclamaciones",
     "termsConditions": "Términos y condiciones",
     "copyright": "© 2026 3R CORE. Todos los derechos reservados",
     "A":" Atención: Lunes a Viernes"
@@ -550,4 +551,129 @@
       }
     }
   }
+  ,
+  "ComplaintsSection": {
+    "title": "Libro de Reclamaciones",
+    "fieldName": "Nombres",
+    "fieldLastName": "Apellidos",
+    "fieldPhone": "Teléfono",
+    "fieldEmail": "Correo Electrónico",
+    "fieldDocumentType": "Tipo de Documento",
+    "fieldDocumentNumber": "Número de Documento",
+    "fieldComplaintType": "Tipo de Reclamación",
+    "fieldDetail": "Detalle de la Reclamación",
+    "fieldRequest": "Pedido",
+    "buttonSend": "Enviar Reclamación",
+    "buttonSending": "Enviando...",
+    "placeholderSelect": "Select",
+    "placeholderDetail": "Describe your claim with as much detail as possible...",
+    "placeholderRequest": "What are you requesting us to do?",
+    "options": {
+      "claim": "Claim",
+      "complaint": "Complaint"
+    }
+  }
+  ,
+  "LandingHero": {
+    "titleLine1": "POSICIONAMIENTO",
+    "titleLine2": "SEO",
+    "slogan": "Impulsa tu negocio en Google y atrae clientes que sí buscan lo que ofreces",
+    "buttonText": "CONTACTAR SERVICIO",
+    "whatsappMessage": "Hola vengo de la página web, quiero agendar una reunión."
+  }
+  ,
+  "FirstLandingSection": {
+    "number": "01.",
+    "heading": "Posicionamiento SEO en Google para empresas que quieren resultados reales",
+    "description": "Mejoramos la visibilidad de tu página web en Google con una estrategia SEO profesional, orientada a atraer tráfico calificado y oportunidades de venta de forma sostenida.",
+    "quote": {
+      "line1": "El SEO no es publicidad ni redes sociales",
+      "line2": "es una estrategia de mediano plazo que construye autoridad, posicionamiento y resultados progresivos en Google"
+    },
+    "pricing": {
+      "label": "Inversión Mensual",
+      "amount": "S/1500",
+      "feature1": "Estrategia SEO profesional",
+      "feature2": "Sin contratos forzosos",
+      "feature3": "Resultados progresivos"
+    }
+  }
+  ,
+  "SecondLandingSection": {
+    "number": "02.",
+    "title": "¿Por qué hacer Posicionamiento SEO?",
+    "subtitle": "Trabajamos bajo una metodología clara, medible y orientada a resultados.",
+    "cards": {
+      "audit": {
+        "title": "Auditoría y Planificación SEO",
+        "items": [
+          "Análisis de palabras clave principales de tu negocio",
+          "Estudio de competidores directos en Google",
+          "Revisión básica de la estructura de tu sitio web",
+          "Propuesta de calendario editorial mensual (8 - 15 títulos optimizados)",
+          "Reporte mensual de rendimiento"
+        ]
+      },
+      "interlinks": {
+        "title": "Optimización de Interlinks",
+        "items": [
+          "Análisis de la estructura interna del sitio",
+          "Estrategia de enlaces internos entre contenidos",
+          "Optimización del recorrido del usuario",
+          "Mejora de la autoridad interna de las páginas principales"
+        ]
+      },
+      "scaling": {
+        "title": "Escalamiento SEO",
+        "items": [
+          "Identificación de nuevas oportunidades de posicionamiento",
+          "Optimización continua de contenidos existentes",
+          "Refuerzo de páginas con mejor desempeño",
+          "Reporte de crecimiento y plan de acciones futuras"
+        ]
+      }
+    }
+  }
+  ,
+  "ThirdLandingSection": {
+    "number": "03.",
+    "heading": "¿Cuándo se empiezan a ver resultados?",
+    "description": "El SEO es una estrategia de mediano plazo. Los primeros avances suelen observarse a partir del tercer mes, dependiendo del rubro, competencia y estado inicial del sitio web.",
+    "quote": {
+      "line1": "Trabajamos con datos, análisis y optimización constante",
+      "line2": "no prometemos posiciones inmediatas, ni resultados irreales"
+    }
+  }
+  ,
+  "FourthLandingSection": {
+    "number": "04.",
+    "heading": "Casos de éxito en posicionamiento SEO",
+    "description": "Hemos trabajado estrategias SEO para diferentes rubros, logrando posicionamiento en búsquedas clave como:",
+    "successCases": {
+      "case1": "Argentaria - Joyería y platería",
+      "case2": "As de Oros - Casino y entretenimiento"
+    },
+    "quote": {
+      "line1": "Cada proyecto parte de un análisis real",
+      "line2": "y una estrategia personalizada según el negocio"
+    }
+  }
+  ,
+  "FiveLandingSection": {
+    "number": "05.",
+    "heading": "Inversión del servicio SEO",
+    "description": "Este servicio incluye auditoría, planificación, optimización, escalamiento y reportes mensuales.",
+    "pricing": {
+      "label": "Inversión Mensual",
+      "amount": "S/1500",
+      "footer": "Es una estrategia continua enfocada en resultados sostenibles."
+    }
+  }
+  ,
+  "SixLandingSection": {
+    "number": "06.",
+    "heading": "¿Tu negocio está listo para posicionarse en Google?",
+    "description": "Si buscas resultados inmediatos, este servicio no es para ti.<br/>Si buscas construir presencia digital sólida y tráfico constante, podemos ayudarte."
+  }
+
 } 

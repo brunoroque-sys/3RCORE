@@ -4,10 +4,14 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function FiveLandingSection() {
+
+  const t = useTranslations('FiveLandingSection');
+
   const sectionRef = useRef(null);
   const numberRef = useRef(null);
   const lineRef = useRef(null);
@@ -95,7 +99,7 @@ export default function FiveLandingSection() {
             ref={numberRef}
             className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
-            05.
+            {t('number')}
           </h3>
           <div 
             ref={lineRef}
@@ -107,14 +111,14 @@ export default function FiveLandingSection() {
           ref={headingRef}
           className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
-          Inversión del servicio SEO
+          {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
           className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
         >
-          Este servicio incluye auditoría, planificación, optimización, escalamiento y reportes mensuales.
+          {t('description')}
         </p>
 
         <div 
@@ -125,10 +129,10 @@ export default function FiveLandingSection() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-center">
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-pink-400 text-xl md:text-3xl italic font-medium mb-3 tracking-wide">
-                  Inversión Mensual
+                  {t('pricing.label')}
                 </p>
                 <p className="text-white text-3xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
-                  S/1500
+                  {t('pricing.amount')}
                 </p>
               </div>
 
@@ -137,7 +141,7 @@ export default function FiveLandingSection() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <p className="text-gray-200 text-sm md:text-lg">
-                    Es una estrategia continua enfocada en resultados sostenibles.
+                    {t('pricing.footer')}
                   </p>
                 </div>
               </div>

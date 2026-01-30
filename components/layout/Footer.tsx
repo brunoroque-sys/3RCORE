@@ -115,6 +115,9 @@ const Footer = () => {
             <Link href="/preguntas" className="hover:text-white hover:brightness-110 transition-all duration-300">
               { t('pregunta')}
             </Link>
+            <Link href="/reclamaciones" className="hover:text-white hover:brightness-110 transition-all duration-300">
+              { t('Recla')}
+            </Link>
           </div>
           
           <div className="text-[10px] uppercase tracking-widest text-white">

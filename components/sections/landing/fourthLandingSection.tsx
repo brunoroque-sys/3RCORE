@@ -4,10 +4,14 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function FourthLandingSection() {
+
+  const t = useTranslations('FourthLandingSection');
+  
   const sectionRef = useRef(null);
   const numberRef = useRef(null);
   const lineRef = useRef(null);
@@ -149,7 +153,7 @@ export default function FourthLandingSection() {
             ref={numberRef}
             className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
-            04.
+            {t('number')}
           </h3>
           <div 
             ref={lineRef}
@@ -161,14 +165,14 @@ export default function FourthLandingSection() {
           ref={headingRef}
           className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
-          Casos de éxito en posicionamiento SEO
+          {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
           className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
         >
-          Hemos trabajado estrategias SEO para diferentes rubros, logrando posicionamiento en búsquedas clave como:
+          {t('description')}
         </p>
 
         {/* Images Row */}
@@ -204,13 +208,13 @@ export default function FourthLandingSection() {
               ref={quoteText1Ref}
               className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light"
             >
-              Cada proyecto parte de un análisis real
+              {t('quote.line1')}
             </p>
             <p 
               ref={quoteText2Ref}
               className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-xl md:text-3xl lg:text-4xl font-medium leading-relaxed"
             >
-              y una estrategia personalizada según el negocio
+              {t('quote.line2')}
             </p>
           </div>
         </div>

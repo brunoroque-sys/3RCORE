@@ -4,10 +4,14 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function FirstLandingSection() {
+  
+  const t = useTranslations('ThirdLandingSection');
+  
   const sectionRef = useRef(null);
   const numberRef = useRef(null);
   const lineRef = useRef(null);
@@ -123,7 +127,7 @@ export default function FirstLandingSection() {
             ref={numberRef}
             className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
           >
-            03.
+            {t('number')}
           </h3>
           <div 
             ref={lineRef}
@@ -135,14 +139,14 @@ export default function FirstLandingSection() {
           ref={headingRef}
           className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
-          ¿Cuándo se empiezan a ver resultados?
+          {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
           className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
         >
-          El SEO es una estrategia de mediano plazo. Los primeros avances suelen observarse a partir del tercer mes, dependiendo del rubro, competencia y estado inicial del sitio web.
+          {t('description')}
         </p>
 
         {/* Quote section with image placeholders */}
@@ -176,13 +180,13 @@ export default function FirstLandingSection() {
               ref={quoteText1Ref}
               className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light"
             >
-              Trabajamos con datos, análisis y optimización constante 
+              {t('quote.line1')}
             </p>
             <p 
               ref={quoteText2Ref}
               className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-xl md:text-3xl lg:text-4xl font-medium leading-relaxed"
             >
-              no prometemos posiciones inmediatas, ni resultados irreales
+              {t('quote.line2')}
             </p>
           </div>
         </div>

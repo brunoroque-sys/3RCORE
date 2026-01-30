@@ -10,7 +10,7 @@ interface HeroLandingProps {
 }
 export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
 
-  const t = useTranslations('SeoSemHero');
+  const t = useTranslations('LandingHero');
   
 
   const pinkBgRef = useRef(null);
@@ -28,6 +28,8 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
     window.open(whatsappUrl, '_blank');
   };
   useEffect(() => {
+
+    
     const playAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -118,7 +120,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
                 ref={brTextRef}
                 className="text-white text-left text-3xl md:text-8xl font-black tracking-[0.1em] leading-none"
               >
-                POSICIONAMIENTO
+                {t('titleLine1')}
               </h2>
             </div>
 
@@ -144,7 +146,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
             ref={sloganRef}
             className="text-white text-xs md:text-sm font-light w-full"
           >
-            Impulsa tu negocio en Google y atrae clientes que sí buscan lo que ofreces
+            {t('slogan')}
           </p>
 
           <div className='relative index-4 -bottom-50 '>
@@ -155,7 +157,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
               
               <span className="relative z-10">
-                 CONTACTAR SERVICIO
+                 {t('buttonText')}
               </span>
             </button>
           </div>
