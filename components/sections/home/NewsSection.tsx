@@ -31,25 +31,30 @@ const NewsSection = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   useEffect(() => {
-  const fetchPosts = async () => {
-    try {
-      // Obtenemos el idioma actual para pasarlo a nuestra API
-      const currentLang = t("t") === "en" ? "en" : "es";
-      
-      // Llamamos a nuestra ruta interna de Next.js
-      const res = await fetch(`/api/blog?lang=${currentLang}`);
+    const fetchPosts = async () => {
+      try {
+        const tValue = t("t");
+        const prefix = tValue === "en" ? "/en" : "";
+        const wpUrl = `https://3rcore.com${prefix}/wp-json/wp/v2/posts?per_page=6&_fields=title,date,link,yoast_head_json`;
 
-      if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+        const proxyUrl = "https://corsproxy.io/?";
+        const finalUrl = proxyUrl + encodeURIComponent(wpUrl);
 
-      const data = await res.json();
-      setPosts(data);
-    } catch (error) {
-      console.error("Error al obtener posts:", error);
-    }
-  };
+        console.log("Conectando a través de proxy a:", wpUrl);
 
-  fetchPosts();
-}, [t]);
+        const res = await fetch(finalUrl);
+
+        if (!res.ok) throw new Error(`Error HTTP: ${res.status}`);
+
+        const data = await res.json();
+        setPosts(data);
+      } catch (error) {
+        console.error("Error al obtener posts:", error);
+      }
+    };
+
+    fetchPosts();
+  }, [t]);
 
   if (posts.length === 0) return null;
 
