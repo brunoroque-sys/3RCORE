@@ -58,7 +58,7 @@
     "webdesign": {
       "bg": "/images/tituloCarru/webCarrubg.webp",
       "title": "/images/tituloCarru/WebDesign.svg",
-      "titleMobile": "/images/tituloCarru/WebDesignHorizontal.svg",
+      "titleMobile": "/images/tituloCarru/webDesignHorizontal.svg",
       "slides": {
         "sw1": "/images/tituloCarru/webCarrubg.webp",
         "sw2": "/images/tituloCarru/webCarru1.webp",
