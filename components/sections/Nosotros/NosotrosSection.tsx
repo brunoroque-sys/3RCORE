@@ -25,8 +25,8 @@ const NosotrosSection= () => {
 
   const t = useTranslations('AboutSection');
   
-  const titleText = t('title');
-  const paragraphText = t('description');
+  const titleText = t('title').split(" ");
+  const paragraphText = t('description').split(" ");
 
   const containerRef = useRef(null);
 
@@ -80,13 +80,13 @@ const NosotrosSection= () => {
       <div className="max-w-6xl mx-auto text-center">
         
         <h2 className={`team-title ${playfair.className} text-white text-4xl md:text-6xl mb-6 tracking-wide`}>
-          {titleText.split("").map((char, index) => (
+          {titleText.map((word, index) => (
             <span 
               key={index} 
-              className="title-char-anim inline-block" 
+              className="title-char-anim inline-block mr-[0.3em]  " 
               style={{ whiteSpace: "pre" }} 
             >
-              {char}
+              {word}
             </span>
           ))}
         </h2>
@@ -98,13 +98,13 @@ const NosotrosSection= () => {
         <div className="team-line w-full max-w-2xl mx-auto h-[1px] bg-white/40 my-10 origin-center will-change-transform"></div>
 
         <p className={`${montserrat.className} text-white text-base md:text-xl leading-relaxed max-w-5xl mx-auto font-normal`}>
-          {paragraphText.split("").map((char, index) => (
+          {paragraphText.map((word, index) => (
             <span 
               key={index} 
-              className="char-anim inline-block" 
+              className="char-anim inline-block mr-[0.3em]" 
               style={{ whiteSpace: "pre-wrap" }} 
             >
-              {char}
+              {word}
             </span>
           ))}
         </p>
