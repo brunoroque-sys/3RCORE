@@ -10,8 +10,8 @@ export default function Gallery() {
   );
 
   return (
-    <main className="p-2 ">
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-2 h-screen">
+    <main className="p-6 lg:p-2 ">
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-2 lg:h-screen">
         {images.map((name, index) => (
           <div 
             key={name}

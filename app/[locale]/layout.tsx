@@ -13,7 +13,8 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { getMessages } from "next-intl/server";
 
- import { SmoothCursor } from "@/components/ui/smooth-cursor"
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
+import ParticlesBackground from "@/components/ui/AnimatedBackground";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,12 +41,16 @@ export default async function RootLayout({children,params}:{children: React.Reac
     <html >
       <body className={`${poppins.className} text-white `}suppressHydrationWarning={true}>
         <div className="noise-overlay" />
+        
+        {/* Partículas moradas de fondo */}
+        <ParticlesBackground />
+        
         <NextIntlClientProvider locale={locale} messages={messages}>
           
           <SmoothScrolling>
             <Navbar />
-            <main className="min-h-screen bg-[#16021B] flex flex-col">
-              <div className="noise-global relative z-10" />
+            <main className="min-h-screen flex flex-col relative z-10">
+              <div className="noise-global" />
               {children}
             </main>
             <Footer />
