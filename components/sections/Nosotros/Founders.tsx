@@ -22,15 +22,15 @@ const foundersData = [
       fullName: 'Alejandro Roque', 
       role: t('roles.ceo'), 
       image: '/images/Fundadores/alejandro2.webp',
-      video:'/images/Fundadores/Alejandro.webm'
+      video:'/images/Fundadores/Alejandro2.webm'
     },
     { 
       id: 'bruno', 
       name: 'BRUNO', 
       fullName: 'Bruno Roque', 
       role: t('roles.marketingDirector'), 
-      image: '/images/Fundadores/Bruno.webp',
-      video:'/images/Fundadores/Bruno.webm'
+      image: '/images/Fundadores/Bruno4.webp',
+      video:'/images/Fundadores/Bruno2.webm'
     },
     { 
       id: 'piero', 
@@ -38,7 +38,7 @@ const foundersData = [
       fullName: 'Piero Roque', 
       role: t('roles.seoDirector'), 
       image: '/images/Fundadores/Piero.webp',
-      video:'/images/Fundadores/Piero.webm'
+      video:'/images/Fundadores/Piero2.webm'
     },
   ];
   
@@ -81,11 +81,11 @@ const foundersData = [
 
     timerRef.current = setInterval(() => {
       setIndex((prev) => (prev + 1) % foundersData.length);
-    }, 3000);
+    }, 2000);
 
     progressAnimationRef.current = gsap.fromTo(progressRef.current, 
       { width: "0%" }, 
-      { width: "100%", duration: 3, ease: "none" }
+      { width: "100%", duration: 2, ease: "none" }
     );
   };
 
@@ -147,7 +147,7 @@ const handleMouseLeave = () => {
     }
     
     gsap.to(imageContainerRef.current, {
-      height: '700px',
+      height: '450px',
       width: '100%',
       x: '0%',
       borderRadius: '0px',
@@ -255,8 +255,8 @@ const handleMouseLeave = () => {
         <div ref={rightSideRef} className="flex flex-col group">
           <div 
             ref={imageContainerRef}
-            className="relative w-full overflow-hidden bg-[#1a0b2e] shadow-[0_0_50px_rgba(0,0,0,0.5)] cursor-pointer"
-            style={{ height: '700px' }} // Altura inicial vertical
+            className="relative w-[80%] overflow-hidden bg-[#1a0b2e] cursor-pointer"
+            style={{ height: '450px' }} // Altura inicial vertical
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -264,7 +264,7 @@ const handleMouseLeave = () => {
               ref={imageRef} 
               src={selected.image} 
               fill 
-              className="object-cover" 
+              className="object-cover " 
               alt={selected.fullName} 
             />
             <video
