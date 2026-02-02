@@ -145,7 +145,7 @@ const WebTypesSection = () => {
           />
           <p 
             ref={descriptionRef}
-            className="text-sm md:text-base leading-relaxed max-w-3xl mx-auto font-light"
+            className="text-xs md:text-sm lg:text-base leading-relaxed max-w-3xl mx-auto font-light"
             dangerouslySetInnerHTML={{ __html: t('header.description') }}
           />
         </div>
@@ -165,7 +165,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-sm md:text-base leading-relaxed seo-item">
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed seo-item">
                   {t('landing.description')}
                 </p>
               </div>
@@ -189,7 +189,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-sm md:text-base leading-relaxed info-item">
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed info-item">
                   {t('info.description')}
                 </p>
               </div>
@@ -213,7 +213,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-sm md:text-base leading-relaxed ecomm-item">
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed ecomm-item">
                   {t('Ecomm.description')}
                 </p>
               </div>
@@ -237,7 +237,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-sm md:text-base leading-relaxed elearn-item">
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed elearn-item">
                   {t('Elearn.description')}
                 </p>
               </div>
@@ -261,7 +261,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-sm md:text-base leading-relaxed servic-item">
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed servic-item">
                   {t('Servic.description')}
                 </p>
               </div>
@@ -285,7 +285,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-sm md:text-base leading-relaxed blogs-item">
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed blogs-item">
                   {t('Blogs.description')}
                 </p>
               </div>

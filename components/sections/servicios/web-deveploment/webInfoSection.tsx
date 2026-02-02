@@ -68,13 +68,13 @@ const WebInfoSection = () => {
         </div>
 
         <div ref={contentRef} className="space-y-8">
-          <p className="text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf1')}
           </p>
-          <p className="text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf2')}
           </p>
-          <p className="text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf3')}
           </p>
           

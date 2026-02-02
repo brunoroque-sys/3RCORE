@@ -10,8 +10,8 @@ export default function Gallery() {
   );
 
   return (
-    <main className="p-6 lg:p-2 ">
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-2 lg:h-screen">
+    <main className="p-10 lg:p-2 ">
+      <div className="grid grid-cols-2 md:grid-cols-6 gap-2 h-screen">
         {images.map((name, index) => (
           <div 
             key={name}
@@ -19,6 +19,16 @@ export default function Gallery() {
               ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}
               ${index === 1 ? 'md:col-span-3 md:row-span-3' : ''}
               ${index === 3 ? 'md:col-span-1 md:row-span-2' : ''}
+              ${index === 4 ? 'md:col-span-1 md:row-span-2' : ''}
+              ${index === 5 ? 'md:col-span-1 md:row-span-1' : ''}
+              ${index === 6 ? 'md:col-span-1 md:row-span-1' : ''}
+              ${index === 7 ? 'md:col-span-2 md:row-span-2' : ''}
+              ${index === 8 ? 'md:col-span-1 md:row-span-1' : ''}
+              ${index === 13 ? 'md:col-span-1 md:row-span-2' : ''}
+              ${index === 14 ? 'md:col-span-3 md:row-span-2' : ''}
+              ${index === 15 ? 'md:col-span-1 md:row-span-2' : ''}
+              ${index === 17 ? 'md:col-span-1 md:row-span-2' : ''}
+              ${index === 19 ? 'md:col-span-1 md:row-span-2' : ''}
             `}
             onClick={() => setSelectedImg(name)}
           >

@@ -21,25 +21,30 @@ const foundersData = [
       name: 'ALEJANDRO', 
       fullName: 'Alejandro Roque', 
       role: t('roles.ceo'), 
-      image: '/images/Fundadores/alejandro.webp' 
+      image: '/images/Fundadores/alejandro2.webp',
+      video:'/images/Fundadores/Alejandro.webm'
     },
     { 
       id: 'bruno', 
       name: 'BRUNO', 
       fullName: 'Bruno Roque', 
       role: t('roles.marketingDirector'), 
-      image: '/images/Fundadores/Bruno.webp' 
+      image: '/images/Fundadores/Bruno.webp',
+      video:'/images/Fundadores/Bruno.webm'
     },
     { 
       id: 'piero', 
       name: 'PIERO', 
       fullName: 'Piero Roque', 
       role: t('roles.seoDirector'), 
-      image: '/images/Fundadores/Piero.webp' 
+      image: '/images/Fundadores/Piero.webp',
+      video:'/images/Fundadores/Piero.webm'
     },
   ];
   
   const [index, setIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
   const selected = foundersData[index];
   
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -49,7 +54,10 @@ const foundersData = [
   const nameRef = useRef<HTMLHeadingElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const progressAnimationRef = useRef<gsap.core.Tween | null>(null);
 
   const runScramble = (newText: string) => {
     if (!nameRef.current) return;
@@ -65,6 +73,95 @@ const foundersData = [
       if (iterations >= newText.length) clearInterval(interval);
       iterations += 1 / 2;
     }, 40);
+  };
+
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (progressAnimationRef.current) progressAnimationRef.current.kill();
+
+    timerRef.current = setInterval(() => {
+      setIndex((prev) => (prev + 1) % foundersData.length);
+    }, 3000);
+
+    progressAnimationRef.current = gsap.fromTo(progressRef.current, 
+      { width: "0%" }, 
+      { width: "100%", duration: 3, ease: "none" }
+    );
+  };
+
+  const pauseTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    if (progressAnimationRef.current) {
+      progressAnimationRef.current.pause();
+    }
+  };
+
+const handleMouseEnter = () => {
+  setIsHovering(true);
+  setShowVideo(true);
+  pauseTimer();
+  
+  if (videoRef.current) {
+    // 1. Intentamos quitar el mute
+    videoRef.current.muted = false;
+    videoRef.current.currentTime = 0;
+
+    const playPromise = videoRef.current.play();
+
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.log("Audio esperando interacción del usuario.");
+        if (videoRef.current) {
+          videoRef.current.muted = true;
+          videoRef.current.play();
+        }
+      });
+    }
+  }
+
+  gsap.to(imageContainerRef.current, {
+    height: '450px', 
+    width: '150%',   
+    x: '0%',       
+    borderRadius: '2px', 
+    duration: 0.6,
+    ease: "expo.out"
+  });
+
+  gsap.to([imageRef.current, videoRef.current], {
+    scale: 1.2, 
+    duration: 0.6,
+    ease: "expo.out"
+  });
+};
+const handleMouseLeave = () => {
+    setIsHovering(false);
+    setShowVideo(false);
+    
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+    
+    gsap.to(imageContainerRef.current, {
+      height: '700px',
+      width: '100%',
+      x: '0%',
+      borderRadius: '0px',
+      duration: 0.6,
+      ease: "elastic.out(1, 0.8)" 
+    });
+
+    gsap.to([imageRef.current, videoRef.current], {
+      scale: 1,
+      duration: 0.6,
+      ease: "expo.out"
+    });
+
+    startTimer();
   };
 
   useEffect(() => {
@@ -93,17 +190,15 @@ const foundersData = [
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % foundersData.length);
-    }, 3000);
+    if (!isHovering) {
+      startTimer();
+    }
 
-    gsap.fromTo(progressRef.current, 
-      { width: "0%" }, 
-      { width: "100%", duration: 3, ease: "none" }
-    );
-
-    return () => clearInterval(timer);
-  }, [index]);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      if (progressAnimationRef.current) progressAnimationRef.current.kill();
+    };
+  }, [index, isHovering]);
 
   useEffect(() => {
     runScramble(selected.name);
@@ -160,15 +255,25 @@ const foundersData = [
         <div ref={rightSideRef} className="flex flex-col group">
           <div 
             ref={imageContainerRef}
-            className="relative aspect-[4/5] w-full overflow-hidden bg-[#1a0b2e] shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+            className="relative w-full overflow-hidden bg-[#1a0b2e] shadow-[0_0_50px_rgba(0,0,0,0.5)] cursor-pointer"
+            style={{ height: '700px' }} // Altura inicial vertical
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            <Image
-              ref={imageRef}
-              src={selected.image}
-              alt={selected.fullName}
-              fill
-              className="object-cover"
-              priority
+            <Image 
+              ref={imageRef} 
+              src={selected.image} 
+              fill 
+              className="object-cover" 
+              alt={selected.fullName} 
+            />
+            <video
+              ref={videoRef}
+              src={selected.video}
+              className="absolute inset-0 w-full h-full  transition-opacity duration-300"
+              style={{ opacity: showVideo ? 1 : 0 }}
+              loop
+              playsInline
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0412] via-transparent to-transparent opacity-60" />
           </div>
