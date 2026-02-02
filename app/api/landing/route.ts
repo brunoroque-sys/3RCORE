@@ -7,9 +7,9 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    const { nombre, apellido, email, telefono, mensaje } = await request.json();
+    const { nombre, apellido, email, telefono, mensaje, website } = await request.json();
 
-    if (!nombre || !email || !mensaje) {
+    if (!nombre || !email || !mensaje  || !website) {
       return NextResponse.json({ error: 'Faltan campos requeridos' }, { status: 400 });
     }
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const result = await resend.batch.send([
       {
         from: 'Sistema 3RCORE <administracion@3rcore.com>',
-        to: 'alejandro.roque@3rcore.com',
+        to: 'piero.roque@3rcore.com',
         subject: `Nuevo contacto: ${nombre} quiere hablar con 3RCORE`,
         html: `
           <html>
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
                   
                   <!-- Header -->
                   <div style="background: linear-gradient(135deg, #E91E63 0%, #9C27B0 100%); padding: 40px; text-align: center;">
-                    <img src="${logoUrl}" alt="3RCORE" style="width: 100px; margin-bottom: 15px; filter: brightness(0) invert(1);">
+                    <img src="${logoUrl}" alt="3RCORE" style="width: 100px; margin-bottom: 15px;">
                     <h2 style="font-size: 22px; color: #ffffff; margin: 0; font-weight: 600; letter-spacing: -0.5px;">¡Nuevo Lead!</h2>
                   </div>
                   
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
                     <!-- Alert Badge -->
                     <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-left: 4px solid #10b981; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
                       <p style="margin: 0; font-weight: 600; color: #059669; font-size: 15px; letter-spacing: 0.3px;">
-                       ALGUIEN SE HA INTERESADO EN LO QUE HACEMOS
+                        ALGUIEN SE HA INTERESADO EN LO QUE HACEMOS
                       </p>
                     </div>
                     
@@ -88,6 +88,7 @@ export async function POST(request: Request) {
                       <div style="background: linear-gradient(to right, #E91E63, #9C27B0); height: 3px; border-radius: 10px; margin-bottom: 15px;"></div>
                       <h4 style="color: #E91E63; margin: 0 0 12px 0; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Mensaje</h4>
                       <p style="line-height: 1.8; color: #374151; margin: 0; font-size: 15px; background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;" class="dark-mode-text dark-mode-card dark-mode-border">${mensaje}</p>
+                      <p style="line-height: 1.8; color: #374151; margin: 0; font-size: 15px; background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e5e7eb;" class="dark-mode-text dark-mode-card dark-mode-border">${website}</p>
                     </div>
 
                     <!-- CTA -->

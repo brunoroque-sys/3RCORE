@@ -159,12 +159,12 @@ export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
 
           <div 
             ref={lineRef}
-            className="w-full ms:w-2/3 2xl:w-1/2 h-[1px] bg-white/50 my-8"
+            className="w-full sm:w-2/3 md:w-3/4 2xl:w-4/4 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light  ms:w-1/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
+            className="text-white text-xs md:text-sm font-light  sm:w-2/3 md:w-3/4 xl:w-3/4 2xl:w-3/4 mx-auto leading-relaxed break-words"
           >
             { t('slogan')}
           </p>

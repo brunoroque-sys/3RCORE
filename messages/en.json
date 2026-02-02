@@ -103,6 +103,18 @@
     "buttonSending": "Sending..."
   }
   ,
+  "LandingContactSection": {
+    "title": "Contact Us",
+    "fieldName": "Full Name",
+    "fieldCompany": "Company",
+    "fieldPhone": "Phone Number",
+    "fieldEmail": "Email",
+    "fieldMessage": "Message",
+    "web":"Link website",
+    "buttonSend": "Send",
+    "buttonSending": "Sending..."
+  }
+  ,
   "Navbar": {
     "title":"Navegador",
     "regular": "Your Success",
@@ -250,75 +262,75 @@
     "sections": {
       "s1": {
         "title": "Introduction",
-        "text": "At 3R Core Marketing Agency, we are committed to providing personal data owners with the highest level of security and protecting the confidentiality of their information. Therefore, business relationships are conducted in a secure server environment under SSL (Secure Socket Layer) protocol, which keeps information encrypted and safe. This protocol is currently used by the world's leading companies for secure electronic transactions. This website has been created and designed to provide all relevant information and to establish a communication space with data owners."
+        "text": "3R Core Marketing Agency, with RUC 2060900821 and located at Av. Las Caobas 170, La Molina, Lima, presents its Privacy Policy to inform about the general conditions for the processing of personal data of its clients and users who visit its website: https://www.3rcore.com."
       },
       "s2": {
         "title": "Objective and Purpose",
-        "text": "At 3R Core Marketing Agency, we are concerned with providing personal data owners with the highest level of security and protecting the confidentiality of their information.",
-        "quote": "Business relationships are conducted in a secure server environment under the SSL (Secure Socket Layer) protocol, which keeps information encrypted and secure."
+        "text": "At 3R Core Marketing Agency, we are concerned with providing personal data holders with the highest level of security and protecting the confidentiality of their information.",
+        "quote": "Business relationships are carried out in a secure server environment under SSL (Secure Socket Layer) protocol, which keeps information encrypted and secure."
       },
       "s3": {
         "title": "Legislation",
-        "intro": "This policy is governed by Peruvian legislation and specifically by:",
-        "law1": "Law No. 29733 - Personal Data Protection Law.",
+        "intro": "This policy is regulated by Peruvian legislation and in particular by:",
+        "law1": "Law No. 29733 – Personal Data Protection Law.",
         "law2": "Supreme Decree No. 003-2013-JUS, Regulation of Law No. 29733.",
-        "footer": "In accordance with Law No. 29733 - Personal Data Protection Law and its Regulation approved by Supreme Decree No. 003-2013-JUS, personal data is any numerical, alphabetical, graphic, photographic, acoustic information, about personal habits or any other type that refers to a natural person that identifies them or makes them identifiable through means that can reasonably be used. Likewise, personal data processing refers to any operation or technical procedure, automated or not, that allows the collection, registration, organization, storage, conservation, elaboration, modification, extraction, consultation, use, blocking, suppression, communication by transfer or by diffusion or any other form of processing that facilitates access, correlation or interconnection of personal data."
+        "footer": "In accordance with Law No. 29733, personal data is any information that identifies or makes a natural person identifiable. The processing of this data includes collection, registration, storage, and any technical procedure that facilitates access or interconnection."
       },
       "s4": {
         "title": "Information Storage",
-        "text": "The personal data provided through our website https://www.3rcore.com/ will be stored in data banks called 'Clients' and 'Prospects' for the period indicated in each privacy notice or consent. It is important to highlight that our data banks are duly registered with the General Directorate for the Protection of Personal Data, in accordance with current legislation. Only 3R Core Marketing Agency personnel who need to know such information to send information or respond to requests from data owners may access and manage the personal data provided. This personal data will be treated fairly and legally and will not be used for purposes incompatible with those specified."
+        "text": "The data provided will be stored in data banks called 'Clients' and 'Prospects', duly registered with the General Directorate for the Protection of Personal Data. Only authorized 3R Core personnel may manage this information to respond to requests from data subjects."
       },
       "s5": {
         "title": "Exercise of Rights",
-        "text": "You may exercise your rights of information, access, update, rectification, and deletion of personal data through:",
+        "text": "You can exercise your rights of information, access, update, inclusion, rectification, and deletion of your personal data through:",
         "physical": "In Person",
-        "digital": "Digital Way",
+        "digital": "Digital Channel",
         "subject": "Subject: Personal Data Protection"
       },
       "s6": {
         "title": "Quality of Personal Data",
-        "text": "The information required from personal data owners consists of basic contact details, which are relevant, adequate, and proportionate in relation to the purpose for which they are collected. The personal data to which 3R Core Marketing Agency will have access will be those that the owners voluntarily provide in the corresponding forms. To ensure that data owners are aware of this Privacy Policy, 3R Core Marketing Agency provides the necessary technical resources. It is essential that the personal data provided is truthful and up-to-date; otherwise, it will be cancelled. Personal data will be deleted when no longer necessary for the purpose for which it was collected but will be kept for an indefinite period."
+        "text": "The data collected is relevant, adequate, and proportionate to its purpose. It is important that the information provided is truthful and up to date. Data will be deleted when no longer necessary for its purpose, although it may be kept for an indefinite period as permitted by law."
       }
     }
-  }
+}
   ,
   "Terms": {
     "title": "Terms and Conditions",
-    "topBadge": "GENERAL TERMS",
+    "topBadge": "TERMS OF USE",
     "sections": {
       "s1": {
-        "title": "Introduction",
-        "text": "At 3R Core Marketing Agency, we are committed to providing personal data owners with the highest level of security and protecting the confidentiality of their information. Therefore, business relationships are conducted in a secure server environment under the SSL (Secure Socket Layer) protocol, which keeps information encrypted and safe. This protocol is currently used by the world's leading companies for secure electronic transactions. This website has been created and designed to provide all relevant information and to establish a communication space with personal data owners."
+        "title": "General Information",
+        "text": "This document regulates the access and use of the website https://www.3rcore.com, owned by 3R Core Marketing Agency, with RUC 2060900821 and registered address at Av. Las Caobas 170, La Molina, Lima. By browsing this site, the user fully accepts these terms and conditions."
       },
       "s2": {
-        "title": "Objective and Purpose",
-        "text": "At 3R Core Marketing Agency, we care about providing personal data owners with the highest level of security and protecting the confidentiality of their information.",
-        "quote": "Business relationships are conducted in a secure server environment under the SSL (Secure Socket Layer) protocol, which keeps information encrypted and safe."
+        "title": "Intellectual Property",
+        "text": "All content on this site (texts, logos, designs, and source code) is the property of 3R Core or is properly licensed.",
+        "quote": "The reproduction, distribution, or modification of any element of this website without the express written authorization of the agency is strictly prohibited."
       },
       "s3": {
-        "title": "Legislation",
-        "intro": "This policy is governed by Peruvian legislation and specifically by:",
-        "law1": "Law No. 29733 - Personal Data Protection Law.",
-        "law2": "Supreme Decree No. 003-2013-JUS, Regulation of Law No. 29733.",
-        "footer": "In accordance with Law No. 29733 - Personal Data Protection Law and its Regulation approved by Supreme Decree No. 003-2013-JUS, personal data is any numerical, alphabetical, graphic, photographic, acoustic information about personal habits or any other type that refers to a natural person that identifies them or makes them identifiable through means that can reasonably be used. Likewise, personal data processing refers to any operation or technical procedure, automated or not, that allows the collection, registration, organization, storage, conservation, elaboration, modification, extraction, consultation, use, blocking, suppression, communication by transfer or by diffusion or any other form of processing that facilitates access, correlation or interconnection of personal data."
+        "title": "Legal Framework",
+        "intro": "These terms are governed by current Peruvian legislation, including:",
+        "law1": "Law N° 29571 - Consumer Protection and Defense Code.",
+        "law2": "Legislative Decree N° 822 - Copyright Law.",
+        "footer": "Any controversy arising from the use of the site shall be resolved before the courts of Lima, Peru. 3R Core reserves the right to modify these terms at any time to adapt them to legislative or technological changes."
       },
       "s4": {
-        "title": "Information Storage",
-        "text": "Personal data provided through our website https://www.3rcore.com/ will be stored in data banks called 'Clients' and 'Prospects', for the time period indicated in each privacy notice or consent. It is important to note that our data banks are duly registered with the General Directorate for the Protection of Personal Data, in accordance with current legislation. Only 3R Core Marketing Agency personnel who need to know such information to send information or respond to requests from data owners may access and manage the personal data provided. This personal data will be processed fairly and legally and will not be used for purposes incompatible with those specified."
+        "title": "User Responsibility",
+        "text": "The user agrees to make lawful use of the website. The use of automated software to extract data (scraping) or actions that compromise the security of 3R Core's SSL server is not permitted. The company is not responsible for damages resulting from external interference, computer viruses, or service disconnections beyond our management."
       },
       "s5": {
-        "title": "Exercise of Rights",
-        "text": "You may exercise your rights to information, access, update, rectification, and deletion of personal data through:",
-        "physical": "In Person",
-        "digital": "Digital Way",
-        "subject": "Subject: Personal Data Protection"
+        "title": "Contact and Claims",
+        "text": "For questions about our services or formal requests, the user may communicate through our official channels:",
+        "physical": "Physical Support",
+        "digital": "Digital Support",
+        "subject": "Subject: Terms and Conditions Inquiry"
       },
       "s6": {
-        "title": "Quality of Personal Data",
-        "text": "The information required from personal data owners consists of basic contact data, which are relevant, adequate, and proportionate in relation to the purpose for which they are collected. The personal data to which 3R Core Marketing Agency will have access will be those provided voluntarily by the owners in the corresponding forms. To ensure that data owners are aware of this Privacy Policy, 3R Core Marketing Agency provides the necessary technical resources. It is important that the personal data provided is truthful and up-to-date; otherwise, it will be cancelled. Personal data will be deleted when no longer necessary for the purpose for which it was collected but will be kept for an indefinite period."
+        "title": "Services and Quotes",
+        "text": "The information about services shown on the website is for reference purposes. The final provision of marketing services will be formalized through a specific contract or accepted business proposal, detailing payment terms, delivery deadlines, and mutual obligations."
       }
     }
-  }
+}
   ,
   "FeaturesSection": {
     "mainTitle": "Let's work together to achieve your goals",

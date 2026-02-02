@@ -94,3 +94,14 @@ html.lenis, html.lenis body {
     100% { transform: translate(5%, 0); }
   }
 }
+@layer base {
+  ::selection {
+    background-color: #A21F8A; 
+    color: white; 
+  }
+
+  ::-moz-selection {
+    background-color: #A21F8A;
+    color: white;
+  }
+}

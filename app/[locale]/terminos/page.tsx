@@ -79,16 +79,19 @@ export default function Terminos() {
               {t('sections.s5.title')}
             </h2>
             <p className="mb-6 text-sm md:text-base">{t('sections.s5.text')}</p>
+
             <div className="grid md:grid-cols-2 gap-6">
+              {/* Vía Presencial */}
               <div className="group relative p-0.5 rounded-2xl overflow-hidden tracking-wide transition-all hover:shadow-[0_0_20px_rgba(156,39,176,0.2)]">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#E91E63] to-[#9C27B0]" />
                 <div className="relative bg-[#130218] p-6 rounded-[14px]">
                   <h4 className="text-white font-bold mb-2 uppercase text-xs tracking-widest">{t('sections.s5.physical')}</h4>
-                  <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0]">info@3rcore.com</p>
+                  <p className="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0]">Sede Central</p>
                   <p className="text-sm text-gray-300">Av. Las Caobas 170, La Molina, Lima.</p>
                 </div>
               </div>
               
+              {/* Vía Digital */}
               <div className="group relative p-0.5 rounded-2xl overflow-hidden tracking-wide transition-all hover:shadow-[0_0_20px_rgba(156,39,176,0.2)]">
                 <div className="absolute inset-0 bg-gradient-to-r from-[#E91E63] to-[#9C27B0]" />
                 <div className="relative bg-[#130218] p-6 rounded-[14px]">

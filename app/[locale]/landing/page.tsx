@@ -1,5 +1,5 @@
 "use client"
-import ContactForm from "@/components/layout/ContactForm";
+import LandingContact from "@/components/layout/landingContact";
 import FirstLandingSection from "@/components/sections/landing/firstLandingSection";
 import FiveLandingSection from "@/components/sections/landing/fiveLandingSection";
 import FourthLandingSection from "@/components/sections/landing/fourthLandingSection";
@@ -32,7 +32,7 @@ export default function Landing() {
       <FiveLandingSection/>
       <SixLandingSection/>
       <div  id="contacto">
-        <ContactForm/>
+        <LandingContact/>
       </div>
 
     </main>
