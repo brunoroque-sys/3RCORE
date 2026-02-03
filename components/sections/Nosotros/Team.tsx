@@ -49,58 +49,61 @@ export default function Team() {
   }, {} as Record<string, typeof members>);
 
 useEffect(() => {
-    const section = sectionRef.current;
-    const container = containerRef.current;
-    const text = textRef.current;
+  const section = sectionRef.current;
+  const container = containerRef.current;
+  const text = textRef.current;
 
-    if (!section || !container) return;
+  if (!section || !container) return;
 
-    const mm = gsap.matchMedia();
+  const mm = gsap.matchMedia();
 
-    mm.add({
-      isMobile: "(max-width: 768px)",
-      isDesktop: "(min-width: 769px)",
-      all: "(min-width: 0px)"
-    }, (context) => {
-      const isMobile = context.conditions?.isMobile;
+  mm.add({
+    isMobile: "(max-width: 768px)",
+    isDesktop: "(min-width: 769px)",
+  }, (context) => {
+    const isMobile = context.conditions?.isMobile;
 
-      const totalScroll = container.offsetHeight - window.innerHeight + 200;
-      
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: `+=${totalScroll}`,
-          pin: true,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      tl.to(container, {
-        y: -totalScroll,
-        ease: "none",
-      });
-
-      if (isMobile && text) {
-        gsap.to(text, {
-          opacity: 0,
-          y: -60,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "top+=400 top",
-            scrub: true,
-          },
-        });
-      }
-
-      return () => {}; 
+    const totalScroll = container.offsetHeight - window.innerHeight + 200;
+    
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top top",
+        end: `+=${totalScroll}`,
+        pin: true,
+        scrub: isMobile ? 0.5 : 1, // ⚡ Menos sensible en móvil
+        invalidateOnRefresh: true,
+        // ⚡ Optimizaciones importantes:
+        anticipatePin: 1,
+        fastScrollEnd: true,
+      },
     });
 
-    return () => mm.revert();
-  }, []);
+    // ⚡ Usa transform en lugar de y para mejor performance
+    tl.to(container, {
+      y: -totalScroll,
+      ease: "none",
+      force3D: true, // ⚡ Fuerza aceleración GPU
+    });
+
+    if (isMobile && text) {
+      gsap.to(text, {
+        opacity: 0,
+        y: -60,
+        ease: "power3.out",
+        force3D: true, // ⚡ Aceleración GPU
+        scrollTrigger: {
+          trigger: container,
+          start: "top top",
+          end: "top+=400 top",
+          scrub: 0.5, // ⚡ Menos intensivo
+        },
+      });
+    }
+  });
+
+  return () => mm.revert();
+}, []);
 
 return (
     <section ref={sectionRef} className="relative flex flex-col md:flex-row h-screen w-full overflow-hidden text-white">
@@ -112,7 +115,7 @@ return (
       </div>
 
       <div className="relative w-full md:w-3/4 h-full">
-        <div ref={containerRef} className="pt-[20vh] pb-[10vh] px-6 md:px-10">
+        <div ref={containerRef} className="pt-[20vh] pb-[10vh] px-6 md:px-10"style={{ willChange: 'transform' }}>
           
           {Object.entries(groupedMembers).map(([area, areaMembers]) => (
             <div key={area} className="mb-20">
