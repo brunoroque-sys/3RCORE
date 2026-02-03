@@ -376,28 +376,28 @@
     
     "faqs": {
       "q1": {
-        "question": "¿Qué servicios ofrece 3RCORE?",
-        "answer": "Ofrecemos soluciones integrales de desarrollo de software, incluyendo desarrollo web, aplicaciones móviles, consultoría tecnológica, automatización de procesos y transformación digital para empresas de todos los tamaños."
+        "question": "¿Qué servicios ofrece 3R CORE?",
+        "answer": "Somos una agencia de marketing digital integral que ofrece Branding Corporativo, Gestión de Redes Sociales (Social Media), Desarrollo Web & E-commerce (Shopify/WooCommerce), Google Ads (SEM) y Posicionamiento SEO."
       },
       "q2": {
-        "question": "¿Cuánto tiempo toma desarrollar un proyecto?",
-        "answer": "El tiempo de desarrollo varía según la complejidad y alcance del proyecto. Proyectos pequeños pueden tomar de 4 a 8 semanas, mientras que soluciones empresariales más complejas pueden requerir de 3 a 6 meses. Siempre proporcionamos un cronograma detallado antes de iniciar."
+        "question": "¿Por qué elegir a 3R CORE como mi agencia?",
+        "answer": "Somos un equipo de profesionales y nativos digitales con una visión de 3 generaciones. Conjugamos la experiencia, la visión estratégica y la tecnología para crear estrategias personalizadas que potencian el crecimiento real de tu empresa."
       },
       "q3": {
-        "question": "¿Ofrecen soporte post-lanzamiento?",
-        "answer": "Sí, ofrecemos paquetes de mantenimiento y soporte continuo que incluyen actualizaciones, corrección de errores, monitoreo de seguridad y asistencia técnica. Nuestro equipo está disponible para asegurar que tu proyecto funcione de manera óptima."
+        "question": "¿Qué incluye el servicio de Branding?",
+        "answer": "Creamos una identidad única que incluye diseño de logotipo, manual de marca, paleta de colores, tipografía corporativa, diseño de papelería, merchandising y plantillas para redes sociales para asegurar que tu marca destaque."
       },
       "q4": {
-        "question": "¿Trabajan con tecnologías específicas?",
-        "answer": "Trabajamos con una amplia gama de tecnologías modernas incluyendo React, Next.js, Node.js, Python, bases de datos SQL y NoSQL, servicios en la nube (AWS, Azure, GCP), y frameworks móviles. Seleccionamos la mejor tecnología según las necesidades específicas de cada proyecto."
+        "question": "¿Con qué plataformas de desarrollo web trabajan?",
+        "answer": "Nos asociamos con las mejores plataformas de comercio electrónico como Shopify y WooCommerce para ofrecer sitios web escalables, robustos y con alto performance (UX/UI), adaptándonos a las necesidades de tu negocio."
       },
       "q5": {
-        "question": "¿Cómo protegen la información de mis proyectos?",
-        "answer": "La seguridad y confidencialidad son nuestra prioridad. Firmamos acuerdos de confidencialidad (NDA), implementamos medidas de seguridad en el desarrollo, cumplimos con normativas de protección de datos y utilizamos repositorios privados seguros para todo el código fuente."
+        "question": "¿Qué resultados puedo esperar de las campañas de Google Ads?",
+        "answer": "Nuestras campañas están enfocadas en la conversión. Obtendrás mayor visibilidad en los primeros resultados de búsqueda, un incremento en los mensajes y llamadas de clientes potenciales, y un mejor retorno de inversión (ROI)."
       },
       "q6": {
-        "question": "¿Cuál es el proceso para iniciar un proyecto?",
-        "answer": "Nuestro proceso inicia con una consulta inicial gratuita para entender tus necesidades. Luego, desarrollamos una propuesta detallada con alcance, cronograma y presupuesto. Una vez aprobado, asignamos un equipo dedicado y comenzamos con sprints de desarrollo ágil, manteniendo comunicación constante."
+        "question": "¿Dónde se encuentran ubicados y cuál es su horario?",
+        "answer": "Nuestra oficina principal está en Calle las Caobas 170, La Molina, Lima. Atendemos de lunes a viernes de 9 a.m. a 6 p.m. Contamos con presencia y atención tanto en Perú como en EE.UU."
       }
     },
 

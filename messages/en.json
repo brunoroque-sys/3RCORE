@@ -364,28 +364,28 @@
     
     "faqs": {
       "q1": {
-        "question": "What services does 3RCORE offer?",
-        "answer": "We offer comprehensive software development solutions, including web development, mobile applications, technology consulting, process automation, and digital transformation for businesses of all sizes."
+        "question": "What services does 3R CORE offer?",
+        "answer": "We are a full-service digital marketing agency offering Corporate Branding, Social Media Management, Web Development & E-commerce (Shopify/WooCommerce), Google Ads (SEM), and SEO Positioning."
       },
       "q2": {
-        "question": "How long does it take to develop a project?",
-        "answer": "Development time varies depending on project complexity and scope. Small projects can take 4 to 8 weeks, while more complex enterprise solutions may require 3 to 6 months. We always provide a detailed timeline before starting."
+        "question": "Why choose 3R CORE as my agency?",
+        "answer": "We are a team of professionals and digital natives with a 3-generation vision. We combine experience, strategic insight, and technology to create personalized strategies that drive real growth for your business."
       },
       "q3": {
-        "question": "Do you offer post-launch support?",
-        "answer": "Yes, we offer ongoing maintenance and support packages that include updates, bug fixes, security monitoring, and technical assistance. Our team is available to ensure your project operates optimally."
+        "question": "What does the Branding service include?",
+        "answer": "We create a unique identity including logo design, brand manual, color palette, corporate typography, stationery design, merchandising, and social media templates to ensure your brand stands out."
       },
       "q4": {
-        "question": "Do you work with specific technologies?",
-        "answer": "We work with a wide range of modern technologies including React, Next.js, Node.js, Python, SQL and NoSQL databases, cloud services (AWS, Azure, GCP), and mobile frameworks. We select the best technology based on each project's specific needs."
+        "question": "Which web development platforms do you work with?",
+        "answer": "We partner with top e-commerce platforms like Shopify and WooCommerce to provide scalable, robust, and high-performance websites (UX/UI) tailored to your business needs."
       },
       "q5": {
-        "question": "How do you protect my project information?",
-        "answer": "Security and confidentiality are our priority. We sign non-disclosure agreements (NDA), implement security measures in development, comply with data protection regulations, and use secure private repositories for all source code."
+        "question": "What results can I expect from Google Ads campaigns?",
+        "answer": "Our campaigns are conversion-focused. You will gain higher visibility in top search results, an increase in messages and calls from potential leads, and a better return on investment (ROI)."
       },
       "q6": {
-        "question": "What is the process to start a project?",
-        "answer": "Our process begins with a free initial consultation to understand your needs. Then, we develop a detailed proposal with scope, timeline, and budget. Once approved, we assign a dedicated team and begin with agile development sprints, maintaining constant communication."
+        "question": "Where are you located and what are your business hours?",
+        "answer": "Our main office is located at Calle las Caobas 170, La Molina, Lima. We are open Monday to Friday from 9 a.m. to 6 p.m., serving clients in both Peru and the USA."
       }
     },
 
