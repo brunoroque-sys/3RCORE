@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from "next-intl"
+import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
 interface CarouselInterval {
   interval: NodeJS.Timeout;
@@ -36,9 +38,16 @@ export default function ProjectsSection() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const pathname = usePathname();
+  const handleScrollTop = (href: string) => {
+    if (pathname === href) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   const projects = [
     {
       id: 'branding',
+      href: '/servicios/branding',
       bg: p('branding.bg'),
       title: p('branding.title'),
       titleMobile: p('branding.titleMobile'),
@@ -52,6 +61,7 @@ export default function ProjectsSection() {
     },
     {
       id: 'socialmedia',
+      href: '/servicios/socialmedia',
       bg: p('socialmedia.bg'),
       title: p('socialmedia.title'),
       titleMobile: p('socialmedia.titleMobile'),
@@ -64,6 +74,7 @@ export default function ProjectsSection() {
     },
     {
       id: 'seosem',
+      href: '/servicios/seo-sem',
       bg: p('seosem.bg'),
       title: p('seosem.title'),
       titleMobile: p('seosem.titleMobile'),
@@ -76,6 +87,7 @@ export default function ProjectsSection() {
     },
     {
       id: 'webdesign',
+      href: '/servicios/web-deveploment',
       bg: p('webdesign.bg'),
       title: p('webdesign.title'),
       titleMobile: p('webdesign.titleMobile'),
@@ -372,6 +384,7 @@ export default function ProjectsSection() {
         {projects.map((project) => {
           const isCarouselActive = carouselStates[project.id] !== undefined;
           const currentSlideIndex = carouselStates[project.id] || 0;
+          const isExpanded = isMobile && activeColumn === project.id;
 
           return (
             <div
@@ -382,6 +395,9 @@ export default function ProjectsSection() {
               onMouseEnter={!isMobile ? () => handleDesktopHover(project.id, project.slides, true) : undefined}
               onMouseLeave={!isMobile ? () => handleDesktopHover(project.id, project.slides, false) : undefined}
               >
+                {!isMobile && (
+                  <Link href={project.href} onClick={() => handleScrollTop(project.href)} className="absolute inset-0 z-[15]" aria-label={project.id} />
+                )}
               <div className={`bg-carousel ${isCarouselActive ? 'active' : ''}`}>
                 {project.slides.map((slide, index) => (
                   <img
@@ -392,8 +408,20 @@ export default function ProjectsSection() {
                   />
                 ))}
               </div>
-              <img src={project.title} className="titulo-hover" alt={project.id} />
-              <img src={project.titleMobile} className="titulo-hover-mobile" alt={project.id} />
+                <Link href={project.href} className="z-[30]">
+                  <img src={project.title} className="titulo-hover" alt={project.id} />
+                  <img src={project.titleMobile} className="titulo-hover-mobile" alt={project.id} />
+                </Link>
+                
+                {isMobile && isExpanded && (
+                  <Link
+                    href={project.href}
+                    onClick={() => handleScrollTop(project.href)}
+                    className="text-xs absolute bottom-4 right-4 z-20 bg-white text-black px-2 py-1 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                  >
+                    Ir al servicio →
+                  </Link>
+                )}
               </div>
           );
         })}

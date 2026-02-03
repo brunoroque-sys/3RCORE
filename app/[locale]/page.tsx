@@ -1,3 +1,4 @@
+'use client';
 
 import TeamSection from '@/components/sections/home/TeamSection'
 import StatsAndCTA from '@/components/sections/home/CTASection'
@@ -7,26 +8,27 @@ import NewsSection from '@/components/sections/home/NewsSection';
 import MosaicoParallax from '@/components/sections/home/imagesParallaxSection';
 import ContactForm from '@/components/layout/ContactForm';
 import ProjectsSection from '@/components/sections/home/ProjectsSection';
-import {useTranslations} from 'next-intl';
+import { useScrollToSection } from '@/components/ui/useScrollToSection';
 
 export default function Home() {
-
+  useScrollToSection(); 
+  
   return (
-    <main >
+    <main>
       <div id="hero">
-      <Hero></Hero>
+        <Hero />
       </div>
-      <TeamSection></TeamSection>
-      <ProjectsSection/>
-      <StatsAndCTA></StatsAndCTA>
+      <TeamSection />
+      <div id="servicios">
+        <ProjectsSection />
+      </div>
+      <StatsAndCTA />
       <MosaicoParallax />
       <ClientSection />
-      <NewsSection/>
-
-      <div  id="contacto">
-        <ContactForm/>
+      <NewsSection />
+      <div id="contacto">
+        <ContactForm />
       </div>
-
     </main>
   );
 }

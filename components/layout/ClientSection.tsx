@@ -36,6 +36,7 @@ const clients: Client[] = [
   { name: 'Nexxum', logo: '/images/Logos/Nexxum.webp', className: "lg:scale-90" },
   { name: 'Oros', logo: '/images/Logos/Oros.webp', className: "lg:translate-y-30 lg:translate-x-30" },
   { name: 'Plinius', logo: '/images/Logos/Plinius.webp', className: "lg:translate-y-4 lg:translate-x-30" },
+  { name: '2K Logo', logo: '/images/Logos/2kLogo.webp', className: "lg:-translate-y-5" }
 ];
 
 export default function ClientsSection() {
