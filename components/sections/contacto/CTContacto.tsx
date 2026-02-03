@@ -55,7 +55,7 @@ useEffect(() => {
       
       <div 
         ref={cardRef} 
-        className="cta-card-container w-full max-w-7xl relative min-h-[250px] md:min-h-[250px] flex items-center"
+        className="cta-card-container w-full max-w-6xl 2xl:max-w-7xl relative min-h-[250px] md:min-h-[250px] flex items-center"
       >
         
         <div className="cta-bg absolute inset-0 bg-[#4a0d3d] rounded-[3rem] shadow-2xl overflow-hidden pointer-events-none">

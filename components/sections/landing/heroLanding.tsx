@@ -144,7 +144,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light w-full"
+            className="text-white text-xs md:text-sm font-light w-[90%] md:w-full"
           >
             {t('slogan')}
           </p>

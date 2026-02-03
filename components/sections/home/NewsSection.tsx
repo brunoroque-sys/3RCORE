@@ -78,7 +78,7 @@ interface WPPost {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative flex items-center">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto relative flex items-center">
         <button
           onClick={() => swiperInstance?.slidePrev()}
           className="absolute -left-20 z-20 hidden xl:block text-white/50 hover:text-white transition-all hover:scale-110 active:scale-90 cursor-pointer"

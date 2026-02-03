@@ -7,14 +7,14 @@ export default function MediaApplications() {
 
   return (
     <section className="w-full flex items-center px-10 lg:px-6 md:px-20 py-12 md:py-18 bg-gradient-to-r from-[#4c0046] to-[#130218]"> 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 items-center">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 items-center">
         
         <div className="flex flex-col space-y-4 md:space-y-8 text-center md:text-left">
-          <h2 className="text-white md:text-3xl lg:text-5xl lg:text-6xl font-serif italic tracking-wide">
+          <h2 className="text-white md:text-3xl lg:text-5xl 2xl:text-6xl font-serif italic tracking-wide">
             { t('griPost')}
           </h2>
           
-          <p className="text-white/90 md:text-base lg:text-xl lg:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
+          <p className="text-white/90 md:text-base lg:text-xl 2xl:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
             { t('griParraf')}
           </p>
         </div>

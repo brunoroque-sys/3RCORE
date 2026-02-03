@@ -135,8 +135,8 @@ const handleMouseEnter = () => {
   });
 
   gsap.to(container, {
-    width: '150%',
-    borderRadius: '6px', 
+    width: '100%',
+    borderRadius: '5px', 
     duration: 0.6,
     ease: "power2.out"
   });

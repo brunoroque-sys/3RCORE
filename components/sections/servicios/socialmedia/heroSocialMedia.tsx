@@ -161,7 +161,7 @@ return (
 
           <div 
             ref={lineRef}
-            className="w-full ms:w-2/3 2xl:w-1/2 h-[1px] bg-white/50 my-8"
+            className="w-full ms:w-2/3 lg:w-3/5 2xl:w-1/2 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 

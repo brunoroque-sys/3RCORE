@@ -159,7 +159,7 @@ export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
 
           <div 
             ref={lineRef}
-            className="w-full sm:w-2/3 md:w-3/4 2xl:w-4/4 h-[1px] bg-white/50 my-8"
+            className="w-full sm:w-2/3 md:w-4/4 2xl:w-4/4 h-[1px] bg-white/50 my-8"
           ></div>
 
           <p 

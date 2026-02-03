@@ -27,31 +27,6 @@ const Contacto = () => {
         }
       });
 
-      const decorations = q(".decoration-img");
-      
-      decorations.forEach((img, i) => {
-        gsap.to(img, {
-          y: i % 2 === 0 ? -60 : 60, 
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 1.5, 
-          }
-        });
-      });
-
-      decorations.forEach((img) => {
-        gsap.to(img, {
-          x: "random(-10, 10)",
-          y: "random(-10, 10)",
-          duration: "random(2, 4)",
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut"
-        });
-      });
 
     }, sectionRef);
 
@@ -64,15 +39,15 @@ const Contacto = () => {
       className="relative md:h-screen text-white px-4 pt-50 md:pt-0 flex flex-col items-center justify-center text-center overflow-hidden"
     >
       
-      <div className="decoration-img hidden lg:block absolute top-[20%] left-[5%] md:left-[0%] w-32 md:w-100 h-auto">
+      <div className="decoration-img hidden lg:block absolute top-[20%] left-[5%] md:left-[0%] w-32 lg:w-80 2xl:w-100 h-auto">
         <img src="/images/brand.webp" alt="Decoración 1" className="w-full h-auto rounded-lg shadow-2xl opacity-60 hover:opacity-100 transition-opacity" />
       </div>
 
-      <div className="decoration-img hidden lg:block absolute bottom-[1%] left-[20%] md:left-[20%] w-28 md:w-120 h-auto z-10">
+      <div className="decoration-img hidden lg:block absolute lg:bottom-[2%] 2xl:bottom-[1%] left-[20%] md:left-[20%] w-28 lg:w-80 2xl:w-120 h-auto z-10">
         <img src="/images/REDES-NEW.gif" alt="Decoración 2" className="w-full h-auto" />
       </div>
 
-      <div className="decoration-img hidden lg:block absolute bottom-[5%] right-[15%] md:right-[30%] w-100 md:w-70 h-auto shadow-xl">
+      <div className="decoration-img hidden lg:block absolute lg:bottom-[2%] 2xl:bottom-[5%] right-[15%] lg:right-[20%] 2xl:right-[30%] w-100 lg:w-70 2xl:w-70 h-auto shadow-xl">
         <img src="/images/monitor.webp" alt="Decoración 3" className="w-full h-auto rounded-md opacity-70" />
       </div>
 

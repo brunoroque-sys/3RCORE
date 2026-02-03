@@ -81,7 +81,7 @@ const Portfolio: React.FC = () => {
 
 return (
     <section className=" min-h-screen py-12 px-10 lg:px-6 md:p-12 flex items-center">
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto w-full">
         <header className="mb-12">
           <h2 className="text-white text-center text-lg tracking-[0.2em] uppercase font-light">
             { t('titPro')}

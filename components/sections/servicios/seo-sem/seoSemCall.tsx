@@ -75,14 +75,14 @@ export default function SeoSemCall() {
           <div className="text-white space-y-6 px-10 lg:pl-40">
             <h2 
               ref={titleRef}
-              className="text-4xl lg:text-6xl font-light leading-tight"
+              className="text-4xl 2xl:text-6xl font-light leading-tight"
             >
               <span className="italic block">{t('title.part1')}</span>
               <span className="text-pink-600 font-normal block">{t('title.part2')}</span>
               <span className="text-pink-600 font-normal block">{t('title.part3')}</span>
             </h2>
 
-            <div className="space-y-4 text-xs lg:text-xl">
+            <div className="space-y-4 text-xs lg:text-base 2xl:text-xl">
               <p ref={paragraph1Ref} className="leading-relaxed">
                 {t('description.paragraph1')}
               </p>
@@ -93,10 +93,10 @@ export default function SeoSemCall() {
             </div>
           </div>
 
-          <div className="relative flex justify-center md:justify-end lg:justify-end">
+          <div className="relative flex justify-end ms:justify-end lg:justify-end">
             <div 
               ref={imageRef}
-              className="relative w-full max-w-[450px] lg:max-w-[650px] 2xl:max-w-[750px]"
+              className="relative w-full max-w-[350px] lg:max-w-[650px] 2xl:max-w-[750px]"
             >
               <Image
                 src="/images/seosem/laptopInici.png"
