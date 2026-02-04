@@ -374,7 +374,7 @@ export default function ProjectsSection() {
         }
       `}</style>
 
-      <div className='w-full py-6 lg:py-24'>
+      <div className='w-full pt-6 2xl:py-10'>
         <div className="contenedor-imagenes-hovers">
           <div className="col col-static">
             <img src="/images/tituloCarru/serviciosbg.webp" className="fondopro" alt="Background" />
