@@ -49,6 +49,9 @@ export default function HeroWeb() {
     gsap.set(brTextRef.current, { opacity: 0, y: -20 });
     gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
     gsap.set(sloganRef.current, { opacity: 0, y: 20 });
+    
+    // Marcar como listo para mostrar
+    setIsAnimationReady(true);
 
     const playAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
