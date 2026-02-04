@@ -51,14 +51,11 @@ export function GlobalLoadingProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Detectar cambios de ruta y mostrar loading en páginas específicas
   useEffect(() => {
-    if (isFirstLoad) return; // No interferir con la primera carga
+    if (isFirstLoad) return;
 
-    // Extraer la ruta sin el locale
     const currentPath = pathname.replace(/^\/(en|es)/, '') || '/';
     
-    // Si cambió de página y es una de las páginas principales
     if (previousPath && previousPath !== currentPath) {
       const shouldShowLoading = PAGES_WITH_LOADING.some(page => 
         currentPath.startsWith(page)
@@ -69,7 +66,7 @@ export function GlobalLoadingProvider({ children }: { children: ReactNode }) {
         
         const timer = setTimeout(() => {
           setIsLoading(false);
-        }, 800); // Loading más corto para navegación (800ms)
+        }, 800); 
 
         return () => clearTimeout(timer);
       }

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from "next-intl"
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
+import Image from 'next/image';
 
 interface CarouselInterval {
   interval: NodeJS.Timeout;
@@ -179,8 +180,8 @@ export default function ProjectsSection() {
           content: '';
           position: absolute;
           inset: 0;
-          background-color: rgba(0, 0, 0, 0.5); /* Misma oscuridad que los demás */
-          z-index: 2; /* Por encima del fondo (z-1) pero debajo del título (z-5) */
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 2;
           transition: opacity 0.4s ease;
         }
         
@@ -222,7 +223,7 @@ export default function ProjectsSection() {
           content: '';
           position: absolute;
           inset: 0;
-          background-color: rgba(0, 0, 0, 0.4); /* Nivel de oscuridad inicial */
+          background-color: rgba(0, 0, 0, 0.4);
           z-index: 10;
           transition: opacity 0.4s ease-in-out;
         }
@@ -270,7 +271,7 @@ export default function ProjectsSection() {
           opacity: 1;
         }
 
-        .bg-carousel img {
+        .bg-carousel .carousel-image {
           position: absolute;
           inset: 0;
           width: 100%;
@@ -281,7 +282,7 @@ export default function ProjectsSection() {
           transition: opacity 0.8s ease-in-out;
         }
 
-        .bg-carousel img.show {
+        .bg-carousel .carousel-image.show {
           opacity: 1;
           z-index: 2;
         }
@@ -361,23 +362,19 @@ export default function ProjectsSection() {
             transform: translate(0px, 0px) !important;
           }
         }
-          .bg-carousel {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          opacity: 0;
-          transition: opacity 0.5s ease;
-        }
-        /* Esta clase es clave para que cuando el carrusel esté activo, se vea sobre el fondo estático */
-        .bg-carousel.active {
-          opacity: 1;
-        }
       `}</style>
 
       <div className='w-full md:py-24'>
         <div className="contenedor-imagenes-hovers">
           <div className="col col-static">
-            <img src="/images/tituloCarru/serviciosbg.webp" className="fondopro" alt="Background" />
+            <Image 
+              src="/images/tituloCarru/serviciosbg.webp" 
+              className="fondopro" 
+              alt="Background"
+              fill
+              sizes="(max-width: 768px) 100vw, 20vw"
+              priority
+            />
             <img src={t('ver')} className="titulo-img" alt="Our Projects" />
             <img src={t('hor')} className="titulo-img-horizon" alt="Our Projects" />
           </div>
@@ -401,11 +398,13 @@ export default function ProjectsSection() {
                   )}
                 <div className={`bg-carousel ${isCarouselActive ? 'active' : ''}`}>
                   {project.slides.map((slide, index) => (
-                    <img
+                    <Image
                       key={index}
                       src={slide}
                       alt=""
-                      className={currentSlideIndex === index ? 'show' : ''}
+                      className={`carousel-image ${currentSlideIndex === index ? 'show' : ''}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 25vw"
                     />
                   ))}
                 </div>
