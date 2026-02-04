@@ -92,9 +92,7 @@ export default function HeroWeb() {
     <section 
       ref={sectionRef}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
-      style={{ 
-        visibility: isAnimationReady ? 'visible' : 'hidden'
-      }}
+      
     >
       <div className="absolute inset-0 z-0">
         <video
@@ -113,7 +111,9 @@ export default function HeroWeb() {
         <div className="absolute inset-0 bg-[#130218] via-transparent to-transparent opacity-80"></div>
       </div>
 
-      <div className="relative z-10 text-center px-10">
+      <div className="relative z-10 text-center px-10"style={{ 
+        visibility: isAnimationReady ? 'visible' : 'hidden'
+      }}>
         <div className="flex flex-col items-center">
           
           <div className='w-auto '>
