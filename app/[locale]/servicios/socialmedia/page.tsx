@@ -9,34 +9,15 @@ import ProcessSMSection from "@/components/sections/servicios/socialmedia/proces
 import SocialPortfolio from "@/components/sections/servicios/socialmedia/socialPortfolio";
 import SocialPost from "@/components/sections/servicios/socialmedia/socialPost";
 import { SocialShowSection } from "@/components/sections/servicios/socialmedia/socialShowSection";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export default function socialmedia(){
-    const [isLoading, setIsLoading] = useState(true);
-  
-    useEffect(() => {
-      const minLoadTime = setTimeout(() => {
-      }, 500);
-      
-      return () => clearTimeout(minLoadTime);
-    }, []);
-  
-    const handleImageLoaded = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    };
 
   return(
     <>
-      <AnimatePresence mode="wait">
-              {isLoading && <LoadingScreen key="loader" />}
-      </AnimatePresence>
       
-      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+      <main >
         <div id="hero">
-          <HeroSocialMedia onImageLoad={handleImageLoaded} />
+          <HeroSocialMedia/>
         </div>
         <ProcessSMSection/>
         <SocialPost/>

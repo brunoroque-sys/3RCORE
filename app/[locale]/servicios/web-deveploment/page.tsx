@@ -14,31 +14,12 @@ import WebFaq from "@/components/sections/servicios/web-deveploment/webFaq";
 import WebImgSection from "@/components/sections/servicios/web-deveploment/webimgSection";
 
 export default function WebDeveploment(){
-    const [isLoading, setIsLoading] = useState(true);
-  
-    useEffect(() => {
-      const minLoadTime = setTimeout(() => {
-      }, 500);
-      
-      return () => clearTimeout(minLoadTime);
-    }, []);
-  
-    const handleImageLoaded = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    };
 
   return(
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && <LoadingScreen key="loader" />}
-      </AnimatePresence>
-      
-      {/* Renderiza el Hero incluso cuando está cargando para precargar el video */}
-      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+      <main >
         <div id="hero">
-          <HeroWeb onImageLoad={handleImageLoaded} />
+          <HeroWeb />
         </div>
         <ProcessWebSection/>
         <WebInfoSection/>

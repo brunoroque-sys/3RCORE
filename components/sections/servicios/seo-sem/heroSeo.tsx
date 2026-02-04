@@ -5,10 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 
-interface HeroSeoProps {
-  onImageLoad: () => void; 
-}
-export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
+export default function HeroSeo() {
 
   const t = useTranslations('SeoSemHero');
   
@@ -30,7 +27,6 @@ export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
     
         const handleCanPlayThrough = () => {
           setIsVideoLoaded(true);
-          onImageLoad();
         };
     
         video.addEventListener('canplaythrough', handleCanPlayThrough);
@@ -42,7 +38,7 @@ export default function HeroSeo({ onImageLoad }: HeroSeoProps) {
           video.removeEventListener('canplaythrough', handleCanPlayThrough);
           video.removeEventListener('loadeddata', handleCanPlayThrough);
         };
-  }, [onImageLoad]);
+  }, []);
 
 
 

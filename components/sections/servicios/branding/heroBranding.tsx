@@ -5,10 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 
-interface HeroBrandingProps {
-  onImageLoad: () => void; 
-}
-export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
+export default function HeroBranding() {
 
   const t = useTranslations('BrandingHero');
   
@@ -30,7 +27,6 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
       
           const handleCanPlayThrough = () => {
             setIsVideoLoaded(true);
-            onImageLoad();
           };
       
           video.addEventListener('canplaythrough', handleCanPlayThrough);
@@ -42,7 +38,7 @@ export default function HeroBranding({ onImageLoad }: HeroBrandingProps) {
             video.removeEventListener('canplaythrough', handleCanPlayThrough);
             video.removeEventListener('loadeddata', handleCanPlayThrough);
           };
-  }, [onImageLoad]);
+  }, []);
   
 
   useEffect(() => {

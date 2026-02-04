@@ -5,10 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 
-interface HeroWebProps {
-  onImageLoad: () => void; 
-}
-export default function HeroWeb({ onImageLoad }: HeroWebProps) {
+export default function HeroWeb() {
 
   const t = useTranslations('WebHero');
   
@@ -29,7 +26,6 @@ export default function HeroWeb({ onImageLoad }: HeroWebProps) {
 
     const handleCanPlayThrough = () => {
       setIsVideoLoaded(true);
-      onImageLoad();
     };
 
     video.addEventListener('canplaythrough', handleCanPlayThrough);
@@ -41,7 +37,7 @@ export default function HeroWeb({ onImageLoad }: HeroWebProps) {
       video.removeEventListener('canplaythrough', handleCanPlayThrough);
       video.removeEventListener('loadeddata', handleCanPlayThrough);
     };
-  }, [onImageLoad]);
+  }, []);
 
 
    useEffect(() => {

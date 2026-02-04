@@ -12,29 +12,12 @@ import ToolsCarousel from "@/components/sections/servicios/seo-sem/toolsCarru";
 
 export default function Seosem(){
 
-    const [isLoading, setIsLoading] = useState(true);
-  
-    useEffect(() => {
-      const minLoadTime = setTimeout(() => {
-      }, 500);
-      
-      return () => clearTimeout(minLoadTime);
-    }, []);
-  
-    const handleImageLoaded = () => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    };
     
   return(
     <>
-      <AnimatePresence mode="wait">
-              {isLoading && <LoadingScreen key="loader" />}
-      </AnimatePresence>
-      <main style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+      <main >
         <div id="hero">
-          <HeroSeo onImageLoad={handleImageLoaded} />
+          <HeroSeo />
         </div>
         <SeoSemCall/>
         <SeoSemSection/>

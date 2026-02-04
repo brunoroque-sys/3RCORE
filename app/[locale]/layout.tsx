@@ -15,6 +15,8 @@ import { getMessages } from "next-intl/server";
 
 import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
+import { GlobalLoadingProvider } from "@/components/layout/GlobalLoadingProvider";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,37 +30,44 @@ export const metadata: Metadata = {
   description: "Agencia de Marketing",
 };
 
-export default async function RootLayout({children,params}:{children: React.ReactNode,params:any}) {
-
+export default async function RootLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode,
+  params: any
+}) {
   const {locale} = await params;
+  
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
   
-  const messages=await getMessages();
+  const messages = await getMessages();
 
   return (
-    <html >
-      <body className={`${poppins.className} text-white `}suppressHydrationWarning={true}>
+    <html lang={locale}>
+      <body className={`${poppins.className} text-white`} suppressHydrationWarning={true}>
         <div className="noise-overlay" />
         
         {/* Partículas moradas de fondo */}
         <ParticlesBackground />
         
         <NextIntlClientProvider locale={locale} messages={messages}>
-          
-          <SmoothScrolling>
-            <Navbar />
-            <main className="min-h-screen flex flex-col relative z-10">
-              <div className="noise-global" />
-              {children}
-            </main>
-            <Footer />
-          </SmoothScrolling>
-          
-          <CookieBanner />
-          <ScrollContactBtn />
-          <WhatsAppBtn />
+          <GlobalLoadingProvider>
+            <SmoothScrolling>
+              <Navbar />
+              <main className="min-h-screen flex flex-col relative z-10">
+                <div className="noise-global" />
+                {children}
+              </main>
+              <Footer />
+            </SmoothScrolling>
+            
+            <CookieBanner />
+            <ScrollContactBtn />
+            <WhatsAppBtn />
+          </GlobalLoadingProvider>
         </NextIntlClientProvider>
       </body>
     </html>
