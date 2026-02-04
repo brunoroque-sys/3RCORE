@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { useTranslations } from "next-intl"
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -265,6 +266,7 @@ export default function HeroHome() {
     }, "+=0");
 
   }, { scope: containerRef });
+
 
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">

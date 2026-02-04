@@ -1,5 +1,6 @@
 'use client';
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 import LoadingScreen from '@/components/layout/LoadingScreen';
 
@@ -15,12 +16,25 @@ const LoadingContext = createContext<LoadingContextType>({
 
 export const useGlobalLoading = () => useContext(LoadingContext);
 
+// Páginas que requieren loading screen en navegación
+const PAGES_WITH_LOADING = [
+  '/branding',
+  '/web-development', 
+  '/social-media',
+  '/audiovisual',
+  '/seo',
+  '/nosotros',
+  '/contacto'
+];
+
 export function GlobalLoadingProvider({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
   const [isLoading, setIsLoading] = useState(true);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [previousPath, setPreviousPath] = useState('');
 
+  // Primera carga de la sesión
   useEffect(() => {
-    // Solo mostrar loading en la primera carga de la sesión
     const hasLoaded = sessionStorage.getItem('hasLoadedBefore');
     
     if (hasLoaded) {
@@ -37,10 +51,37 @@ export function GlobalLoadingProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // Detectar cambios de ruta y mostrar loading en páginas específicas
+  useEffect(() => {
+    if (isFirstLoad) return; // No interferir con la primera carga
+
+    // Extraer la ruta sin el locale
+    const currentPath = pathname.replace(/^\/(en|es)/, '') || '/';
+    
+    // Si cambió de página y es una de las páginas principales
+    if (previousPath && previousPath !== currentPath) {
+      const shouldShowLoading = PAGES_WITH_LOADING.some(page => 
+        currentPath.startsWith(page)
+      );
+
+      if (shouldShowLoading) {
+        setIsLoading(true);
+        
+        const timer = setTimeout(() => {
+          setIsLoading(false);
+        }, 800); // Loading más corto para navegación (800ms)
+
+        return () => clearTimeout(timer);
+      }
+    }
+
+    setPreviousPath(currentPath);
+  }, [pathname, previousPath, isFirstLoad]);
+
   return (
     <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
       <AnimatePresence mode="wait">
-        {isLoading && isFirstLoad && <LoadingScreen key="global-loader" />}
+        {isLoading && <LoadingScreen key="global-loader" />}
       </AnimatePresence>
       {children}
     </LoadingContext.Provider>
