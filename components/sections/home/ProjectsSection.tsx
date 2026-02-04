@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from "next-intl"
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
+import Image from 'next/image';
 
 interface CarouselInterval {
   interval: NodeJS.Timeout;
@@ -21,7 +22,6 @@ interface Project {
 export default function ProjectsSection() {
 
   const t = useTranslations('Hovers');
-  const p = useTranslations('projects');
 
   const [isMobile, setIsMobile] = useState(false);
   const [activeColumn, setActiveColumn] = useState<string | null>(null);
@@ -48,54 +48,54 @@ export default function ProjectsSection() {
     {
       id: 'branding',
       href: '/servicios/branding',
-      bg: p('branding.bg'),
-      title: p('branding.title'),
-      titleMobile: p('branding.titleMobile'),
+      bg: "/images/tituloCarru/brandCarrubg.webp",
+      title: "/images/tituloCarru/Branding.svg",
+      titleMobile: "/images/tituloCarru/brandingH.svg",
       slides: [
-        p('branding.slides.sb1'),
-        p('branding.slides.sb2'),
-        p('branding.slides.sb3'),
-        p('branding.slides.sb4'),
-        p('branding.slides.sb5')
+        "/images/tituloCarru/brandCarrubg.webp",
+        "/images/tituloCarru/brandCarru1.webp",
+        "/images/tituloCarru/brandCarru2.webp",
+        "/images/tituloCarru/brandCarru3.webp",
+        "/images/tituloCarru/brandCarru4.webp",
       ]
     },
     {
       id: 'socialmedia',
       href: '/servicios/socialmedia',
-      bg: p('socialmedia.bg'),
-      title: p('socialmedia.title'),
-      titleMobile: p('socialmedia.titleMobile'),
+      bg: "/images/tituloCarru/socialCarrubg.webp",
+      title: "/images/tituloCarru/SocialMedia.svg",
+      titleMobile:  "/images/tituloCarru/socialMediaHorizontal.svg",
       slides: [
-        p('socialmedia.slides.sm1'),
-        p('socialmedia.slides.sm2'),
-        p('socialmedia.slides.sm3'),
-        p('socialmedia.slides.sm4')
+        "/images/tituloCarru/socialCarrubg.webp",
+        "/images/tituloCarru/socialCarru1.webp",
+        "/images/tituloCarru/socialCarru2.webp",
+        "/images/tituloCarru/socialCarru3.webp"
       ]
     },
     {
       id: 'seosem',
       href: '/servicios/seo-sem',
-      bg: p('seosem.bg'),
-      title: p('seosem.title'),
-      titleMobile: p('seosem.titleMobile'),
+      bg: "/images/tituloCarru/seoCarrubg.webp",
+      title: "/images/tituloCarru/SeoSem.svg",
+      titleMobile:"/images/tituloCarru/seoSemHorizontal.svg",
       slides: [
-        p('seosem.slides.sss1'),
-        p('seosem.slides.sss2'),
-        p('seosem.slides.sss3'),
-        p('seosem.slides.sss4')
+        "/images/tituloCarru/seoCarrubg.webp",
+        "/images/tituloCarru/seoCarru1.webp",
+        "/images/tituloCarru/seoCarru2.webp",
+        "/images/tituloCarru/seoCarru3.webp",
       ]
     },
     {
       id: 'webdesign',
       href: '/servicios/web-deveploment',
-      bg: p('webdesign.bg'),
-      title: p('webdesign.title'),
-      titleMobile: p('webdesign.titleMobile'),
+      bg: "/images/tituloCarru/webCarrubg.webp",
+      title:  "/images/tituloCarru/webDevelopmentV.svg",
+      titleMobile: "/images/tituloCarru/webDevelopment.svg",
       slides: [
-        p('webdesign.slides.sw1'),
-        p('webdesign.slides.sw2'),
-        p('webdesign.slides.sw3'),
-        p('webdesign.slides.sw4')
+        "/images/tituloCarru/webCarrubg.webp",
+        "/images/tituloCarru/webCarru1.webp",
+        "/images/tituloCarru/webCarru2.webp",
+        "/images/tituloCarru/webCarru3.webp"
       ]
     }
   ];
@@ -374,57 +374,59 @@ export default function ProjectsSection() {
         }
       `}</style>
 
-      <div className="contenedor-imagenes-hovers">
-        <div className="col col-static">
-          <img src="/images/tituloCarru/serviciosbg.webp" className="fondopro" alt="Background" />
-          <img src={t('ver')} className="titulo-img" alt="Our Projects" />
-          <img src={t('hor')} className="titulo-img-horizon" alt="Our Projects" />
-        </div>
+      <div className='w-full py-6 lg:py-24'>
+        <div className="contenedor-imagenes-hovers">
+          <div className="col col-static">
+            <img src="/images/tituloCarru/serviciosbg.webp" className="fondopro" alt="Background" />
+            <img src={t('ver')} className="titulo-img" alt="Our Projects" />
+            <img src={t('hor')} className="titulo-img-horizon" alt="Our Projects" />
+          </div>
 
-        {projects.map((project) => {
-          const isCarouselActive = carouselStates[project.id] !== undefined;
-          const currentSlideIndex = carouselStates[project.id] || 0;
-          const isExpanded = isMobile && activeColumn === project.id;
+          {projects.map((project) => {
+            const isCarouselActive = carouselStates[project.id] !== undefined;
+            const currentSlideIndex = carouselStates[project.id] || 0;
+            const isExpanded = isMobile && activeColumn === project.id;
 
-          return (
-            <div
-              key={project.id}
-              className={`col col-hover ${isMobile && activeColumn === project.id ? 'active-mobile' : ''}`}
-              style={{ backgroundImage: `url('${project.bg}')` }}
-              onClick={isMobile ? () => handleMobileClick(project.id, project.slides) : undefined}
-              onMouseEnter={!isMobile ? () => handleDesktopHover(project.id, project.slides, true) : undefined}
-              onMouseLeave={!isMobile ? () => handleDesktopHover(project.id, project.slides, false) : undefined}
-              >
-                {!isMobile && (
-                  <Link href={project.href} onClick={() => handleScrollTop(project.href)} className="absolute inset-0 z-[15]" aria-label={project.id} />
-                )}
-              <div className={`bg-carousel ${isCarouselActive ? 'active' : ''}`}>
-                {project.slides.map((slide, index) => (
-                  <img
-                    key={index}
-                    src={slide}
-                    alt=""
-                    className={currentSlideIndex === index ? 'show' : ''}
-                  />
-                ))}
-              </div>
-                <Link href={project.href} className="z-[30]">
-                  <img src={project.title} className="titulo-hover" alt={project.id} />
-                  <img src={project.titleMobile} className="titulo-hover-mobile" alt={project.id} />
-                </Link>
-                
-                {isMobile && isExpanded && (
-                  <Link
-                    href={project.href}
-                    onClick={() => handleScrollTop(project.href)}
-                    className="text-xs absolute bottom-4 right-4 z-20 bg-white text-black px-2 py-1 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-                  >
-                    Ir al servicio →
+            return (
+              <div
+                key={project.id}
+                className={`col col-hover ${isMobile && activeColumn === project.id ? 'active-mobile' : ''}`}
+                style={{ backgroundImage: `url('${project.bg}')` }}
+                onClick={isMobile ? () => handleMobileClick(project.id, project.slides) : undefined}
+                onMouseEnter={!isMobile ? () => handleDesktopHover(project.id, project.slides, true) : undefined}
+                onMouseLeave={!isMobile ? () => handleDesktopHover(project.id, project.slides, false) : undefined}
+                >
+                  {!isMobile && (
+                    <Link href={project.href} onClick={() => handleScrollTop(project.href)} className="absolute inset-0 z-[15]" aria-label={project.id} />
+                  )}
+                <div className={`bg-carousel ${isCarouselActive ? 'active' : ''}`}>
+                  {project.slides.map((slide, index) => (
+                    <img
+                      key={index}
+                      src={slide}
+                      alt=""
+                      className={currentSlideIndex === index ? 'show' : ''}
+                    />
+                  ))}
+                </div>
+                  <Link href={project.href} className="z-[30]">
+                    <img src={project.title} className="titulo-hover" alt={project.id} />
+                    <img src={project.titleMobile} className="titulo-hover-mobile" alt={project.id} />
                   </Link>
-                )}
-              </div>
-          );
-        })}
+                  
+                  {isMobile && isExpanded && (
+                    <Link
+                      href={project.href}
+                      onClick={() => handleScrollTop(project.href)}
+                      className="text-xs absolute bottom-4 right-4 z-20 bg-white text-black px-2 py-1 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+                    >
+                      Ir al servicio →
+                    </Link>
+                  )}
+                </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
