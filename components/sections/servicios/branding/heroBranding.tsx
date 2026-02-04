@@ -9,7 +9,6 @@ export default function HeroBranding() {
 
   const t = useTranslations('BrandingHero');
   
-
   const pinkBgRef = useRef(null);
   const andTextRef = useRef(null);
   const brTextRef = useRef(null);
@@ -17,42 +16,44 @@ export default function HeroBranding() {
   const sloganRef = useRef(null);
   const sectionRef = useRef(null);
   
-  
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isAnimationReady, setIsAnimationReady] = useState(false);
       
   useEffect(() => {
-          const video = videoRef.current;
-          if (!video) return;
-      
-          const handleCanPlayThrough = () => {
-            setIsVideoLoaded(true);
-          };
-      
-          video.addEventListener('canplaythrough', handleCanPlayThrough);
-          video.addEventListener('loadeddata', handleCanPlayThrough);
-      
-          video.load();
-      
-          return () => {
-            video.removeEventListener('canplaythrough', handleCanPlayThrough);
-            video.removeEventListener('loadeddata', handleCanPlayThrough);
-          };
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleCanPlayThrough = () => {
+      setIsVideoLoaded(true);
+    };
+
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
+    video.addEventListener('loadeddata', handleCanPlayThrough);
+
+    video.load();
+
+    return () => {
+      video.removeEventListener('canplaythrough', handleCanPlayThrough);
+      video.removeEventListener('loadeddata', handleCanPlayThrough);
+    };
   }, []);
   
-
   useEffect(() => {
-
     if (!isVideoLoaded) return;
+
+    // Configurar estado inicial inmediatamente
+    gsap.set(pinkBgRef.current, { scaleX: 0, transformOrigin: 'left center' });
+    gsap.set(andTextRef.current, { clipPath: 'inset(0 100% 0 0)' });
+    gsap.set(brTextRef.current, { opacity: 0, y: -20 });
+    gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
+    gsap.set(sloganRef.current, { opacity: 0, y: 20 });
+    
+    // Marcar como listo para mostrar
+    setIsAnimationReady(true);
 
     const playAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-      gsap.set(pinkBgRef.current, { scaleX: 0, transformOrigin: 'left center' });
-      gsap.set(andTextRef.current, { clipPath: 'inset(0 100% 0 0)' });
-      gsap.set(brTextRef.current, { opacity: 0, y: -20 });
-      gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
-      gsap.set(sloganRef.current, { opacity: 0, y: 20 });
 
       tl.to(pinkBgRef.current, {
         scaleX: 1,
@@ -83,31 +84,34 @@ export default function HeroBranding() {
     };
 
     const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                playAnimation();
-              }
-            });
-          },
-          { threshold: 0.3 }
-        );
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            playAnimation();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
       if (sectionRef.current) {
-        observer.observe(sectionRef.current);
+        observer.unobserve(sectionRef.current);
       }
-
-      return () => {
-        if (sectionRef.current) {
-          observer.unobserve(sectionRef.current);
-        }
-      };
-    }, [isVideoLoaded]);
+    };
+  }, [isVideoLoaded]);
     
   return (
     <section 
       ref={sectionRef}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
+      style={{ 
+        visibility: isAnimationReady ? 'visible' : 'hidden'
+      }}
     >
       <div className="absolute inset-0 z-0">
         <video

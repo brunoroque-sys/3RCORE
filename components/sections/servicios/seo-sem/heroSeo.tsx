@@ -20,6 +20,7 @@ export default function HeroSeo() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isAnimationReady, setIsAnimationReady] = useState(false);
     
   useEffect(() => {
         const video = videoRef.current;
@@ -46,14 +47,19 @@ export default function HeroSeo() {
 
     if (!isVideoLoaded) return;
 
+    gsap.set(pinkBgRef.current, { scaleX: 0, transformOrigin: 'left center' });
+    gsap.set(andTextRef.current, { clipPath: 'inset(0 100% 0 0)' });
+    gsap.set(brTextRef.current, { opacity: 0, y: -20 });
+    gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
+    gsap.set(sloganRef.current, { opacity: 0, y: 20 });
+
+    // Marcar como listo para mostrar
+    setIsAnimationReady(true);
+
     const playAnimation = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      gsap.set(pinkBgRef.current, { scaleX: 0, transformOrigin: 'left center' });
-      gsap.set(andTextRef.current, { clipPath: 'inset(0 100% 0 0)' });
-      gsap.set(brTextRef.current, { opacity: 0, y: -20 });
-      gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
-      gsap.set(sloganRef.current, { opacity: 0, y: 20 });
+      
 
       tl.to(pinkBgRef.current, {
         scaleX: 1,
@@ -109,6 +115,9 @@ export default function HeroSeo() {
     <section 
       ref={sectionRef}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black"
+      style={{ 
+        visibility: isAnimationReady ? 'visible' : 'hidden'
+      }}
     >
       <div className="absolute inset-0 z-0">
         <video
