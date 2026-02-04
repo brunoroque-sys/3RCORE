@@ -157,9 +157,9 @@ const SeoSemSection = () => {
           />
         </div>
 
-        <div ref={seoRef} className="mb-20">
+        <div ref={seoRef} className="mb-10">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
-            <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[500px]">
+            <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[400px]">
               <div className="space-y-2 ">
                 <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#E91E63]">
                  {t('seo.title')}
@@ -196,7 +196,7 @@ const SeoSemSection = () => {
 
         <div ref={semRef}>
           <div className="grid md:grid-cols-[40%_60%] gap-0">
-            <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[500px]">
+            <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[400px]">
               <div className="space-y-2">
                 <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#E91E63]">
                   {t('sem.title')}

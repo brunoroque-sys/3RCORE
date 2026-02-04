@@ -28,9 +28,8 @@ const members = [
   { id: 16, name: "Josue", role: "Post-Production", image: "/images/Equipo/Josue.webp", area:"design multimedia"},
   { id: 17, name: "Franco", role: "Designer", image: "/images/Equipo/franco-2.webp", area:"design multimedia"}, 
 
-  { id: 18, name: "Debora", role: "Project Manager Director", image: "/images/Equipo/Debora.webp", area:"Web development & IT" },
-  { id: 19, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web development & IT"},
-  { id: 20, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web development & IT" },
+  { id: 18, name: "Luis", role: "Web & IT Supervisor", image: "/images/Equipo/Luis.webp", area:"Web development & IT"},
+  { id: 19, name: "Aymar", role: "Software Engineer", image: "/images/Equipo/Aymar.webp", area:"Web development & IT" },
 
 ];
 
@@ -71,19 +70,17 @@ useEffect(() => {
         start: "top top",
         end: `+=${totalScroll}`,
         pin: true,
-        scrub: isMobile ? 0.5 : 1, // ⚡ Menos sensible en móvil
+        scrub: isMobile ? 0.5 : 1, 
         invalidateOnRefresh: true,
-        // ⚡ Optimizaciones importantes:
         anticipatePin: 1,
         fastScrollEnd: true,
       },
     });
 
-    // ⚡ Usa transform en lugar de y para mejor performance
     tl.to(container, {
       y: -totalScroll,
       ease: "none",
-      force3D: true, // ⚡ Fuerza aceleración GPU
+      force3D: true, 
     });
 
     if (isMobile && text) {
@@ -91,12 +88,12 @@ useEffect(() => {
         opacity: 0,
         y: -60,
         ease: "power3.out",
-        force3D: true, // ⚡ Aceleración GPU
+        force3D: true, 
         scrollTrigger: {
           trigger: container,
           start: "top top",
           end: "top+=400 top",
-          scrub: 0.5, // ⚡ Menos intensivo
+          scrub: 0.5, 
         },
       });
     }
@@ -106,7 +103,7 @@ useEffect(() => {
 }, []);
 
 return (
-    <section ref={sectionRef} className="relative flex flex-col md:flex-row h-screen w-full overflow-hidden text-white">
+    <section ref={sectionRef} className="relative flex flex-col md:flex-row h-[80vh] w-full overflow-hidden text-white">
       <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-10 md:px-16 pt-30 md:pt-0 z-20">
         <h2 className="text-4xl md:text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
         <p className="text-m max-w-xs leading-relaxed">
@@ -114,8 +111,8 @@ return (
         </p>
       </div>
 
-      <div className="relative w-full md:w-3/4 h-full">
-        <div ref={containerRef} className="pt-[20vh] pb-[10vh] px-6 md:px-10"style={{ willChange: 'transform' }} >
+      <div className="relative w-full md:w-3/4 ">
+        <div ref={containerRef} className="pt-[20vh] pb-[1vh] px-6 md:px-10"style={{ willChange: 'transform' }} >
           
           {Object.entries(groupedMembers).map(([area, areaMembers]) => (
             <div key={area} className="mb-20">

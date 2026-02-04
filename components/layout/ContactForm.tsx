@@ -56,7 +56,13 @@ const ContactForm = () => {
 
       <div className="relative z-10 w-full max-w-7xl px-10 lg:px-6">
         <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.2em] uppercase mb-16">
-          {t('title')}
+          <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+            {t('title')}
+          </span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">

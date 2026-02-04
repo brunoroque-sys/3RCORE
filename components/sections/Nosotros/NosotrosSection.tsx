@@ -20,15 +20,23 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "700"] 
 });
 
-
-const NosotrosSection= () => {
-
+const NosotrosSection = () => {
   const t = useTranslations('AboutSection');
   
   const titleText = t('title').split(" ");
   const paragraphText = t('description').split(" ");
 
   const containerRef = useRef(null);
+
+  // Palabras exactas a resaltar (Mayúsculas y con posibles comas)
+  const keywordsToHighlight = [
+    "Experiencia", "Experiencia,", 
+    "Visión", "Visión,", 
+    "Tecnología", "Tecnología,",
+    "Experience", "Experience,",
+    "Vision", "Vision,",
+    "Technology", "Technology,"
+  ];
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -45,7 +53,7 @@ const NosotrosSection= () => {
       opacity: 0,
       filter: "blur(8px)", 
       stagger: 0.04,      
-      duration: 1,       
+      duration: 1,      
       ease: "power3.out"
     })
     
@@ -83,7 +91,7 @@ const NosotrosSection= () => {
           {titleText.map((word, index) => (
             <span 
               key={index} 
-              className="title-char-anim inline-block mr-[0.3em]  " 
+              className="title-char-anim inline-block mr-[0.3em]" 
               style={{ whiteSpace: "pre" }} 
             >
               {word}
@@ -97,16 +105,28 @@ const NosotrosSection= () => {
 
         <div className="team-line w-full max-w-xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
 
-        <p className={`${montserrat.className} text-white ms:text-sm text-xs md:text-base leading-relaxed max-w-5xl mx-auto font-normal`}>
-          {paragraphText.map((word, index) => (
-            <span 
-              key={index} 
-              className="char-anim inline-block mr-[0.5em]" 
-              style={{ whiteSpace: "pre-wrap" }} 
-            >
-              {word}
-            </span>
-          ))}
+        <p className={`${montserrat.className} text-white ms:text-sm text-xs md:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
+          {paragraphText.map((word, index) => {
+            // Verificamos si la palabra coincide exactamente con nuestras keywords
+            const shouldHighlight = keywordsToHighlight.includes(word);
+
+            return (
+              <span 
+                key={index} 
+                className="char-anim inline-block mr-[0.25em]" 
+                style={{ whiteSpace: "pre-wrap" }} 
+              >
+                <span style={shouldHighlight ? {
+                  backgroundColor: '#A21F8A',
+                  padding: '2px 6px',
+                  borderRadius: '2px',
+                  fontWeight: '500'
+                } : {}}>
+                  {word}
+                </span>
+              </span>
+            );
+          })}
         </p>
 
       </div>

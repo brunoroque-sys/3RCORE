@@ -16,7 +16,7 @@
   "TeamSection": {
     "title": "We are a team",
     "subtitle": "Professional and Digital Native",
-    "description": "At 3R CORE MARKETING AGENCY, we are a team with a 3-generation vision focused on the same goal, highly trained and combining experience, vision, and technology focused on digital marketing strategies, customized according to your business."
+    "description": "At 3R CORE MARKETING AGENCY, we are a team of professionals with a 3-generation vision focused on the same goal, highly trained to combine Experience, Vision, and Technology focused on digital marketing strategies, customized according to your business."
   }
   ,
   "Hovers": {
@@ -85,7 +85,7 @@
   ,
   "FoundersSection": {
     "badge": "Founders",
-    "description": "Explore the vision of our leadership team through this interactive presentation.",
+    "description": "Hover over each founder to connect with their vision.",
     "roles": {
       "ceo": "CEO 3R Core",
       "marketingDirector": "Marketing Director",
@@ -96,7 +96,7 @@
   "AboutSection": {
     "title": "About Us",
     "subtitle": "We boost your results",
-    "description": "We are a team of professionals and digital natives who combine experience, vision, and technology focused on providing digital marketing strategies, oriented towards optimizing your return on investment, enhancing the positioning and competitive advantages of our clients."
+    "description": "We are a team of professionals and digital natives who combine Experience, Vision, and Technology focused on providing digital marketing strategies, oriented towards optimizing your return on investment, enhancing the positioning and competitive advantages of our clients."
   }
   ,
   "OurTeamSection": {
@@ -148,7 +148,7 @@
     "slogan": "We offer an integrated Content Marketing strategy. We design and create relevant, creative content that builds a meaningful connection with your target audience. As a digital marketing agency, our commitment is to leverage the advantages of social media to amplify the value your brand offers.",
 
     "protitle": "We stay up to date",
-    "prosubtitle": "We align with current trends and the audience your brand needs",
+    "prosubtitle": "With current trends and the audience your brand needs",
     "proIn": "Research",
     "proEs": "Strategy",
     "proAr": "Grid Layout",

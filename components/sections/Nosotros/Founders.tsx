@@ -112,6 +112,18 @@ const foundersData = [
     }
   };
 
+  const goToPrevious = () => {
+    pauseTimer();
+    setIndex((prev) => (prev - 1 + foundersData.length) % foundersData.length);
+    setTimeout(() => startTimer(), 100);
+  };
+
+  const goToNext = () => {
+    pauseTimer();
+    setIndex((prev) => (prev + 1) % foundersData.length);
+    setTimeout(() => startTimer(), 100);
+  };
+
 const handleMouseEnter = () => {
   // Only enable video on desktop
   if (!isDesktop) return;
@@ -160,7 +172,7 @@ const handleMouseLeave = () => {
   setIsHovering(false);
   
   gsap.to(imageContainerRef.current, {
-    width: '80%',
+    width: '100%',
     borderRadius: '0px',
     duration: 0.6,
     ease: "power2.inOut"
@@ -235,7 +247,7 @@ const handleMouseLeave = () => {
   return (
     <section 
       ref={sectionRef}
-      className="flex items-center justify-center px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden font-sans"
+      className="flex items-center justify-center px-4 sm:px-6 md:px-8 py-2 overflow-hidden font-sans"
     >
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
         
@@ -249,18 +261,22 @@ const handleMouseLeave = () => {
               <span className="text-white font-mono text-base sm:text-lg">0{foundersData.length}</span>
             </div>
             <div className="h-[1px] w-10 sm:w-12 bg-white"></div>
-            <span className="text-white uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[10px] font-bold">
+            <span className="text-white uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] sm:text-[13px] font-bold">
               {t('badge')}
             </span>
           </div>
 
           <div className="relative">
-            <h2
-              ref={nameRef}
-              className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-none min-h-[1.1em] flex items-center"
-            >
-              {selected.name}
-            </h2>
+            <div className="flex items-center gap-4 sm:gap-6">
+              <h2
+                ref={nameRef}
+                className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-none min-h-[1.1em] flex items-center"
+              >
+                {selected.name}
+              </h2>
+              
+              
+            </div>
             
             <div className="absolute -bottom-3 sm:-bottom-4 left-0 w-full h-[2px] bg-gray-900">
               <div 
@@ -270,7 +286,7 @@ const handleMouseLeave = () => {
             </div>
           </div>
 
-          <p className="text-gray-500 text-sm max-w-xs italic pt-3 sm:pt-4 leading-relaxed">
+          <p className="text-white text-lg max-w-sm italic pt-3 sm:pt-4 leading-relaxed">
             {t('description')}
           </p>
         </div>
@@ -278,7 +294,7 @@ const handleMouseLeave = () => {
         <div ref={rightSideRef} className="flex flex-col group">
           <div 
             ref={imageContainerRef}
-            className="relative w-full lg:w-[80%] overflow-hidden bg-[#1a0b2e] cursor-pointer" 
+            className="relative w-full lg:w-[100%] overflow-hidden bg-[#1a0b2e] cursor-pointer" 
             style={{ height: 'clamp(350px, 60vw, 450px)' }} 
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -305,14 +321,49 @@ const handleMouseLeave = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0412] via-transparent to-transparent opacity-60" />
           </div>
           
-          <div className="mt-6 sm:mt-7 md:mt-8 flex flex-col space-y-1 border-l-2 border-pink-600 pl-4 sm:pl-5 md:pl-6 transition-all duration-500">
-            <h3 className="text-white text-2xl sm:text-3xl font-bold tracking-tight uppercase">
-              {selected.fullName}
-            </h3>
-            <p className="text-pink-500 font-medium tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[11px] sm:text-xs">
-              {selected.role}
-            </p>
+          <div className="flex justify-between">
+            <div className='mt-6 sm:mt-7 md:mt-8 flex flex-col space-y-1 border-l-2 border-pink-600 pl-4 sm:pl-5 md:pl-6 transition-all duration-500'>
+              <h3 className="text-white text-2xl sm:text-3xl font-bold tracking-tight uppercase">
+                {selected.fullName}
+              </h3>
+              <p className="text-pink-500 font-medium tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[11px] sm:text-xs">
+                {selected.role}
+              </p>
+            </div>
+
+              <div className="flex items-center gap-2 sm:gap-3">
+                <button
+                  onClick={goToPrevious}
+                  className="group w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white/5 border border-white/10 hover:border-pink-500 hover:bg-pink-500/10 transition-all duration-300 rounded hover:cursor-pointer"
+                  aria-label="Previous founder"
+                >
+                  <svg 
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 group-hover:text-pink-500 transition-colors duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                
+                <button
+                  onClick={goToNext}
+                  className="group w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white/5 border border-white/10 hover:border-pink-500 hover:bg-pink-500/10 transition-all duration-300 rounded hover:cursor-pointer"
+                  aria-label="Next founder"
+                >
+                  <svg 
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-pink-500 group-hover:text-pink-500 transition-colors duration-300" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
           </div>
+          
         </div>
 
       </div>

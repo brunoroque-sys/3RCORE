@@ -17,7 +17,7 @@
   "TeamSection": {
     "title": "Somos un equipo",
     "subtitle": "Profesional y Nativo Digital",
-    "description": "En 3R CORE AGENCIA DE MARKETING Somos un equipo con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la experiencia, la Visión y la tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresas"
+    "description": "En 3R CORE AGENCIA DE MARKETING Somos un equipo de profesionales con una visión de 3 generaciones enfocados en un mismo objetivo, altamente capacitados que conjugan la Experiencia, la Visión y la Tecnología enfocados estrategias de marketing Digital, personalizadas de acuerdo a tu empresa"
   }
   ,
   "Hovers": {
@@ -85,7 +85,7 @@
   ,
   "FoundersSection": {
     "badge": "Fundadores",
-    "description": "Explora la visión de nuestro equipo directivo a través de esta presentación interactiva.",
+    "description": "Pasa el cursor sobre cada fundador para conectar con su visión.",
     "roles": {
       "ceo": "CEO 3R Core",
       "marketingDirector": "Director de Marketing",
@@ -96,7 +96,7 @@
   "AboutSection": {
     "title": "Nosotros",
     "subtitle": "Potenciamos tus resultados",
-    "description": "Somos equipo de profesionales y nativos digitales que conjugamos la experiencia, la Visión y la tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes"
+    "description": "Somos equipo de profesionales y nativos digitales que conjugamos la Experiencia, la Visión y la Tecnología enfocados en brindar estrategias en marketing Digital, orientados en optimizar el retorno de su inversión, potenciando el posicionamiento y las ventajas competitivas de nuestros clientes"
   }
   ,
   "OurTeamSection": {
@@ -143,10 +143,10 @@
   }
   ,
   "SocialMediaHero": {
-    "slogan": "Ofrecemos una estrategia integrada de Content Marketing. Diseñamos y creamos contenido relevante y creativo que permite el desarrollo de un vínculo con tu público objetivo. Como agencia de marketing digital, nuestro compromiso consiste en aprovechar las ventajas de las redes sociales para potenciar el valor que ofrece tu marca.",
+    "slogan": "Ofrecemos un estrategia digitales integradas a los objetivos de cada empresa. Diseñamos y creamos contenido relevante que permite el desarrollo de un vínculo con tu público objetivo. Nosotros como agencia de marketing digital, nuestro compromiso consiste en aprovechar las ventajas de las redes sociales para potenciar el valor que ofrece tu marca.",
 
-    "protitle":"Nuestro mantenemos actualizados",
-    "prosubtitle":"vamos con las tendencias actuales y audiencia que tu marca necesita",
+    "protitle":"Nosotros te mantenemos actualizados",
+    "prosubtitle":"Con tendencias actuales  y audiencia que tu marca necesita",
     "proIn":"Investigación",
     "proEs":"Estrategia",
     "proAr":"Armado de grilla",

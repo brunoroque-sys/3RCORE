@@ -57,7 +57,7 @@ export default async function RootLayout({
           <GlobalLoadingProvider>
             <SmoothScrolling>
               <Navbar />
-              <main className="min-h-screen flex flex-col relative z-10">
+              <main className=" flex flex-col relative z-10">
                 <div className="noise-global" />
                 {children}
               </main>

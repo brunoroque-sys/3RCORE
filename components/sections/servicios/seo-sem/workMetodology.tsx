@@ -54,7 +54,7 @@ const WorkMethodology = () => {
             key={index} 
             className="step-item grid grid-cols-1 md:grid-cols-2 py-8 border-b border-white/80 border-line items-center gap-4"
           >
-            <h3 className="text-sm md:text-base font-medium tracking-widest uppercase">
+            <h3 className="text-sm md:text-base font-bold tracking-widest uppercase">
               {step.title}
             </h3>
             <p className="text-sm md:text-base font-light text-white">

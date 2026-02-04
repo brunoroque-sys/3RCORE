@@ -95,7 +95,7 @@ const ClientCard = ({ client }: { client: Client }) => {
     if (isMobile) return;
 
     const triggerRandomFlicker = () => {
-      const randomTime = Math.floor(Math.random() * 2000) + 2000;
+      const randomTime = Math.floor(Math.random() * 1000) + 1000;
       setTimeout(() => {
         setVisible(prev => !prev);
         triggerRandomFlicker();

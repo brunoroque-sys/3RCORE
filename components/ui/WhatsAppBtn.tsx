@@ -3,7 +3,7 @@
 import React from 'react';
 
 const WhatsAppBtn = () => {
-  const phoneNumber = "51986889147"; 
+  const phoneNumber = "51987216703"; 
   const message = "Hola vengo de la página web, quiero agendar una reunión.";
   
   const encodedMessage = encodeURIComponent(message);

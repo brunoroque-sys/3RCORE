@@ -59,7 +59,13 @@ const BrandManualSection = () => {
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
           <h2 className="text-sm lg:text-lg tracking-[0.3em] uppercase font-light text-white">
-             { t('maTitle')}
+             <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+                  { t('maTitle')}
+             </span>
           </h2>
           <div 
             ref={lineRef}
@@ -72,7 +78,7 @@ const BrandManualSection = () => {
             { t('maParraf')}
           </p>
           
-          <p className="text-xs lg:text-xl font-medium italic" >
+          <p className="text-xs lg:text-xl font-semibold italic" >
              { t('maPreg')}
           </p>
 

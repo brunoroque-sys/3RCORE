@@ -68,7 +68,7 @@ export default function SeoSemCall() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen pt-24 flex items-center overflow-hidden"
+      className="relative py-8 flex items-center overflow-hidden"
     >
       <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">

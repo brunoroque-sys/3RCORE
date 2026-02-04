@@ -26,7 +26,7 @@ const ToolsCarousel = () => {
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col items-center mb-16">
         <div className="flex flex-col items-center w-full max-w-4xl">
-            <h2 className="px-6 text-white text-xs md:text-sm tracking-[0.3em] font-light uppercase whitespace-nowrap mb-4">
+            <h2 className="px-6 text-white text-xs md:text-lg tracking-[0.3em] font-light uppercase whitespace-nowrap mb-4">
             {t('title')}
             </h2>
             <div className="w-full md:w-2/3 h-[1px] bg-white/60"></div>

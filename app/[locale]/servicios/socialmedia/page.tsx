@@ -21,10 +21,9 @@ export default function socialmedia(){
         </div>
         <ProcessSMSection/>
         <SocialPost/>
-        <PostMedia/>
-        <MediaApplications/>
-        <SocialShowSection/>
         <SocialPortfolio/>
+        <MediaApplications/>
+        
         <ClientSection />
         <div id="contacto">
           <ContactForm/>

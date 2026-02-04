@@ -151,8 +151,14 @@ const StatsAndCTA = () => {
         <div className="cta-content relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-12">
           <div className="flex flex-col items-start text-left md:w-1/2 space-y-8">
             <div className="text-white text-2xl md:text-xl 2xl:text-4xl leading-tight">
-              <h3 className={`${playfair.className} italic font-normal mb-2`}>
-                {t("titleLine1")}
+              <h3 className={`${playfair.className} italic font-normal mb-4 text-white `}>
+                <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+                  {t("titleLine1")}
+                </span>
               </h3>
               <h3 className={`${poppins.className} font-normal`}>
                 {t("titleLine2")}

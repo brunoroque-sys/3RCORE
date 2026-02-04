@@ -27,6 +27,22 @@ const TeamSection = () => {
   const titleWords = t('title').split(" ");
   const descriptionWords = t('description').split(" ");
   
+  // 1. Identificar el corte inicial (Agencia)
+  const stopIndex = descriptionWords.findIndex(word => 
+    word.toLowerCase() === "somos" || word.toLowerCase() === "we"
+  );
+
+  // 2. Palabras clave con capitalización exacta
+  // Quitamos .toLowerCase() de la lógica para que "visión" != "Visión"
+  const keywordsToHighlight = [
+    "Experiencia", "Experiencia,", 
+    "Visión", "Visión,", // Solo con V mayúscula como en tu JSON
+    "Tecnología", "Tecnología,",
+    "Experience", "Experience,",
+    "Vision", "Vision,",
+    "Technology", "Technology,"
+  ];
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -38,36 +54,16 @@ const TeamSection = () => {
     });
 
     tl.from(".title-word-anim", {
-      y: 30, 
-      opacity: 0,
-      filter: "blur(8px)", 
-      stagger: 0.1,       
-      duration: 1,       
-      ease: "power3.out"
+      y: 30, opacity: 0, filter: "blur(8px)", stagger: 0.1, duration: 1, ease: "power3.out"
     })
-    
     .from(".team-subtitle", {
-      y: 30,
-      opacity: 0,
-      filter: "blur(10px)",
-      duration: 1.2,
-      ease: "power2.out"
+      y: 30, opacity: 0, filter: "blur(10px)", duration: 1.2, ease: "power2.out"
     }, "-=0.6") 
-
     .from(".team-line", {
-      scaleX: 0,
-      opacity: 0,
-      duration: 1.5, 
-      ease: "power3.inOut"
+      scaleX: 0, opacity: 0, duration: 1.5, ease: "power3.inOut"
     }, "-=1.0")
-
     .from(".word-anim", {
-      opacity: 0,
-      y: 10,
-      filter: "blur(4px)",
-      stagger: 0.02, 
-      duration: 0.8, 
-      ease: "power1.out"
+      opacity: 0, y: 10, filter: "blur(4px)", stagger: 0.02, duration: 0.8, ease: "power1.out"
     }, "-=1.2"); 
 
   }, { scope: containerRef });
@@ -78,10 +74,7 @@ const TeamSection = () => {
         
         <h2 className={`team-title ${playfair.className} text-white text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl mb-4 md:mb-6 tracking-wide leading-tight`}>
           {titleWords.map((word, index) => (
-            <span 
-              key={index} 
-              className="title-word-anim inline-block mr-[0.25em]"
-            >
+            <span key={index} className="title-word-anim inline-block mr-[0.25em]">
               {word}
             </span>
           ))}
@@ -94,14 +87,31 @@ const TeamSection = () => {
         <div className="team-line w-full max-w-3xl mx-auto h-[1px] bg-white/40 my-10 origin-center will-change-transform"></div>
 
         <p className={`${montserrat.className} text-white text-sm sm:text-sm md:text-sm xl:text-sm 2xl:text-lg leading-relaxed max-w-5xl mx-auto px-4`}>
-          {descriptionWords.map((word, index) => (
-            <span 
-              key={index} 
-              className="word-anim inline-block mr-[0.3em]"
-            >
-              {word}
-            </span>
-          ))}
+          {descriptionWords.map((word, index) => {
+            // A. Resaltado inicial (Agencia): sigue siendo insensible a mayúsculas
+            const isInitialHighlight = index < stopIndex;
+            
+            // B. Resaltado específico: AHORA SÍ distingue mayúsculas (Case Sensitive)
+            // Solo resaltará "Visión" y no "visión"
+            const isKeywordHighlight = keywordsToHighlight.includes(word);
+
+            const shouldHighlight = isInitialHighlight || isKeywordHighlight;
+
+            return (
+              <span 
+                key={index} 
+                className={`word-anim inline-block mr-[0.3em] ${shouldHighlight ? 'px-1' : ''}`}
+                style={shouldHighlight ? { 
+                  backgroundColor: '#A21F8A', 
+                  fontWeight: '500',
+                  lineHeight: '1.4',
+                  borderRadius: '2px'
+                } : {}}
+              >
+                {word}
+              </span>
+            );
+          })}
         </p>
 
       </div>

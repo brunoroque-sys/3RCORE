@@ -111,7 +111,7 @@ export default function WebApplications() {
           className="relative w-full h-auto mt-4 md:mt-0"
         >
           <img 
-            src="/images/web/monitor.png" 
+            src="/images/web/mono.webp" 
             alt="Brand Applications Mockup"
             className="w-full h-auto object-contain max-h-[300px] md:max-h-none"
           />

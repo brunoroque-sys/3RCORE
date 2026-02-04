@@ -71,7 +71,7 @@ const SocialPost = () => {
             { t('poParraf')}
           </p>
           
-          <p className="text-xs lg:text-xl font-medium italic" >
+          <p className="text-xs lg:text-xl font-semibold italic" >
              { t('poPreg')}
           </p>
 
