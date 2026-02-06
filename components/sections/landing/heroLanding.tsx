@@ -176,7 +176,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
             {renderGoogleText(t('slogan'))}
           </p>
 
-          <div className='relative index-4 -bottom-30 2xl:-bottom-50'>
+          <div className='relative index-4 -bottom-20 2xl:-bottom-50'>
             <button 
               onClick={handleWhatsAppClick}
               className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-lg tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent cursor-pointer"

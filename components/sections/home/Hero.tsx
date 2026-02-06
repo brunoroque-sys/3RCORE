@@ -416,16 +416,13 @@ export default function HeroHome() {
 
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
-      {/* Canvas de frames */}
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
 
-      {/* Canvas de letras (detrás de partículas) */}
       <canvas 
         ref={lettersCanvasRef} 
         className="absolute inset-0 w-full h-full pointer-events-none z-[8]"
       />
 
-      {/* Canvas de partículas */}
       <canvas 
         ref={particlesCanvasRef} 
         className="absolute inset-0 w-full h-full pointer-events-none z-10"
@@ -478,3 +475,4 @@ export default function HeroHome() {
     </div>
   );
 }
+

@@ -14,6 +14,10 @@ import {useIndividualPageLoader} from '@/components/layout/useIndividualPageLoad
 import { AnimatePresence } from 'framer-motion';
 import PageLoader from '@/components/layout/PageLoader';
 
+
+import WhatsAppBtn from '@/components/ui/WhatsAppBtn';
+import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
+
 export default function Branding() {
 
   useScrollToSection(); 
@@ -41,6 +45,8 @@ export default function Branding() {
       <div id="contacto">
         <ContactForm />
       </div>
+      <ScrollContactBtn />
+      <WhatsAppBtn />
     </>
   );
 }

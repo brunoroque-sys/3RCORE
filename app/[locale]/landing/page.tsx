@@ -8,7 +8,7 @@ import SecondLandingSection from "@/components/sections/landing/secondLandingSec
 import SixLandingSection from "@/components/sections/landing/sixLandingSection";
 import ThirdLandingSection from "@/components/sections/landing/thirdLandingSection";
 import Tools from "@/components/sections/landing/Tools";
-import ToolsCarousel from "@/components/sections/servicios/seo-sem/toolsCarru";
+import WhatsAppBtnLanding from '@/components/ui/WhatsAppBtnLanding'
 import { useEffect, useState } from "react";
 
 export default function Landing() {
@@ -37,7 +37,8 @@ export default function Landing() {
       <div  id="contacto">
         <LandingContact/>
       </div>
-
+      <WhatsAppBtnLanding/>
     </main>
+
   );
 }

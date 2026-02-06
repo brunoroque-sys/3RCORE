@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import ContactForm from '@/components/layout/ContactForm';
 
+import WhatsAppBtn from '@/components/ui/WhatsAppBtn';
+import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
+
 export default function FAQ() {
   const t = useTranslations('FAQ');
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -120,6 +123,8 @@ export default function FAQ() {
         </div>
       </section>
       <ContactForm/>
+      <ScrollContactBtn />
+      <WhatsAppBtn />
     </>
   );
 }

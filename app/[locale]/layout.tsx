@@ -60,8 +60,7 @@ export default async function RootLayout({
           </SmoothScrolling>
           
           <CookieBanner />
-          <ScrollContactBtn />
-          <WhatsAppBtn />
+
         </NextIntlClientProvider>
       </body>
     </html>
