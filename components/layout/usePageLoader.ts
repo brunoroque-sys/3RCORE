@@ -8,13 +8,12 @@ interface UsePageLoaderOptions {
 }
 
 export function usePageLoader(options: UsePageLoaderOptions = {}) {
-  const { timeout = 5000, minLoadingTime = 800 } = options;
+  const { timeout = 5000, minLoadingTime = 1000 } = options;
   const { setIsLoading } = useGlobalLoading();
   const [startTime] = useState(Date.now());
   const hasRun = useRef(false);
 
   useEffect(() => {
-    // Evitar que se ejecute dos veces en desarrollo (React.StrictMode)
     if (hasRun.current) return;
     hasRun.current = true;
 
@@ -80,7 +79,6 @@ export function usePageLoader(options: UsePageLoaderOptions = {}) {
         timeoutPromise
       ]);
 
-      // Asegurar tiempo mínimo de loading
       const elapsed = Date.now() - startTime;
       if (elapsed < minLoadingTime) {
         await new Promise(resolve => setTimeout(resolve, minLoadingTime - elapsed));
