@@ -34,7 +34,12 @@ export default function HeroHome() {
     t('connection')
   ];
 
-  // Sistema de palabras que salen del centro
+  const wordRanges = [
+    { start: 23, end: 48 },   
+    { start: 57, end: 83 },  
+    { start: 90, end: 112 } 
+  ];
+
   useEffect(() => {
     const canvas = lettersCanvasRef.current;
     if (!canvas) return;
@@ -66,79 +71,130 @@ export default function HeroHome() {
       vy!: number;
       opacity!: number;
       size!: number;
+      assignedRange!: { start: number; end: number };
+      birthFrame!: number;
+      hasStarted!: boolean;
+      initialX!: number;
+      initialY!: number;
+      padding!: number;
+      borderRadius!: number;
 
-      constructor() {
-        this.reset();
+      constructor(rangeIndex: number) {
+        this.assignedRange = wordRanges[rangeIndex];
+        this.init();
       }
 
-      reset() {
+      init() {
         if (!canvas) return;
-        // Empiezan en el centro
-        this.x = canvas.width / 2;
-        this.y = canvas.height / 2;
+        this.initialX = canvas.width / 2;
+        this.initialY = canvas.height / 2;
+        this.x = this.initialX;
+        this.y = this.initialY;
         this.text = words[Math.floor(Math.random() * words.length)];
         
-        // Velocidad en dirección aleatoria
+        const rangeDuration = this.assignedRange.end - this.assignedRange.start;
+        this.birthFrame = this.assignedRange.start + Math.random() * (rangeDuration * 0.3);
+        this.hasStarted = false;
+        
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 1.5 + 0.8; // Un poco más lento para palabras
+        const speed = Math.random() * 1.2 + 0.6;
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
         
-        this.opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6 (más sutil)
-        this.size = Math.random() * 15 + 25; // 25-40px
+        this.opacity = 0;
+        this.size = Math.random() * 10 + 20;
+        this.padding = 15; 
+        this.borderRadius = 8; 
       }
 
-      update() {
+      update(currentFrame: number) {
         if (!canvas) return;
         
-        this.x += this.vx;
-        this.y += this.vy;
+        if (currentFrame >= this.birthFrame && !this.hasStarted) {
+          this.hasStarted = true;
+          this.x = this.initialX;
+          this.y = this.initialY;
+        }
         
-        // Fade out gradual mientras se aleja
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const distanceFromCenter = Math.sqrt(
-          Math.pow(this.x - centerX, 2) + Math.pow(this.y - centerY, 2)
-        );
-        
-        // Reducir opacidad basado en distancia
-        const maxDistance = Math.max(canvas.width, canvas.height) / 2;
-        this.opacity = Math.max(0, 0.6 - (distanceFromCenter / maxDistance));
-        
-        // Si sale completamente de la pantalla o es invisible, resetear
-        if (this.opacity <= 0 || 
-            this.x < -200 || this.x > canvas.width + 200 ||
-            this.y < -200 || this.y > canvas.height + 200) {
-          this.reset();
+        if (this.hasStarted) {
+          this.x += this.vx;
+          this.y += this.vy;
+          
+          const centerX = canvas.width / 2;
+          const centerY = canvas.height / 2;
+          const distanceFromCenter = Math.sqrt(
+            Math.pow(this.x - centerX, 2) + Math.pow(this.y - centerY, 2)
+          );
+          
+          const maxDistance = Math.max(canvas.width, canvas.height) / 2;
+          const distanceProgress = Math.min(distanceFromCenter / maxDistance, 1);
+          
+          if (distanceProgress < 0.05) {
+            this.opacity = distanceProgress / 0.05 * 0.8;
+          } else {
+            this.opacity = Math.max(0, 0.8 - distanceProgress);
+          }
+          
+          if (this.x < -200 || this.x > canvas.width + 200 ||
+              this.y < -200 || this.y > canvas.height + 200) {
+            this.opacity = 0;
+          }
         }
       }
 
       draw(ctx: CanvasRenderingContext2D) {
+        if (!this.hasStarted || this.opacity <= 0.01) return;
+        
         ctx.save();
-        ctx.translate(this.x, this.y);
         
         ctx.font = `${this.size}px Arial, sans-serif`;
-        ctx.fillStyle = `rgba(209, 30, 104, ${this.opacity})`;
+        const metrics = ctx.measureText(this.text);
+        const textWidth = metrics.width;
+        const textHeight = this.size;
+        
+        const boxWidth = textWidth + this.padding * 2;
+        const boxHeight = textHeight + this.padding * 1.5;
+        
+        const boxX = this.x - boxWidth / 2;
+        const boxY = this.y - boxHeight / 2;
+        
+        ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity * 0.6})`;
+        ctx.beginPath();
+        ctx.roundRect(boxX, boxY, boxWidth, boxHeight, this.borderRadius);
+        ctx.fill();
+        
+        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.roundRect(boxX, boxY, boxWidth, boxHeight, this.borderRadius);
+        ctx.stroke();
+        
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(this.text, 0, 0);
+        ctx.fillText(this.text, this.x, this.y);
         
         ctx.restore();
       }
     }
 
-    const wordCount = 20; // Cantidad de palabras flotantes
+    const wordsPerRange = 5; 
     const wordParticles: Word[] = [];
-    for (let i = 0; i < wordCount; i++) {
-      wordParticles.push(new Word());
-    }
+    
+    wordRanges.forEach((_, rangeIndex) => {
+      for (let i = 0; i < wordsPerRange; i++) {
+        wordParticles.push(new Word(rangeIndex));
+      }
+    });
 
     let animationId: number;
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
+      const currentFrame = frameRef.current.frame;
+      
       wordParticles.forEach(word => {
-        word.update();
+        word.update(currentFrame);
         word.draw(ctx);
       });
       
@@ -152,7 +208,6 @@ export default function HeroHome() {
     };
   }, [t]);
 
-  // Sistema de partículas original
   useEffect(() => {
     const canvas = particlesCanvasRef.current;
     if (!canvas) return;
@@ -195,14 +250,12 @@ export default function HeroHome() {
         this.drift = Math.random() * 0.5 - 0.25;
       }
 
-      update(scrollVelocity: number) {
-        if (!canvas) return 0;
+      update() {
+        if (!canvas) return;
         
         this.y += this.speedY;
         this.x += Math.sin(this.angle) * 0.3 + this.drift;
         this.angle += 0.01;
-
-        const stretchFactor = Math.abs(scrollVelocity) * 2;
         
         if (this.y > canvas.height + 10) {
           this.y = -10;
@@ -211,36 +264,20 @@ export default function HeroHome() {
         if (this.x < -10 || this.x > canvas.width + 10) {
           this.x = Math.random() * canvas.width;
         }
-
-        return stretchFactor;
       }
 
-      draw(ctx: CanvasRenderingContext2D, stretchFactor: number) {
+      draw(ctx: CanvasRenderingContext2D) {
         ctx.save();
         
-        if (stretchFactor > 0.1) {
-          const gradient = ctx.createLinearGradient(
-            this.x, 
-            this.y, 
-            this.x, 
-            this.y - stretchFactor * 20
-          );
-          gradient.addColorStop(0, `rgba(209, 30, 104, ${this.opacity})`);
-          gradient.addColorStop(1, `rgba(209, 30, 104, 0)`);
-          
-          ctx.fillStyle = gradient;
-          ctx.fillRect(this.x - this.size / 2, this.y - stretchFactor * 20, this.size, stretchFactor * 20 + this.size);
-        } else {
-          const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
-          gradient.addColorStop(0, `rgba(209, 30, 104, ${this.opacity})`);
-          gradient.addColorStop(0.5, `rgba(209, 30, 104, ${this.opacity * 0.8})`);
-          gradient.addColorStop(1, `rgba(209, 30, 104, 0)`);
-          
-          ctx.fillStyle = gradient;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
+        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+        gradient.addColorStop(0, `rgba(209, 30, 104, ${this.opacity})`);
+        gradient.addColorStop(0.5, `rgba(209, 30, 104, ${this.opacity * 0.8})`);
+        gradient.addColorStop(1, `rgba(209, 30, 104, 0)`);
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
         
         ctx.restore();
       }
@@ -257,11 +294,9 @@ export default function HeroHome() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       particles.forEach(particle => {
-        const stretchFactor = particle.update(scrollVelocityRef.current);
-        particle.draw(ctx, stretchFactor);
+        particle.update();
+        particle.draw(ctx);
       });
-
-      scrollVelocityRef.current *= 0.95;
       
       animationId = requestAnimationFrame(animate);
     };
