@@ -9,10 +9,13 @@ import MosaicoParallax from '@/components/sections/home/imagesParallaxSection';
 import ContactForm from '@/components/layout/ContactForm';
 import ProjectsSection from '@/components/sections/home/ProjectsSection';
 import { useScrollToSection } from '@/components/ui/useScrollToSection';
+import {usePageLoader} from '@/components/layout/usePageLoader'
 
 export default function Home() {
+
   useScrollToSection(); 
-  
+  usePageLoader({ timeout: 4000, minLoadingTime: 1000 });
+
   return (
     <main>
       <div id="hero">

@@ -1,9 +1,6 @@
 'use client';
 import ContactForm from "@/components/layout/ContactForm";
-import LoadingScreen from "@/components/layout/LoadingScreen";
 import ClientSection from "@/components/layout/ClientSection";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 import HeroWeb from "@/components/sections/servicios/web-deveploment/heroWeb";
 import ProcessWebSection from "@/components/sections/servicios/web-deveploment/processWebSection";
 import WebInfoSection from "@/components/sections/servicios/web-deveploment/webInfoSection";
@@ -12,8 +9,13 @@ import WebTypesSection from "@/components/sections/servicios/web-deveploment/web
 import WebApplications from "@/components/sections/servicios/web-deveploment/aplicationWebSection";
 import WebFaq from "@/components/sections/servicios/web-deveploment/webFaq";
 import WebImgSection from "@/components/sections/servicios/web-deveploment/webimgSection";
+import { useScrollToSection } from '@/components/ui/useScrollToSection';
+import {usePageLoader} from '@/components/layout/usePageLoader'
 
 export default function WebDeveploment(){
+  
+  useScrollToSection(); 
+  usePageLoader({ timeout: 3000, minLoadingTime: 800 });
 
   return(
     <>

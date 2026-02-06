@@ -104,4 +104,11 @@ html.lenis, html.lenis body {
     background-color: #A21F8A;
     color: white;
   }
+}/* Ocultar contenido hasta que el loader termine */
+body {
+  visibility: hidden;
+}
+
+body.loaded {
+  visibility: visible;
 }

@@ -9,9 +9,13 @@ import SeoSemCall from "@/components/sections/servicios/seo-sem/seoSemCall";
 import { SeoClients } from "@/components/sections/servicios/seo-sem/seoClients";
 import WorkMethodology from "@/components/sections/servicios/seo-sem/workMetodology";
 import ToolsCarousel from "@/components/sections/servicios/seo-sem/toolsCarru";
+import { useScrollToSection } from '@/components/ui/useScrollToSection';
+import {usePageLoader} from '@/components/layout/usePageLoader'
 
 export default function Seosem(){
-
+  
+  useScrollToSection(); 
+  usePageLoader({ timeout: 3000, minLoadingTime: 800 });
     
   return(
     <>

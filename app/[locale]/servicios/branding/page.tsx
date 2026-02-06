@@ -8,8 +8,14 @@ import { BrandShowSection } from "@/components/sections/servicios/branding/brand
 import Portfolio from "@/components/sections/servicios/branding/Portfolio";
 import BrandApplications from "@/components/sections/servicios/branding/aplicationSection";
 import HeroBranding from "@/components/sections/servicios/branding/heroBranding";
+import { useScrollToSection } from '@/components/ui/useScrollToSection';
+import {usePageLoader} from '@/components/layout/usePageLoader'
 
 export default function Branding() {
+
+  useScrollToSection(); 
+  usePageLoader({ timeout: 3000, minLoadingTime: 800 });
+  
   return (
     <>
       <div id="hero">
