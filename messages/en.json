@@ -89,7 +89,7 @@
     "roles": {
       "ceo": "CEO 3R Core",
       "marketingDirector": "Marketing Director",
-      "seoDirector": "SEO Director"
+      "seoDirector": "SEO and Google Ads Analyst"
     }
   }
   ,
@@ -123,7 +123,8 @@
 
 
     "protitle": "Our process sets us apart",
-    "prosubtitle": "Artistic devotion and rigor used to develop the essence of your brand",
+    "prosubtitle1": "Devotion and artistic rigor",
+    "prosubtitle2": "We are the team that develops the essence of your brand",
     "proIn": "Research",
     "proEs": "Strategy",
     "proPla": "Planning",
@@ -168,7 +169,7 @@
   }
   ,
   "SeoSemHero": {
-    "slogan": "Boost your business on Google and attract customers who are actively looking for what you offer.",
+    "slogan": "Boost your business on <google>Google</google> and attract customers who are actively looking for what you offer.",
 
     "protitle": "We stay up to date",
     "prosubtitle": "We align with current trends and the audience your brand needs",
@@ -350,8 +351,7 @@
   ,
   "SEOSEM": {
     "title": {
-      "part1": "We position you",
-      "part2": "in search engines",
+      "part1": "We position you on GOOGLE",
       "part3": "organically"
     },
     "description": {
@@ -364,33 +364,33 @@
   "SeoSemSection": {
     "header": {
       "subtitle": "WHAT WE DO AND WHAT THE SERVICE CONSISTS OF",
-      "description": "Our SEO and SEM service focuses on achieving visibility, quality traffic, and conversions.<br />It's not just about appearing on Google, but appearing in front of the right people.<br />We take care of:"
+      "description": "Our SEO/SEM and GOOGLE ADS service focuses on achieving visibility, quality traffic, and conversions.<br />It's not just about appearing on Google, but appearing in front of the right people."
     },
     "seo": {
       "title": "SEO",
       "subtitle": "Organic positioning\non Google",
-      "description": "SEO allows your website to appear naturally on Google when someone searches for your services or products. We work on:",
+      "description": "<strong>SEO</strong> allows your website to appear naturally on Google when someone searches for your services or products. We work on:",
       "items": [
-        "SEO Audit of your website",
-        "On-Page SEO Optimization (structure, texts, speed)",
+        "<strong>SEO</strong> Audit of your website",
+        "On-Page <strong>SEO</strong> Optimization (structure, texts, speed)",
         "Keyword strategy",
         "Optimized content creation",
         "Medium and long-term organic strategy"
       ],
-      "footer": "SEO is ideal for building authority, trust, and sustainable results over time."
+      "footer": "<strong>SEO</strong> is ideal for building authority, trust, and sustainable results over time."
     },
     "sem": {
       "title": "SEM",
       "subtitle": "Google Ads Advertising",
-      "description": "With Google Ads, we achieve immediate results through strategically targeted ads. We handle:",
+      "description": "With <strong>Google Ads</strong>, we achieve immediate results through strategically targeted ads. We handle:",
       "items": [
-        "Creation and configuration of Google Ads campaigns",
+        "Creation and configuration of <strong>Google Ads</strong> campaigns",
         "Search intent segmentation",
         "Budget optimization",
         "Constant monitoring of results",
         "Continuous performance improvement of the ads"
       ],
-      "footer": "SEM is ideal if you are looking for fast sales, lead generation, or immediate traffic."
+      "footer": "<strong>SEM</strong> is ideal if you are looking for fast sales, lead generation, or immediate traffic."
     }
   }
   ,

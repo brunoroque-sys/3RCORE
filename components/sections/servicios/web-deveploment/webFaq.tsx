@@ -308,7 +308,13 @@ export default function WebFaq() {
           <p 
             className="text-white text-lg uppercase tracking-widest font-light mb-6"
           >
-            {t('tipar')}
+            <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+              {t('tipar')}
+            </span>
           </p>
           <div className="header-line h-[1px] w-full bg-white/90 origin-center mb-5" />
           <p 

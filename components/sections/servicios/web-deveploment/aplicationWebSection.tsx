@@ -92,7 +92,7 @@ export default function WebApplications() {
         <div className="flex flex-col space-y-4 md:space-y-8 text-center md:text-left">
           <h2 
             ref={titleRef}
-            className="text-white text-3xl lg:text-5xl 2xl:text-6xl font-serif italic tracking-wide bg-gradient-to-r from-white via-pink-200 to-white bg-[length:200%_100%]"
+            className="text-white text-3xl lg:text-4xl 2xl:text-5xl font-serif italic tracking-wide bg-gradient-to-r from-white via-pink-200 to-white bg-[length:200%_100%]"
             style={{ backgroundClip: 'text', WebkitBackgroundClip: 'text' }}
           >
             {t('griPost')}
@@ -100,7 +100,7 @@ export default function WebApplications() {
           
           <p 
             ref={paragraphRef}
-            className="text-white/90 text-base lg:text-xl 2xl:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0"
+            className="text-white/90 text-base lg:text-lg 2xl:text-xl font-light leading-relaxed max-w-xl mx-auto md:mx-0"
           >
             {t('griParraf')}
           </p>

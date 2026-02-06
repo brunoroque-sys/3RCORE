@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
+import { SiShopify, SiWoocommerce } from 'react-icons/si';
 
 export default function HeroWeb() {
 
@@ -134,7 +135,7 @@ export default function HeroWeb() {
                 ref={andTextRef}
                 className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
               >
-                DEV
+                DEVELOPMENT
               </h2>
             </div>
           </div>
@@ -146,9 +147,20 @@ export default function HeroWeb() {
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light  ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
+            className="text-white text-xs md:text-sm font-light ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
           >
-            { t('slogan')}
+            {t.rich('slogan', {
+              shopify: (chunks) => (
+                <span className="inline-flex items-center gap-1 font-semibold text-white">
+                  <SiShopify className="inline" /> {chunks}
+                </span>
+              ),
+              woo: (chunks) => (
+                <span className="inline-flex items-center gap-1 font-semibold text-white">
+                  <SiWoocommerce className="text-xl inline" /> {chunks}
+                </span>
+              )
+            })}
           </p>
         </div>
       </div>

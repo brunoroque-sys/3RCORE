@@ -75,16 +75,30 @@ export default function SeoSemCall() {
           <div className="text-white space-y-6 px-10 lg:pl-40">
             <h2 
               ref={titleRef}
-              className="text-4xl 2xl:text-6xl font-light leading-tight"
+              className="text-4xl 2xl:text-5xl font-light leading-tight"
             >
-              <span className="italic block">{t('title.part1')}</span>
-              <span className="text-pink-600 font-normal block">{t('title.part2')}</span>
+              <span className="italic block">
+                {t('title.part1').split('GOOGLE')[0]}
+                <span className="font-normal not-italic">
+                  <span className="text-[#4285F4]">G</span>
+                  <span className="text-[#EA4335]">o</span>
+                  <span className="text-[#FBBC04]">o</span>
+                  <span className="text-[#4285F4]">g</span>
+                  <span className="text-[#34A853]">l</span>
+                  <span className="text-[#EA4335]">e</span>
+                </span>
+                {t('title.part1').split('GOOGLE')[1]}
+              </span>
               <span className="text-pink-600 font-normal block">{t('title.part3')}</span>
             </h2>
 
-            <div className="space-y-4 text-xs lg:text-base 2xl:text-xl">
+            <div className="space-y-4 text-xs lg:text-base 2xl:text-lg">
               <p ref={paragraph1Ref} className="leading-relaxed">
-                {t('description.paragraph1')}
+                {t('description.paragraph1').split('(SEO)')[0]}
+                <span className="bg-[#A21F8A] text-white px-1 py-0.5">(SEO)</span>
+                {t('description.paragraph1').split('(SEO)')[1].split('(Google Ads)')[0]}
+                <span className="bg-[#A21F8A] text-white px-1 py-0.5">(Google Ads)</span>
+                {t('description.paragraph1').split('(Google Ads)')[1]}
               </p>
 
               <p ref={paragraph2Ref} className="leading-relaxed">

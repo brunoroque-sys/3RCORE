@@ -8,8 +8,15 @@ export default function SocialPortfolio() {
   return (
     <main className=" py-20 px-10 lg:px-4">
       <div className="max-w-6xl 2xl:mx-w-7xl mx-auto">
-        <h2 className="text-white text-center text-lg tracking-[0.3em] uppercase mb-12 opacity-80">
-          { t('titPost')}
+        <h2 className="text-white text-center text-lg tracking-[0.3em] uppercase mb-12 ">
+          <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+                { t('titPost')}
+          </span>
+          
           <div className="w-[60%] h-[1px] bg-white/80 mx-auto mt-4"></div>
         </h2>
 

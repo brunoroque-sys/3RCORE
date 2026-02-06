@@ -58,8 +58,14 @@ const WebInfoSection = () => {
     >
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
-          <h2 className="text-sm md:text-xl tracking-[0.3em] uppercase font-light text-white">
-             { t('poTitle')}
+          <h2 className="text-sm md:text-xl tracking-[0.1em] uppercase font-light text-white">
+             <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+              { t('poTitle')}
+             </span>
           </h2>
           <div 
             ref={lineRef}
@@ -67,7 +73,7 @@ const WebInfoSection = () => {
           />
         </div>
 
-        <div ref={contentRef} className="space-y-8">
+        <div ref={contentRef} className="space-y-5">
           <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf1')}
           </p>

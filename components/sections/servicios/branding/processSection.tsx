@@ -97,13 +97,16 @@ const ProcessSection = () => {
     <section ref={sectionRef} className="w-full text-white pt-24 font-sans flex flex-col items-center overflow-hidden">
       <div className="max-w-6xl w-full px-10 space-y-24">
         
-        <div className="text-center space-y-8">
+        <div className="text-center space-y-5">
           <h2 ref={headerRef} className="italic text-2xl lg:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
             { t('protitle')}
           </h2>
-          <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
-            { t('prosubtitle')}
-          </p>
+            <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
+              {t('prosubtitle1')}
+            </p>
+            <p className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
+              {t('prosubtitle2')}
+            </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 pb-10">

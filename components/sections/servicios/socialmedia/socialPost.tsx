@@ -58,7 +58,14 @@ const SocialPost = () => {
       <div className="max-w-4xl w-full space-y-12">
         <div className="space-y-4">
           <h2 className="text-sm lg:text-lg tracking-[0.3em] uppercase font-light text-white">
-            { t('poTitle')}
+            <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+                  { t('poTitle')}
+            </span>
+            
           </h2>
           <div 
             ref={lineRef}

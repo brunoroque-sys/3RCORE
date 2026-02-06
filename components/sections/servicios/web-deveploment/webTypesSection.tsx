@@ -135,9 +135,15 @@ const WebTypesSection = () => {
         <div className="text-center mb-30 space-y-6">
           <h2 
             ref={titleRef}
-            className="text-base md:text-lg tracking-[0.3em] uppercase font-light"
+            className="text-base md:text-lg tracking-[0.2em] uppercase font-light"
           >
-            {t('header.subtitle')}
+            <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+              {t('header.subtitle')}
+            </span>
           </h2>
           <div 
             ref={lineRef}

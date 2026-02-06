@@ -25,12 +25,17 @@ const ToolsCarousel = () => {
       
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col items-center mb-16">
-        <div className="flex flex-col items-center w-full max-w-4xl">
+          <div className="flex flex-col items-center w-full max-w-4xl">
             <h2 className="px-6 text-white text-xs md:text-lg tracking-[0.3em] font-light uppercase whitespace-nowrap mb-4">
-            {t('title')}
+              <span className="relative inline-block px-2 py-0.5">
+                <span className="relative z-10 font-medium">
+                  {t('title')}
+                </span>
+                <span className="absolute inset-0 bg-[#A21F8A] rounded-sm"></span>
+              </span>
             </h2>
             <div className="w-full md:w-2/3 h-[1px] bg-white/60"></div>
-        </div>
+          </div>
         </div>
 
         <Swiper

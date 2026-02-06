@@ -84,7 +84,13 @@ return (
       <div className="max-w-6xl 2xl:max-w-7xl mx-auto w-full">
         <header className="mb-12">
           <h2 className="text-white text-center text-lg tracking-[0.2em] uppercase font-light">
-            { t('titPro')}
+            <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+              { t('titPro')}
+            </span>
           </h2>
           <div className="w-[60%] h-[1px] bg-white/80 mx-auto mt-4"></div>
         </header>

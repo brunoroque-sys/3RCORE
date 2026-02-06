@@ -16,6 +16,7 @@ export default function HeroHome() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesCanvasRef = useRef<HTMLCanvasElement>(null);
+  const lettersCanvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]); 
   const frameRef = useRef({ frame: 0 });
@@ -33,7 +34,131 @@ export default function HeroHome() {
     t('connection')
   ];
 
-  // Sistema de partículas
+  // Sistema de palabras que salen del centro
+  useEffect(() => {
+    const canvas = lettersCanvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const words = [
+      'impact',
+      'values',
+      'experience',
+      'identity',
+      'professionalism',
+      'connection'
+    ];
+    
+    class Word {
+      x!: number;
+      y!: number;
+      text!: string;
+      vx!: number;
+      vy!: number;
+      opacity!: number;
+      size!: number;
+      rotation!: number;
+      rotationSpeed!: number;
+
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        if (!canvas) return;
+        // Empiezan en el centro
+        this.x = canvas.width / 2;
+        this.y = canvas.height / 2;
+        this.text = words[Math.floor(Math.random() * words.length)];
+        
+        // Velocidad en dirección aleatoria
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 1.5 + 0.8; // Un poco más lento para palabras
+        this.vx = Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed;
+        
+        this.opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6 (más sutil)
+        this.size = Math.random() * 15 + 25; // 25-40px
+        this.rotation = 0;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.03; // Rotación más suave
+      }
+
+      update() {
+        if (!canvas) return;
+        
+        this.x += this.vx;
+        this.y += this.vy;
+        this.rotation += this.rotationSpeed;
+        
+        // Fade out gradual mientras se aleja
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const distanceFromCenter = Math.sqrt(
+          Math.pow(this.x - centerX, 2) + Math.pow(this.y - centerY, 2)
+        );
+        
+        // Reducir opacidad basado en distancia
+        const maxDistance = Math.max(canvas.width, canvas.height) / 2;
+        this.opacity = Math.max(0, 0.6 - (distanceFromCenter / maxDistance));
+        
+        // Si sale completamente de la pantalla o es invisible, resetear
+        if (this.opacity <= 0 || 
+            this.x < -200 || this.x > canvas.width + 200 ||
+            this.y < -200 || this.y > canvas.height + 200) {
+          this.reset();
+        }
+      }
+
+      draw(ctx: CanvasRenderingContext2D) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        
+        ctx.font = `${this.size}px Arial, sans-serif`;
+        ctx.fillStyle = `rgba(209, 30, 104, ${this.opacity})`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.text, 0, 0);
+        
+        ctx.restore();
+      }
+    }
+
+    const wordCount = 20; // Cantidad de palabras flotantes
+    const wordParticles: Word[] = [];
+    for (let i = 0; i < wordCount; i++) {
+      wordParticles.push(new Word());
+    }
+
+    let animationId: number;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      wordParticles.forEach(word => {
+        word.update();
+        word.draw(ctx);
+      });
+      
+      animationId = requestAnimationFrame(animate);
+    };
+    animate();
+
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", resizeCanvas);
+    };
+  }, [t]);
+
+  // Sistema de partículas original
   useEffect(() => {
     const canvas = particlesCanvasRef.current;
     if (!canvas) return;
@@ -41,7 +166,6 @@ export default function HeroHome() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Ajustar canvas al tamaño de la ventana
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -70,25 +194,22 @@ export default function HeroHome() {
         this.y = Math.random() * canvas.height;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.size = Math.random() * 3 + 1; // 1-4px
-        this.speedY = Math.random() * 0.5 + 0.2; // velocidad base
-        this.opacity = Math.random() * 0.5 + 0.3; // 0.3-0.8
+        this.size = Math.random() * 3 + 1;
+        this.speedY = Math.random() * 0.5 + 0.2;
+        this.opacity = Math.random() * 0.5 + 0.3;
         this.angle = Math.random() * Math.PI * 2;
-        this.drift = Math.random() * 0.5 - 0.25; // deriva horizontal
+        this.drift = Math.random() * 0.5 - 0.25;
       }
 
       update(scrollVelocity: number) {
         if (!canvas) return 0;
         
-        // Movimiento base de caída
         this.y += this.speedY;
         this.x += Math.sin(this.angle) * 0.3 + this.drift;
         this.angle += 0.01;
 
-        // Efecto de scroll - alargar hacia arriba cuando hay velocidad
         const stretchFactor = Math.abs(scrollVelocity) * 2;
         
-        // Si sale de la pantalla, resetear
         if (this.y > canvas.height + 10) {
           this.y = -10;
           this.x = Math.random() * canvas.width;
@@ -103,7 +224,6 @@ export default function HeroHome() {
       draw(ctx: CanvasRenderingContext2D, stretchFactor: number) {
         ctx.save();
         
-        // Si hay velocidad de scroll, dibujar una estela alargada
         if (stretchFactor > 0.1) {
           const gradient = ctx.createLinearGradient(
             this.x, 
@@ -117,7 +237,6 @@ export default function HeroHome() {
           ctx.fillStyle = gradient;
           ctx.fillRect(this.x - this.size / 2, this.y - stretchFactor * 20, this.size, stretchFactor * 20 + this.size);
         } else {
-          // Modo normal - partículas flotantes con color magenta
           const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
           gradient.addColorStop(0, `rgba(209, 30, 104, ${this.opacity})`);
           gradient.addColorStop(0.5, `rgba(209, 30, 104, ${this.opacity * 0.8})`);
@@ -193,8 +312,8 @@ export default function HeroHome() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=900%", 
-        scrub: 1,
+        end: "+=200%", // Reducido de 900% a 200% para que con 2 scrolls llegues al final
+        scrub: 0.5, // Scrub más suave para movimiento más lento
         pin: true,
         onRefresh: render,
         onUpdate: (self) => {
@@ -245,12 +364,10 @@ export default function HeroHome() {
       if (i < wordsBottom.length - 1) {
         tl.to(word, { opacity: 0, y: -20, duration: 0.5, ease: "power2.in" }, start + step - 0.5);
       } else {
-        // La última palabra se queda visible
         tl.to(word, { opacity: 1, duration: 0.1 }, start + step);
       }
     });
 
-    // Animación de palabras arriba
     wordsTop.forEach((word, i) => {
       const start = (i * step) + 1; 
       tl.to(word, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, start);
@@ -272,6 +389,12 @@ export default function HeroHome() {
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
       {/* Canvas de frames */}
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
+
+      {/* Canvas de letras (detrás de partículas) */}
+      <canvas 
+        ref={lettersCanvasRef} 
+        className="absolute inset-0 w-full h-full pointer-events-none z-[8]"
+      />
 
       {/* Canvas de partículas */}
       <canvas 

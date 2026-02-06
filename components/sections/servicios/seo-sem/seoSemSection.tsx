@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useTranslations } from 'next-intl';
-
+import HighlightedDescription from '@/components/ui/highlight'
 gsap.registerPlugin(ScrollTrigger);
 
 const SeoSemSection = () => {
@@ -144,23 +144,30 @@ const SeoSemSection = () => {
             ref={titleRef}
             className="text-base md:text-lg tracking-[0.3em] uppercase font-light"
           >
-            {t('header.subtitle')}
+            <span className="relative inline-block px-2 py-1">
+              <span className="relative z-10">{t('header.subtitle')}</span>
+              <span className="absolute bottom-0 left-0 w-full h-[3px] bg-[#A21F8A]"></span>
+              <span className="absolute inset-0 bg-[#A21F8A]/100 rounded-sm"></span>
+            </span>
           </h2>
+          
           <div 
             ref={lineRef}
             className="h-[1px] w-full bg-white max-w-2xl mx-auto origin-center"
           />
-          <p 
+          
+          <div 
             ref={descriptionRef}
             className="text-xs md:text-base leading-relaxed max-w-3xl mx-auto font-light"
-            dangerouslySetInnerHTML={{ __html: t('header.description') }}
-          />
+          >
+            <HighlightedDescription text={t('header.description')} />
+          </div>
         </div>
 
         <div ref={seoRef} className="mb-10">
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[400px]">
-              <div className="space-y-2 ">
+              <div className="space-y-2 2xl:max-w-[40%]">
                 <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#E91E63]">
                  {t('seo.title')}
                 </h3>
@@ -177,17 +184,25 @@ const SeoSemSection = () => {
               />
               <div className="space-y-6 py-8">
                 <p className="text-sm md:text-base leading-relaxed seo-item">
-                  {t('seo.description')}
+                  {t.rich('seo.description', {
+                    strong: (chunks) => <strong className="font-bold">{chunks}</strong>
+                  })}
                 </p>
                 
                 <ul className="space-y-3 text-sm md:text-base">
                   {t.raw('seo.items').map((item: string, index: number) => (
-                    <li key={index} className="seo-item">- {item}</li>
+                    <li key={index} className="seo-item">
+                      - {t.rich(`seo.items.${index}`, {
+                          strong: (chunks) => <strong className="font-bold">{chunks}</strong>
+                        })}
+                    </li>
                   ))}
                 </ul>
 
                 <p className="text-sm md:text-base italic font-light pt-4 seo-item">
-                  {t('seo.footer')}
+                  {t.rich('seo.footer', {
+                    strong: (chunks) => <strong className="font-bold">{chunks}</strong>
+                  })}
                 </p>
               </div>
             </div>
@@ -197,7 +212,7 @@ const SeoSemSection = () => {
         <div ref={semRef}>
           <div className="grid md:grid-cols-[40%_60%] gap-0">
             <div className="flex items-center md:justify-center min-h-[200px] md:min-h-[400px]">
-              <div className="space-y-2">
+              <div className="space-y-2 2xl:max-w-[40%]">
                 <h3 className="text-5xl md:text-6xl lg:text-7xl font-serif italic text-[#E91E63]">
                   {t('sem.title')}
                 </h3>
@@ -214,20 +229,28 @@ const SeoSemSection = () => {
               />
               <div className="space-y-6 py-8">
                 <p className="text-sm md:text-base leading-relaxed sem-item">
-                  {t('sem.description')}
+                  {t.rich('sem.description', {
+                    strong: (chunks) => <strong className="font-bold">{chunks}</strong>
+                  })}
                 </p>
                 
                 <ul className="space-y-3 text-sm md:text-base">
                   {t.raw('sem.items').map((item: string, index: number) => (
-                    <li key={index} className="sem-item">- {item}</li>
+                    <li key={index} className="sem-item">
+                      - {t.rich(`sem.items.${index}`, {
+                          strong: (chunks) => <strong className="font-bold">{chunks}</strong>
+                        })}
+                    </li>
                   ))}
                 </ul>
-
                 <p className="text-sm md:text-base italic font-light pt-4 sem-item">
-                  {t('sem.footer')}
+                  {t.rich('sem.footer', {
+                    strong: (chunks) => <strong className="font-bold">{chunks}</strong>
+                  })}
                 </p>
               </div>
             </div>
+
           </div>
         </div>
       </div>

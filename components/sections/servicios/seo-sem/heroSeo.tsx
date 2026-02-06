@@ -169,10 +169,21 @@ export default function HeroSeo() {
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light  sm:w-2/3 md:w-3/4 xl:w-3/4 2xl:w-3/4 mx-auto leading-relaxed break-words"
+            className="text-white text-xs md:text-sm font-light ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
           >
-            { t('slogan')}
-          </p>
+            {t.rich('slogan', {
+              google: (chunks) => (
+                <span className="font-bold inline-flex">
+                  <span className="text-[#4285F4]">G</span>
+                  <span className="text-[#EA4335]">o</span>
+                  <span className="text-[#FBBC05]">o</span>
+                  <span className="text-[#4285F4]">g</span>
+                  <span className="text-[#34A853]">l</span>
+                  <span className="text-[#EA4335]">e</span>
+                </span>
+              )
+            })}
+          </p>  
         </div>
       </div>
 

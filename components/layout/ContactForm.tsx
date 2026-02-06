@@ -55,10 +55,10 @@ const ContactForm = () => {
       <div className="absolute inset-0 bg-[#130218]/90 z-0"></div>
 
       <div className="relative z-10 w-full max-w-7xl px-10 lg:px-6">
-        <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.2em] uppercase mb-16">
+        <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.1em] uppercase mb-16">
           <span style={{ 
                   backgroundColor: '#A21F8A', 
-                  padding: '2px 10px', 
+                  padding: '5px 10px', 
                   borderRadius: '2px' 
                 }}>
             {t('title')}

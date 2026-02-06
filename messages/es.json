@@ -89,7 +89,7 @@
     "roles": {
       "ceo": "CEO 3R Core",
       "marketingDirector": "Director de Marketing",
-      "seoDirector": "Director de SEO"
+      "seoDirector": "Analista de SEO y Google ADS"
     }
   }
   ,
@@ -122,7 +122,8 @@
     "slogan": "Tu imagen dice mucho sobre ti, asegúrate de que sea la correcta.",
 
     "protitle":"Nuestro proceso nos diferencia",
-    "prosubtitle":"devoción y rigor artístico con los que desarrollamos la esencia de tu marca",
+    "prosubtitle1": "Devoción y rigor artístico",
+    "prosubtitle2": "Somos el equipo que desarrollamos la esencia de tu marca",
     "proIn":"Investigación",
     "proEs":"Estrategia",
     "proPla":"Planificación",
@@ -131,7 +132,7 @@
     "proGes":"Gestión y resultado",
 
     "maTitle":"Manual de Marca",
-    "maParraf":"Es una parte fundamental en el branding de cualquier entidad que se va a lanzar y posicionar en el mercado. Su objetivo es que la identidad visual sea consistente a través del tiempo y así crear una marca sólida.",
+    "maParraf":"El brading es la parte fundamental de cualquier identidad de marca que se va a lanzar y posicionar en el mercado. Su objetivo es que la identidad visual sea consistente a través del tiempo y así crear una marca sólida.",
     "maPreg":"¿Necesitas ayuda con el tuyo?",
     "mabot":"Contáctanos",
 
@@ -155,7 +156,7 @@
     "proGes":"Gestión y análisis",
 
     "poTitle":"Diseño de posts",
-    "poParraf":" Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.",
+    "poParraf":" Con ingenio y dedicación desarrollamos contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.",
     "poPreg":"¿Hablamos de tu próximo gran paso en redes?",
     "pobot":"Contáctanos",
 
@@ -167,10 +168,9 @@
 
   }
   ,
-    "SeoSemHero": {
-      "slogan": "Impulsa tu negocio en Google y atrae clientes que sí buscan lo que ofreces",
-
-      "protitle":"Nuestro mantenemos actualizados",
+  "SeoSemHero": {
+    "slogan": "Impulsa tu negocio en <google>Google</google> y atrae clientes que sí buscan lo que ofreces",
+    "protitle":"Nuestro mantenemos actualizados",
     "prosubtitle":"vamos con las tendencias actuales y audiencia que tu marca necesita",
     "proIn":"Investigación",
     "proEs":"Estrategia",
@@ -178,18 +178,13 @@
     "proDi":"Diseño contenido",
     "proPu":"Publicación",
     "proGes":"Gestión y análisis",
-
     "poTitle":"Diseño de posts",
-    "poParraf":" Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Para nosotros, la clave está en cómo contamos tu historia a través del diseño.",
+    "poParraf":" Ponemos todo nuestro ingenio y dedicación en desarrollar contenido que no solo sea atractivo, sino que proyecte una marca sólida desde el primer día. Paranosotros, la clave está en cómo contamos tu historia a través del diseño.",
     "poPreg":"¿Hablamos de tu próximo gran paso en redes?",
     "pobot":"Contáctanos",
-
     "griPost":"Grilla de Contenidos",
     "griParraf":"Estrategias personalizadas que reflejan los valores únicos de la marca. Desarrollamos el copy para cada post, cubriendo diversos formatos de contenido.",
-
     "titPost":"Algunos de nuestros proyectos"
-
-
   }
   ,
   "Footer": {
@@ -362,8 +357,7 @@
   ,
   "SEOSEM": {
     "title": {
-      "part1": "Te posicionamos",
-      "part2": "en buscadores de",
+      "part1": "Te posicionamos en GOOGLE",
       "part3": "manera orgánica"
     },
     "description": {
@@ -376,33 +370,33 @@
   "SeoSemSection": {
     "header": {
       "subtitle": "¿QUÉ HACEMOS Y EN QUÉ CONSISTE EL SERVICIO?",
-      "description": "Nuestro servicio de SEO y SEM se enfoca en lograr visibilidad, tráfico de calidad y conversiones.<br />No se trata solo de aparecer en Google, sino de aparecer frente a las personas correctas.<br />Nos encargamos de:"
+      "description": "Nuestro servicio de SEO/SEM y GOOGLE ADS se enfoca en lograr visibilidad, tráfico de calidad y conversiones.No se trata solo de aparecer en Google, sino de aparecer frente a las personas correctas."
     },
     "seo": {
       "title": "SEO",
       "subtitle": "Posicionamiento orgánico\nen Google",
-      "description": "El SEO permite que tu página web aparezca de forma natural en Google cuando alguien busca tus servicios o productos. Trabajamos:",
+      "description": "El <strong>SEO</strong> permite que tu página web aparezca de forma natural en Google cuando alguien busca tus servicios o productos. Trabajamos:",
       "items": [
-        "Auditoría SEO de tu web",
-        "Optimización SEO On Page (estructura, textos, velocidad)",
+        "Auditoría <strong>SEO</strong> de tu web",
+        "Optimización <strong>SEO</strong> On Page (estructura, textos, velocidad)",
         "Estrategia de palabras clave",
         "Creación de contenido optimizado",
         "Estrategia orgánica a mediano y largo plazo"
       ],
-      "footer": "El SEO es ideal para construir autoridad, confianza y resultados sostenibles en el tiempo."
+      "footer": "El <strong>SEO</strong> es ideal para construir autoridad, confianza y resultados sostenibles en el tiempo."
     },
     "sem": {
       "title": "SEM",
       "subtitle": "Publicidad en Google Ads",
-      "description": "Con Google Ads logramos resultados inmediatos a través de anuncios estratégicamente segmentados. Nos encargamos de:",
+      "description": "Con <strong>Google Ads</strong> logramos resultados inmediatos a través de anuncios estratégicamente segmentados. Nos encargamos de:",
       "items": [
-        "Creación y configuración de campañas en Google Ads",
+        "Creación y configuración de campañas en <strong>Google Ads</strong>",
         "Segmentación por intención de búsqueda",
         "Optimización del presupuesto",
         "Monitoreo constante de resultados",
         "Mejora continua del rendimiento de la pauta"
       ],
-      "footer": "El SEM es ideal si buscas ventas rápidas, generación de leads o tráfico inmediato."
+      "footer": "El <strong>SEM</strong> es ideal si buscas ventas rápidas, generación de leads o tráfico inmediato."
     }
   }
   ,
@@ -426,7 +420,7 @@
   }
   ,
   "WebHero": {
-    "slogan": "Nos asociamos con las mejores plataformas de comercio electrónico del mercado, como Shopify y WooCommerce, que ofrecen la escalabilidad, robustez y flexibilidad para adaptarse a cualquier negocio en tiempo récord, acelerar los mercados digitales y evitar implementaciones prolongadas.",
+    "slogan": "Nos asociamos con las mejores plataformas de comercio electrónico del mercado, como <shopify>Shopify</shopify> y <woo>WooCommerce</woo>, que ofrecen la escalabilidad, robustez y flexibilidad para adaptarse a cualquier negocio en tiempo récord, acelerar los mercados digitales y evitar implementaciones prolongadas.",
 
     "protitle": "La mejor tecnologia para cada proyecto",
     "prosubtitle": "tu sitio funcionará a velocidad, será seguro, fácil de mantener y preparado para crecer",
