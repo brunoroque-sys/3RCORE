@@ -10,7 +10,6 @@ const Footer = () => {
 
   const t = useTranslations('Footer');
   
-
   const pathname = usePathname();
 
   const handleScrollTop = (href: string) => {
@@ -20,13 +19,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className=" text-white pt-16 pb-8 px-10 font-sans">
-      <div className="max-w-8xl mx-auto">
+    <footer className="text-white pt-16 pb-8 px-10 font-sans">
+      <div className="max-w-7xl mx-auto">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
           <div className="flex justify-start items-start">
-            <div className="relative w-56 h-20"> 
+            <div className="relative w-60 h-30"> 
               <Image 
                 src="/icons/LogoLetrasBlanco.webp" 
                 alt="3R Core Logo" 
@@ -38,12 +37,12 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">{ t('agency')}</h3>
-            <div className="text-gray-200 text-xs leading-relaxed space-y-4">
+            <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('agency')}</h3>
+            <div className="text-gray-200 text-sm leading-relaxed space-y-4">
               <p>
-                Calle Las Caobas 170, Ofic. 400, Urb El Remanso,
+                Calle Las Caobas 170, Ofic. 400
                 <br />
-                La Molina. Lima - Perú
+                 Urb El Remanso,La Molina. Lima - Perú
               </p>
               <p>
                 { t('A')} <span className="mx-2">|</span> 9am a 6pm
@@ -51,50 +50,52 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">{ t('services')}</h3>
-            <ul className="space-y-3 text-xs text-gray-200">
-              <li>
-                <Link 
-                  href="/servicios/branding" 
-                  onClick={() => handleScrollTop("/servicios/branding")}
-                  className="hover:text-white transition-colors"
-                >
-                  Branding
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/servicios/socialmedia" 
-                  onClick={() => handleScrollTop("/servicios/socialmedia")}
-                  className="hover:text-white transition-colors"
-                >
-                  Social Media
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/servicios/seo-sem" 
-                  onClick={() => handleScrollTop("/servicios/seo-sem")}
-                  className="hover:text-white transition-colors"
-                >
-                  Google SEO / SEM
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/servicios/web-deveploment" 
-                  onClick={() => handleScrollTop("/servicios/web-deveploment")}
-                  className="hover:text-white transition-colors"
-                >
-                  Web Development
-                </Link>
-              </li>
-            </ul>
+          <div className="flex justify-center">
+            <div className="2xl:w-[60%]">
+              <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('services')}</h3>
+              <ul className="space-y-3 text-sm text-gray-200">
+                <li>
+                  <Link 
+                    href="/servicios/branding" 
+                    onClick={() => handleScrollTop("/servicios/branding")}
+                    className="hover:text-pink-500 transition-colors duration-300"
+                  >
+                    Branding
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/servicios/socialmedia" 
+                    onClick={() => handleScrollTop("/servicios/socialmedia")}
+                    className="hover:text-pink-500 transition-colors duration-300"
+                  >
+                    Social Media
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/servicios/seo-sem" 
+                    onClick={() => handleScrollTop("/servicios/seo-sem")}
+                    className="hover:text-pink-500 transition-colors duration-300"
+                  >
+                    Google SEO / SEM
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/servicios/web-deveploment" 
+                    onClick={() => handleScrollTop("/servicios/web-deveploment")}
+                    className="hover:text-pink-500 transition-colors duration-300"
+                  >
+                    Web Development
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="flex flex-col items-start">
-            <h3 className="text-white font-bold text-sm uppercase tracking-widest mb-6">{ t('socialMedia')}</h3>
+            <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('socialMedia')}</h3>
             <div className="flex gap-4">
               <SocialIcon href="https://www.facebook.com/3Rcore/" icon={<FaFacebookF />} />
               <SocialIcon href="https://www.instagram.com/3rcore_/?hl=es" icon={<FaInstagram />} />
@@ -103,20 +104,36 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex gap-8 text-[10px] tracking-widest text-white">
-            <Link href="/politicas" className="hover:text-white hover:brightness-110 transition-all duration-300">
+      </div>
+      <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex gap-8 text-[10px] tracking-widest text-gray-200">
+            <Link 
+              href="/politicas" 
+              className="hover:text-pink-500 transition-colors duration-300 relative group"
+            >
               { t('privacyPolicy')}
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#A21F8A] group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link href="/terminos" className="hover:text-white hover:brightness-110 transition-all duration-300">
+            <Link 
+              href="/terminos" 
+              className="hover:text-pink-500 transition-colors duration-300 relative group"
+            >
               { t('termsConditions')}
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#A21F8A] group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link href="/preguntas" className="hover:text-white hover:brightness-110 transition-all duration-300">
+            <Link 
+              href="/preguntas" 
+              className="hover:text-pink-500 transition-colors duration-300 relative group"
+            >
               { t('pregunta')}
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#A21F8A] group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link href="/reclamaciones" className="hover:text-white hover:brightness-110 transition-all duration-300">
+            <Link 
+              href="/reclamaciones" 
+              className="hover:text-pink-500 transition-colors duration-300 relative group"
+            >
               { t('Recla')}
+              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#A21F8A] group-hover:w-full transition-all duration-300"></span>
             </Link>
           </div>
           
@@ -124,7 +141,6 @@ const Footer = () => {
             { t('copyright')}
           </div>
         </div>
-      </div>
     </footer>
   );
 };
@@ -135,9 +151,9 @@ const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
       href={href} 
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative text-white text-lg p-2 rounded-md border border-white/20 transition-all duration-500 ease-out hover:border-transparent hover:-translate-y-0.5 flex items-center justify-center overflow-hidden"
+      className="group relative text-white text-lg p-2 rounded-md border border-white/20 transition-all duration-500 ease-out hover:border-[#A21F8A] hover:-translate-y-0.5 flex items-center justify-center overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#E91E63] to-[#9C27B0] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#A21F8A] to-[#6B0F5C] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
       <span className="relative z-10 transition-transform duration-300 group-hover:scale-110">
         {icon}
       </span>

@@ -106,22 +106,26 @@ html.lenis, html.lenis body {
   }
 }/* Scrollbar personalizado - Webkit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 8px; /* Ancho del scrollbar */
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #16021B; /* Color del fondo/recorrido */
+  background: transparent; /* Invisible por defecto */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #A21F8A; /* Color de la barra */
-  border-radius: 4px; /* Bordes redondeados */
+  background: transparent; /* Invisible por defecto */
+  border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #C528A8; /* Color al hacer hover (más claro) */
+/* Solo visible al hacer hover sobre la página */
+body:hover::-webkit-scrollbar-thumb {
+  background: #A21F8A;
 }
 
+body:hover::-webkit-scrollbar-track {
+  background: #16021B;
+}
 /* Scrollbar para Firefox */
 * {
   scrollbar-width: thin; /* 'thin' o 'auto' */
