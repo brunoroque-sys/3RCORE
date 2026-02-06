@@ -10,7 +10,6 @@ const ToolsCarousel = () => {
   const t = useTranslations('TOOLS');
 
   const logos = [
-    { src: "/images/seosem/Logo1.svg", alt: "Google Ads" },
     { src: "/images/seosem/Logo2.svg", alt: "Google Partner" },
     { src: "/images/seosem/Logo3.svg", alt: "Google Analytics" },
     { src: "/images/seosem/Logo4.svg", alt: "Search Console" },
@@ -21,7 +20,7 @@ const ToolsCarousel = () => {
   ];
 
   return (
-    <section className=" py-30 pt-32 md:pt-60"> 
+    <section className="py-10 pt-32 md:pt-20"> 
       
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col items-center mb-16">

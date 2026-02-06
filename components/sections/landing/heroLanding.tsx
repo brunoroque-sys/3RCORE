@@ -91,6 +91,33 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
     };
   }, []);
 
+  const renderGoogleText = (text: string) => {
+    const googleColors = {
+      'G': '#4285F4', 
+      'o': '#EA4335', 
+      'o2': '#FBBC04', 
+      'g': '#4285F4', 
+      'l': '#34A853',
+      'e': '#EA4335' 
+    };
+
+    return text.split(' ').map((word: string, wordIndex: number) => {
+      if (word.toLowerCase() === 'google') {
+        return (
+          <span key={wordIndex}>
+            <span style={{ color: googleColors['G'] }}>G</span>
+            <span style={{ color: googleColors['o'] }}>o</span>
+            <span style={{ color: googleColors['o2'] }}>o</span>
+            <span style={{ color: googleColors['g'] }}>g</span>
+            <span style={{ color: googleColors['l'] }}>l</span>
+            <span style={{ color: googleColors['e'] }}>e</span>
+            {' '}
+          </span>
+        );
+      }
+      return <span key={wordIndex}>{word} </span>;
+    });
+  };
   return (
     <section 
       ref={sectionRef}
@@ -144,15 +171,15 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light w-[90%] md:w-full"
+            className="text-white text-sm md:text-xl font-light w-[90%] md:w-full"
           >
-            {t('slogan')}
+            {renderGoogleText(t('slogan'))}
           </p>
 
           <div className='relative index-4 -bottom-50 '>
             <button 
               onClick={handleWhatsAppClick}
-              className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-xs tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent cursor-pointer"
+              className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-lg tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent cursor-pointer"
             >   
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
               

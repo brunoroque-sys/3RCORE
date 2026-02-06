@@ -7,6 +7,7 @@ import HeroLanding from "@/components/sections/landing/heroLanding";
 import SecondLandingSection from "@/components/sections/landing/secondLandingSection";
 import SixLandingSection from "@/components/sections/landing/sixLandingSection";
 import ThirdLandingSection from "@/components/sections/landing/thirdLandingSection";
+import ToolsCarousel from "@/components/sections/servicios/seo-sem/toolsCarru";
 import { useEffect, useState } from "react";
 
 export default function Landing() {
@@ -25,6 +26,7 @@ export default function Landing() {
       <div id="hero">
         <HeroLanding  onImageLoad={handleImageLoaded} />
       </div>
+      <ToolsCarousel/>
       <FirstLandingSection/>
       <SecondLandingSection/>
       <ThirdLandingSection/>

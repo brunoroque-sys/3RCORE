@@ -66,8 +66,6 @@ export default function HeroHome() {
       vy!: number;
       opacity!: number;
       size!: number;
-      rotation!: number;
-      rotationSpeed!: number;
 
       constructor() {
         this.reset();
@@ -88,8 +86,6 @@ export default function HeroHome() {
         
         this.opacity = Math.random() * 0.4 + 0.2; // 0.2-0.6 (más sutil)
         this.size = Math.random() * 15 + 25; // 25-40px
-        this.rotation = 0;
-        this.rotationSpeed = (Math.random() - 0.5) * 0.03; // Rotación más suave
       }
 
       update() {
@@ -97,7 +93,6 @@ export default function HeroHome() {
         
         this.x += this.vx;
         this.y += this.vy;
-        this.rotation += this.rotationSpeed;
         
         // Fade out gradual mientras se aleja
         const centerX = canvas.width / 2;
@@ -121,7 +116,6 @@ export default function HeroHome() {
       draw(ctx: CanvasRenderingContext2D) {
         ctx.save();
         ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
         
         ctx.font = `${this.size}px Arial, sans-serif`;
         ctx.fillStyle = `rgba(209, 30, 104, ${this.opacity})`;
@@ -312,8 +306,8 @@ export default function HeroHome() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=200%", // Reducido de 900% a 200% para que con 2 scrolls llegues al final
-        scrub: 0.5, // Scrub más suave para movimiento más lento
+        end: "+=200%", 
+        scrub: 0.5, 
         pin: true,
         onRefresh: render,
         onUpdate: (self) => {

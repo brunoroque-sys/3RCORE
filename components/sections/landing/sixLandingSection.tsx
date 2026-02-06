@@ -70,7 +70,36 @@ export default function SixLandingSection() {
 
     return () => ctx.revert();
   }, []);
+  // Función para renderizar "Google" con colores oficiales
+  const renderGoogleText = (text: string) => {
+    const googleColors = {
+      'G': '#4285F4', // Azul
+      'o': '#EA4335', // Rojo (primera o)
+      'o2': '#FBBC04', // Amarillo (segunda o)
+      'g': '#4285F4', // Azul
+      'l': '#34A853', // Verde
+      'e': '#EA4335', // Rojo
+      'q': '#FFFFFf'  // Rojo
+    };
 
+    return text.split(' ').map((word: string, wordIndex: number) => {
+      if (word.toLowerCase() === 'google') {
+        return (
+          <span key={wordIndex}>
+            <span style={{ color: googleColors['G'] }}>G</span>
+            <span style={{ color: googleColors['o'] }}>o</span>
+            <span style={{ color: googleColors['o2'] }}>o</span>
+            <span style={{ color: googleColors['g'] }}>g</span>
+            <span style={{ color: googleColors['l'] }}>l</span>
+            <span style={{ color: googleColors['e'] }}>e</span>
+            <span style={{ color: googleColors['q'] }}>?</span>
+            {' '}
+          </span>
+        );
+      }
+      return <span key={wordIndex}>{word} </span>;
+    });
+  };
   return (
     <section 
       ref={sectionRef}
@@ -94,7 +123,7 @@ export default function SixLandingSection() {
           ref={headingRef}
           className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
-          {t('heading')}
+          {renderGoogleText(t('heading'))}
         </h2>
 
         <p 

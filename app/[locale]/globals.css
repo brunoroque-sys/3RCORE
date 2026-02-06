@@ -104,36 +104,13 @@ html.lenis, html.lenis body {
     background-color: #A21F8A;
     color: white;
   }
-}/* Scrollbar personalizado - Webkit (Chrome, Safari, Edge) */
+} /* Ocultar barra en Chrome, Safari y Opera */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent; /* Invisible por defecto */
-}
-
-::-webkit-scrollbar-thumb {
-  background: transparent; /* Invisible por defecto */
-  border-radius: 4px;
-}
-
-/* Solo visible al hacer hover sobre la página */
-body:hover::-webkit-scrollbar-thumb {
-  background: #A21F8A;
-}
-
-body:hover::-webkit-scrollbar-track {
-  background: #16021B;
-}
-/* Scrollbar para Firefox */
-* {
-  scrollbar-width: thin; /* 'thin' o 'auto' */
-  scrollbar-color: #A21F8A #16021B; /* barra fondo */
-}
-
-/* Para HTML y body específicamente */
+/* Ocultar barra en IE, Edge y Firefox */
 html {
-  scrollbar-width: thin;
-  scrollbar-color: #A21F8A #16021B;
+  -ms-overflow-style: none;  /* IE y Edge */
+  scrollbar-width: none;  /* Firefox */
 }

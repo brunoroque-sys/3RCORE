@@ -65,7 +65,7 @@ const Navbar = () => {
   return (
     <>
       <nav 
-        className={`fixed top-0 left-0 w-full z-50 bg-[#130218] text-white border-b border-white/10 transition-transform duration-500 ease-in-out
+        className={`fixed top-0 left-0 w-full z-50 bg-[#130218] text-white  transition-transform duration-500 ease-in-out
           ${isVisible ? "translate-y-0" : "-translate-y-full"}
         `}
       >
