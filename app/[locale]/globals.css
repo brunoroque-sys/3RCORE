@@ -104,11 +104,32 @@ html.lenis, html.lenis body {
     background-color: #A21F8A;
     color: white;
   }
-}/* Ocultar contenido hasta que el loader termine */
-body {
-  visibility: hidden;
+}/* Scrollbar personalizado - Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
 }
 
-body.loaded {
-  visibility: visible;
+::-webkit-scrollbar-track {
+  background: #16021B; /* Color del fondo/recorrido */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A21F8A; /* Color de la barra */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C528A8; /* Color al hacer hover (más claro) */
+}
+
+/* Scrollbar para Firefox */
+* {
+  scrollbar-width: thin; /* 'thin' o 'auto' */
+  scrollbar-color: #A21F8A #16021B; /* barra fondo */
+}
+
+/* Para HTML y body específicamente */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #A21F8A #16021B;
 }

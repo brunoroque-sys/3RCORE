@@ -7,16 +7,26 @@ import ProcessSMSection from "@/components/sections/servicios/socialmedia/proces
 import SocialPortfolio from "@/components/sections/servicios/socialmedia/socialPortfolio";
 import SocialPost from "@/components/sections/servicios/socialmedia/socialPost";
 import { useScrollToSection } from '@/components/ui/useScrollToSection';
-import {usePageLoader} from '@/components/layout/usePageLoader'
+
+import {useIndividualPageLoader} from '@/components/layout/useIndividualPageLoader'
+import { AnimatePresence } from 'framer-motion';
+import PageLoader from '@/components/layout/PageLoader';
 
 export default function socialmedia(){
   
   useScrollToSection(); 
-  usePageLoader({ timeout: 3000, minLoadingTime: 800 });
+  const isLoading = useIndividualPageLoader({ 
+      timeout: 4000, 
+      minLoadingTime: 1200,
+      checkVideos: true 
+    });
+  
 
   return(
     <>
-      
+      <AnimatePresence mode="wait">
+        {isLoading && <PageLoader key="home-loader" />}
+      </AnimatePresence>
       <main >
         <div id="hero">
           <HeroSocialMedia/>

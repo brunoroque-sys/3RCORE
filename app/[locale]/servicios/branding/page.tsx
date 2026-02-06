@@ -9,15 +9,26 @@ import Portfolio from "@/components/sections/servicios/branding/Portfolio";
 import BrandApplications from "@/components/sections/servicios/branding/aplicationSection";
 import HeroBranding from "@/components/sections/servicios/branding/heroBranding";
 import { useScrollToSection } from '@/components/ui/useScrollToSection';
-import {usePageLoader} from '@/components/layout/usePageLoader'
+
+import {useIndividualPageLoader} from '@/components/layout/useIndividualPageLoader'
+import { AnimatePresence } from 'framer-motion';
+import PageLoader from '@/components/layout/PageLoader';
 
 export default function Branding() {
 
   useScrollToSection(); 
-  usePageLoader({ timeout: 3000, minLoadingTime: 800 });
+  const isLoading = useIndividualPageLoader({ 
+    timeout: 4000, 
+    minLoadingTime: 1200,
+    checkVideos: true 
+  });
+
   
   return (
     <>
+      <AnimatePresence mode="wait">
+        {isLoading && <PageLoader key="home-loader" />}
+      </AnimatePresence>
       <div id="hero">
         <HeroBranding />
       </div>

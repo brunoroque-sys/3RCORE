@@ -9,29 +9,42 @@ import MosaicoParallax from '@/components/sections/home/imagesParallaxSection';
 import ContactForm from '@/components/layout/ContactForm';
 import ProjectsSection from '@/components/sections/home/ProjectsSection';
 import { useScrollToSection } from '@/components/ui/useScrollToSection';
-import {usePageLoader} from '@/components/layout/usePageLoader'
+
+import {useIndividualPageLoader} from '@/components/layout/useIndividualPageLoader'
+import { AnimatePresence } from 'framer-motion';
+import PageLoader from '@/components/layout/PageLoader';
 
 export default function Home() {
 
-  useScrollToSection(); 
-  usePageLoader({ timeout: 4000, minLoadingTime: 1000 });
+  useScrollToSection();
+  const isLoading = useIndividualPageLoader({ 
+    timeout: 4000, 
+    minLoadingTime: 1200,
+    checkVideos: true 
+  });
 
   return (
-    <main>
-      <div id="hero">
-        <Hero />
-      </div>
-      <TeamSection />
-      <div id="servicios">
-        <ProjectsSection />
-      </div>
-      <StatsAndCTA />
-      <MosaicoParallax />
-      <ClientSection />
-      <NewsSection />
-      <div id="contacto">
-        <ContactForm />
-      </div>
-    </main>
+    <>
+      <AnimatePresence mode="wait">
+        {isLoading && <PageLoader key="home-loader" />}
+      </AnimatePresence>
+      <main>
+
+        <div id="hero">
+          <Hero />
+        </div>
+        <TeamSection />
+        <div id="servicios">
+          <ProjectsSection />
+        </div>
+        <StatsAndCTA />
+        <MosaicoParallax />
+        <ClientSection />
+        <NewsSection />
+        <div id="contacto">
+          <ContactForm />
+        </div>
+      </main>
+    </>
   );
 }

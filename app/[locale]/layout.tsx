@@ -13,10 +13,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import { getMessages } from "next-intl/server";
 
-import { SmoothCursor } from "@/components/ui/smooth-cursor"
 import ParticlesBackground from "@/components/ui/AnimatedBackground";
-import { GlobalLoadingProvider } from "@/components/layout/GlobalLoadingProvider";
-
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -50,24 +47,21 @@ export default async function RootLayout({
       <body className={`${poppins.className} text-white`} suppressHydrationWarning={true}>
         <div className="noise-overlay" />
         
-        {/* Partículas moradas de fondo */}
         <ParticlesBackground />
         
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <GlobalLoadingProvider>
-            <SmoothScrolling>
-              <Navbar />
-              <main className=" flex flex-col relative z-10">
-                <div className="noise-global" />
-                {children}
-              </main>
-              <Footer />
-            </SmoothScrolling>
-            
-            <CookieBanner />
-            <ScrollContactBtn />
-            <WhatsAppBtn />
-          </GlobalLoadingProvider>
+          <SmoothScrolling>
+            <Navbar />
+            <main className="flex flex-col relative z-10">
+              <div className="noise-global" />
+              {children}
+            </main>
+            <Footer />
+          </SmoothScrolling>
+          
+          <CookieBanner />
+          <ScrollContactBtn />
+          <WhatsAppBtn />
         </NextIntlClientProvider>
       </body>
     </html>
