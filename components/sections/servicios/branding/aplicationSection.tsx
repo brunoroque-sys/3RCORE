@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ColorPalette {
   id: string;
@@ -34,12 +34,20 @@ export default function BrandApplications() {
 
   const [selectedPalette, setSelectedPalette] = useState<ColorPalette>(palettes[0]);
 
+  // 🔥 PRECARGAR TODAS LAS IMÁGENES
+  useEffect(() => {
+    palettes.forEach((palette) => {
+      const img = new Image();
+      img.src = palette.image;
+    });
+  }, []); // Solo se ejecuta una vez al montar
+
   return (
     <section className="w-full flex items-center px-10 lg:px-6 md:px-15 py-12 md:py-18 bg-gradient-to-r from-[#4c0046] to-[#130218]"> 
       <div className="max-w-6xl 2xl:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
         
         <div className="flex flex-col space-y-4 md:space-y-6 text-center md:text-left">
-          <h2 className="text-white text-3xl lg:text-5xl lg:text-5xl font-serif italic tracking-wide">
+          <h2 className="text-white text-3xl lg:text-5xl font-serif italic tracking-wide">
             {t('apMarca')}
           </h2>
           
@@ -54,7 +62,8 @@ export default function BrandApplications() {
             <img 
               src={selectedPalette.image}
               alt={`Brand Applications Mockup - ${selectedPalette.name}`}
-              className="w-full h-auto object-contain max-h-[300px] md:max-h-none transition-opacity duration-300 rounded-[20px]"
+              className="w-full h-auto object-contain max-h-[300px] md:max-h-none transition-all duration-300 rounded-[20px]"
+              loading="eager" // 🔥 Fuerza carga inmediata
             />
 
             <div className="absolute -bottom-20 -left-8 lg:-bottom-10 lg:-left-20 w-24 h-24 lg:w-50 md:h-50 z-10">
@@ -62,6 +71,7 @@ export default function BrandApplications() {
                 src="/images/branding/Apli/stickerAI.png" 
                 alt="Alucon Sticker"
                 className="w-full h-full object-contain drop-shadow-xl"
+                loading="eager"
               />
             </div>
           </div>

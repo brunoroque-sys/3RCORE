@@ -109,7 +109,6 @@ ${formData.proyecto}
     
     window.open(whatsappUrl, '_blank');
     
-    // Resetear formulario y cerrar
     setFormData({
       nombre: '',
       numero: '',
@@ -135,7 +134,6 @@ ${formData.proyecto}
         overflow: 'visible'
       }}
     >
-      {/* Contenido del botón */}
       <div 
         ref={buttonContentRef}
         className={`absolute inset-0 flex items-center justify-center cursor-pointer transition-all duration-300 hover:scale-105 ${isExpanded ? 'pointer-events-none' : ''}`}
@@ -157,7 +155,6 @@ ${formData.proyecto}
         </div>
       </div>
 
-      {/* Contenido del formulario */}
       <div 
         ref={formContentRef}
         className={`absolute inset-0 p-6 opacity-0 ${!isExpanded ? 'pointer-events-none' : ''}`}

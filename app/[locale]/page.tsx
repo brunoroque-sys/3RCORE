@@ -27,7 +27,10 @@ export default function Home() {
   });
 
   return (
-    <>
+    <> 
+      <AnimatePresence mode="wait">
+            {isLoading && <PageLoader key="home-loader" />}
+      </AnimatePresence>
       <main>
 
         <div id="hero">

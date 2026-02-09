@@ -62,7 +62,7 @@ export default function ClientsSection() {
           ">
             <h2 className={`
               tracking-[0.05em] uppercase leading-tight
-              text-xl md:text-2xl 
+              text-xl md:text-lg 
               bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
               bg-clip-text text-transparent font-m
             `}>
