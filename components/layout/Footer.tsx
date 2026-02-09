@@ -17,7 +17,7 @@ const Footer = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
-
+//sdsadadasdsa
   return (
     <footer className="text-white pt-16 pb-8 px-10 font-sans">
       <div className="max-w-7xl mx-auto">
