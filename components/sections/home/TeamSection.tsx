@@ -69,7 +69,9 @@ const TeamSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full py-24 px-10 flex justify-center items-center overflow-hidden">
+    <section ref={containerRef} className="relative w-full py-24 px-10 flex justify-center items-center overflow-hidden">
+      {/* Gradiente superior - de #16021B hacia transparente/negro */}
+      <div className="absolute top-0 left-0 right-0 h-18 bg-gradient-to-t from-[#16021B] via-[#16021B]/10 to-black/90 z-0 pointer-events-none" />
       <div className="max-w-3xl md:max-w-5xl 2xl:max-w-7xl mx-auto text-center">
         
         <h2 className={`team-title ${playfair.className} text-white text-3xl sm:text-4xl md:text-3xl lg:text-4xl xl:text-5xl mb-4 md:mb-6 tracking-wide leading-tight`}>
@@ -115,6 +117,7 @@ const TeamSection = () => {
         </p>
 
       </div>
+      
     </section>
   );
 };

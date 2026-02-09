@@ -455,7 +455,7 @@ export default function HeroHome() {
   };
 
   return (
-    <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
+    <div ref={containerRef} className="relative w-full h-screen bg-[#16021B] overflow-hidden">
       <canvas ref={canvasRef} width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover z-0" />
 
       <canvas 
@@ -512,9 +512,8 @@ export default function HeroHome() {
       </div>
 
       <div className="absolute inset-0 bg-black/40 z-[5] pointer-events-none" />
-      {/* Agregar este nuevo div para el gradiente inferior */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#16021B] via-[#16021B]/50 to-transparent z-[6] pointer-events-none" />
-    </div>
+
+      </div>
     
   );
 }
