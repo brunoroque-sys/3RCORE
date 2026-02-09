@@ -414,7 +414,7 @@
   }
   ,
   "WebHero": {
-    "slogan": "We partner with market-leading e-commerce platforms like Shopify and WooCommerce. These solutions provide the scalability, robustness, and flexibility to adapt to any business in record time, accelerating digital market entry and eliminating lengthy implementation cycles.",
+    "slogan": "We partner with market-leading e-commerce platforms like <shopify>Shopify</shopify> and <woo></woo>. These solutions provide the scalability, robustness, and flexibility to adapt to any business in record time, accelerating digital market entry and eliminating lengthy implementation cycles.",
 
     "protitle": "The best technology for every project",
     "prosubtitle": "Your site will run at high speed, be secure, easy to maintain, and ready to scale",

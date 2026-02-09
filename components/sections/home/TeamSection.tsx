@@ -70,7 +70,6 @@ const TeamSection = () => {
 
   return (
     <section ref={containerRef} className="relative w-full py-24 px-10 flex justify-center items-center overflow-hidden">
-      {/* Gradiente superior - de #16021B hacia transparente/negro */}
       <div className="absolute top-0 left-0 right-0 h-18 bg-gradient-to-t from-[#16021B] via-[#16021B]/10 to-black/90 z-0 pointer-events-none" />
       <div className="max-w-3xl md:max-w-5xl 2xl:max-w-7xl mx-auto text-center">
         
@@ -90,11 +89,8 @@ const TeamSection = () => {
 
         <p className={`${montserrat.className} text-white text-sm sm:text-sm md:text-sm xl:text-sm 2xl:text-lg leading-relaxed max-w-5xl mx-auto px-4`}>
           {descriptionWords.map((word, index) => {
-            // A. Resaltado inicial (Agencia): sigue siendo insensible a mayúsculas
             const isInitialHighlight = index < stopIndex;
             
-            // B. Resaltado específico: AHORA SÍ distingue mayúsculas (Case Sensitive)
-            // Solo resaltará "Visión" y no "visión"
             const isKeywordHighlight = keywordsToHighlight.includes(word);
 
             const shouldHighlight = isInitialHighlight || isKeywordHighlight;

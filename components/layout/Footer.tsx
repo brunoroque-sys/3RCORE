@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex 2xl:justify-center">
             <div className="2xl:w-[60%]">
               <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('services')}</h3>
               <ul className="space-y-3 text-sm text-gray-200">

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 import { SiShopify, SiWoocommerce } from 'react-icons/si';
+import Image from 'next/image';
 
 export default function HeroWeb() {
 
@@ -119,7 +120,7 @@ export default function HeroWeb() {
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-4xl md:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 WEB
               </h2>
@@ -131,7 +132,7 @@ export default function HeroWeb() {
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-4xl md:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 DEVELOPMENT
               </h2>
@@ -150,12 +151,26 @@ export default function HeroWeb() {
             {t.rich('slogan', {
               shopify: (chunks) => (
                 <span className="inline-flex items-center gap-1 font-semibold text-white">
-                  <SiShopify className="inline" /> {chunks}
+                  <Image 
+                    src="/icons/shop.svg" 
+                    alt="WooCommerce"
+                    width={30}
+                    height={10}
+                    className="inline brightness-0 invert"
+                  />
+                  {chunks}
                 </span>
               ),
               woo: (chunks) => (
                 <span className="inline-flex items-center gap-1 font-semibold text-white">
-                  <SiWoocommerce className="text-xl inline" /> {chunks}
+                  <Image 
+                    src="/icons/woocommerce.svg" 
+                    alt="WooCommerce"
+                    width={80}
+                    height={30}
+                    className="inline brightness-0 invert"
+                  />
+                  {chunks}
                 </span>
               )
             })}
