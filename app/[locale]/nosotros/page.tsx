@@ -1,4 +1,4 @@
-
+"use client"
 import ContactForm from "@/components/layout/ContactForm";
 import { DraggableCardDemo } from "@/components/sections/Nosotros/Activities";
 import Founders from "@/components/sections/Nosotros/Founders";
@@ -13,6 +13,7 @@ import ScrollContactBtn from '@/components/ui/ScrollContactBtn'
 import { AnimatePresence } from "framer-motion";
 import PageLoader from "@/components/layout/PageLoader";
 import { useIndividualPageLoader } from "@/components/layout/useIndividualPageLoader";
+
 export default function Nosotros() {
   const isLoading = useIndividualPageLoader({ 
       timeout: 4000, 

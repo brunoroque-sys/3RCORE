@@ -63,7 +63,7 @@ export default function BrandApplications() {
               src={selectedPalette.image}
               alt={`Brand Applications Mockup - ${selectedPalette.name}`}
               className="w-full h-auto object-contain max-h-[300px] md:max-h-none transition-all duration-300 rounded-[20px]"
-              loading="eager" // 🔥 Fuerza carga inmediata
+              loading="eager" 
             />
 
             <div className="absolute -bottom-20 -left-8 lg:-bottom-10 lg:-left-20 w-24 h-24 lg:w-50 md:h-50 z-10">
