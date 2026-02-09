@@ -101,12 +101,12 @@ const ProcessSection = () => {
           <h2 ref={headerRef} className="italic text-2xl lg:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
             { t('protitle')}
           </h2>
-            <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
-              {t('prosubtitle1')}
-            </p>
-            <p className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
-              {t('prosubtitle2')}
-            </p>
+          <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #FF1A55 0%, #9C27B0 60%, #9C27B0 100%)'}}>
+            {t('prosubtitle1')}
+          </p>
+          <p className="text-xl lg:text-5xl font-medium leading-tight bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #FF1A55 0%, #9C27B0 60%, #9C27B0 100%)'}}>
+            {t('prosubtitle2')}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-20 pb-10">

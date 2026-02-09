@@ -502,6 +502,11 @@ export default function HeroHome() {
       </div>
 
       <div className="absolute bottom-30 2xl:bottom-10 left-20 lg:right-20 z-20 text-white pointer-events-none">
+
+        <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
+              bg-clip-text text-transparent font-m tracking-tighter leading-tight">
+            3R CORE
+        </h1>
         <h2 className="text-2xl md:text-4xl font-light ">{t('agency2')}  <span className="italic font-serif">{t('d')}</span></h2>
         <div className="relative h-30 w-[500px]">
           <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 

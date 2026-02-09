@@ -101,7 +101,7 @@ const ProcessSMSection = () => {
           <h2 ref={headerRef} className="italic text-2xl lg:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
             {t('protitle')}
           </h2>
-          <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-gradient-to-r from-[#FF1A55] to-[#9C27B0] bg-clip-text text-transparent">
+          <p ref={subheaderRef} className="text-xl lg:text-5xl font-medium leading-tight bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #FF1A55 0%, #9C27B0 60%)'}}>
             {t('prosubtitle')}
           </p>
         </div>
