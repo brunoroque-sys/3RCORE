@@ -1,13 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const ScrollNavBtn = () => {
-   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById('contacto');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
+      // Limpia el hash después de hacer scroll
+      setTimeout(() => {
+        window.history.replaceState(null, '', window.location.pathname);
+      }, 100);
     }
   };
 
@@ -24,7 +28,6 @@ const ScrollNavBtn = () => {
       aria-label="Ir a contacto"
     >
       <div className="relative w-7 h-7 flex items-center justify-center">
-        {/* ICONO DE MENSAJE ESTÁTICO */}
         <svg 
           className="w-full h-full"
           viewBox="0 0 24 24" 

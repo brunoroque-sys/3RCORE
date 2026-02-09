@@ -98,11 +98,11 @@ const NosotrosSection = () => {
           ))}
         </h2>
 
-        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl 2xl:text-6xl font-medium mb-10 tracking-tight will-change-transform`}>
+        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl 2xl:text-6xl font-medium mb-10 tracking-tight will-change-transform leading-tight bg-clip-text text-transparent`}style={{backgroundImage: 'linear-gradient(to right, #9C27B0 0%, #9C27B0 30%, #FF1A55 100%)'}}>
          {t('subtitle')}
         </h3>
 
-        <div className="team-line w-full max-w-xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
+        <div className="team-line w-full max-w-xl 2xl:max-w-5xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
 
         <p className={`${montserrat.className} text-white ms:text-sm text-xs md:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
           {paragraphText.map((word, index) => {

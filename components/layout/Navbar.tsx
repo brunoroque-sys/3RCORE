@@ -16,6 +16,19 @@ const Navbar = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const target = document.getElementById('contacto');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      // Limpia el hash después de hacer scroll
+      setTimeout(() => {
+        window.history.replaceState(null, '', window.location.pathname);
+      }, 100);
+    }
+    setIsOpen(false);
+  };
   
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -56,8 +69,7 @@ const Navbar = () => {
     { name: t('nav.about us') ,href: "/nosotros" },
     { name: t('nav.services'), href: "/#servicios" },
     { name: t('nav.blogs'), href: "https://3rcore.com/blog" },
-    { name: t('nav.contact'), href: "#contacto" },
-
+    { name: t('nav.contact'), href: "#contacto", isContact: true },
   ];
 
   const socialLinks = [
@@ -177,7 +189,14 @@ const Navbar = () => {
                 <li key={link.name} className="group overflow-hidden">
                   <Link
                     href={link.href}
-                    onClick={() => {setIsOpen(false), handleScrollTop("/");}}
+                    onClick={(e) => {
+                      if (link.isContact) {
+                        scrollToContact(e);
+                      } else {
+                        setIsOpen(false);
+                        handleScrollTop("/");
+                      }
+                    }}
                     className={`block text-3xl sm:text-3xl lg:text:4xl font-bold tracking-tight text-white py-4 sm:py-6 border-b border-white/20 relative transition-all duration-500 transform 
                       ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
                       hover:text-white hover:pl-4 transition-all duration-300
