@@ -86,17 +86,17 @@ const LandingContact = () => {
                 <input name="email" required type="email" className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
-
-              <div className="flex flex-col gap-2 md:col-span-2 relative group/field">
-                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldMessage')}</label>
-                <textarea name="mensaje" required rows={1} className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors resize-none peer" />
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
-              </div>
               <div className="flex flex-col gap-2 md:col-span-2 relative group/field">
                 <label className="text-white text-[10px] uppercase tracking-widest">{t('web')}</label>
                 <textarea name="website" required rows={1} className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors resize-none peer" />
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
               </div>
+              <div className="flex flex-col gap-2 md:col-span-2 relative group/field">
+                <label className="text-white text-[10px] uppercase tracking-widest">{t('fieldMessage')}</label>
+                <textarea name="mensaje" required rows={1} className="bg-transparent border-b border-white/30 py-2 text-white focus:outline-none transition-colors resize-none peer" />
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-all duration-500 peer-focus:w-full"></span>
+              </div>
+              
 
               <div className="md:col-span-2 flex flex-col gap-4 mt-6">
                 <button 

@@ -5,8 +5,10 @@ import { gsap } from 'gsap';
 
 const WhatsAppBtnLanding = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [formData, setFormData] = useState({
     nombre: '',
+    codigoPais: '+51',
     numero: '',
     paginaWeb: '',
     correo: '',
@@ -16,7 +18,35 @@ const WhatsAppBtnLanding = () => {
   const containerRef = useRef(null);
   const buttonContentRef = useRef(null);
   const formContentRef = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const phoneNumber = "51914757406";
+
+  const codigosPais = [
+    { codigo: '+1', pais: 'Estados Unidos', iso: 'us' },
+    { codigo: '+54', pais: 'Argentina', iso: 'ar' },
+    { codigo: '+591', pais: 'Bolivia', iso: 'bo' },
+    { codigo: '+55', pais: 'Brasil', iso: 'br' },
+    { codigo: '+56', pais: 'Chile', iso: 'cl' },
+    { codigo: '+57', pais: 'Colombia', iso: 'co' },
+    { codigo: '+593', pais: 'Ecuador', iso: 'ec' },
+    { codigo: '+595', pais: 'Paraguay', iso: 'py' },
+    { codigo: '+51', pais: 'Perú', iso: 'pe' },
+    { codigo: '+598', pais: 'Uruguay', iso: 'uy' },
+    { codigo: '+58', pais: 'Venezuela', iso: 've' },
+  ];
+
+  const paisSeleccionado = codigosPais.find(p => p.codigo === formData.codigoPais) || codigosPais[8];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowCountryDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     if (isExpanded) {
@@ -30,7 +60,7 @@ const WhatsAppBtnLanding = () => {
       })
       .to(containerRef.current, {
         width: '350px',
-        height: '500px',
+        height: '520px',
         borderRadius: '16px',
         duration: 0.5,
         ease: 'power3.out'
@@ -49,7 +79,6 @@ const WhatsAppBtnLanding = () => {
         '-=0.2'
       );
     } else if (containerRef.current) {
-      // Animar transformación a botón
       const tl = gsap.timeline();
       
       tl.to(formContentRef.current, {
@@ -60,8 +89,8 @@ const WhatsAppBtnLanding = () => {
       })
       .to(containerRef.current, {
         width: '180px',
-        height: '60px',
-        borderRadius: '30px',
+        height: '50px',
+        borderRadius: '20px',
         duration: 0.5,
         ease: 'power3.out'
       })
@@ -89,6 +118,14 @@ const WhatsAppBtnLanding = () => {
     }));
   };
 
+  const handleCountrySelect = (codigo: string) => {
+    setFormData(prev => ({
+      ...prev,
+      codigoPais: codigo
+    }));
+    setShowCountryDropdown(false);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -96,7 +133,7 @@ const WhatsAppBtnLanding = () => {
 *Nuevo contacto desde la web*
 
 *Nombre:* ${formData.nombre}
-*Número:* ${formData.numero}
+*Número:* ${formData.codigoPais}${formData.numero}
 *Página web:* ${formData.paginaWeb || 'No especificada'}
 *Correo:* ${formData.correo}
 
@@ -111,6 +148,7 @@ ${formData.proyecto}
     
     setFormData({
       nombre: '',
+      codigoPais: '+51',
       numero: '',
       paginaWeb: '',
       correo: '',
@@ -129,8 +167,8 @@ ${formData.proyecto}
       className="fixed bottom-6 right-6 bg-white shadow-2xl z-50 border-2 border-[#25d366]"
       style={{ 
         width: '180px', 
-        height: '60px', 
-        borderRadius: '30px',
+        height: '50px', 
+        borderRadius: '20px',
         overflow: 'visible'
       }}
     >
@@ -141,8 +179,8 @@ ${formData.proyecto}
       >
         <div className="flex items-center text-[#25d366] px-4">
           <svg 
-            width="28" 
-            height="28" 
+            width="25" 
+            height="25" 
             viewBox="0 0 24 24" 
             fill="#25d366" 
             xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +224,63 @@ ${formData.proyecto}
             />
           </div>
 
-          <div>
+          <div className="flex gap-2">
+            <div className="relative" ref={dropdownRef}>
+              <button
+                type="button"
+                onClick={() => setShowCountryDropdown(!showCountryDropdown)}
+                className="w-auto px-2 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 transition-all flex items-center justify-between"
+              >
+                <span className="flex items-center gap-1.5">
+                  <img 
+                    src={`https://flagcdn.com/w20/${paisSeleccionado.iso}.png`}
+                    srcSet={`https://flagcdn.com/w40/${paisSeleccionado.iso}.png 2x`}
+                    width="20"
+                    alt={paisSeleccionado.pais}
+                    className="rounded-sm"
+                  />
+                  <span>{paisSeleccionado.codigo}</span>
+                </span>
+                <svg 
+                  className={`w-4 h-4 transition-transform ${showCountryDropdown ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {showCountryDropdown && (
+                <div 
+                  className="absolute bottom-full left-0 mb-1 w-56 bg-white border-2 border-[#25d366] rounded-lg shadow-lg z-[9999]"
+                  style={{ 
+                    maxHeight: '700px',
+                    overflowX: 'hidden'
+                  }}
+                >
+                  {codigosPais.map((pais) => (
+                    <button
+                      key={pais.codigo}
+                      type="button"
+                      onClick={() => handleCountrySelect(pais.codigo)}
+                      className="w-full px-3 py-2.5 text-black text-left hover:bg-[#25d366] hover:text-white transition-colors flex items-center gap-2 text-sm border-b border-gray-100 last:border-b-0"
+                    >
+                      <img 
+                        src={`https://flagcdn.com/w20/${pais.iso}.png`}
+                        srcSet={`https://flagcdn.com/w40/${pais.iso}.png 2x`}
+                        width="24"
+                        alt={pais.pais}
+                        className="rounded-sm flex-shrink-0"
+                      />
+                      <span className="font-medium flex-shrink-0">{pais.codigo}</span>
+                      <span className="text-xs opacity-75 truncate">{pais.pais}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <input
               type="tel"
               name="numero"
@@ -194,7 +288,7 @@ ${formData.proyecto}
               onChange={handleInputChange}
               placeholder="Número *"
               required
-              className="w-full px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 placeholder-gray-500 transition-all"
+              className="flex-1 px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white text-sm text-gray-800 placeholder-gray-500 transition-all"
             />
           </div>
 
@@ -228,7 +322,7 @@ ${formData.proyecto}
               onChange={handleInputChange}
               placeholder="Cuéntanos de tu proyecto *"
               required
-              rows={4}
+              rows={3}
               className="w-full px-3 py-2.5 bg-gray-50 border border-[#25d366] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25d366] focus:bg-white resize-none text-sm text-gray-800 placeholder-gray-500 transition-all"
             />
           </div>
