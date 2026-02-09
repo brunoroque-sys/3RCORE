@@ -27,6 +27,13 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
   const handleWhatsAppClick = () => {
     window.open(whatsappUrl, '_blank');
   };
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const target = document.getElementById('contacto');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   useEffect(() => {
 
     
@@ -176,17 +183,22 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
             {renderGoogleText(t('slogan'))}
           </p>
 
-          <div className='relative index-4 -bottom-20 2xl:-bottom-50'>
-            <button 
-              onClick={handleWhatsAppClick}
-              className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-lg tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent cursor-pointer"
-            >   
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
-              
-              <span className="relative z-10">
-                 {t('buttonText')}
-              </span>
-            </button>
+          <div className='relative z-10 mt-12 2xl:mt-20'>
+            <a 
+              href="#contacto" 
+              onClick={scrollToContact} 
+              className="inline-block"
+            > 
+              <button 
+                className="group relative px-10 py-3 border border-gray-500 rounded-[15px] text-lg tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 ease-in-out hover:border-transparent cursor-pointer"
+              >   
+                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-opacity duration-500 ease-in-out" />
+                
+                <span className="relative z-10 text-white">
+                    {t('buttonText')}
+                </span>
+              </button>
+            </a>
           </div>
 
         </div>

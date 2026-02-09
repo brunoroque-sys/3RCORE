@@ -3,19 +3,18 @@
 import React, { useState, useEffect } from 'react';
 
 const ScrollNavBtn = () => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const targetSection = document.getElementById('contacto');
-    
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById('contacto');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <a
-      href="#contacto"
-      onClick={handleScroll}
+      href="#contacto" 
+      onClick={scrollToContact} 
       className="fixed bottom-24 right-6 w-14 h-14 rounded-full z-50 flex items-center justify-center 
                  transition-all duration-500 ease-in-out border border-transparent
                  shadow-[0_8px_30px_rgb(233,30,99,0.3)]

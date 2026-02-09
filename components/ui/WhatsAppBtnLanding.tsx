@@ -16,11 +16,10 @@ const WhatsAppBtnLanding = () => {
   const containerRef = useRef(null);
   const buttonContentRef = useRef(null);
   const formContentRef = useRef(null);
-  const phoneNumber = "51969791251";
+  const phoneNumber = "51914757406";
 
   useEffect(() => {
     if (isExpanded) {
-      // Animar transformación a formulario
       const tl = gsap.timeline();
       
       tl.to(buttonContentRef.current, {

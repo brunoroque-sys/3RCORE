@@ -300,7 +300,14 @@ export default function ProjectsSection() {
             height: auto;
           }
         }
-
+        @media screen and (min-width: 1024px) {
+          .contenedor-imagenes-hovers {
+            height: 500px;
+          }
+          .titulo-hover {
+            height:250px
+          }
+        }
         @media (max-width: 768px) {
           .contenedor-imagenes-hovers {
             flex-direction: column;
