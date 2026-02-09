@@ -169,7 +169,7 @@ export default function HeroBranding() {
           </p>
         </div>
       </div>
-
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#16021B] via-[#16021B]/50 to-transparent z-[6] pointer-events-none" />
     </section>
   );
 }

@@ -45,14 +45,14 @@ const ContactForm = () => {
 
   return (
     <section 
-      className={`${montserrat.className} relative w-full py-24 flex flex-col justify-center items-center overflow-hidden min-h-screen`}
+      className={`${montserrat.className} relative w-full 2xl:py-15 flex flex-col justify-center items-center overflow-hidden `}
       style={{
         backgroundImage: "url('/images/Formulario/wmremove-transformed-8-1-1.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className="absolute inset-0 bg-[#130218]/90 z-0"></div>
+      <div className="absolute inset-0 bg-[#130218]/80 z-0"></div>
 
       <div className="relative z-10 w-full max-w-6xl 2xl:max-w-7xl px-10 lg:px-6">
         <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.1em] uppercase mb-16">
@@ -128,6 +128,8 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
+      <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-[#16021B] via-[#16021B]/50 to-transparent z-[1] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#16021B] via-[#16021B]/50 to-transparent z-[1] pointer-events-none"></div>
     </section>
   );
 };
