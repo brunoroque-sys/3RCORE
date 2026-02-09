@@ -88,8 +88,8 @@ const WhatsAppBtnLanding = () => {
         ease: 'power2.in'
       })
       .to(containerRef.current, {
-        width: '70px',
-        height: '70px',
+        width: '60px',
+        height: '60px',
         borderRadius: '50%',
         duration: 0.5,
         ease: 'power3.out'
@@ -177,8 +177,8 @@ const WhatsAppBtnLanding = () => {
       ref={containerRef}
       className="fixed bottom-6 right-6 bg-white shadow-2xl z-50 border-2 border-[#25d366]"
       style={{ 
-        width: '70px', 
-        height: '70px', 
+        width: '60px', 
+        height: '60px', 
         borderRadius: '50%',
         overflow: 'visible'
       }}
@@ -190,8 +190,8 @@ const WhatsAppBtnLanding = () => {
       >
         <div className="flex items-center justify-center w-full h-full">
           <svg 
-            width="40" 
-            height="40" 
+            width="30" 
+            height="30" 
             viewBox="0 0 24 24" 
             fill="#25d366" 
             xmlns="http://www.w3.org/2000/svg"
