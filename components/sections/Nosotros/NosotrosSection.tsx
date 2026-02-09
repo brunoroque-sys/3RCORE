@@ -83,10 +83,10 @@ const NosotrosSection = () => {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="w-full py-40 px-10 flex justify-center items-center overflow-hidden">
+    <section ref={containerRef} className="w-full py-20 px-10 flex justify-center items-center overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         
-        <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl mb-6 tracking-wide`}>
+        <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl 2xl:text-6xl mb-6 tracking-wide`}>
           {titleText.map((word, index) => (
             <span 
               key={index} 
@@ -98,7 +98,7 @@ const NosotrosSection = () => {
           ))}
         </h2>
 
-        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl font-medium mb-10 tracking-tight will-change-transform`}>
+        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl 2xl:text-6xl font-medium mb-10 tracking-tight will-change-transform`}>
          {t('subtitle')}
         </h3>
 
