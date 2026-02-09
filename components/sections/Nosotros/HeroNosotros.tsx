@@ -162,14 +162,6 @@ const HeroNosotros = () => {
         </div>
       </div>
 
-      {/* Loading Spinner */}
-      {!isVideoLoaded && (
-        <div className="absolute inset-0 z-30 flex items-center justify-center bg-black">
-          <div className="relative">
-            <div className="w-12 h-12 border-4 border-white/20 border-t-white rounded-full animate-spin"></div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
