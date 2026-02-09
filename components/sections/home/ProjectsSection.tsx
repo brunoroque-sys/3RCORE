@@ -294,18 +294,27 @@ export default function ProjectsSection() {
             object-fit: scale-down;
           }
         }
-
+        
         @media screen and (min-width: 2561px) {
           .contenedor-imagenes-hovers {
             height: auto;
           }
         }
+        
         @media screen and (min-width: 1024px) {
           .contenedor-imagenes-hovers {
             height: 500px;
           }
           .titulo-hover {
             height:250px
+          }
+        }
+         @media screen and (min-width: 1536px) {
+          .contenedor-imagenes-hovers {
+            height: 670px;
+          }
+            .titulo-hover {
+            height:auto;
           }
         }
         @media (max-width: 768px) {

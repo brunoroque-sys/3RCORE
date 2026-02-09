@@ -72,7 +72,14 @@ interface WPPost {
       <div className="flex flex-col items-center justify-center mb-20 w-full group">
         <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
           <h2 className="text-white text-s md:text-m tracking-[0.1em] uppercase whitespace-nowrap">
-            {t("title")}
+            <span style={{ 
+                  backgroundColor: '#A21F8A', 
+                  padding: '2px 10px', 
+                  borderRadius: '2px' 
+                }}>
+                {t("title")}
+            </span>
+            
           </h2>
           <div className="h-[1px] bg-white/90 w-full md:w-[70%] lg:w-[100%] mx-auto"></div>
         </div>

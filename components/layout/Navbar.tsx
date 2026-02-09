@@ -50,7 +50,7 @@ const Navbar = () => {
     { name: t('nav.about us') ,href: "/nosotros" },
     { name: t('nav.services'), href: "/#servicios" },
     { name: t('nav.blogs'), href: "https://3rcore.com/blog" },
-    { name: t('nav.contact'), href: "/contacto" },
+    { name: t('nav.contact'), href: "#contacto" },
 
   ];
 
