@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
@@ -70,16 +69,15 @@ export default function SixLandingSection() {
 
     return () => ctx.revert();
   }, []);
-  // Función para renderizar "Google" con colores oficiales
   const renderGoogleText = (text: string) => {
     const googleColors = {
-      'G': '#4285F4', // Azul
-      'o': '#EA4335', // Rojo (primera o)
-      'o2': '#FBBC04', // Amarillo (segunda o)
-      'g': '#4285F4', // Azul
-      'l': '#34A853', // Verde
-      'e': '#EA4335', // Rojo
-      'q': '#FFFFFf'  // Rojo
+      'G': '#4285F4',
+      'o': '#EA4335',
+      'o2': '#FBBC04',
+      'g': '#4285F4',
+      'l': '#34A853',
+      'e': '#EA4335',
+      'q': '#FFFFFf'  
     };
 
     return text.split(' ').map((word: string, wordIndex: number) => {

@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 import { SiShopify, SiWoocommerce } from 'react-icons/si';
@@ -51,7 +50,6 @@ export default function HeroWeb() {
     gsap.set(lineRef.current, { scaleX: 0, transformOrigin: 'center' });
     gsap.set(sloganRef.current, { opacity: 0, y: 20 });
     
-    // Marcar como listo para mostrar
     setIsAnimationReady(true);
 
     const playAnimation = () => {

@@ -20,13 +20,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
   const sloganRef = useRef(null);
   const sectionRef = useRef(null);
   
-      const phoneNumber = "51986889147";
-  const message = "Hola vengo de la página web, quiero agendar una reunión.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-  const handleWhatsAppClick = () => {
-    window.open(whatsappUrl, '_blank');
-  };
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const target = document.getElementById('contacto');

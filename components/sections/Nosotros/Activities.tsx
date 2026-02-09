@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   DraggableCardBody,
   DraggableCardContainer,
@@ -6,11 +6,6 @@ import {
 import { Playfair_Display, Poppins } from "next/font/google";
 import { useTranslations } from "next-intl";
 
-const playfair = Playfair_Display({ 
-  subsets: ["latin"], 
-  style: ['italic'], 
-  weight: ["400"]
-});
 
 const poppins = Poppins({ 
   subsets: ["latin"], 

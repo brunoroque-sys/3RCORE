@@ -10,7 +10,13 @@ const Navbar = () => {
 
    const t = useTranslations('Navbar');
   const pathname = usePathname();
-
+  
+  const handleScrollTop = (href: string) => {
+    if (pathname === href) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+  
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -73,7 +79,13 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-24 relative">
             
             <div className="flex-shrink-0 relative z-[60]">
-              <Link href="/" onClick={() => setIsOpen(false)}> 
+              <Link 
+                href="/" 
+                onClick={() => {
+                  setIsOpen(false);
+                  handleScrollTop("/");
+                }}
+              > 
                 <div className="relative h-10 w-28 cursor-pointer">
                   <Image
                     src="/icons/LogoFull.webp"
@@ -133,8 +145,8 @@ const Navbar = () => {
       >
         <div className="w-full h-full flex flex-col lg:flex-row">
           
-          <div onClick={() => setIsOpen(false)} className="hidden lg:flex flex-1 items-center justify-center bg-[#130218] relative border-r border-white/10">
-            {/* Envolvemos el div de la imagen con Link */}
+          <div onClick={() => {setIsOpen(false), handleScrollTop("/");}} className="hidden lg:flex flex-1 items-center justify-center bg-[#130218] relative border-r border-white/10">
+ 
             <Link 
               href="/" 
               className={`relative h-100 w-100 cursor-pointer transition-all duration-700 delay-300 transform ${
@@ -165,7 +177,7 @@ const Navbar = () => {
                 <li key={link.name} className="group overflow-hidden">
                   <Link
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {setIsOpen(false), handleScrollTop("/");}}
                     className={`block text-3xl sm:text-3xl lg:text:4xl font-bold tracking-tight text-white py-4 sm:py-6 border-b border-white/20 relative transition-all duration-500 transform 
                       ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
                       hover:text-white hover:pl-4 transition-all duration-300

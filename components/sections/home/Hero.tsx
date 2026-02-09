@@ -6,13 +6,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { useTranslations } from "next-intl"
-import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroHome() {
 
   const t = useTranslations('HeroHome');
+
+  
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -23,6 +25,7 @@ export default function HeroHome() {
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const scrollVelocityRef = useRef(0);
   const lastScrollRef = useRef(0);
+  const bottomArrowRef = useRef<HTMLDivElement>(null);
 
   const frameCount = 193;
   const palabrasAbajo = [
@@ -41,12 +44,17 @@ export default function HeroHome() {
   ];
 
   useEffect(() => {
+
+    if ( !scrollIndicatorRef.current) return;
+
     const canvas = lettersCanvasRef.current;
     if (!canvas) return;
     
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    
+  
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -158,16 +166,14 @@ export default function HeroHome() {
         const boxX = this.x - boxWidth / 2;
         const boxY = this.y - boxHeight / 2;
         
-        ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity * 0.6})`;
+        const bgGradient = ctx.createLinearGradient(boxX, boxY, boxX + boxWidth, boxY + boxHeight);
+        bgGradient.addColorStop(0, `rgba(156, 39, 176, ${this.opacity * 0.7})`); 
+        bgGradient.addColorStop(1, `rgba(233, 30, 99, ${this.opacity * 0.7})`);  
+        
+        ctx.fillStyle = bgGradient;
         ctx.beginPath();
         ctx.roundRect(boxX, boxY, boxWidth, boxHeight, this.borderRadius);
         ctx.fill();
-        
-        ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.roundRect(boxX, boxY, boxWidth, boxHeight, this.borderRadius);
-        ctx.stroke();
         
         ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.textAlign = 'center';
@@ -336,6 +342,13 @@ export default function HeroHome() {
     const wordsBottom = gsap.utils.toArray<HTMLElement>(".word-bottom", containerRef.current);
     const wordsTop = gsap.utils.toArray<HTMLElement>(".word-top", containerRef.current);
     const step = 2; 
+    gsap.to(scrollIndicatorRef.current, {
+        y: 8,
+        duration: 1.5,
+        ease: 'power1.inOut',
+        repeat: -1,
+        yoyo: true,
+      });
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -403,7 +416,17 @@ export default function HeroHome() {
       if (i < wordsTop.length - 1) {
         tl.to(word, { opacity: 0, y: -20, duration: 0.5, ease: "power2.in" }, start + step - 0.5);
       }
-    });
+    }); 
+    gsap.to(scrollIndicatorRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top top',
+          end: '+=150',
+          scrub: true,
+        },
+        opacity: 0,
+        y: -30,
+      });
 
     tl.to(frameRef.current, {
       frame: frameCount - 1,
@@ -411,8 +434,25 @@ export default function HeroHome() {
       onUpdate: render
     }, "+=0");
 
+    if (bottomArrowRef.current) {
+        gsap.to(bottomArrowRef.current, {
+          y: 5,
+          opacity: 0.3,
+          duration: 1.5,
+          ease: 'power1.inOut',
+          repeat: -1,
+          yoyo: true,
+        });
+    }
+
   }, { scope: containerRef });
 
+  const handleScrollClick = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div ref={containerRef} className="relative w-full h-screen bg-black overflow-hidden">
@@ -430,40 +470,40 @@ export default function HeroHome() {
 
       <div 
         ref={scrollIndicatorRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 text-white/70"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
+        onClick={handleScrollClick}
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Scroll</span>
+        <div className="flex flex-col items-center gap-3 group">
         
-        <svg 
-          className="scroll-arrow w-6 h-6 mt-2" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-        >
-          <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-        </svg>
-      </div>
+          <div className="flex flex-col items-center gap-2">
+            <div className="relative w-7 h-11 border-2 border-white/50 rounded-full flex items-start justify-center p-1 transition-all duration-300 group-hover:border-white group-hover:scale-105">
+              <div className="w-1 h-2.5 bg-white/60 rounded-full animate-scroll-down group-hover:bg-white"></div>
+            </div>
+            
+            <span className="text-white/70 text-xs font-light tracking-widest uppercase transition-colors group-hover:text-white">
+              Scroll
+            </span>
+          </div>
 
-      <div className="absolute bottom-30 left-10 lg:left-20 z-20 text-white pointer-events-none">
-        <h2 className="text-3xl md:text-4xl font-light">{t('agency')} <span className="italic font-serif">{t('s')}</span></h2>
-        <div className="relative h-20 w-[500px]">
-          {palabrasAbajo.map((h2, i) => (
-            <h2 
-              key={`bot-${i}`} 
-              className="word-bottom absolute top-0 left-0 text-4xl md:text-6xl font-m tracking-tighter opacity-0 translate-y-10 will-change-transform"
+          <div ref={bottomArrowRef}>
+            <svg 
+              className="w-5 h-5 text-white/60 transition-colors group-hover:text-white"
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2.5"
+              strokeLinecap="round" 
+              strokeLinejoin="round"
             >
-              {h2}
-            </h2>
-          ))}
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </div>
         </div>
       </div>
 
-      <div className="absolute top-40 right-10 lg:right-20 z-20 text-white text-right pointer-events-none">
-        <h2 className="text-3xl md:text-4xl font-light ">{t('agency2')}  <span className="italic font-serif">{t('d')}</span></h2>
-        <div className="relative h-30 w-[500px] ml-auto">
+      <div className="absolute bottom-30 2xl:bottom-10 left-20 lg:right-20 z-20 text-white pointer-events-none">
+        <h2 className="text-2xl md:text-4xl font-light ">{t('agency2')}  <span className="italic font-serif">{t('d')}</span></h2>
+        <div className="relative h-30 w-[500px]">
           <h1 className="text-4xl md:text-6xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
               bg-clip-text text-transparent font-m tracking-tighter leading-tight">
             {t('marketing')}

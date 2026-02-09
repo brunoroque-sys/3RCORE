@@ -20,7 +20,6 @@ export default function WebFaq() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Array de preguntas frecuentes
   const faqs = [
     { id: 1, question: t('faqs.q1.question'), answer: t('faqs.q1.answer') },
     { id: 2, question: t('faqs.q2.question'), answer: t('faqs.q2.answer') },
@@ -30,12 +29,10 @@ export default function WebFaq() {
     { id: 6, question: t('faqs.q6.question'), answer: t('faqs.q6.answer') },
   ];
 
-  // Animaciones iniciales (solo se ejecutan una vez)
   useEffect(() => {
     if (!sectionRef.current || !headerRef.current || !titleRef.current || !subtitleRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Animación del título
       if (titleRef.current && headerRef.current) {
         gsap.from(titleRef.current, {
           scrollTrigger: {
@@ -50,7 +47,6 @@ export default function WebFaq() {
         });
       }
 
-      // Animación del subtítulo
       if (subtitleRef.current && headerRef.current) {
         gsap.from(subtitleRef.current, {
           scrollTrigger: {
@@ -65,7 +61,6 @@ export default function WebFaq() {
         });
       }
 
-      // Animación de la línea del header
       const headerLine = headerRef.current?.querySelector('.header-line');
       if (headerLine && headerRef.current) {
         gsap.from(headerLine, {
@@ -80,7 +75,6 @@ export default function WebFaq() {
         });
       }
 
-      // Animación de cada FAQ con stagger
       faqRefs.current.forEach((faq, index) => {
         if (!faq) return;
 
@@ -100,9 +94,8 @@ export default function WebFaq() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []); // Sin dependencias - solo se ejecuta una vez
+  }, []); 
 
-  // Event listeners para hover (separado)
   useEffect(() => {
     const eventListeners: Array<{ element: HTMLElement; events: { type: string; handler: () => void }[] }> = [];
 
@@ -144,7 +137,6 @@ export default function WebFaq() {
       });
     });
 
-    // Cleanup
     return () => {
       eventListeners.forEach(({ element, events }) => {
         events.forEach(({ type, handler }) => {
@@ -154,7 +146,6 @@ export default function WebFaq() {
     };
   }, [openIndex]);
 
-  // Animación al abrir/cerrar respuesta
   useEffect(() => {
     faqRefs.current.forEach((faq, index) => {
       if (!faq) return;
@@ -166,7 +157,6 @@ export default function WebFaq() {
       if (!answer || !icon || !gradientBorder) return;
 
       if (openIndex === index) {
-        // Abrir
         gsap.to(answer, {
           maxHeight: 400,
           opacity: 1,
@@ -185,7 +175,6 @@ export default function WebFaq() {
           duration: 0.3
         });
       } else {
-        // Cerrar
         gsap.to(answer, {
           maxHeight: 0,
           opacity: 0,
@@ -242,7 +231,6 @@ export default function WebFaq() {
               ref={(el) => { faqRefs.current[index] = el; }}
               className="group relative overflow-hidden rounded-2xl transition-all duration-300"
             >
-              {/* Gradient border effect */}
               <div className={`
                 gradient-border
                 absolute inset-0 bg-gradient-to-r from-[#E91E63] to-[#9C27B0] 
@@ -250,10 +238,8 @@ export default function WebFaq() {
                 ${openIndex === index ? 'opacity-100' : 'opacity-50'}
               `} />
               
-              {/* Content container */}
               <div className="relative bg-[#130218] m-[1px] rounded-[15px]">
                 
-                {/* Question header */}
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full text-left p-6 flex items-start justify-between gap-4 transition-all"
@@ -267,7 +253,6 @@ export default function WebFaq() {
                     </h3>
                   </div>
                   
-                  {/* Toggle icon */}
                   <svg 
                     className="toggle-icon shrink-0 w-6 h-6"
                     fill="none" 
@@ -289,7 +274,6 @@ export default function WebFaq() {
                   </svg>
                 </button>
 
-                {/* Answer content */}
                 <div className="faq-answer overflow-hidden max-h-0 opacity-0">
                   <div className="px-6 pb-6 pl-16">
                     <div>

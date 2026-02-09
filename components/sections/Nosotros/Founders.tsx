@@ -60,7 +60,6 @@ const foundersData = [
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const progressAnimationRef = useRef<gsap.core.Tween | null>(null);
 
-  // Detect if desktop (1024px+)
   useEffect(() => {
     const checkIsDesktop = () => {
       setIsDesktop(window.innerWidth >= 1024);
@@ -125,7 +124,6 @@ const foundersData = [
   };
 
 const handleMouseEnter = () => {
-  // Only enable video on desktop
   if (!isDesktop) return;
 
   const video = videoRef.current;

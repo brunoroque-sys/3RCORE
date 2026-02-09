@@ -102,9 +102,9 @@ export default function FirstLandingSection() {
       'G': '#4285F4', // Azul
       'o': '#EA4335', // Rojo (primera o)
       'o2': '#FBBC04', // Amarillo (segunda o)
-      'g': '#4285F4', // Azul
-      'l': '#34A853', // Verde
-      'e': '#EA4335'  // Rojo
+      'g': '#4285F4', 
+      'l': '#34A853', 
+      'e': '#EA4335'  
     };
 
     return text.split(' ').map((word: string, wordIndex: number) => {

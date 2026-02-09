@@ -28,7 +28,6 @@ const NosotrosSection = () => {
 
   const containerRef = useRef(null);
 
-  // Palabras exactas a resaltar (Mayúsculas y con posibles comas)
   const keywordsToHighlight = [
     "Experiencia", "Experiencia,", 
     "Visión", "Visión,", 
@@ -107,7 +106,7 @@ const NosotrosSection = () => {
 
         <p className={`${montserrat.className} text-white ms:text-sm text-xs md:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
           {paragraphText.map((word, index) => {
-            // Verificamos si la palabra coincide exactamente con nuestras keywords
+            
             const shouldHighlight = keywordsToHighlight.includes(word);
 
             return (
