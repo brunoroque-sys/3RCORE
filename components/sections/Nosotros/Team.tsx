@@ -105,8 +105,8 @@ useEffect(() => {
 return (
     <section ref={sectionRef} className="relative flex flex-col md:flex-row h-[80vh] w-full overflow-hidden text-white">
       <div ref={textRef} className="flex w-full md:w-2/4 flex-col justify-center px-10 md:px-16 pt-30 md:pt-0 z-20">
-        <h2 className="text-4xl md:text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
-        <p className="text-m max-w-xs leading-relaxed">
+        <h2 className="text-4xl  xl:text-5xl italic mb-6 text-white font-serif">{ t('title')}</h2>
+        <p className="text-sm max-w-xs leading-relaxed">
           { t('description')}
         </p>
       </div>
@@ -118,7 +118,7 @@ return (
             <div key={area} className="mb-20">
               
               <div className="w-full mb-10 border-l-3 border-pink-500 pl-3">
-                <h2 className="text-2xl md:text-3xl font-m uppercase tracking-[0.05em] text-pink-500">
+                <h2 className="text-xl xl:text-3xl font-m uppercase tracking-[0.05em] text-pink-500">
                   {area}
                 </h2>
               </div>
@@ -141,8 +141,8 @@ return (
                         </div>
                       </div>
                       <div className="px-1 mt-4">
-                        <h3 className="font-bold text-base uppercase tracking-tight leading-none">{member.name}</h3>
-                        <p className="text-white text-[10px] mt-2 uppercase tracking-widest">{member.role}</p>
+                        <h3 className="font-bold text-base lg:text-xs xl:text-base uppercase tracking-tight leading-none">{member.name}</h3>
+                        <p className="text-white text-[8px] xl:text-[10px] mt-2 uppercase tracking-widest">{member.role}</p>
                       </div>
                     </div>
                   );

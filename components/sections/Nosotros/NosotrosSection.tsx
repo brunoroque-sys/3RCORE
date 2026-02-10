@@ -84,7 +84,7 @@ const NosotrosSection = () => {
 
   return (
     <section ref={containerRef} className="w-full py-20 px-10 flex justify-center items-center overflow-hidden">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl lg:max-w-xl xl:max-w-6xl mx-auto text-center">
         
         <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl 2xl:text-6xl mb-6 tracking-wide`}>
           {titleText.map((word, index) => (
@@ -104,7 +104,7 @@ const NosotrosSection = () => {
 
         <div className="team-line w-full max-w-xl 2xl:max-w-5xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
 
-        <p className={`${montserrat.className} text-white ms:text-sm text-xs md:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
+        <p className={`${montserrat.className} text-white text-xs ms:text-sm lg:text-[11px] 2xl:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
           {paragraphText.map((word, index) => {
             
             const shouldHighlight = keywordsToHighlight.includes(word);

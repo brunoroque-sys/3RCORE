@@ -19,7 +19,7 @@ const ScrollNavBtn = () => {
     <a
       href="#contacto" 
       onClick={scrollToContact} 
-      className="fixed bottom-24 right-6 w-14 h-14 rounded-full z-50 flex items-center justify-center 
+      className="fixed bottom-24 right-6 w-13 h-13 rounded-full z-50 flex items-center justify-center 
                  transition-all duration-500 ease-in-out border border-transparent
                  shadow-[0_8px_30px_rgb(233,30,99,0.3)]
                  animate-pulse-slow group

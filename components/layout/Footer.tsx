@@ -17,7 +17,6 @@ const Footer = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
-//sdsadadasdsa
   return (
     <footer className="text-white pt-16 pb-8 px-10 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -37,8 +36,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('agency')}</h3>
-            <div className="text-gray-200 text-sm leading-relaxed space-y-4">
+            <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">{ t('agency')}</h3>
+            <div className="text-gray-200 text-sm lg:text-xs xl:text-sm leading-relaxed space-y-4">
               <p>
                 Calle Las Caobas 170, Ofic. 400
                 <br />
@@ -50,10 +49,10 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex 2xl:justify-center">
+          <div className="flex  lg:justify-center">
             <div className="2xl:w-[60%]">
-              <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('services')}</h3>
-              <ul className="space-y-3 text-sm text-gray-200">
+              <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">{ t('services')}</h3>
+              <ul className="space-y-3 text-sm lg:text-xs xl:text-sm text-gray-200">
                 <li>
                   <Link 
                     href="/servicios/branding" 
@@ -95,7 +94,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-start">
-            <h3 className="text-white font-bold text-base uppercase tracking-widest mb-6">{ t('socialMedia')}</h3>
+            <h3 className="text-white font-bold lg:text-sm 2xl:text-base uppercase tracking-widest mb-6">{ t('socialMedia')}</h3>
             <div className="flex gap-4">
               <SocialIcon href="https://www.facebook.com/3Rcore/" icon={<FaFacebookF />} />
               <SocialIcon href="https://www.instagram.com/3rcore_/?hl=es" icon={<FaInstagram />} />
@@ -128,6 +127,7 @@ const Footer = () => {
               { t('pregunta')}
               <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#A21F8A] group-hover:w-full transition-all duration-300"></span>
             </Link>
+            
             <Link 
               href="/reclamaciones" 
               className="hover:text-pink-500 transition-colors duration-300 relative group"

@@ -69,7 +69,7 @@ interface WPPost {
     <section
       className={`${montserrat.className} py-24 bg-transparent text-white px-10 2xl:px-6 overflow-hidden`}
     >
-      <div className="flex flex-col items-center justify-center mb-20 w-full group">
+      <div className="flex flex-col items-center justify-center lg:mb-10 2xl:mb-20 w-full group">
         <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
           <h2 className="text-white text-s md:text-m tracking-[0.1em] uppercase whitespace-nowrap">
             <span style={{ 
@@ -132,8 +132,8 @@ interface WPPost {
 
               return (
                 <SwiperSlide key={index}>
-                  <div className="group bg-[#2F0729] backdrop-blur-xl rounded-[20px] overflow-hidden flex flex-col min-h-[620px] border border-white/5 transition-all duration-500 hover:border-white/10">
-                    <div className="relative h-80 w-full">
+                  <div className="group bg-[#2F0729] backdrop-blur-xl rounded-[20px] overflow-hidden flex flex-col lg:h-[400px] 2xl:min-h-[620px] border border-white/5 transition-all duration-500 hover:border-white/10">
+                    <div className="relative lg:h-80 2xl:h-80 w-full">
                       <div className="relative w-full h-full overflow-hidden rounded-t-[20px]">
                         <Image
                           src={imageUrl}
@@ -149,7 +149,7 @@ interface WPPost {
                         {formattedDate}
                       </span>
                       <h3
-                        className="text-2xl font-semibold leading-[1.4] mb-8 text-white/90 group-hover:text-white transition-colors"
+                        className="lg:text-sm 2xl:text-2xl font-semibold leading-[1.4] mb-8 text-white/90 group-hover:text-white transition-colors"
                         dangerouslySetInnerHTML={{ __html: item.title.rendered }}
                       />
 
@@ -158,7 +158,7 @@ interface WPPost {
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="relative inline-flex items-center justify-center px-10 py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-500 border border-white/20 rounded-[15px] cursor-pointer text-white group/btn"
+                          className="relative inline-flex items-center justify-center lg:px-8 2xl:px-10 py-2 2xl:py-3.5 overflow-hidden font-bold uppercase tracking-[0.2em] lg:text-[8px] 2xl:text-[10px] transition-all duration-500 border border-white/20 rounded-[10px] cursor-pointer text-white group/btn"
                         >
                           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#E91E63] to-[#9C27B0] transition-transform duration-500 ease-out -translate-x-full group-hover/btn:translate-x-0"></span>
                           <span className="relative z-10 transition-colors duration-300">

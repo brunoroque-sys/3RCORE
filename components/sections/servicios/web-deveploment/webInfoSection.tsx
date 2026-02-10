@@ -56,9 +56,9 @@ const WebInfoSection = () => {
       ref={containerRef} 
       className="w-full text-white py-20 px-10 flex flex-col items-center text-center"
     >
-      <div className="max-w-4xl w-full space-y-12">
+      <div className="max-w-4xl lg:max-w-xl w-full space-y-12">
         <div className="space-y-4">
-          <h2 className="text-sm md:text-xl tracking-[0.1em] uppercase font-light text-white">
+          <h2 className="text-sm lg:text-lg tracking-[0.1em] uppercase font-light text-white">
              <span style={{ 
                   backgroundColor: '#A21F8A', 
                   padding: '2px 10px', 
@@ -74,13 +74,13 @@ const WebInfoSection = () => {
         </div>
 
         <div ref={contentRef} className="space-y-5">
-          <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-xs lg:text-sm xl:text-xl leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf1')}
           </p>
-          <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-xs lg:text-sm xl:text-xl leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf2')}
           </p>
-          <p className="text-xs md:text-sm lg:text-lg leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-xs lg:text-sm xl:text-xl leading-relaxed text-white max-w-xl lg:max-w-3xl mx-auto font-light">
             { t('poParraf3')}
           </p>
           

@@ -72,10 +72,10 @@ export default function SeoSemCall() {
     >
       <div className="w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="text-white space-y-6 px-10 lg:pl-40">
+          <div className="text-white space-y-6 px-10 lg:pl-20 xl:pl-40">
             <h2 
               ref={titleRef}
-              className="text-4xl 2xl:text-5xl font-light leading-tight"
+              className="text-4xl lg:text-3xl 2xl:text-5xl font-light leading-tight"
             >
               <span className="italic block">
                 {t('title.part1').split('GOOGLE')[0]}
@@ -92,7 +92,7 @@ export default function SeoSemCall() {
               <span className="text-pink-600 font-normal block">{t('title.part3')}</span>
             </h2>
 
-            <div className="space-y-4 text-xs lg:text-base 2xl:text-lg">
+            <div className="space-y-4 text-xs  xl:text-base 2xl:text-lg">
               <p ref={paragraph1Ref} className="leading-relaxed">
                 {t('description.paragraph1').split('(SEO)')[0]}
                 <span className="bg-[#A21F8A] text-white px-1 py-0.5">(SEO)</span>

@@ -120,7 +120,7 @@ export default function HeroWeb() {
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-4xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-4xl lg:text-5xl xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 WEB
               </h2>
@@ -132,7 +132,7 @@ export default function HeroWeb() {
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-left text-4xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-4xl lg:text-5xl xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 DEVELOPMENT
               </h2>
@@ -146,7 +146,7 @@ export default function HeroWeb() {
 
           <p 
             ref={sloganRef}
-            className="text-white text-xs md:text-sm font-light ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
+            className="text-white text-xs xl:text-sm font-light ms:w-2/3 md:w-1/2 2xl:w-1/2 mx-auto leading-relaxed break-words"
           >
             {t.rich('slogan', {
               shopify: (chunks) => (

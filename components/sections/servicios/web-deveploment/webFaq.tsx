@@ -197,7 +197,7 @@ export default function WebFaq() {
   }, [openIndex]);
 
   return (
-    <section ref={sectionRef} className="relative z-10 pt-40 pb-20 px-10 lg:px-6">
+    <section ref={sectionRef} className="relative z-10 pt-15 xl:pt-40 pb-20 px-10 lg:px-6">
       <div className="max-w-4xl mx-auto">
 
         <header ref={headerRef} className="mb-12 pb-8 text-center relative">

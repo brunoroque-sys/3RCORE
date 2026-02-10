@@ -43,14 +43,14 @@ export default function BrandApplications() {
   return (
     <section className="w-full flex items-center px-10 lg:px-6 md:px-15 py-12 md:py-18 bg-gradient-to-r from-[#4c0046] to-[#130218]"> 
     
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
+      <div className="max-w-6xl lg:max-w-4xl 2xl:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
         
         <div className="flex flex-col space-y-4 md:space-y-6 text-center md:text-left">
-          <h2 className="text-white text-3xl lg:text-5xl font-serif italic tracking-wide">
+          <h2 className="text-white text-3xl lg:text-4xl xl:text-5xl font-serif italic tracking-wide">
             {t('apMarca')}
           </h2>
           
-          <p className="text-white/90 text-base lg:text-xl 2xl:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
+          <p className="text-white/90 text-base lg:text-base xl:text-2xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
             {t('apParraf')}
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function BrandApplications() {
               loading="eager" 
             />
 
-            <div className="absolute -bottom-20 -left-8 lg:-bottom-10 lg:-left-20 w-24 h-24 lg:w-50 md:h-50 z-10">
+            <div className="absolute -bottom-20 -left-8 lg:-bottom-10 lg:-left-20 w-24 h-24 lg:w-50 lg:h-30 xl:h-50 z-10">
               <img 
                 src="/images/branding/Apli/stickerAI.png" 
                 alt="Alucon Sticker"

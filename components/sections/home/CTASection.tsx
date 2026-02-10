@@ -115,7 +115,7 @@ const StatsAndCTA = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full py-10 px-10 lg:px-4 flex flex-col items-center xl:gap-20 2xl:gap-40  overflow-hidden"
+      className="w-full py-10 lg:py-15 2xl:py-24 px-10 lg:px-4 flex flex-col items-center lg:gap-10  xl:gap-20 2xl:gap-40  overflow-hidden"
     >
       <div className="stats-container flex flex-col md:flex-row justify-center items-center gap-10 lg:gap-30 md:gap-15 xl:gap-40 w-full max-w-5xl">
         {stats.map((stat, index) => (
@@ -124,7 +124,7 @@ const StatsAndCTA = () => {
             className="stat-item text-center flex flex-col items-center"
           >
             <div
-              className={`text-[#D11E68] text-5xl md:text-7xl ${trirong.className} italic font-bold mb-3`}
+              className={`text-[#D11E68] text-5xl xl:text-7xl ${trirong.className} italic font-bold mb-3`}
             >
               <span>{stat.prefix}</span>
               <span
@@ -136,7 +136,7 @@ const StatsAndCTA = () => {
               </span>
             </div>
             <p
-              className={`text-white text-xs md:text-sm tracking-[0.2em] font-medium ${poppins.className} opacity-80`}
+              className={`text-white text-xs lg:text-sm tracking-[0.2em] font-medium ${poppins.className} opacity-80`}
             >
               {stat.label}
             </p>
@@ -150,7 +150,7 @@ const StatsAndCTA = () => {
 
         <div className="cta-content relative z-10 w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-12">
           <div className="flex flex-col items-start text-left md:w-1/2 space-y-8">
-            <div className="text-white text-2xl md:text-xl 2xl:text-4xl leading-tight">
+            <div className="text-white text-xl md:text-xl 2xl:text-4xl leading-tight mb-2">
               <h3 className={`${playfair.className} italic font-normal mb-4 text-white `}>
                 <span style={{ 
                   backgroundColor: '#A21F8A', 
@@ -169,14 +169,14 @@ const StatsAndCTA = () => {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block" 
+              className="inline-block mt-3" 
             >
               <button
                 className={`
-                ${poppins.className} 
-                relative inline-flex items-center justify-center px-10 py-4 
-                overflow-hidden text-xs font-bold uppercase tracking-[0.2em] text-white 
-                border border-white/30 rounded-[15px] transition-all duration-500 
+                ${poppins.className}  
+                relative inline-flex items-center justify-center px-5 xl:px-10 py-2 xl:py-4 
+                overflow-hidden text-[10px] xl:text-xs font-bold uppercase tracking-[0.2em] text-white 
+                border border-white/30 rounded-[10px] transition-all duration-500 
                 group/btn hover:border-transparent 
               `}
               >
