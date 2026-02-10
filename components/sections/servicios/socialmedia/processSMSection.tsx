@@ -98,10 +98,10 @@ const ProcessSMSection = () => {
       <div className="max-w-6xl lg:max-w-4xl xl:max-w-6xl w-full  px-10 md:px-1  lg:px-6 space-y-24">
         
         <div className="text-center space-y-8">
-          <h2 ref={headerRef} className="italic text-2xl lg:text-4xl 2xl:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
+          <h2 ref={headerRef} className="italic text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl text-gray-200" style={{ fontFamily: 'serif' }}>
             {t('protitle')}
           </h2>
-          <p ref={subheaderRef} className="text-xl lg:text-3xl 2xl:text-5xl font-medium leading-tight bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #9C27B0 0%, #9C27B0 40%, #FF1A55 100%)'}}>
+          <p ref={subheaderRef} className="text-xl lg:text-3xl xl:text-5xl 2xl:text-5xl font-medium leading-tight bg-clip-text text-transparent" style={{backgroundImage: 'linear-gradient(to right, #9C27B0 0%, #9C27B0 40%, #FF1A55 100%)'}}>
             {t('prosubtitle')}
           </p>
         </div>
