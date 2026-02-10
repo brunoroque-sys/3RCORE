@@ -14,11 +14,11 @@ const ubuntu = Ubuntu({ subsets: ["latin"], weight: ["400", "700"] });
 
 const clients: Client[] = [
   { name: '2K Logo', logo: '/images/Logos/2kLogo.webp', className: "lg:-translate-y-5" },
-  { name: 'Daska', logo: '/images/Logos/Daska.webp', className: "lg:-translate-y-25 2xl:-translate-y-35" },
+  { name: 'Daska', logo: '/images/Logos/Daska.webp', className: "xl:-translate-y-25 2xl:-translate-y-35" },
   { name: 'Edifica', logo: '/images/Logos/Edifica.webp', className: "lg:scale-90" },
   { name: 'Clinica Familia', logo: '/images/Logos/clinicaFamilia.webp', className: "lg:translate-y-6" },
-  { name: 'CGM', logo: '/images/Logos/cgm.webp', className: "lg:-translate-y-25 2xl:-translate-y-30 2xl:translate-x-30" },
-  { name: 'Capital Core', logo: '/images/Logos/capitalCore.webp', className: "lg:translate-x-15 2xl:-translate-y-6 2xl:translate-x-40" },
+  { name: 'CGM', logo: '/images/Logos/cgm.webp', className: "lg:-translate-y-5 xl:-translate-y-25 2xl:-translate-y-30 2xl:translate-x-30" },
+  { name: 'Capital Core', logo: '/images/Logos/capitalCore.webp', className: "xl:translate-x-15 2xl:-translate-y-6 2xl:translate-x-40" },
   { name: 'AGU', logo: '/images/Logos/agu.webp', className: "lg:-translate-x-10 lg:-translate-y-5 2xl:-translate-x-30" },
   { name: 'Vlissad', logo: '/images/Logos/vlissad.webp', className: "lg:scale-95" },
   { name: 'Vita Logo', logo: '/images/Logos/vitaLogo.webp', className: "lg:-translate-y-2" },
@@ -26,17 +26,17 @@ const clients: Client[] = [
   { name: 'Ventura Logo', logo: '/images/Logos/venturaLogo.webp', className: "lg:-translate-y-1" },
   { name: 'Rancho Ventura', logo: '/images/Logos/ranchoVentura.webp', className: "lg:translate-y-6 lg:scale-90" },
   { name: 'Pretties', logo: '/images/Logos/pretties.webp', className: "lg:-translate-y-4" },
-  { name: 'PDK', logo: '/images/Logos/pdk.webp', className: "lg:translate-x-15 lg:translate-y-2 2xl:translate-x-30" },
-  { name: 'Domus Logo', logo: '/images/Logos/domusLogo.webp', className: "lg:-translate-y-6 lg:-translate-x-40" },
-  { name: 'Auto Logo', logo: '/images/Logos/AutoLogo.webp', className: "lg:translate-y-4 lg:-translate-x-30" },
+  { name: 'PDK', logo: '/images/Logos/pdk.webp', className: "xl:translate-x-15 lg:translate-y-10 2xl:translate-x-30" },
+  { name: 'Domus Logo', logo: '/images/Logos/domusLogo.webp', className: "lg:-translate-x-5 xl:-translate-y-6 xl:-translate-x-40" },
+  { name: 'Auto Logo', logo: '/images/Logos/AutoLogo.webp', className: "lg:translate-y-10 lg:-translate-x-5 xl:translate-y-4 xl:-translate-x-30" },
   { name: 'DPS', logo: '/images/Logos/DPS.webp', className: "lg:scale-95" },
   { name: 'Glimsolar', logo: '/images/Logos/glimsolar.webp', className: "lg:translate-y-5" },
   { name: 'Instal Pro', logo: '/images/Logos/instalPro.webp', className: "lg:-translate-y-5" },
-  { name: 'Italel', logo: '/images/Logos/Italel.webp', className: "lg:translate-y-3" },
+  { name: 'Italel', logo: '/images/Logos/Italel.webp', className: "lg:translate-y-20 xl:translate-y-3" },
   { name: 'Nexxum', logo: '/images/Logos/Nexxum.webp', className: "lg:scale-90" },
-  { name: 'Oros', logo: '/images/Logos/Oros.webp', className: "lg:translate-y-25 lg:transalte-x-25 2xl:translate-y-30 2xl:translate-x-30" },
+  { name: 'Oros', logo: '/images/Logos/Oros.webp', className: "lg:translate-y-10 lg:translate-x-10 xl:translate-y-25 xl:transalte-x-25 2xl:translate-y-30 2xl:translate-x-30" },
   { name: 'Plinius', logo: '/images/Logos/Plinius.webp', className: "lg:translate-y-4 lg:translate-x-30" },
-  { name: '2K Logo', logo: '/images/Logos/2kLogo.webp', className: "lg:translate-y-25 lg:translate-x-25 2xl:translate-y-30" }
+  { name: '2K Logo', logo: '/images/Logos/2kLogo.webp', className: "lg:translate-x-40 xl:translate-y-25 xl:translate-x-25 2xl:translate-y-30" }
 ];
 
 export default function ClientsSection() {

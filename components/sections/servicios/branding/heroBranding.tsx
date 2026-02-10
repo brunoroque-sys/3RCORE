@@ -133,11 +133,11 @@ export default function HeroBranding() {
       }}>
         <div className="flex flex-col items-center">
           
-          <div className='w-auto md:w-[35%]'>
+          <div className='w-auto xl:w-[35%]'>
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-6xl lg:text-7xl xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 BR
               </h2>
@@ -149,7 +149,7 @@ export default function HeroBranding() {
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-6xl lg:text-7xl xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 AND
               </h2>

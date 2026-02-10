@@ -50,14 +50,12 @@ export default async function RootLayout({
         <ParticlesBackground />
         
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <SmoothScrolling>
             <Navbar />
             <main className="flex flex-col relative z-10">
               <div className="noise-global" />
               {children}
             </main>
             <Footer />
-          </SmoothScrolling>
           
           <CookieBanner />
 

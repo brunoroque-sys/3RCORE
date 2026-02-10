@@ -144,7 +144,7 @@ return (
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-6xl lg:text-7xl xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 SO
               </h2>
@@ -156,7 +156,7 @@ return (
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-left text-6xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-6xl lg:text-7xl xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 CIAL
               </h2>
