@@ -146,7 +146,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-3xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-3xl lg:text-6xl 2xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 {t('titleLine1')}
               </h2>
@@ -158,7 +158,7 @@ export default function HeroLanding({ onImageLoad }: HeroLandingProps) {
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-center text-3xl md:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-center text-3xl lg:text-6xl 2xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 SEO
               </h2>

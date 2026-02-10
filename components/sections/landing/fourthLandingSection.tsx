@@ -141,7 +141,7 @@ export default function FourthLandingSection() {
         <div className="mb-12">
           <h3 
             ref={numberRef}
-            className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
+            className="text-[#A21F8A] text-4xl lg:text-5xl xl:text-6xl font-bold italic tracking-tight"
           >
             {t('number')}
           </h3>
@@ -153,14 +153,14 @@ export default function FourthLandingSection() {
 
         <h2 
           ref={headingRef}
-          className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
+          className="text-white text-lg md:text-xl lg:text-xl 2xl:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
           {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
-          className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
+          className="text-white text-xs lg:text-sm 2xl:text-base max-w-4xl mb-16 leading-relaxed"
         >
           {t('description')}
         </p>
@@ -168,7 +168,7 @@ export default function FourthLandingSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           <div 
             ref={image1Ref}
-            className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full h-[300px] xl:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image 
               src="/images/landing/argentaria.gif" 
@@ -178,7 +178,7 @@ export default function FourthLandingSection() {
           </div>
           <div 
             ref={image2Ref}
-            className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full h-[300px] xl:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
           >
             <Image 
               src="/images/landing/asdeoros.gif" 

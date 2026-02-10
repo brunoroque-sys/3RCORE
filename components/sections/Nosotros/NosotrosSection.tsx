@@ -84,9 +84,9 @@ const NosotrosSection = () => {
 
   return (
     <section ref={containerRef} className="w-full py-20 px-10 flex justify-center items-center overflow-hidden">
-      <div className="max-w-6xl lg:max-w-xl xl:max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl lg:max-w-xl 2xl:max-w-6xl mx-auto text-center">
         
-        <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl 2xl:text-6xl mb-6 tracking-wide`}>
+        <h2 className={`team-title ${playfair.className} text-white text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl mb-6 tracking-wide`}>
           {titleText.map((word, index) => (
             <span 
               key={index} 
@@ -98,13 +98,13 @@ const NosotrosSection = () => {
           ))}
         </h2>
 
-        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl 2xl:text-6xl font-medium mb-10 tracking-tight will-change-transform leading-tight bg-clip-text text-transparent`}style={{backgroundImage: 'linear-gradient(to right, #9C27B0 0%, #9C27B0 30%, #FF1A55 100%)'}}>
+        <h3 className={`team-subtitle ${montserrat.className} text-[#D11E68] text-3xl md:text-3xl xl:text-4xl 2xl:text-6xl font-medium mb-10 tracking-tight will-change-transform leading-tight bg-clip-text text-transparent`}style={{backgroundImage: 'linear-gradient(to right, #9C27B0 0%, #9C27B0 30%, #FF1A55 100%)'}}>
          {t('subtitle')}
         </h3>
 
         <div className="team-line w-full max-w-xl 2xl:max-w-5xl mx-auto h-[1px] bg-white/90 my-10 origin-center will-change-transform"></div>
 
-        <p className={`${montserrat.className} text-white text-xs ms:text-sm lg:text-[11px] 2xl:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
+        <p className={`${montserrat.className} text-white text-xs ms:text-sm lg:text-[12px] 2xl:text-base leading-[2.2] max-w-5xl mx-auto font-normal`}>
           {paragraphText.map((word, index) => {
             
             const shouldHighlight = keywordsToHighlight.includes(word);

@@ -171,7 +171,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed seo-item">
+                <p className="text-xs lg:text-sm xl:text-base 2xl:text-xl leading-relaxed seo-item">
                   {t('landing.description')}
                 </p>
               </div>
@@ -195,7 +195,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed info-item">
+                <p className="text-xs lg:text-sm xl:text-base 2xl:text-xl leading-relaxed info-item">
                   {t('info.description')}
                 </p>
               </div>
@@ -219,7 +219,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed ecomm-item">
+                <p className="text-xs lg:text-sm xl:text-base 2xl:text-xl leading-relaxed ecomm-item">
                   {t('Ecomm.description')}
                 </p>
               </div>
@@ -243,7 +243,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed elearn-item">
+                <p className="text-xs lg:text-sm xl:text-base 2xl:text-xl leading-relaxed elearn-item">
                   {t('Elearn.description')}
                 </p>
               </div>
@@ -267,7 +267,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed servic-item">
+                <p className="text-xs lg:text-sm xl:text-base 2xl:text-xl leading-relaxed servic-item">
                   {t('Servic.description')}
                 </p>
               </div>
@@ -291,7 +291,7 @@ const WebTypesSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed blogs-item">
+                <p className="text-xs lg:text-sm xl:text-base 2xl:text-xl leading-relaxed blogs-item">
                   {t('Blogs.description')}
                 </p>
               </div>

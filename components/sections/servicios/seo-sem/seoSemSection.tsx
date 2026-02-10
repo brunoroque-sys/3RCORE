@@ -139,7 +139,7 @@ const SeoSemSection = () => {
       className="w-full text-white py-10 xl:py-20 px-10 md:px-6 lg:px-20"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 lg:mb-20 xl:mb-30 space-y-6">
+        <div className="text-center mb-10 lg:mb-20 2xl:mb-30 space-y-6">
           <h2 
             ref={titleRef}
             className="text-base md:text-lg tracking-[0.1em] uppercase font-light"
@@ -158,7 +158,7 @@ const SeoSemSection = () => {
           
           <div 
             ref={descriptionRef}
-            className="text-xs lg:text-sm xl:text-xl leading-relaxed max-w-3xl lg:max-w-xl xl:max-w-3xl mx-auto font-light"
+            className="text-xs lg:text-base 2xl:text-xl leading-relaxed max-w-3xl lg:max-w-xl xl:max-w-3xl mx-auto font-light"
           >
             <HighlightedDescription text={t('header.description')} />
           </div>
@@ -183,13 +183,13 @@ const SeoSemSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed seo-item">
+                <p className="text-xs lg:text-sm 2xl:text-xl leading-relaxed seo-item">
                   {t.rich('seo.description', {
                     strong: (chunks) => <strong className="font-bold">{chunks}</strong>
                   })}
                 </p>
                 
-                <ul className="space-y-3 text-xs lg:text-sm xl:text-xl">
+                <ul className="space-y-3 text-xs lg:text-sm 2xl:text-xl">
                   {t.raw('seo.items').map((item: string, index: number) => (
                     <li key={index} className="seo-item">
                       - {t.rich(`seo.items.${index}`, {
@@ -199,7 +199,7 @@ const SeoSemSection = () => {
                   ))}
                 </ul>
 
-                <p className="text-xs lg:text-sm xl:text-xl italic font-light pt-4 seo-item">
+                <p className="text-xs lg:text-sm 2xl:text-xl italic font-light pt-4 seo-item">
                   {t.rich('seo.footer', {
                     strong: (chunks) => <strong className="font-bold">{chunks}</strong>
                   })}
@@ -228,13 +228,13 @@ const SeoSemSection = () => {
                 className="absolute left-0 top-0 bottom-0 w-[1px] bg-white origin-top"
               />
               <div className="space-y-6 py-8">
-                <p className="text-xs lg:text-sm xl:text-xl leading-relaxed sem-item">
+                <p className="text-xs lg:text-sm 2xl:text-xl leading-relaxed sem-item">
                   {t.rich('sem.description', {
                     strong: (chunks) => <strong className="font-bold">{chunks}</strong>
                   })}
                 </p>
                 
-                <ul className="space-y-3 text-xs lg:text-sm xl:text-xl">
+                <ul className="space-y-3 text-xs lg:text-sm 2xl:text-xl">
                   {t.raw('sem.items').map((item: string, index: number) => (
                     <li key={index} className="sem-item">
                       - {t.rich(`sem.items.${index}`, {
@@ -243,7 +243,7 @@ const SeoSemSection = () => {
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs lg:text-sm xl:text-xl italic font-light pt-4 sem-item">
+                <p className="text-xs lg:text-sm 2xl:text-xl italic font-light pt-4 sem-item">
                   {t.rich('sem.footer', {
                     strong: (chunks) => <strong className="font-bold">{chunks}</strong>
                   })}

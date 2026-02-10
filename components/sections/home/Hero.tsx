@@ -501,7 +501,7 @@ export default function HeroHome() {
         </div>
       </div>
 
-      <div className="absolute bottom-30 lg:bottom-5 xl:bottom-20 left-10 xl:left-20 z-20 text-white pointer-events-none">
+      <div className="absolute bottom-30 lg:bottom-5 2xl:bottom-20 left-10 2xl:left-20 z-20 text-white pointer-events-none">
 
         <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl bg-gradient-to-r from-[#9C27B0] to-[#E91E63] 
               bg-clip-text text-transparent font-m tracking-tighter leading-tight">

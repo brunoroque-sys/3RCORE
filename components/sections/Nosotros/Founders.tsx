@@ -252,14 +252,14 @@ const handleMouseLeave = () => {
         <div ref={leftSideRef} className="flex flex-col space-y-4 sm:space-y-5 md:space-y-6">
           <div className="flex items-center space-x-3 sm:space-x-4">
             <div className="overflow-hidden h-7 sm:h-8 flex items-center">
-              <span className="text-pink-500 font-mono text-xl lg:text-base xl:text-2xl font-bold">
+              <span className="text-pink-500 font-mono text-xl lg:text-base 2xl:text-2xl font-bold">
                 0{index + 1}
               </span>
-              <span className="text-white mx-1.5 sm:mx-2 lg:text-base xl:text-lg sm:text-xl">/</span>
+              <span className="text-white mx-1.5 sm:mx-2 lg:text-base 2xl:text-lg sm:text-xl">/</span>
               <span className="text-white font-mono text-base sm:text-lg">0{foundersData.length}</span>
             </div>
             <div className="h-[1px] w-10 sm:w-12 bg-white"></div>
-            <span className="text-white uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] lg:text-[10px] xl:text-[13px] font-bold">
+            <span className="text-white uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[9px] lg:text-[10px] 2xl:text-[13px] font-bold">
               {t('badge')}
             </span>
           </div>
@@ -268,7 +268,7 @@ const handleMouseLeave = () => {
             <div className="flex items-center gap-4 sm:gap-6">
               <h2
                 ref={nameRef}
-                className="text-5xl xl:text-7xl font-black tracking-tighter text-white leading-none min-h-[1.1em] flex items-center"
+                className="text-5xl 2xl:text-7xl font-black tracking-tighter text-white leading-none min-h-[1.1em] flex items-center"
               >
                 {selected.name}
               </h2>
@@ -321,10 +321,10 @@ const handleMouseLeave = () => {
           
           <div className="flex justify-between mt-6">
             <div className=' flex flex-col space-y-1 border-l-2 border-pink-600 pl-4 sm:pl-5 md:pl-6 transition-all duration-500'>
-              <h3 className="text-white text-2xl xl:text-3xl font-bold tracking-tight uppercase">
+              <h3 className="text-white text-2xl 2xl:text-3xl font-bold tracking-tight uppercase">
                 {selected.fullName}
               </h3>
-              <p className="text-pink-500 font-medium tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[11px] xl:text-xs">
+              <p className="text-pink-500 font-medium tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[11px] 2xl:text-xs">
                 {selected.role}
               </p>
             </div>

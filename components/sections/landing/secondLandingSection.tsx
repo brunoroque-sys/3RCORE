@@ -70,15 +70,15 @@ export default function SecondLandingSection() {
   
   return (
     <section ref={sectionRef} className="relative min-h-screen w-full py-20 overflow-hidden ">
-      <div className="relative max-w-7xl mx-auto px-10 md:px-6 mb-16">
+      <div className="relative max-w-7xl mx-auto px-10 md:px-6 mb-16 lg:px-24">
         <div className="mb-8">
-          <h3 className="header-anim text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight">{t('number')}</h3>
+          <h3 className="header-anim text-[#A21F8A] text-4xl lg:text-5xl xl:text-6xl font-bold italic tracking-tight">{t('number')}</h3>
           <div className="line-grow w-30 h-[2px] bg-white mt-2"></div>
         </div>
-        <h2 className="header-anim text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 leading-tight">
+        <h2 className="header-anim text-white text-lg md:text-xl lg:text-xl 2xl:text-3xl font-semibold mb-6 leading-tight">
           {t('title')}
         </h2>
-        <p className="header-anim text-white text-sm md:text-base max-w-4xl leading-relaxed">
+        <p className="header-anim text-white text-xs lg:text-sm 2xl:text-base max-w-4xl leading-relaxed">
           {t('subtitle')}
         </p>
       </div>
@@ -102,10 +102,10 @@ export default function SecondLandingSection() {
 
             <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'>
-                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>
+                <h3 className='text-white text-lg xl:text-2xl font-bold uppercase mb-6'>
                   {t('cards.audit.title')}
                 </h3>
-                <ul className='text-white/90  space-y-3 text-sm md:text-base'>
+                <ul className='text-white/90  space-y-3 text-sm xl:text-base'>
                   <li>- {t('cards.audit.items.0')}</li>
                   <li>- {t('cards.audit.items.1')}</li>
                   <li>- {t('cards.audit.items.2')}</li>
@@ -122,8 +122,8 @@ export default function SecondLandingSection() {
           <div className='grid md:grid-cols-2 items-center'>
             <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center'>
               <div className='max-w-md w-full'>
-                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6'>{t('cards.interlinks.title')}</h3>
-                <ul className='text-white/90 space-y-3 text-sm md:text-base'>
+                <h3 className='text-white text-lg xl:text-2xl font-bold uppercase mb-6'>{t('cards.interlinks.title')}</h3>
+                <ul className='text-white/90 space-y-3 text-sm xl:text-base'>
                   <li>- {t('cards.interlinks.items.0')}</li>
                   <li>- {t('cards.interlinks.items.1')}</li>
                   <li>- {t('cards.interlinks.items.2')}</li>
@@ -160,10 +160,10 @@ export default function SecondLandingSection() {
 
             <div className='text-container p-10 md:p-8 md:p-16 lg:p-24 flex items-center justify-center order-1 md:order-2'>
               <div className='max-w-md w-full'> 
-                <h3 className='text-white text-xl md:text-2xl font-bold uppercase mb-6 text-left'>
+                <h3 className='text-white text-lg xl:text-2xl font-bold uppercase mb-6 text-left'>
                   {t('cards.scaling.title')}
                 </h3>
-                <ul className='text-white/90 space-y-3 text-sm md:text-base text-left'>
+                <ul className='text-white/90 space-y-3 text-sm xl:text-base text-left'>
                   <li>- {t('cards.scaling.items.0')}</li>
                   <li>- {t('cards.scaling.items.1')}</li>
                   <li>- {t('cards.scaling.items.2')}</li>

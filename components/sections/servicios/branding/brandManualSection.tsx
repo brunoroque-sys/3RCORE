@@ -56,7 +56,7 @@ const BrandManualSection = () => {
       ref={containerRef} 
       className="w-full text-white py-20 px-10 lg:px-6 flex flex-col items-center text-center"
     >
-      <div className="max-w-4xl lg:max-w-xl 2xl:max-w-4xl w-full space-y-12">
+      <div className="max-w-4xl lg:max-w-xl xl:max-w-4xl w-full space-y-12">
         <div className="space-y-4">
           <h2 className="text-sm lg:text-lg tracking-[0.3em] uppercase font-light text-white">
              <span style={{ 

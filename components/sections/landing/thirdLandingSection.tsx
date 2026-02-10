@@ -111,13 +111,13 @@ export default function FirstLandingSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full py-10 px-10 md:px-12 lg:px-14 overflow-hidden"
+      className="relative w-full py-10 px-10 md:px-12 lg:px-24 overflow-hidden"
     >
       <div className="relative max-w-7xl mx-auto">
         <div className="mb-12">
           <h3 
             ref={numberRef}
-            className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
+            className="text-[#A21F8A] text-4xl lg:text-5xl xl:text-6xl font-bold italic tracking-tight"
           >
             {t('number')}
           </h3>
@@ -129,14 +129,14 @@ export default function FirstLandingSection() {
 
         <h2 
           ref={headingRef}
-          className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
+          className="text-white text-lg md:text-xl lg:text-xl 2xl:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
           {t('heading')}
         </h2>
 
         <p 
           ref={descriptionRef}
-          className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
+          className="text-white text-xs lg:text-sm 2xl:text-base max-w-4xl mb-16 leading-relaxed"
         >
           {t('description')}
         </p>

@@ -45,7 +45,7 @@ const LandingContact = () => {
 
   return (
     <section 
-      className={`${montserrat.className} relative w-full 2xl:py-15 flex flex-col justify-center items-center overflow-hidden `}
+      className={`${montserrat.className} relative w-full lg:py-10 2xl:py-15 flex flex-col justify-center items-center overflow-hidden `}
       style={{
         backgroundImage: "url('/images/Formulario/wmremove-transformed-8-1-1.webp')",
         backgroundSize: 'cover',
@@ -54,7 +54,7 @@ const LandingContact = () => {
     >
       <div className="absolute inset-0 bg-[#130218]/90 z-0"></div>
 
-      <div className="relative z-10 w-full max-w-7xl px-10 lg:px-6">
+      <div className="relative z-10 w-full  max-w-5xl xl:max-w-6xl 2xl:max-w-7xl px-10 xl:px-6">
         <h2 className="text-white text-center text-2xl md:text-3xl tracking-[0.2em] uppercase mb-16">
           {t('title')}
         </h2>

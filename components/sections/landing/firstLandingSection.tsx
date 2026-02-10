@@ -134,7 +134,7 @@ export default function FirstLandingSection() {
         <div className="mb-12">
           <h3 
             ref={numberRef}
-            className="text-[#A21F8A] text-4xl md:text-6xl font-bold italic tracking-tight"
+            className="text-[#A21F8A] text-4xl lg:text-5xl xl:text-6xl font-bold italic tracking-tight"
           >
            {t('number')}
           </h3>
@@ -146,14 +146,14 @@ export default function FirstLandingSection() {
 
         <h2 
           ref={headingRef}
-          className="text-white text-lg md:text-xl lg:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
+          className="text-white text-lg md:text-xl lg:text-xl 2xl:text-3xl font-semibold mb-6 max-w-7xl leading-tight"
         >
           {renderGoogleText(t('heading'))}
         </h2>
 
         <p 
           ref={descriptionRef}
-          className="text-white text-xs md:text-base max-w-4xl mb-16 leading-relaxed"
+          className="text-white text-xs lg:text-sm 2xl:text-base max-w-4xl mb-16 leading-relaxed"
         >
           {renderGoogleText(t('description'))}
         </p>
@@ -184,10 +184,10 @@ export default function FirstLandingSection() {
           </div>
 
           <div className="relative index-3 text-center px-1 md:px-16 py-12">
-            <p className="text-white/90 text-xl md:text-2xl lg:text-3xl italic mb-1 font-light">
+            <p className="text-white/90 text-xl md:text-2xl 2xl:text-3xl italic mb-1 font-light">
               {t('quote.line1')}
             </p>
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-xl md:text-3xl lg:text-4xl font-medium leading-relaxed">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-xl md:text-2xl 2xl:text-4xl font-medium leading-relaxed">
               {renderGoogleText(t('quote.line2'))}
             </p>
           </div>
@@ -200,10 +200,10 @@ export default function FirstLandingSection() {
           <div className="bg-[#24032D] rounded-[3rem] p-8 md:p-12 md:px-40 transition-shadow duration-500">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-center">
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-pink-400 text-xl md:text-5xl italic font-medium mb-3 tracking-wide">
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#E91E63] to-[#9C27B0] text-pink-400 text-xl  xl:text-3xl 2xl:text-5xl italic font-medium mb-3 tracking-wide">
                   {t('pricing.label')}
                 </p>
-                <p className="text-white text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight">
+                <p className="text-white text-3xl md:text-4xl 2xl:text-5xl font-semibold tracking-tight">
                   {t('pricing.amount')}
                 </p>
               </div>

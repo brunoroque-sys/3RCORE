@@ -120,7 +120,7 @@ export default function HeroWeb() {
             <div className="bg-none px-6 py-2 w-[100%] transform">
               <h2 
                 ref={brTextRef}
-                className="text-white text-left text-4xl lg:text-5xl xl:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 WEB
               </h2>
@@ -132,7 +132,7 @@ export default function HeroWeb() {
             >
               <h2 
                 ref={andTextRef}
-                className="text-white text-left text-4xl lg:text-5xl xl:text-8xl font-black tracking-[0.1em] leading-none"
+                className="text-white text-left text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-black tracking-[0.1em] leading-none"
               >
                 DEVELOPMENT
               </h2>
